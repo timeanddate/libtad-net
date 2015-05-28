@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2879BE0B-E891-4F3A-B69C-C5EE26012532}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TimeAndDate.Services</RootNamespace>
+    <AssemblyName>TimeAndDate.Time</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="TimeService.cs" />
+    <Compile Include="Authentication.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="HolidaysService.cs" />
+    <Compile Include="Common\UriUtils.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="PlacesService.cs" />
+    <Compile Include="ConvertTimeService.cs" />
+    <Compile Include="Common\StringHelpers.cs" />
+    <Compile Include="AstronomyService.cs" />
+    <Compile Include="DialCodeService.cs" />
+    <Compile Include="DataTypes\Places\Location.cs" />
+    <Compile Include="DataTypes\Places\Geo.cs" />
+    <Compile Include="DataTypes\Places\Country.cs" />
+    <Compile Include="DataTypes\Astro\Astronomy.cs" />
+    <Compile Include="DataTypes\Time\TimeChange.cs" />
+    <Compile Include="DataTypes\Astro\AstronomyEvent.cs" />
+    <Compile Include="DataTypes\Astro\AstronomySpecial.cs" />
+    <Compile Include="DataTypes\Holidays\Holiday.cs" />
+    <Compile Include="DataTypes\Holidays\HolidayState.cs" />
+    <Compile Include="DataTypes\Astro\AstronomyObjectType.cs" />
+    <Compile Include="DataTypes\Astro\AstronomyEventType.cs" />
+    <Compile Include="DataTypes\Places\Place.cs" />
+    <Compile Include="DataTypes\Places\LocationRef.cs" />
+    <Compile Include="DataTypes\Places\Region.cs" />
+    <Compile Include="DataTypes\Astro\AstronomyObjectDetails.cs" />
+    <Compile Include="DataTypes\Astro\AstronomyDay.cs" />
+    <Compile Include="DataTypes\Astro\AstronomyDayEvent.cs" />
+    <Compile Include="DataTypes\Astro\MoonPhase.cs" />
+    <Compile Include="DataTypes\Astro\AstronomyEventCode.cs" />
+    <Compile Include="DataTypes\DialCode\Composition.cs" />
+    <Compile Include="DataTypes\DialCode\PhoneNumberElement.cs" />
+    <Compile Include="DataTypes\Time\TADTime.cs" />
+    <Compile Include="DataTypes\Time\TADTimezone.cs" />
+    <Compile Include="DialCodes.cs" />
+    <Compile Include="ConvertedTimes.cs" />
+    <Compile Include="DataTypes\Astro\AstronomyLocation.cs" />
+    <Compile Include="DataTypes\DST\DST.cs" />
+    <Compile Include="DataTypes\DST\DSTSpecialType.cs" />
+    <Compile Include="DataTypes\Holidays\HolidayType.cs" />
+    <Compile Include="DataTypes\Astro\AstronomyEventClass.cs" />
+    <Compile Include="DataTypes\Places\Coordinates.cs" />
+    <Compile Include="DataTypes\Places\LocationId.cs" />
+    <Compile Include="Common\InMemStore.cs" />
+    <Compile Include="Common\AuthOptions.cs" />
+    <Compile Include="Common\Exceptions.cs" />
+    <Compile Include="Common\XmlUtils.cs" />
+    <Compile Include="Common\DateTimeUtils.cs" />
+    <Compile Include="DSTService.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="DataTypes\" />
+    <Folder Include="DataTypes\Time\" />
+    <Folder Include="DataTypes\DialCode\" />
+    <Folder Include="DataTypes\DST\" />
+    <Folder Include="DataTypes\Holidays\" />
+    <Folder Include="DataTypes\Places\" />
+  </ItemGroup>
+</Project>

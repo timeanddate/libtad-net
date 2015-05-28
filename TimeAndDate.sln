@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeAndDate.Services", "TimeAndDate.Services\TimeAndDate.Services.csproj", "{2879BE0B-E891-4F3A-B69C-C5EE26012532}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeAndDate.Services.Tests", "TimeAndDate.Services.Tests\TimeAndDate.Services.Tests.csproj", "{7DF2F1C9-0C4D-4850-974C-1CFD58763C94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2879BE0B-E891-4F3A-B69C-C5EE26012532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2879BE0B-E891-4F3A-B69C-C5EE26012532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2879BE0B-E891-4F3A-B69C-C5EE26012532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2879BE0B-E891-4F3A-B69C-C5EE26012532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF2F1C9-0C4D-4850-974C-1CFD58763C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF2F1C9-0C4D-4850-974C-1CFD58763C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF2F1C9-0C4D-4850-974C-1CFD58763C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF2F1C9-0C4D-4850-974C-1CFD58763C94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = TimeAndDate.Time\TimeAndDate.Services.csproj
+	EndGlobalSection
+EndGlobal

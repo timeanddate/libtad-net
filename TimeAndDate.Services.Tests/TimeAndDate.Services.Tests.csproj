@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7DF2F1C9-0C4D-4850-974C-1CFD58763C94}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TimeAndDate.Services.Tests</RootNamespace>
+    <AssemblyName>TimeAndDate.Time.Tests</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="UnitTests\AstronomyTests.cs" />
+    <Compile Include="IntegrationTests\HolidaysServiceTests.cs" />
+    <Compile Include="IntegrationTests\TimeServiceTests.cs" />
+    <Compile Include="IntegrationTests\PlacesServiceTests.cs" />
+    <Compile Include="IntegrationTests\ConvertTimeServiceTests.cs" />
+    <Compile Include="IntegrationTests\AstronomyServiceTests.cs" />
+    <Compile Include="IntegrationTests\DialCodeServiceTests.cs" />
+    <Compile Include="IntegrationTests\DSTServiceTests.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\TimeAndDate.Services\TimeAndDate.Services.csproj">
+      <Project>{2879BE0B-E891-4F3A-B69C-C5EE26012532}</Project>
+      <Name>TimeAndDate.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UnitTests\" />
+    <Folder Include="IntegrationTests\" />
+  </ItemGroup>
+</Project>
