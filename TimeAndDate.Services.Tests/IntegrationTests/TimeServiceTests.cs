@@ -76,7 +76,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(osloCoords));
+			var result = timeservice.CurrentTimeForPlace (new LocationId (osloCoords));
 			var firstLocation = result.SingleOrDefault ();
 			
 			// Assert
@@ -84,8 +84,8 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			Assert.AreEqual (osloCoords.Longitude, firstLocation.Geography.Coordinates.Longitude);
 			Assert.AreEqual (expectedId, firstLocation.Id);
 			Assert.IsNull (firstLocation.Geography.Country);
-			Assert.IsNullOrEmpty (firstLocation.Geography.State);
-			Assert.IsNullOrEmpty (firstLocation.Geography.Name);
+			Assert.IsNull (firstLocation.Geography.State);
+			Assert.IsNull (firstLocation.Geography.Name);
 		}
 		
 		[Test]

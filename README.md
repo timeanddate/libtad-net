@@ -1,6 +1,8 @@
 Time And Date .NET API
 ======================================
 
+### Note that this is currently a Release Candidate
+
 Time and Date APIs support looking up several different locations and IDs. As of API version 2 the following variations is availalble
 
 * Numeric ID (e.g. 187)
@@ -94,7 +96,7 @@ Daylight Saving Time Service
 
 Get all daylight saving times:
 
-        var service = new DSTervice('accessKey', 'secretKey');
+        var service = new DSTService('accessKey', 'secretKey');
         var allDST = service.GetDaylightSavingTime();
 
 Get daylight saving time for specified year:

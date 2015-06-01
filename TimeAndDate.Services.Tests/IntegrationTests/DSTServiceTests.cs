@@ -224,7 +224,8 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			Assert.AreEqual (1, norway.StandardTimezone.Offset.Hours);			
 			Assert.AreEqual (0, norway.StandardTimezone.Offset.Minutes);			
 			
-			Assert.IsNotNullOrEmpty (norway.Region.Description);
+			Assert.IsNotNull (norway.Region.Description);
+			Assert.IsNotEmpty (norway.Region.Description);
 		}
 	}
 }

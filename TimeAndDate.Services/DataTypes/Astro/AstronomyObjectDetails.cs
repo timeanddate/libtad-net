@@ -35,7 +35,7 @@ namespace TimeAndDate.Services.DataTypes.Astro
 			var name = node.Attributes ["name"];
 			var days = node.SelectNodes ("day");
 			
-			AstronomyObjectType type;
+			AstronomyObjectType type = AstronomyObjectType.Sun;
 			if (name != null && !AstronomyObjectType.TryParse (name.InnerText, true, out type))
 				throw new MalformedXMLException ("The XML returned from Time and Date contained an unsupported name: " + name.InnerText);
 							

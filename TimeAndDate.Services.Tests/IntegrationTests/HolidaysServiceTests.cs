@@ -75,11 +75,14 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Assert
 			Assert.AreEqual (expectedCount, result.Count);
 			Assert.IsTrue (result.All (x => x.Types.Contains ("Christian") || x.Types.Contains ("Buddhism")));
-			Assert.IsTrue (result.All (x => x.Country.Id == country));
-			Assert.IsNotNullOrEmpty (sample.Description);
-			Assert.IsNotNullOrEmpty (sample.Uid);
+			Assert.IsTrue (result.All (x => x.Country.Id == country));			
+			Assert.IsNotNull (sample.Description);
+			Assert.IsNotEmpty (sample.Description);
+			Assert.IsNotNull (sample.Uid);
+			Assert.IsNotEmpty (sample.Uid);
 			Assert.IsNotNull (sample.Url);
-			Assert.IsNotNullOrEmpty (sample.Url.AbsoluteUri);
+			Assert.IsNotNull (sample.Url.AbsoluteUri);
+			Assert.IsNotEmpty (sample.Url.AbsoluteUri);
 		}
 	}
 }

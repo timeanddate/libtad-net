@@ -61,15 +61,18 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Assert
 			Assert.AreEqual (intl.PhoneNumberElement, PhoneNumberElementType.InternationalPrefix);
 			Assert.AreEqual ("011", intl.Number);
-			Assert.IsNotNullOrEmpty (intl.Description);
+			Assert.IsNotNull (intl.Description);
+			Assert.IsNotEmpty (intl.Description);
 			
 			Assert.AreEqual (local.PhoneNumberElement, PhoneNumberElementType.LocalNumber);
 			Assert.AreEqual (sampleNumber.ToString (), local.Number);
-			Assert.IsNotNullOrEmpty (local.Description);
+			Assert.IsNotNull (local.Description);
+			Assert.IsNotEmpty (local.Description);
 			
 			Assert.AreEqual (ctry.PhoneNumberElement, PhoneNumberElementType.CountryPrefix);
 			Assert.AreEqual ("47", ctry.Number);
-			Assert.IsNotNullOrEmpty (ctry.Description);
+			Assert.IsNotNull (ctry.Description);
+			Assert.IsNotEmpty (ctry.Description);
 			
 			Assert.IsNotNull (oslo.Time);
 			Assert.IsNotNull (oslo.Time.ISO);

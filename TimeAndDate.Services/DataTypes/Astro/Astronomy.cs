@@ -91,7 +91,7 @@ namespace TimeAndDate.Services.DataTypes.Astro
 			var name = node.Attributes ["name"];
 			var events = node.SelectNodes ("event");
 			
-			AstronomyObjectType type;
+			AstronomyObjectType type = AstronomyObjectType.Sun;
 			if (name != null && !AstronomyObjectType.TryParse (name.InnerText, true, out type))
 				throw new MalformedXMLException (
 					"The XML Received from Time and Date did not include an object name which complies with an AstronomyObjectType enum: " + 
