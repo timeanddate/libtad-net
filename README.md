@@ -1,7 +1,7 @@
 Time And Date .NET API
 ======================================
 
-### Note that this is currently a Release Candidate no commercial support will be provided by Time and Date at this time!
+### Note that this is currently a Release Candidate no support will be provided by Time and Date at this time!
 
 Time and Date APIs support looking up several different locations and IDs. As of API version 2 the following variations is availalble
 
