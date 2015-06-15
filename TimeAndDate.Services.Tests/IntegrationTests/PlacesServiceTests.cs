@@ -20,7 +20,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			var places = service.GetPlaces ();
 			
 			// Assert
-			Assert.IsNotEmpty (places);
+			Assert.Greater(places.Count, 0);
 			Assert.IsTrue (places.Any (x => x.Geography.Coordinates.Latitude > 0.0m));
 			Assert.IsTrue (places.Any (x => x.Geography.Coordinates.Longitude > 0.0m));
 		}
@@ -36,7 +36,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			var places = service.GetPlaces ();
 						
 			// Assert
-			Assert.IsNotEmpty (places);
+			Assert.Greater(places.Count, 0);
 			Assert.IsTrue (places.All (x => x.Geography.Coordinates == null));			
 		}
 	}

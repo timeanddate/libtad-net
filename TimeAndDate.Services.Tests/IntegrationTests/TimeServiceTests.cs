@@ -450,7 +450,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		
 		#endregion			
 
-		[Test]
+		[ExpectedException(typeof(LocalTimeDoesNotExistException))]
 		public void Calling_TimeService_And_GettingUTCOffset_WithNonExistingLocalTime_Should_ThrowException ()
 		{
 			// Arrange
@@ -464,13 +464,10 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			
 			// Assert
-			Assert.Throws<LocalTimeDoesNotExistException> (delegate
-			{
-				firstLocation.GetUTCOffsetFromLocalTime (localTime);
-			});
+			firstLocation.GetUTCOffsetFromLocalTime (localTime);
 		}
 		
-		[Test]
+		[ExpectedException(typeof(QueriedDateOutOfRangeException))]
 		public void Calling_TimeService_And_GettingUTCOffset_WithWrongYear_Should_ThrowException ()
 		{
 			// Arrange
@@ -484,10 +481,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			
 			// Assert
-			Assert.Throws<QueriedDateOutOfRangeException> (delegate
-			{
-				firstLocation.GetUTCOffsetFromLocalTime (localTime);
-			});
+			firstLocation.GetUTCOffsetFromLocalTime (localTime);
 		}
 		
 		[Test]
