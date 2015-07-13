@@ -1,8 +1,6 @@
 Time And Date .NET API
 ======================================
 
-### Note that this is currently a Release Candidate no support will be provided by Time and Date at this time!
-
 Time and Date APIs support looking up several different locations and IDs. As of API version 2 the following variations is availalble
 
 * Numeric ID (e.g. 187)
@@ -12,7 +10,8 @@ Time and Date APIs support looking up several different locations and IDs. As of
 
 The class LocationId is used to set the appropriate location ID. Airports categorize the same way as textual ID.
 
- 
+Developed with Mono C# Compiler 4.0.1.0 
+
 Astronomy Service
 --------------------------------------
   

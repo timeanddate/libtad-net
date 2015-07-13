@@ -4,12 +4,12 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes. 
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle("TimeAndDate.Time")]
+[assembly: AssemblyTitle("TimeAndDate.Services")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Time and Date")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("cato")]
+[assembly: AssemblyCopyright("Time and Date")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
