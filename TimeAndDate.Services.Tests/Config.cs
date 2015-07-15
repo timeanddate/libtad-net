@@ -7,9 +7,8 @@ namespace TimeAndDate.Services.Tests
 {
 	public static class Config
 	{
-		private static NameValueCollection conf = (NameValueCollection)ConfigurationManager.GetSection("tad");
-		public static string AccessKey = conf["AccessKey"];
-		public static string SecretKey = conf["SecretKey"];
+		public static string AccessKey = ConfigurationManager.AppSettings["TADaccessKey"];
+		public static string SecretKey = ConfigurationManager.AppSettings["TADsecretKey"];
 	}
 }
 
