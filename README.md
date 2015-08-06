@@ -1,7 +1,7 @@
 Time And Date .NET API
 ======================================
 
-Time and Date APIs support looking up several different locations and IDs. As of API version 2 the following variations is availalble
+Time and Date APIs support looking up several different locations and IDs. As of API version 2 the following variations are available:
 
 * Numeric ID (e.g. 187)
 * Textual ID (e.g. "usa/las-vegas")
@@ -10,19 +10,21 @@ Time and Date APIs support looking up several different locations and IDs. As of
 
 The class LocationId is used to set the appropriate location ID. Airports categorize the same way as textual ID.
 
+An access key and a secret key is required to use the API. If you are not already a Time and Date API user, please see our [API offers](https://services.timeanddate.com/api/packages/) to get a free 3 month trial. For more information, see our [API Services page](https://services.timeanddate.com/).
+
 Developed with Mono C# Compiler 4.0.1.0 
 
 Astronomy Service
 --------------------------------------
   
-Get astronomy information from place on date by textual ID:
+Get astronomy information for place on date by textual ID:
          
          var place = new LocationId("usa/anchorage");
          var date = new DateTime(2015, 1, 1);
          var service = new AstronomyService('accessKey', 'secretKey');
          var astroInfo = service.GetAstronomicalInfo(AstronomyObjectType.Sun, place, date);
          
-Get astronomy information from place between dates by numeric ID:
+Get astronomy information for place between dates by numeric ID:
  
          var place = new LocationId(187);
          var startDate = new DateTime(2015, 1, 1);
@@ -191,7 +193,7 @@ Get specific holidays for a country:
 Places Service
 --------------------------------------
 
-Get all places in Time and Date (these can be used to lookup data in other services):
+Get all places in Time and Date (these can be used to look up data in other services):
 
         var service = new  PlacesService('accessKey', 'secretKey')
         var result = service.GetPlaces();
@@ -234,7 +236,7 @@ Other options:
 Location data type:
 --------------------------------------
 
-Get UTC offset from local time (only applicable if service.IncludeListOfTimeChanges has been set to true):
+Get UTC offset for local time (only applicable if service.IncludeListOfTimeChanges has been set to true):
 
 		DateTimeOffset localTime = new DateTimeOffset(2015, 6, 7, 0);
 		Location sampleLoc = result.FirstOrDefault();
