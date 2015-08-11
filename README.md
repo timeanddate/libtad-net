@@ -17,14 +17,14 @@ Developed with Mono C# Compiler 4.0.1.0
 Astronomy Service
 --------------------------------------
   
-Get astronomy information for place on date by textual ID:
+Get astronomy information for a place on a date by textual ID:
          
          var place = new LocationId("usa/anchorage");
          var date = new DateTime(2015, 1, 1);
          var service = new AstronomyService('accessKey', 'secretKey');
          var astroInfo = service.GetAstronomicalInfo(AstronomyObjectType.Sun, place, date);
          
-Get astronomy information for place between dates by numeric ID:
+Get astronomy information for a place between two dates by numeric ID:
  
          var place = new LocationId(187);
          var startDate = new DateTime(2015, 1, 1);
@@ -100,12 +100,12 @@ Get all daylight saving times:
         var service = new DSTService('accessKey', 'secretKey');
         var allDST = service.GetDaylightSavingTime();
 
-Get daylight saving time for specified year:
+Get daylight saving time for a specified year:
 
         var service = new DSTService('accessKey', 'secretKey');
         var result = service.GetDaylightSavingTime(2014);
 
-Get daylight saving time for specified [ISO3166-1 (Alpha2)](http://services.timeanddate.com/api/doc/v2/type-isocountry.html) country code:
+Get daylight saving time for a specified [ISO3166-1 (Alpha2)](http://services.timeanddate.com/api/doc/v2/type-isocountry.html) country code:
 
         var service = new DSTService('accessKey', 'secretKey');
         var result = service.GetDaylightSavingTime("no");
@@ -132,7 +132,7 @@ Other options:
 Dial Code Service
 --------------------------------------
 
-Get dial code to a location:
+Get dial code for a location:
 
         var osloId = new LocationId("norway/oslo");
         var service = new DialCodeService('accessKey', 'secretKey');
@@ -206,7 +206,7 @@ Other options:
 Time Service
 --------------------------------------
 
-Get current time for place:
+Get current time for a place:
 
         var place = new LocationId(179);
         var service = new TimeService('accessKey', 'secretKey');
@@ -236,7 +236,7 @@ Other options:
 Location data type:
 --------------------------------------
 
-Get UTC offset for local time (only applicable if service.IncludeListOfTimeChanges has been set to true):
+Get UTC offset for a local time (only applicable if service.IncludeListOfTimeChanges has been set to true):
 
 		DateTimeOffset localTime = new DateTimeOffset(2015, 6, 7, 0);
 		Location sampleLoc = result.FirstOrDefault();
