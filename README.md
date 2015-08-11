@@ -110,7 +110,7 @@ Get daylight saving time for a specified [ISO3166-1 (Alpha2)](http://services.ti
         var service = new DSTService('accessKey', 'secretKey');
         var result = service.GetDaylightSavingTime("no");
 
-Get daylight saving time for specified [ISO3166-1 (Alpha2)](http://services.timeanddate.com/api/doc/v2/type-isocountry.html) country code and year:
+Get daylight saving time for a specified [ISO3166-1 (Alpha2)](http://services.timeanddate.com/api/doc/v2/type-isocountry.html) country code and year:
 
         var service = new DSTService('accessKey', 'secretKey');
         var result = service.GetDaylightSavingTime("no", 2014);
