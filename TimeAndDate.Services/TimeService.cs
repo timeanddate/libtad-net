@@ -80,6 +80,7 @@ namespace TimeAndDate.Services
 			IncludeCurrentTimeToLocation = true;
 			IncludeListOfTimeChanges = true;
 			IncludeTimezoneInformation = true;
+			XmlElemName = "location";
 		}
 		
 		/// <summary>
@@ -99,20 +100,20 @@ namespace TimeAndDate.Services
 			var id = placeId.GetIdAsString ();
 			if(string.IsNullOrEmpty(id))
 				throw new ArgumentException ("A required argument is null or empty");
-			
-			return RetrieveCurrentTime (id);
+
+			var args = GetArguments (id);
+			return CallService(args, x => (Location)x);
 		}
 		
 		private IList<Location> RetrieveCurrentTime (string placeid)
 		{
-			var arguments = GetArguments (placeid);
-			var result = CallService(arguments);
-			return FromXml (result, "location", x => (Location)x);
+			var args = GetArguments (placeid);
+			return CallService(args, x => (Location)x);
 		}
-		
+
 		private NameValueCollection GetArguments (string placeId)
 		{
-			var args = new NameValueCollection (AuthenticationOptions);
+			var args = new NameValueCollection ();
 			args.Set ("geo", IncludeCoordinates.ToNum ());
 			args.Set ("lang", Language);
 			args.Set ("radius", Radius.ToString ());
@@ -120,9 +121,7 @@ namespace TimeAndDate.Services
 			args.Set ("time", IncludeCurrentTimeToLocation.ToNum ());
 			args.Set ("timechanges", IncludeListOfTimeChanges.ToNum ());
 			args.Set ("tz", IncludeTimezoneInformation.ToNum ());
-			args.Set ("out", Constants.DefaultReturnFormat);
 			args.Set ("placeid", placeId);
-			args.Set ("version", Version.ToString ());
 			args.Set ("verbosetime", Constants.DefaultVerboseTimeValue.ToString ());
 			
 			return args;

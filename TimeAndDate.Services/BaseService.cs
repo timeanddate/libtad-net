@@ -28,6 +28,8 @@ namespace TimeAndDate.Services
 		/// ISO639 language code. <c>en</c> is default..
 		/// </value>
 		public string Language { get; set; }
+
+		protected string XmlElemName;
 		
 		protected readonly string ServiceName;
 		
@@ -45,8 +47,12 @@ namespace TimeAndDate.Services
 
 		}
 
-		protected string CallService(NameValueCollection args) 
+		private string SendRequest(NameValueCollection args) 
 		{
+			args.Set ("out", Constants.DefaultReturnFormat);
+			args.Set ("version", Constants.DefaultVersion.ToString ());
+			args.Add (AuthenticationOptions);
+
 			var query = UriUtils.BuildUriString (args);
 
 			var uri = new UriBuilder (Constants.EntryPoint + ServiceName)
@@ -61,10 +67,21 @@ namespace TimeAndDate.Services
 				XmlUtils.CheckForErrors (result);
 
 				return result;
-			}
+			}	
 		}
 
-		protected virtual IList<T> FromXml<T>(string result, string elem, Func<XmlNode, T> cb) 
+		protected IList<T> CallService<T>(NameValueCollection args, Func<XmlNode, T> parser) 
+		{
+			var result = SendRequest (args);
+			return FromXml(result, XmlElemName, parser);
+		}
+
+		protected T CallService<T>(NameValueCollection args)
+		{
+			return FromString<T> (SendRequest (args));
+		}
+
+		protected IList<T> FromXml<T>(string result, string elem, Func<XmlNode, T> parser) 
 		{
 			var list = new List<T> ();
 			var xml = new XmlDocument ();
@@ -72,9 +89,14 @@ namespace TimeAndDate.Services
 
 			var locationNodes = xml.GetElementsByTagName (elem);
 			foreach (XmlNode location in locationNodes)
-				list.Add (cb(location));
+				list.Add (parser(location));
 
 			return list;
+		}
+
+		protected virtual T FromString<T>(string result)
+		{
+			return default(T);	
 		}
 	}
 }

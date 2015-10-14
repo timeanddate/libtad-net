@@ -33,6 +33,7 @@ namespace TimeAndDate.Services
 		public PlacesService (string accessKey, string secretKey) : base(accessKey, secretKey, "places")
 		{
 			IncludeCoordinates = true;
+			XmlElemName = "place";
 		}
 		
 		/// <summary>
@@ -43,18 +44,15 @@ namespace TimeAndDate.Services
 		/// </returns>
 		public IList<Place> GetPlaces ()
 		{
-			var arguments = GetArguments ();
-			var result = CallService (arguments);
-			return FromXml (result, "place", x => (Place)x);
+			var args = GetArguments ();
+			return CallService (args, x => (Place)x);
 		}
 		
 		private NameValueCollection GetArguments ()
 		{
-			var args = new NameValueCollection (AuthenticationOptions);
+			var args = new NameValueCollection ();
 			args.Set ("lang", Language);			
 			args.Set ("geo", IncludeCoordinates.ToNum ());
-			args.Set ("version", Version.ToString ());
-			args.Set ("out", Constants.DefaultReturnFormat);
 			args.Set ("verbosetime", Constants.DefaultVerboseTimeValue.ToString ());
 			
 			return args;

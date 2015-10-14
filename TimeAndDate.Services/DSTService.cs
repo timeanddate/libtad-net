@@ -58,6 +58,7 @@ namespace TimeAndDate.Services
 			IncludeTimeChanges = false;
 			IncludePlacesForEveryCountry = true;
 			IncludeOnlyDstCountries = true;
+			XmlElemName = "dstentry";
 		}
 		
 		/// <summary>
@@ -68,7 +69,8 @@ namespace TimeAndDate.Services
 		/// </returns>
 		public IList<DST> GetDaylightSavingTime ()
 		{			
-			return RetrieveDstList ();
+			var args = GetArguments ();
+			return CallService (args, x => (DST)x);
 		}
 		
 		/// <summary>
@@ -86,10 +88,10 @@ namespace TimeAndDate.Services
 				throw new ArgumentException ("A required argument is null or empty");
 			
 			IncludeOnlyDstCountries = false;
-			var args = new NameValueCollection ();
+			var args = GetArguments ();
 			args.Set ("country", countryCode);
 			
-			return RetrieveDstList (args);
+			return CallService (args, x => (DST)x);
 		}
 		
 		/// <summary>
@@ -106,10 +108,10 @@ namespace TimeAndDate.Services
 			if (year <= 0)
 				throw new ArgumentException ("A required argument is null or empty");
 			
-			var args = new NameValueCollection ();
+			var args = GetArguments ();
 			args.Set ("year", year.ToString ());
 			
-			return RetrieveDstList (args);
+			return CallService (args, x => (DST)x);
 		}
 		
 		/// <summary>
@@ -130,50 +132,24 @@ namespace TimeAndDate.Services
 				throw new ArgumentException ("A required argument is null or empty");
 			
 			IncludeOnlyDstCountries = false;
-			var args = new NameValueCollection ();
+			var args = GetArguments ();
 			args.Set ("country", countryCode);
 			args.Set ("year", year.ToString ());
 			
-			return RetrieveDstList (args);
-		}
-		
-		private IList<DST> RetrieveDstList (NameValueCollection args = null)
-		{
-			var arguments = GetArguments ();
-			if(args != null)
-				arguments.Add (args);
-
-			var result = CallService(arguments);
-			return FromXml(result);
+			return CallService (args, x => (DST)x);
 		}
 		
 		private NameValueCollection GetArguments ()
 		{
-			var args = new NameValueCollection (AuthenticationOptions);
+			var args = new NameValueCollection ();
 			args.Set ("lang", Language);			
 			args.Set ("timechanges", IncludeTimeChanges.ToNum ());
 			args.Set ("onlydst", IncludeOnlyDstCountries.ToNum ());
 			args.Set ("listplaces", IncludePlacesForEveryCountry.ToNum ());
-			args.Set ("version", Version.ToString ());
-			args.Set ("out", Constants.DefaultReturnFormat);
 			args.Set ("verbosetime", Constants.DefaultVerboseTimeValue.ToString ());
 			
 			return args;
 		}
-		
-		private static IList<DST> FromXml (string result)
-		{
-			var list = new List<DST> ();
-			var xml = new XmlDocument ();
-			xml.LoadXml (result);
-			
-			var dstlist = xml.GetElementsByTagName ("dstentry");
-			
-			foreach (XmlNode entry in dstlist)
-				list.Add ((DST)entry);
-			
-			return list;
-		}		
 	}
 }
 

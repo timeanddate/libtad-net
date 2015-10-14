@@ -24,33 +24,14 @@ namespace TimeAndDate.Services
 		/// </value>
 		public IList<Location> Locations { get; set; }
 				
-		private ConvertedTimes ()
+		public ConvertedTimes ()
 		{
 			Locations = new List<Location> ();
 		}
-		
-		public static explicit operator ConvertedTimes (string result)
-		{
-			var model = new ConvertedTimes ();
-			var xml = new XmlDocument ();
-			
-			xml.LoadXml (result);
-			
-			var utc = xml.SelectSingleNode ("data/utc/time");
-			var locations = xml.GetElementsByTagName ("location");
-			
-			if (utc != null)
-				model.Utc = (TADTime)utc;
-			
-			if (locations != null)
-			{
-				foreach (XmlNode location in locations)
-				{
-					model.Locations.Add ((Location)location);
-				}
-			}
-			
-			return model;
+
+		public ConvertedTimes(IList<Location> locations, TADTime utc) {
+			Utc = utc;
+			Locations = locations;
 		}
 	}
 

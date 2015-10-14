@@ -72,6 +72,7 @@ namespace TimeAndDate.Services
 			IncludeCoordinates = true;
 			IncludeISOTime = false;
 			IncludeUTCTime = false;
+			XmlElemName = "location";
 		}
 		
 		/// <summary>
@@ -98,12 +99,12 @@ namespace TimeAndDate.Services
 			if (string.IsNullOrEmpty (id))
 				throw new ArgumentException ("A required argument is null or empty");
 			
-			var args = new NameValueCollection (AuthenticationOptions);
+			var args = GetOptionalArguments();
 			args.Set ("placeid", id);
 			args.Set ("object", objectType.ToString ().ToLower ());
 			args.Set ("startdt", startDate.ToString ("yyyy-MM-dd"));
 			
-			return RetrieveAstronomicalInfo (args);
+			return CallService (args, x => (AstronomyLocation)x);
 		}								
 		
 		/// <summary>
@@ -136,26 +137,18 @@ namespace TimeAndDate.Services
 			if (endDate.Ticks < startDate.Ticks)
 				throw new QueriedDateOutOfRangeException ("End date cannot be before Start date");
 			
-			var args = new NameValueCollection (AuthenticationOptions);
+			var args = GetOptionalArguments();
 			args.Set ("placeid", id);
 			args.Set ("object", objectType.ToString ().ToLower ());
 			args.Set ("startdt", startDate.ToString ("yyyy-MM-dd"));
 			args.Set ("enddt", endDate.ToString ("yyyy-MM-dd"));
 			
-			return RetrieveAstronomicalInfo (args);
+			return CallService (args, x => (AstronomyLocation)x);
 		}
 		
-		
-		private IList<AstronomyLocation> RetrieveAstronomicalInfo (NameValueCollection args)
+		private NameValueCollection GetOptionalArguments ()
 		{
-			var arguments = GetOptionalArguments (args);			
-			var result = CallService (arguments);
-			return FromXml (result, "location", x => (AstronomyLocation)x);
-		}
-		
-		private NameValueCollection GetOptionalArguments (NameValueCollection args)
-		{
-			var optionalArgs = new NameValueCollection (args);
+			var optionalArgs = new NameValueCollection ();
 			var types = GetAstronomyEventTypes ();
 			
 			optionalArgs.Set ("geo", IncludeCoordinates.ToNum ());
@@ -163,7 +156,6 @@ namespace TimeAndDate.Services
 			optionalArgs.Set ("lang", Language);
 			optionalArgs.Set ("radius", Radius.ToString());
 			optionalArgs.Set ("utctime", IncludeUTCTime.ToNum ());				
-			optionalArgs.Set ("out", Constants.DefaultReturnFormat);
 			optionalArgs.Set ("verbosetime", Constants.DefaultVerboseTimeValue.ToString ());
 			
 			if(!string.IsNullOrEmpty(types))

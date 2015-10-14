@@ -5,6 +5,8 @@ using TimeAndDate.Services.Common;
 using System.Net;
 using System.Globalization;
 using TimeAndDate.Services.DataTypes.Places;
+using System.Xml;
+using TimeAndDate.Services.DataTypes.Time;
 
 namespace TimeAndDate.Services
 {
@@ -77,7 +79,13 @@ namespace TimeAndDate.Services
 			if (string.IsNullOrEmpty (id))
 				throw new ArgumentException ("A required argument is null or empty");
 				
-			return ExecuteConvertTime (id, iso, toIds);
+			var arguments = GetCommonArguments (id);
+			arguments.Set ("iso", iso);
+
+			if (toIds != null)
+				arguments.Add (GetArgumentsForToIds (toIds));			
+
+			return CallService<ConvertedTimes>(arguments);
 		}		
 		
 		/// <summary>
@@ -99,21 +107,6 @@ namespace TimeAndDate.Services
 		{	
 			return ConvertTime (fromId, date.ToString ("s", CultureInfo.InvariantCulture), toIds);
 		}					
-		
-		private ConvertedTimes ExecuteConvertTime (string fromId, string iso, IList<LocationId> toIds)
-		{			
-			if (string.IsNullOrEmpty (fromId) || string.IsNullOrEmpty (iso))
-				throw new ArgumentException ("A required argument is null or empty");
-			
-			var arguments = GetCommonArguments (fromId);
-			arguments.Set ("iso", iso);
-			
-			if (toIds != null)
-				arguments.Add (GetArgumentsForToIds (toIds));			
-
-			var result = CallService(arguments);
-			return (ConvertedTimes)result;
-		}
 			
 		private NameValueCollection GetArgumentsForToIds (IList<LocationId> toIds)
 		{							  
@@ -139,17 +132,41 @@ namespace TimeAndDate.Services
 		
 		private NameValueCollection GetCommonArguments (string fromId)
 		{
-			var args = new NameValueCollection (AuthenticationOptions);
+			var args = new NameValueCollection ();
 			args.Set ("timechanges", IncludeTimeChanges.ToNum ());
 			args.Set ("tz", IncludeTimezoneInformation.ToNum ());
 			args.Set ("fromid", fromId);
 			args.Set ("lang", Language);			
-			args.Set ("version", Version.ToString ());
 			args.Set ("radius", Radius.ToString ());
-			args.Set ("out", Constants.DefaultReturnFormat);
 			args.Set ("verbosetime", Constants.DefaultVerboseTimeValue.ToString ());			
 			return args;
 		}		
+
+		protected override ConvertedTimes FromString<ConvertedTimes> (string result)
+		{
+			var xml = new XmlDocument ();
+
+			xml.LoadXml (result);
+
+			var utc = xml.SelectSingleNode ("data/utc/time");
+			var locations = xml.GetElementsByTagName ("location");
+			var locationList = new List<Location>();
+			TADTime tad = new TADTime();
+
+			if (utc != null)
+				tad = (TADTime)utc;
+
+			if (locations != null)
+			{
+				foreach (XmlNode location in locations)
+				{
+					locationList.Add ((Location)location);
+				}
+			}
+
+			var instance = Activator.CreateInstance(typeof(ConvertedTimes), new object[] { locationList, tad });
+			return (ConvertedTimes) instance;
+		}
 	}
 }
 
