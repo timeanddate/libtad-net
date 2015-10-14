@@ -80,6 +80,7 @@ namespace TimeAndDate.Services
 			IncludeCurrentTimeToLocation = true;
 			IncludeListOfTimeChanges = true;
 			IncludeTimezoneInformation = true;
+			XmlElemName = "location";
 		}
 		
 		/// <summary>
@@ -99,30 +100,20 @@ namespace TimeAndDate.Services
 			var id = placeId.GetIdAsString ();
 			if(string.IsNullOrEmpty(id))
 				throw new ArgumentException ("A required argument is null or empty");
-			
-			return RetrieveCurrentTime (id);
+
+			var args = GetArguments (id);
+			return CallService(args, x => (Location)x);
 		}
 		
 		private IList<Location> RetrieveCurrentTime (string placeid)
 		{
-			var arguments = GetArguments (placeid);
-			var query = UriUtils.BuildUriString (arguments);			
-			var uri = new UriBuilder (Constants.EntryPoint + ServiceName);
-			uri.Query = query;
-			
-			using (var client = new WebClient())
-			{
-				client.Encoding = System.Text.Encoding.UTF8;
-				var result = client.DownloadString (uri.Uri);
-				XmlUtils.CheckForErrors (result);
-								
-				return FromXml (result);
-			}
+			var args = GetArguments (placeid);
+			return CallService(args, x => (Location)x);
 		}
-		
+
 		private NameValueCollection GetArguments (string placeId)
 		{
-			var args = new NameValueCollection (AuthenticationOptions);
+			var args = new NameValueCollection ();
 			args.Set ("geo", IncludeCoordinates.ToNum ());
 			args.Set ("lang", Language);
 			args.Set ("radius", Radius.ToString ());
@@ -130,26 +121,11 @@ namespace TimeAndDate.Services
 			args.Set ("time", IncludeCurrentTimeToLocation.ToNum ());
 			args.Set ("timechanges", IncludeListOfTimeChanges.ToNum ());
 			args.Set ("tz", IncludeTimezoneInformation.ToNum ());
-			args.Set ("out", Constants.DefaultReturnFormat);
 			args.Set ("placeid", placeId);
-			args.Set ("version", Version.ToString ());
 			args.Set ("verbosetime", Constants.DefaultVerboseTimeValue.ToString ());
 			
 			return args;
 		}				
-		
-		private static IList<Location> FromXml(string result)
-		{
-			var list = new List<Location> ();
-			var xml = new XmlDocument ();
-			xml.LoadXml (result);
-						
-			var locationNodes = xml.GetElementsByTagName ("location");
-			foreach (XmlNode location in locationNodes)
-				list.Add ((Location)location);
-			
-			return list;
-		}		
 	}
 }
 

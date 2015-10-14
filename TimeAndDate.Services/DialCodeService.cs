@@ -3,6 +3,9 @@ using System.Collections.Specialized;
 using TimeAndDate.Services.Common;
 using System.Net;
 using TimeAndDate.Services.DataTypes.Places;
+using System.Xml;
+using TimeAndDate.Services.DataTypes.DialCode;
+using System.Collections.Generic;
 
 
 namespace TimeAndDate.Services
@@ -78,7 +81,7 @@ namespace TimeAndDate.Services
 			if (string.IsNullOrEmpty (id))
 				throw new ArgumentException ("A required argument is null or empty");
 			
-			var opts = GetOptionalArguments (AuthenticationOptions);
+			var opts = GetOptionalArguments ();
 			opts.Set ("toid", id);
 			
 			return RetrieveDialCode (opts);
@@ -106,7 +109,7 @@ namespace TimeAndDate.Services
 			if (string.IsNullOrEmpty (toId) ||string.IsNullOrEmpty(fromId))
 				throw new ArgumentException ("A required argument is null or empty");
 			
-			var opts = GetOptionalArguments (AuthenticationOptions);
+			var opts = GetOptionalArguments ();
 			opts.Set ("toid", toId);
 			opts.Set ("fromid", fromId);
 			
@@ -136,34 +139,52 @@ namespace TimeAndDate.Services
 		
 		private DialCodes RetrieveDialCode(NameValueCollection args)
 		{
-			var query = UriUtils.BuildUriString (args);			
-			var uri = new UriBuilder (Constants.EntryPoint + ServiceName);
-			uri.Query = query;
-			
-			using (var client = new WebClient())
-			{
-				client.Encoding = System.Text.Encoding.UTF8;
-				var result = client.DownloadString (uri.Uri);
-				XmlUtils.CheckForErrors (result);
-				return (DialCodes)result;				
-			}
+			var result = CallService<DialCodes>(args);
+			return (DialCodes)result;
 		}
 		
-		private NameValueCollection GetOptionalArguments (NameValueCollection existingArguments)
+		private NameValueCollection GetOptionalArguments ()
 		{
-			var args = new NameValueCollection (existingArguments);
+			var args = new NameValueCollection ();
 			
 			args.Set ("locinfo", IncludeLocations.ToNum ());
 			args.Set ("geo", IncludeCoordinates.ToNum ());
 			args.Set ("time", IncludeCurrentTime.ToNum ());
 			args.Set ("tz", IncludeTimezoneInformation.ToNum ());
-			args.Set ("out", Constants.DefaultReturnFormat);
 			args.Set ("verbosetime", Constants.DefaultVerboseTimeValue.ToString ());
 			
 			if (_number.HasValue)
 				args.Set ("number", _number.Value.ToString());
 			
 			return args;
+		}
+
+		protected override DialCodes FromString<DialCodes> (string result)
+		{
+			var xml = new XmlDocument ();
+			xml.LoadXml (result);
+
+			var dataNode = xml.DocumentElement;
+			var number = dataNode.SelectSingleNode ("number/full");
+			var num = "";
+			var comp = new List<Composition> ();
+			var locs = new List<Location> ();
+
+			if (number != null)
+				num = number.InnerText;
+
+			var compositions = dataNode.SelectSingleNode ("composition");
+			if (compositions != null)
+				foreach (XmlNode composition in compositions)
+					comp.Add ((Composition)composition);
+
+			var locations = dataNode.GetElementsByTagName ("location");
+			if(locations != null)
+				foreach(XmlNode location in locations)
+					locs.Add((Location)location);
+
+			var instance = Activator.CreateInstance(typeof(DialCodes), new object[] { comp, locs, num });
+			return (DialCodes)instance;
 		}
 	}
 }

@@ -31,7 +31,10 @@ namespace TimeAndDate.Services
 		/// <param name='secretKey'>
 		/// Secret key.
 		/// </param>
-		public HolidaysService (string accessKey, string secretKey) : base(accessKey, secretKey, "holidays") {	}
+		public HolidaysService (string accessKey, string secretKey) : base(accessKey, secretKey, "holidays") 
+		{	
+			XmlElemName = "holiday";
+		}
 		
 		/// <summary>
 		/// The holidays service can be used to retrieve the list of holidays for a country.
@@ -49,8 +52,9 @@ namespace TimeAndDate.Services
 		{
 			if (string.IsNullOrEmpty (countryCode) && year <= 0)
 				throw new ArgumentException ("A required argument is null or empty");
-			
-			return RetrieveHolidays (countryCode, year);
+
+			var args = GetArguments (countryCode, year);
+			return CallService(args, x => (Holiday)x);
 		}
 		
 		/// <summary>
@@ -67,35 +71,18 @@ namespace TimeAndDate.Services
 		{
 			if (string.IsNullOrEmpty (country))
 				throw new ArgumentException ("A required argument is null or empty");
-			
-			return RetrieveHolidays (country, DateTime.Now.Year);
-		}
-		
-		private IList<Holiday> RetrieveHolidays (string country, int year)
-		{
-			var arguments = GetArguments (country, year);
-			var query = UriUtils.BuildUriString (arguments);
-			
-			var uri = new UriBuilder (Constants.EntryPoint + ServiceName);
-			uri.Query = query;
-			using (var client = new WebClient())
-			{
-				client.Encoding = System.Text.Encoding.UTF8;
-				var result = client.DownloadString (uri.Uri);
-				XmlUtils.CheckForErrors (result);
-				return FromXml(result);				
-			}
+
+			var args = GetArguments (country, DateTime.Now.Year);
+			return CallService(args, x => (Holiday)x);
 		}				
 		
 		private NameValueCollection GetArguments (string country, int year)
 		{
-			var args = new NameValueCollection (AuthenticationOptions);
+			var args = new NameValueCollection ();
 			var types = GetHolidayTypes ();
 			args.Set ("country", country);			
 			args.Set ("lang", Language);									
-			args.Set ("version", Version.ToString ());
 			args.Set ("verbosetime", Constants.DefaultVerboseTimeValue.ToString ());
-			args.Set ("out", Constants.DefaultReturnFormat);
 			
 			if (!string.IsNullOrEmpty (types))
 				args.Set ("types", types);
@@ -104,21 +91,6 @@ namespace TimeAndDate.Services
 				args.Set ("year", year.ToString ());
 			
 			return args;
-		}
-		
-		private static IList<Holiday> FromXml (string result)
-		{
-			var xml = new XmlDocument ();
-			var list = new List<Holiday> ();
-			xml.LoadXml (result);
-			
-			var dataNode = xml.DocumentElement;			
-			
-			var holidayNodes = dataNode.GetElementsByTagName ("holiday");
-			foreach (XmlNode holiday in holidayNodes)
-				list.Add ((Holiday)holiday);
-			
-			return list;			
 		}
 		
 		private string GetHolidayTypes ()

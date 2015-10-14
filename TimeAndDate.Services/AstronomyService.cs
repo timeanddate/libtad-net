@@ -72,6 +72,7 @@ namespace TimeAndDate.Services
 			IncludeCoordinates = true;
 			IncludeISOTime = false;
 			IncludeUTCTime = false;
+			XmlElemName = "location";
 		}
 		
 		/// <summary>
@@ -98,12 +99,12 @@ namespace TimeAndDate.Services
 			if (string.IsNullOrEmpty (id))
 				throw new ArgumentException ("A required argument is null or empty");
 			
-			var args = new NameValueCollection (AuthenticationOptions);
+			var args = GetOptionalArguments();
 			args.Set ("placeid", id);
 			args.Set ("object", objectType.ToString ().ToLower ());
 			args.Set ("startdt", startDate.ToString ("yyyy-MM-dd"));
 			
-			return RetrieveAstronomicalInfo (args);
+			return CallService (args, x => (AstronomyLocation)x);
 		}								
 		
 		/// <summary>
@@ -136,39 +137,18 @@ namespace TimeAndDate.Services
 			if (endDate.Ticks < startDate.Ticks)
 				throw new QueriedDateOutOfRangeException ("End date cannot be before Start date");
 			
-			var args = new NameValueCollection (AuthenticationOptions);
+			var args = GetOptionalArguments();
 			args.Set ("placeid", id);
 			args.Set ("object", objectType.ToString ().ToLower ());
 			args.Set ("startdt", startDate.ToString ("yyyy-MM-dd"));
 			args.Set ("enddt", endDate.ToString ("yyyy-MM-dd"));
 			
-			return RetrieveAstronomicalInfo (args);
+			return CallService (args, x => (AstronomyLocation)x);
 		}
 		
-		
-		private IList<AstronomyLocation> RetrieveAstronomicalInfo (NameValueCollection args)
+		private NameValueCollection GetOptionalArguments ()
 		{
-			var arguments = GetOptionalArguments (args);			
-			
-			var query = UriUtils.BuildUriString (arguments);
-			
-			var uri = new UriBuilder (Constants.EntryPoint + ServiceName)
-			{
-				Query = query	
-			};
-			
-			using (var client = new WebClient())
-			{
-				client.Encoding = System.Text.Encoding.UTF8;
-				var result = client.DownloadString (uri.Uri);
-				XmlUtils.CheckForErrors (result);
-				return FromXml (result);				
-			}
-		}
-		
-		private NameValueCollection GetOptionalArguments (NameValueCollection args)
-		{
-			var optionalArgs = new NameValueCollection (args);
+			var optionalArgs = new NameValueCollection ();
 			var types = GetAstronomyEventTypes ();
 			
 			optionalArgs.Set ("geo", IncludeCoordinates.ToNum ());
@@ -176,29 +156,12 @@ namespace TimeAndDate.Services
 			optionalArgs.Set ("lang", Language);
 			optionalArgs.Set ("radius", Radius.ToString());
 			optionalArgs.Set ("utctime", IncludeUTCTime.ToNum ());				
-			optionalArgs.Set ("out", Constants.DefaultReturnFormat);
 			optionalArgs.Set ("verbosetime", Constants.DefaultVerboseTimeValue.ToString ());
 			
 			if(!string.IsNullOrEmpty(types))
 				optionalArgs.Set ("types", types);
 			
 			return optionalArgs;
-		}
-		
-		private static IList<AstronomyLocation> FromXml(string result)
-		{
-			var list = new List<AstronomyLocation> ();
-			var xml = new XmlDocument ();
-			xml.LoadXml (result);
-			
-			
-			var dataNode = xml.DocumentElement;			
-			
-			var locations = dataNode.GetElementsByTagName ("location");
-			foreach (XmlNode location in locations)
-				list.Add ((AstronomyLocation)location);
-			
-			return list;
 		}
 		
 		private string GetAstronomyEventTypes ()

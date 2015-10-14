@@ -20,30 +20,12 @@ namespace TimeAndDate.Services
 			Compositions = new List<Composition> ();
 			Locations = new List<Location> ();
 		}
-		
-		public static explicit operator DialCodes (string result)
+
+		public DialCodes (List<Composition> comp, List<Location> locs, string num)
 		{
-			var model = new DialCodes ();
-			var xml = new XmlDocument ();
-			xml.LoadXml (result);
-			
-			var dataNode = xml.DocumentElement;
-			var number = dataNode.SelectSingleNode ("number/full");
-			
-			if (number != null)
-				model.Number = number.InnerText;
-			
-			var compositions = dataNode.SelectSingleNode ("composition");
-			if (compositions != null)
-				foreach (XmlNode composition in compositions)
-					model.Compositions.Add ((Composition)composition);
-			
-			var locations = dataNode.GetElementsByTagName ("location");
-			if(locations != null)
-				foreach(XmlNode location in locations)
-					model.Locations.Add((Location)location);
-			
-			return model;
+			Compositions = comp;
+			Locations = locs;
+			Number = num;
 		}
 	}
 

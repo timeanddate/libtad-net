@@ -33,6 +33,7 @@ namespace TimeAndDate.Services
 		public PlacesService (string accessKey, string secretKey) : base(accessKey, secretKey, "places")
 		{
 			IncludeCoordinates = true;
+			XmlElemName = "place";
 		}
 		
 		/// <summary>
@@ -43,44 +44,18 @@ namespace TimeAndDate.Services
 		/// </returns>
 		public IList<Place> GetPlaces ()
 		{
-			var arguments = GetArguments ();
-			var query = UriUtils.BuildUriString (arguments);
-			
-			var uri = new UriBuilder (Constants.EntryPoint + ServiceName);
-			uri.Query = query;
-			using (var client = new WebClient())
-			{
-				client.Encoding = System.Text.Encoding.UTF8;
-				var result = client.DownloadString (uri.Uri);
-				XmlUtils.CheckForErrors (result);
-				return FromXml (result);				
-			}
+			var args = GetArguments ();
+			return CallService (args, x => (Place)x);
 		}
 		
 		private NameValueCollection GetArguments ()
 		{
-			var args = new NameValueCollection (AuthenticationOptions);
+			var args = new NameValueCollection ();
 			args.Set ("lang", Language);			
 			args.Set ("geo", IncludeCoordinates.ToNum ());
-			args.Set ("version", Version.ToString ());
-			args.Set ("out", Constants.DefaultReturnFormat);
 			args.Set ("verbosetime", Constants.DefaultVerboseTimeValue.ToString ());
 			
 			return args;
-		}
-		
-		private static IList<Place> FromXml(string result)
-		{
-			var list = new List<Place> ();
-			
-			var xml = new XmlDocument ();
-			xml.LoadXml (result);
-						
-			var places = xml.GetElementsByTagName ("place");
-			foreach (XmlNode place in places)
-				list.Add ((Place)place);			
-			
-			return list;
 		}
 	}
 }

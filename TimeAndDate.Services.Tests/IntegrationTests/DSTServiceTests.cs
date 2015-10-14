@@ -15,7 +15,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		public void Calling_DstService_Should_ReturnAllDst ()
 		{
 			// Arrage
-			var expectedReturnedCount = 138;
+			var expectedReturnedCount = 139;
 			
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
@@ -33,7 +33,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		{
 			// Arrage
 			var year = 2014;
-			var expectedReturnedCount = 138;
+			var expectedReturnedCount = 139;
 			
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
@@ -173,7 +173,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Assert
 			Assert.IsTrue (service.IncludeOnlyDstCountries);
-			Assert.AreEqual (138, result.Count);
+			Assert.AreEqual (139, result.Count);
 			
 			HasValidSampleCountry (sampleCountry);
 		}
