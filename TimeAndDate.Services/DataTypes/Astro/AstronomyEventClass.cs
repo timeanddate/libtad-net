@@ -11,37 +11,37 @@ namespace TimeAndDate.Services.DataTypes.Astro
 		/// <summary>
 		/// Day length. 
 		/// </summary>
-		DayLength = 2,
+		DayLength = 1 << 1,
 		/// <summary>
 		/// Meridian (Noon, highest point) and Anti-Meridian (lowest point) events.
 		/// </summary>
-		Meridian = 4,
+		Meridian = 1 << 2,
 		/// <summary>
 		/// Moon phase events. Additionally to the phase events (only occurring on 
 		/// four days per lunar month), an additional attribute for the current moon 
 		/// phase is reported for every day.
 		/// </summary>
-		Phase = 8,
+		Phase = 1 << 3,
 		/// <summary>
 		/// Set and rise events. Event times take atmospheric refraction into account.
 		/// </summary>
-		SetRise = 16,
+		SetRise = 1 << 4,
 		/// <summary>
 		/// Combination of all 3 twilight classes.
 		/// </summary>
-		AllTwilights = 32,
+		AllTwilights = 1 << 5,
 		/// <summary>
 		/// Civil twilight (-6°).
 		/// </summary>
-		CivilTwilight = 64,
+		CivilTwilight = 1 << 6,
 		/// <summary>
 		/// Nautical twilight (-12°).
 		/// </summary>
-		NauticalTwilight = 128,
+		NauticalTwilight = 1 << 7,
 		/// <summary>
 		/// Astronomical twilight (-18°).
 		/// </summary>
-		AstronomicalTwilight = 256		
+		AstronomicalTwilight = 1 << 8		
 	}
 }
 

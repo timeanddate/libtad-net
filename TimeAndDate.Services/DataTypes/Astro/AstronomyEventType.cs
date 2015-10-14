@@ -5,7 +5,7 @@ namespace TimeAndDate.Services.DataTypes.Astro
 	public enum AstronomyEventType
 	{
 		Rise = 1,
-		Set = 2
+		Set = 1 << 1
 	}
 }
 

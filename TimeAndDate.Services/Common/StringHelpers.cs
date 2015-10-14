@@ -23,28 +23,28 @@ namespace TimeAndDate.Services.Common
 			var list = new List<Tuple<int, string, HolidayType>> ()
 			{
 				Tuple.Create (1, "all", HolidayType.All),
-				Tuple.Create (2, "default", HolidayType.Default),
-				Tuple.Create (4, "countrydefault", HolidayType.DefaultForCountry),
-				Tuple.Create (8, "obs", HolidayType.Observances),
-				Tuple.Create (16, "federal", HolidayType.Federal),
-				Tuple.Create (32, "federallocal", HolidayType.FederalLocal),
-				Tuple.Create (64, "local", HolidayType.Local),
-				Tuple.Create (128, "flagday", HolidayType.FlagDays),
-				Tuple.Create (256, "local2", HolidayType.LocalObservances),
-				Tuple.Create (512, "obs1", HolidayType.ImportantObservances),
-				Tuple.Create (1024, "obs2", HolidayType.CommonObservances),
-				Tuple.Create (2048, "obs3", HolidayType.OtherObservances),
-				Tuple.Create (4096, "weekday", HolidayType.Weekdays),
-				Tuple.Create (8192, "buddhism", HolidayType.Buddhism),
-				Tuple.Create (16384, "hebrew", HolidayType.Hebrew),
-				Tuple.Create (32768, "hinduism", HolidayType.Hinduism),
-				Tuple.Create (65536, "muslim", HolidayType.Muslim),
-				Tuple.Create (131072, "orthodox", HolidayType.Orthodox),
-				Tuple.Create (262144, "seasons", HolidayType.Seasons),
-				Tuple.Create (524288, "tz", HolidayType.TimezoneEvents),
-				Tuple.Create (1048576, "un", HolidayType.UnitedNations),
-				Tuple.Create (2097152, "world", HolidayType.WorldWideObservances),
-				Tuple.Create (4194304, "christian", HolidayType.Christian)
+				Tuple.Create (1 << 1, "default", HolidayType.Default),
+				Tuple.Create (1 << 2, "countrydefault", HolidayType.DefaultForCountry),
+				Tuple.Create (1 << 3, "obs", HolidayType.Observances),
+				Tuple.Create (1 << 4, "federal", HolidayType.Federal),
+				Tuple.Create (1 << 5, "federallocal", HolidayType.FederalLocal),
+				Tuple.Create (1 << 6, "local", HolidayType.Local),
+				Tuple.Create (1 << 7, "flagday", HolidayType.FlagDays),
+				Tuple.Create (1 << 8, "local2", HolidayType.LocalObservances),
+				Tuple.Create (1 << 9, "obs1", HolidayType.ImportantObservances),
+				Tuple.Create (1 << 10, "obs2", HolidayType.CommonObservances),
+				Tuple.Create (1 << 11, "obs3", HolidayType.OtherObservances),
+				Tuple.Create (1 << 12, "weekday", HolidayType.Weekdays),
+				Tuple.Create (1 << 13, "christian", HolidayType.Christian),
+				Tuple.Create (1 << 14, "buddhism", HolidayType.Buddhism),
+				Tuple.Create (1 << 15, "hebrew", HolidayType.Hebrew),
+				Tuple.Create (1 << 16, "hinduism", HolidayType.Hinduism),
+				Tuple.Create (1 << 17, "muslim", HolidayType.Muslim),
+				Tuple.Create (1 << 18, "orthodox", HolidayType.Orthodox),
+				Tuple.Create (1 << 19, "seasons", HolidayType.Seasons),
+				Tuple.Create (1 << 20, "tz", HolidayType.TimezoneEvents),
+				Tuple.Create (1 << 21, "un", HolidayType.UnitedNations),
+				Tuple.Create (1 << 22, "world", HolidayType.WorldWideObservances)
 			};
 			
 			return list.SingleOrDefault (expr);
@@ -56,14 +56,14 @@ namespace TimeAndDate.Services.Common
 		{
 			var list = new List<Tuple<int, string, AstronomyEventClass>> ();
 			list.Add (Tuple.Create (1, "all", AstronomyEventClass.All));
-			list.Add (Tuple.Create (2, "daylength", AstronomyEventClass.DayLength));
-			list.Add (Tuple.Create (4, "meridian", AstronomyEventClass.Meridian));
-			list.Add (Tuple.Create (8, "phase", AstronomyEventClass.Phase));
-			list.Add (Tuple.Create (16, "setrise", AstronomyEventClass.SetRise));
-			list.Add (Tuple.Create (32, "twilight", AstronomyEventClass.AllTwilights));
-			list.Add (Tuple.Create (64, "twilight6", AstronomyEventClass.CivilTwilight));
-			list.Add (Tuple.Create (128, "twilight12", AstronomyEventClass.NauticalTwilight));
-			list.Add (Tuple.Create (256, "twilight18", AstronomyEventClass.AstronomicalTwilight));
+			list.Add (Tuple.Create (1 << 1, "daylength", AstronomyEventClass.DayLength));
+			list.Add (Tuple.Create (1 << 2, "meridian", AstronomyEventClass.Meridian));
+			list.Add (Tuple.Create (1 << 3, "phase", AstronomyEventClass.Phase));
+			list.Add (Tuple.Create (1 << 4, "setrise", AstronomyEventClass.SetRise));
+			list.Add (Tuple.Create (1 << 5, "twilight", AstronomyEventClass.AllTwilights));
+			list.Add (Tuple.Create (1 << 6, "twilight6", AstronomyEventClass.CivilTwilight));
+			list.Add (Tuple.Create (1 << 7, "twilight12", AstronomyEventClass.NauticalTwilight));
+			list.Add (Tuple.Create (1 << 8, "twilight18", AstronomyEventClass.AstronomicalTwilight));
 			
 			return list.SingleOrDefault (expr);
 		}
