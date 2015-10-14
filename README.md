@@ -8,7 +8,7 @@ Time and Date APIs support looking up several different locations and IDs. As of
 * Coordinates (e.g. "+59.743+10.204")
 * Airports (e.g. "a-ENZV")
 
-The class LocationId is used to set the appropriate location ID. Airports categorize the same way as textual ID.
+The class [LocationId](http://services.timeanddate.com/api/doc/v2/type-locationid.html) is used to set the appropriate location ID. Airports categorize the same way as textual ID.
 
 An access key and a secret key is required to use the API. If you are not already a Time and Date API user, please see our [API offers](https://services.timeanddate.com/api/packages/) to get a free 3 month trial. For more information, see our [API Services page](https://services.timeanddate.com/).
 
@@ -17,14 +17,14 @@ Developed with Mono C# Compiler 4.0.1.0
 Astronomy Service
 --------------------------------------
   
-Get astronomy information for place on date by textual ID:
+Get astronomy information for a place on a date by textual ID:
          
          var place = new LocationId("usa/anchorage");
          var date = new DateTime(2015, 1, 1);
          var service = new AstronomyService('accessKey', 'secretKey');
          var astroInfo = service.GetAstronomicalInfo(AstronomyObjectType.Sun, place, date);
          
-Get astronomy information for place between dates by numeric ID:
+Get astronomy information for a place between two dates by numeric ID:
  
          var place = new LocationId(187);
          var startDate = new DateTime(2015, 1, 1);
@@ -65,7 +65,7 @@ Convert time from a location:
         var service = new ConvertTimeService('accessKey', 'secretKey');
         var convertedTime = service.ConvertTime(place, date);
 
-Convert time from a location using an ISO 8601-string:
+Convert time from a location using an [ISO 8601](http://services.timeanddate.com/api/doc/v2/type-isotime.html)-string:
 
         ...
         var convertedTime = service.ConvertTime(place, "2015-04-21T16:45:00");
@@ -100,17 +100,17 @@ Get all daylight saving times:
         var service = new DSTService('accessKey', 'secretKey');
         var allDST = service.GetDaylightSavingTime();
 
-Get daylight saving time for specified year:
+Get daylight saving time for a specified year:
 
         var service = new DSTService('accessKey', 'secretKey');
         var result = service.GetDaylightSavingTime(2014);
 
-Get daylight saving time for specified ISO 639 country code:
+Get daylight saving time for a specified [ISO3166-1 (Alpha2)](http://services.timeanddate.com/api/doc/v2/type-isocountry.html) country code:
 
         var service = new DSTService('accessKey', 'secretKey');
-        var result = service.GetDaylightSavingTime(2014);
+        var result = service.GetDaylightSavingTime("no");
 
-Get daylight saving time for specified ISO 639 country code and year:
+Get daylight saving time for a specified [ISO3166-1 (Alpha2)](http://services.timeanddate.com/api/doc/v2/type-isocountry.html) country code and year:
 
         var service = new DSTService('accessKey', 'secretKey');
         var result = service.GetDaylightSavingTime("no", 2014);
@@ -132,7 +132,7 @@ Other options:
 Dial Code Service
 --------------------------------------
 
-Get dial code to a location:
+Get dial code for a location:
 
         var osloId = new LocationId("norway/oslo");
         var service = new DialCodeService('accessKey', 'secretKey');
@@ -170,13 +170,13 @@ Other options:
 Holidays Service
 --------------------------------------
 
-Get all holidays for a country by ISO 630 country code:
+Get all holidays for a country by [ISO3166-1 (Alpha2)](http://services.timeanddate.com/api/doc/v2/type-isocountry.html) country code:
 
         var country = "no";
         var service = new HolidaysService('accessKey', 'secretKey');
         var result = service.GetHolidaysForCountry(country);
 
-Get all holidays for a country by year and ISO 630 country code:
+Get all holidays for a country by year and [ISO3166-1 (Alpha2)](http://services.timeanddate.com/api/doc/v2/type-isocountry.html) country code:
 
         var country = "no";
         var year = 2014;
@@ -206,7 +206,7 @@ Other options:
 Time Service
 --------------------------------------
 
-Get current time for place:
+Get current time for a place:
 
         var place = new LocationId(179);
         var service = new TimeService('accessKey', 'secretKey');
@@ -236,7 +236,7 @@ Other options:
 Location data type:
 --------------------------------------
 
-Get UTC offset for local time (only applicable if service.IncludeListOfTimeChanges has been set to true):
+Get UTC offset for a local time (only applicable if service.IncludeListOfTimeChanges has been set to true):
 
 		DateTimeOffset localTime = new DateTimeOffset(2015, 6, 7, 0);
 		Location sampleLoc = result.FirstOrDefault();
