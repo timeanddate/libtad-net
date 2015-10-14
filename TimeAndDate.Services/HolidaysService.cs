@@ -74,17 +74,8 @@ namespace TimeAndDate.Services
 		private IList<Holiday> RetrieveHolidays (string country, int year)
 		{
 			var arguments = GetArguments (country, year);
-			var query = UriUtils.BuildUriString (arguments);
-			
-			var uri = new UriBuilder (Constants.EntryPoint + ServiceName);
-			uri.Query = query;
-			using (var client = new WebClient())
-			{
-				client.Encoding = System.Text.Encoding.UTF8;
-				var result = client.DownloadString (uri.Uri);
-				XmlUtils.CheckForErrors (result);
-				return FromXml(result);				
-			}
+			var result = CallService(arguments);
+			return FromXml(result);
 		}				
 		
 		private NameValueCollection GetArguments (string country, int year)

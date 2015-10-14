@@ -2,6 +2,7 @@ using System;
 using System.Xml;
 using TimeAndDate.Services.Common;
 using System.Collections.Specialized;
+using System.Net;
 
 namespace TimeAndDate.Services
 {
@@ -41,7 +42,26 @@ namespace TimeAndDate.Services
 			Version = Constants.DefaultVersion;
 			Language = Constants.DefaultLanguage;
 
-		}				
+		}
+
+		protected string CallService(NameValueCollection args) 
+		{
+			var query = UriUtils.BuildUriString (args);
+
+			var uri = new UriBuilder (Constants.EntryPoint + ServiceName)
+			{
+				Query = query	
+			};
+
+			using (var client = new WebClient ())
+			{
+				client.Encoding = System.Text.Encoding.UTF8;
+				var result = client.DownloadString (uri.Uri);
+				XmlUtils.CheckForErrors (result);
+
+				return result;
+			}
+		}
 	}
 }
 

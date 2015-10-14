@@ -142,18 +142,9 @@ namespace TimeAndDate.Services
 			var arguments = GetArguments ();
 			if(args != null)
 				arguments.Add (args);
-			
-			var query = UriUtils.BuildUriString (arguments);			
-			var uri = new UriBuilder (Constants.EntryPoint + ServiceName);
-			uri.Query = query;
-			
-			using (var client = new WebClient())
-			{
-				client.Encoding = System.Text.Encoding.UTF8;
-				var result = client.DownloadString (uri.Uri);
-				XmlUtils.CheckForErrors (result);
-				return FromXml(result);				
-			}
+
+			var result = CallService(arguments);
+			return FromXml(result);
 		}
 		
 		private NameValueCollection GetArguments ()

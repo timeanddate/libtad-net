@@ -136,17 +136,8 @@ namespace TimeAndDate.Services
 		
 		private DialCodes RetrieveDialCode(NameValueCollection args)
 		{
-			var query = UriUtils.BuildUriString (args);			
-			var uri = new UriBuilder (Constants.EntryPoint + ServiceName);
-			uri.Query = query;
-			
-			using (var client = new WebClient())
-			{
-				client.Encoding = System.Text.Encoding.UTF8;
-				var result = client.DownloadString (uri.Uri);
-				XmlUtils.CheckForErrors (result);
-				return (DialCodes)result;				
-			}
+			var result = CallService(args);
+			return (DialCodes)result;
 		}
 		
 		private NameValueCollection GetOptionalArguments (NameValueCollection existingArguments)

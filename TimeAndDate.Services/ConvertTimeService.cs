@@ -110,18 +110,9 @@ namespace TimeAndDate.Services
 			
 			if (toIds != null)
 				arguments.Add (GetArgumentsForToIds (toIds));			
-			
-			var query = UriUtils.BuildUriString (arguments);
-			
-			var uri = new UriBuilder (Constants.EntryPoint + ServiceName);
-			uri.Query = query;
-			using (var client = new WebClient())
-			{
-				client.Encoding = System.Text.Encoding.UTF8;
-				var result = client.DownloadString (uri.Uri);
-				XmlUtils.CheckForErrors (result);
-				return (ConvertedTimes)result;				
-			}
+
+			var result = CallService(arguments);
+			return (ConvertedTimes)result;
 		}
 			
 		private NameValueCollection GetArgumentsForToIds (IList<LocationId> toIds)
