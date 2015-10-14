@@ -75,7 +75,7 @@ namespace TimeAndDate.Services
 		{
 			var arguments = GetArguments (country, year);
 			var result = CallService(arguments);
-			return FromXml(result);
+			return FromXml(result, "holiday", x => (Holiday)x);
 		}				
 		
 		private NameValueCollection GetArguments (string country, int year)
@@ -95,21 +95,6 @@ namespace TimeAndDate.Services
 				args.Set ("year", year.ToString ());
 			
 			return args;
-		}
-		
-		private static IList<Holiday> FromXml (string result)
-		{
-			var xml = new XmlDocument ();
-			var list = new List<Holiday> ();
-			xml.LoadXml (result);
-			
-			var dataNode = xml.DocumentElement;			
-			
-			var holidayNodes = dataNode.GetElementsByTagName ("holiday");
-			foreach (XmlNode holiday in holidayNodes)
-				list.Add ((Holiday)holiday);
-			
-			return list;			
 		}
 		
 		private string GetHolidayTypes ()

@@ -107,7 +107,7 @@ namespace TimeAndDate.Services
 		{
 			var arguments = GetArguments (placeid);
 			var result = CallService(arguments);
-			return FromXml (result);
+			return FromXml (result, "location", x => (Location)x);
 		}
 		
 		private NameValueCollection GetArguments (string placeId)
@@ -127,19 +127,6 @@ namespace TimeAndDate.Services
 			
 			return args;
 		}				
-		
-		private static IList<Location> FromXml(string result)
-		{
-			var list = new List<Location> ();
-			var xml = new XmlDocument ();
-			xml.LoadXml (result);
-						
-			var locationNodes = xml.GetElementsByTagName ("location");
-			foreach (XmlNode location in locationNodes)
-				list.Add ((Location)location);
-			
-			return list;
-		}		
 	}
 }
 

@@ -3,6 +3,7 @@ using System.Xml;
 using TimeAndDate.Services.Common;
 using System.Collections.Specialized;
 using System.Net;
+using System.Collections.Generic;
 
 namespace TimeAndDate.Services
 {
@@ -61,6 +62,19 @@ namespace TimeAndDate.Services
 
 				return result;
 			}
+		}
+
+		protected virtual IList<T> FromXml<T>(string result, string elem, Func<XmlNode, T> cb) 
+		{
+			var list = new List<T> ();
+			var xml = new XmlDocument ();
+			xml.LoadXml (result);
+
+			var locationNodes = xml.GetElementsByTagName (elem);
+			foreach (XmlNode location in locationNodes)
+				list.Add (cb(location));
+
+			return list;
 		}
 	}
 }

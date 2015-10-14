@@ -150,7 +150,7 @@ namespace TimeAndDate.Services
 		{
 			var arguments = GetOptionalArguments (args);			
 			var result = CallService (arguments);
-			return FromXml (result);
+			return FromXml (result, "location", x => (AstronomyLocation)x);
 		}
 		
 		private NameValueCollection GetOptionalArguments (NameValueCollection args)
@@ -170,22 +170,6 @@ namespace TimeAndDate.Services
 				optionalArgs.Set ("types", types);
 			
 			return optionalArgs;
-		}
-		
-		private static IList<AstronomyLocation> FromXml(string result)
-		{
-			var list = new List<AstronomyLocation> ();
-			var xml = new XmlDocument ();
-			xml.LoadXml (result);
-			
-			
-			var dataNode = xml.DocumentElement;			
-			
-			var locations = dataNode.GetElementsByTagName ("location");
-			foreach (XmlNode location in locations)
-				list.Add ((AstronomyLocation)location);
-			
-			return list;
 		}
 		
 		private string GetAstronomyEventTypes ()

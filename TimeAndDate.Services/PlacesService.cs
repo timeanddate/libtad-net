@@ -45,7 +45,7 @@ namespace TimeAndDate.Services
 		{
 			var arguments = GetArguments ();
 			var result = CallService (arguments);
-			return FromXml (result);
+			return FromXml (result, "place", x => (Place)x);
 		}
 		
 		private NameValueCollection GetArguments ()
@@ -58,20 +58,6 @@ namespace TimeAndDate.Services
 			args.Set ("verbosetime", Constants.DefaultVerboseTimeValue.ToString ());
 			
 			return args;
-		}
-		
-		private static IList<Place> FromXml(string result)
-		{
-			var list = new List<Place> ();
-			
-			var xml = new XmlDocument ();
-			xml.LoadXml (result);
-						
-			var places = xml.GetElementsByTagName ("place");
-			foreach (XmlNode place in places)
-				list.Add ((Place)place);			
-			
-			return list;
 		}
 	}
 }
