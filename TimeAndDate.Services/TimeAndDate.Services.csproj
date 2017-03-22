@@ -8,7 +8,8 @@
     <ProjectGuid>{2879BE0B-E891-4F3A-B69C-C5EE26012532}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>TimeAndDate.Services</RootNamespace>
-    <AssemblyName>TimeAndDate.Time</AssemblyName>
+    <AssemblyName>TimeAndDate.Services</AssemblyName>
+    <ReleaseVersion>1.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
