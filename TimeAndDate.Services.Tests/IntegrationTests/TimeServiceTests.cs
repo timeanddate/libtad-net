@@ -1,6 +1,8 @@
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using NUnit.Framework;
+using NUnit.Framework.Constraints;
 using System.Globalization;
 using TimeAndDate.Services.DataTypes.Astro;
 using TimeAndDate.Services.DataTypes.Places;
@@ -199,28 +201,32 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			var placeId = 187;
 			var expectedTimezoneAbbr1 = "CEST";
 			var expectedTimezoneAbbr2 = "CET";
-			var expectedTimezoneName = "Central European Summer Time";
-			var expectedOffsetHour = 2;
+			var expectedTimezoneName1 = "Central European Summer Time";
+			var expectedTimezoneName2 = "Central European Time";
+			var expectedOffsetHour1 = 1;
+			var expectedOffsetHour2 = 2;
 			var expectedOffsetMinute = 0;
 			var expectedBasicOffset = 3600;
-			var expectedDstOffset = 3600;
-			var expectedTotalOffset = 7200;
-			
+			var expectedDstOffset1 = 3600;
+			var expectedDstOffset2 = 0;
+			var expectedTotalOffset1 = 7200;
+			var expectedTotalOffset2 = 3600;
+
+
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
 			var result = timeservice.CurrentTimeForPlace (new LocationId(placeId));
 			var firstLocation = result.SingleOrDefault ();			
 			var abbr = firstLocation.Time.Timezone.Abbrevation;
-			
+
 			// Assert
-			Assert.IsTrue (abbr == expectedTimezoneAbbr1 || abbr == expectedTimezoneAbbr2); 
-			Assert.AreEqual (expectedTimezoneName, firstLocation.Time.Timezone.Name);
-			Assert.AreEqual (expectedOffsetHour, firstLocation.Time.Timezone.Offset.Hours);
+			Assert.That(firstLocation.Time.Timezone.Abbrevation, Is.EqualTo(expectedTimezoneAbbr1) | Is.EqualTo(expectedTimezoneAbbr2));
+			Assert.That(firstLocation.Time.Timezone.Name, Is.EqualTo(expectedTimezoneName1) | Is.EqualTo(expectedTimezoneName2));
+			Assert.That(firstLocation.Time.Timezone.Offset.Hours, Is.EqualTo(expectedOffsetHour1) | Is.EqualTo(expectedOffsetHour2));
+			Assert.That(firstLocation.Time.Timezone.DSTOffset, Is.EqualTo(expectedDstOffset1) | Is.EqualTo(expectedDstOffset2));
+			Assert.That(firstLocation.Time.Timezone.TotalOffset, Is.EqualTo(expectedTotalOffset1) | Is.EqualTo(expectedTotalOffset2));
 			Assert.AreEqual (expectedOffsetMinute, firstLocation.Time.Timezone.Offset.Minutes);
 			Assert.AreEqual (expectedBasicOffset, firstLocation.Time.Timezone.BasicOffset);
-			Assert.AreEqual (expectedDstOffset, firstLocation.Time.Timezone.DSTOffset);
-			Assert.AreEqual (expectedTotalOffset, firstLocation.Time.Timezone.TotalOffset);
-			
 		}
 		
 		[Test]
@@ -228,27 +234,33 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		{
 			// Arrange
 			var placeName = "norway/oslo";
-			var expectedTimezoneAbbr = "CEST";
-			var expectedTimezoneName = "Central European Summer Time";
-			var expectedOffsetHour = 2;
+			var expectedTimezoneAbbr1 = "CEST";
+			var expectedTimezoneAbbr2 = "CET";
+			var expectedTimezoneName1 = "Central European Summer Time";
+			var expectedTimezoneName2 = "Central European Time";
+			var expectedOffsetHour1 = 1;
+			var expectedOffsetHour2 = 2;
 			var expectedOffsetMinute = 0;
 			var expectedBasicOffset = 3600;
-			var expectedDstOffset = 3600;
-			var expectedTotalOffset = 7200;
-			
+			var expectedDstOffset1 = 3600;
+			var expectedDstOffset2 = 0;
+			var expectedTotalOffset1 = 7200;
+			var expectedTotalOffset2 = 3600;
+
+
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
 			var result = timeservice.CurrentTimeForPlace (new LocationId(placeName));
-			var firstLocation = result.SingleOrDefault ();			
-			
+			var firstLocation = result.SingleOrDefault ();
+
 			// Assert
-			Assert.AreEqual (expectedTimezoneAbbr, firstLocation.Time.Timezone.Abbrevation);
-			Assert.AreEqual (expectedTimezoneName, firstLocation.Time.Timezone.Name);
-			Assert.AreEqual (expectedOffsetHour, firstLocation.Time.Timezone.Offset.Hours);
+			Assert.That(firstLocation.Time.Timezone.Abbrevation, Is.EqualTo(expectedTimezoneAbbr1) | Is.EqualTo(expectedTimezoneAbbr2));
+			Assert.That(firstLocation.Time.Timezone.Name, Is.EqualTo(expectedTimezoneName1) | Is.EqualTo(expectedTimezoneName2));
+			Assert.That(firstLocation.Time.Timezone.Offset.Hours, Is.EqualTo(expectedOffsetHour1) | Is.EqualTo(expectedOffsetHour2));
+			Assert.That(firstLocation.Time.Timezone.DSTOffset, Is.EqualTo(expectedDstOffset1) | Is.EqualTo(expectedDstOffset2));
+			Assert.That(firstLocation.Time.Timezone.TotalOffset, Is.EqualTo(expectedTotalOffset1) | Is.EqualTo(expectedTotalOffset2));
 			Assert.AreEqual (expectedOffsetMinute, firstLocation.Time.Timezone.Offset.Minutes);
 			Assert.AreEqual (expectedBasicOffset, firstLocation.Time.Timezone.BasicOffset);
-			Assert.AreEqual (expectedDstOffset, firstLocation.Time.Timezone.DSTOffset);
-			Assert.AreEqual (expectedTotalOffset, firstLocation.Time.Timezone.TotalOffset);
 		}
 		
 				
@@ -257,27 +269,34 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		{
 			// Arrange
 			var osloCoords = new Coordinates (59.914m, 10.752m);			
-			var expectedTimezoneAbbr = "CEST";
-			var expectedTimezoneName = "Central European Summer Time";
-			var expectedOffsetHour = 2;
+			var expectedTimezoneAbbr1 = "CEST";
+			var expectedTimezoneAbbr2 = "CET";
+			var expectedTimezoneName1 = "Central European Summer Time";
+			var expectedTimezoneName2 = "Central European Time";
+			var expectedOffsetHour1 = 1;
+			var expectedOffsetHour2 = 2;
 			var expectedOffsetMinute = 0;
-			var expectedBasicOffset = 3600;
-			var expectedDstOffset = 3600;
-			var expectedTotalOffset = 7200;
-			
+			var expectedBasicOffset1 = 3600;
+			var expectedBasicOffset2 = 0;
+			var expectedDstOffset1 = 3600;
+			var expectedDstOffset2 = 0;
+			var expectedTotalOffset1 = 7200;
+			var expectedTotalOffset2 = 3600;
+
+
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
 			var result = timeservice.CurrentTimeForPlace (new LocationId(osloCoords));
-			var firstLocation = result.SingleOrDefault ();			
-			
+			var firstLocation = result.SingleOrDefault ();
+
 			// Assert
-			Assert.AreEqual (expectedTimezoneAbbr, firstLocation.Time.Timezone.Abbrevation);
-			Assert.AreEqual (expectedTimezoneName, firstLocation.Time.Timezone.Name);
-			Assert.AreEqual (expectedOffsetHour, firstLocation.Time.Timezone.Offset.Hours);
+			Assert.That(firstLocation.Time.Timezone.Abbrevation, Is.EqualTo(expectedTimezoneAbbr1) | Is.EqualTo(expectedTimezoneAbbr2));
+			Assert.That(firstLocation.Time.Timezone.Name, Is.EqualTo(expectedTimezoneName1) | Is.EqualTo(expectedTimezoneName2));
+			Assert.That(firstLocation.Time.Timezone.Offset.Hours, Is.EqualTo(expectedOffsetHour1) | Is.EqualTo(expectedOffsetHour2));
+			Assert.That(firstLocation.Time.Timezone.BasicOffset, Is.EqualTo(expectedBasicOffset1) | Is.EqualTo(expectedBasicOffset2));
+			Assert.That(firstLocation.Time.Timezone.DSTOffset, Is.EqualTo(expectedDstOffset1) | Is.EqualTo(expectedDstOffset2));
+			Assert.That(firstLocation.Time.Timezone.TotalOffset, Is.EqualTo(expectedTotalOffset1) | Is.EqualTo(expectedTotalOffset2));
 			Assert.AreEqual (expectedOffsetMinute, firstLocation.Time.Timezone.Offset.Minutes);
-			Assert.AreEqual (expectedBasicOffset, firstLocation.Time.Timezone.BasicOffset);
-			Assert.AreEqual (expectedDstOffset, firstLocation.Time.Timezone.DSTOffset);
-			Assert.AreEqual (expectedTotalOffset, firstLocation.Time.Timezone.TotalOffset);
 		}
 		
 		#endregion
@@ -450,7 +469,6 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		
 		#endregion			
 
-		[ExpectedException(typeof(LocalTimeDoesNotExistException))]
 		public void Calling_TimeService_And_GettingUTCOffset_WithNonExistingLocalTime_Should_ThrowException ()
 		{
 			// Arrange
@@ -460,14 +478,14 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
 			var result = timeservice.CurrentTimeForPlace (new LocationId (placeId));
-			var firstLocation = result.SingleOrDefault ();	
-			
-			
+			var firstLocation = result.SingleOrDefault ();
+
+
 			// Assert
-			firstLocation.GetUTCOffsetFromLocalTime (localTime);
+			Assert.That (() => firstLocation.GetUTCOffsetFromLocalTime(localTime),
+						 Throws.TypeOf<LocalTimeDoesNotExistException>());
 		}
 		
-		[ExpectedException(typeof(QueriedDateOutOfRangeException))]
 		public void Calling_TimeService_And_GettingUTCOffset_WithWrongYear_Should_ThrowException ()
 		{
 			// Arrange
@@ -477,11 +495,12 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
 			var result = timeservice.CurrentTimeForPlace (new LocationId (placeId));
-			var firstLocation = result.SingleOrDefault ();	
-			
-			
+			var firstLocation = result.SingleOrDefault ();
+
+
 			// Assert
-			firstLocation.GetUTCOffsetFromLocalTime (localTime);
+			Assert.That (() => firstLocation.GetUTCOffsetFromLocalTime(localTime), 
+			            Throws.TypeOf<QueriedDateOutOfRangeException>());
 		}
 		
 		[Test]
@@ -489,9 +508,9 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		{
 			// Arrange
 			var placeId = 187;			
-			var localWinterTime = new DateTime (2015, 2, 15, 2, 30, 0);
-			var localSummerTime = new DateTime (2015, 7, 15, 2, 30, 0);
-			var localFallTime = new DateTime (2015, 11, 15, 2, 30, 0);
+			var localWinterTime = new DateTime (DateTime.UtcNow.Year, 2, 15, 2, 30, 0);
+			var localSummerTime = new DateTime (DateTime.UtcNow.Year, 7, 15, 2, 30, 0);
+			var localFallTime = new DateTime (DateTime.UtcNow.Year, 11, 15, 2, 30, 0);
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
@@ -513,10 +532,10 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		{
 			// Arrange
 			var placeId = "usa/anchorage";			
-			var beforeDstStart = new DateTimeOffset (2015, 3, 8, 1, 0, 0, TimeSpan.FromHours (0));
-			var afterDstStart = new DateTimeOffset (2015, 3, 8, 3, 0, 0, TimeSpan.FromHours (0));
-			var beforeDstEnd = new DateTimeOffset (2015, 11, 1, 1, 0, 0, TimeSpan.FromHours (0));
-			var afterDstEnd = new DateTimeOffset (2015, 11, 1, 2, 0, 0, TimeSpan.FromHours (0));
+			var beforeDstStart = new DateTimeOffset (DateTime.UtcNow.Year, 2, 15, 1, 0, 0, TimeSpan.FromHours (0));
+			var afterDstStart = new DateTimeOffset (DateTime.UtcNow.Year, 4, 15, 3, 0, 0, TimeSpan.FromHours (0));
+			var beforeDstEnd = new DateTimeOffset (DateTime.UtcNow.Year, 10, 15, 1, 0, 0, TimeSpan.FromHours (0));
+			var afterDstEnd = new DateTimeOffset (DateTime.UtcNow.Year, 12, 15, 2, 0, 0, TimeSpan.FromHours (0));
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
