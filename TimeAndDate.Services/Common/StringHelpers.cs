@@ -18,56 +18,72 @@ namespace TimeAndDate.Services.Common
 			return boolean ? "1" : "0";
 		}
 		
-		// TODO:
-		// This needs to be converted to a struct from Tuple for clarity
-		internal static Tuple<int, string, HolidayType> ResolveHolidayType (Func<Tuple<int, string, HolidayType>, bool> expr)
+		internal static string ResolveHolidayType (Func<dynamic, bool> expr)
 		{
-			var list = new List<Tuple<int, string, HolidayType>> ()
-			{
-				Tuple.Create (1, "all", HolidayType.All),
-				Tuple.Create (1 << 1, "default", HolidayType.Default),
-				Tuple.Create (1 << 2, "countrydefault", HolidayType.DefaultForCountry),
-				Tuple.Create (1 << 3, "obs", HolidayType.Observances),
-				Tuple.Create (1 << 4, "federal", HolidayType.Federal),
-				Tuple.Create (1 << 5, "federallocal", HolidayType.FederalLocal),
-				Tuple.Create (1 << 6, "local", HolidayType.Local),
-				Tuple.Create (1 << 7, "flagday", HolidayType.FlagDays),
-				Tuple.Create (1 << 8, "local2", HolidayType.LocalObservances),
-				Tuple.Create (1 << 9, "obs1", HolidayType.ImportantObservances),
-				Tuple.Create (1 << 10, "obs2", HolidayType.CommonObservances),
-				Tuple.Create (1 << 11, "obs3", HolidayType.OtherObservances),
-				Tuple.Create (1 << 12, "weekday", HolidayType.Weekdays),
-				Tuple.Create (1 << 13, "christian", HolidayType.Christian),
-				Tuple.Create (1 << 14, "buddhism", HolidayType.Buddhism),
-				Tuple.Create (1 << 15, "hebrew", HolidayType.Hebrew),
-				Tuple.Create (1 << 16, "hinduism", HolidayType.Hinduism),
-				Tuple.Create (1 << 17, "muslim", HolidayType.Muslim),
-				Tuple.Create (1 << 18, "orthodox", HolidayType.Orthodox),
-				Tuple.Create (1 << 19, "seasons", HolidayType.Seasons),
-				Tuple.Create (1 << 20, "tz", HolidayType.TimezoneEvents),
-				Tuple.Create (1 << 21, "un", HolidayType.UnitedNations),
-				Tuple.Create (1 << 22, "world", HolidayType.WorldWideObservances)
-			};
-			
-			return list.SingleOrDefault (expr);
-		}			
-		
-		// TODO:
-		// This needs to be converted to a struct from Tuple for clarity
-		internal static Tuple<int, string, AstronomyEventClass> ResolveAstronomyEventClass (Func<Tuple<int, string, AstronomyEventClass>, bool> expr)
+			var x = new[] {
+				new { arg = "all", type = HolidayType.All },
+				new { arg = "default", type = HolidayType.Default },
+				new { arg = "countrydefault", type = HolidayType.DefaultForCountry },
+				new { arg = "obs", type = HolidayType.Observances },
+				new { arg = "federal", type = HolidayType.Federal },
+				new { arg = "federallocal", type = HolidayType.FederalLocal },
+				new { arg = "local", type = HolidayType.Local },
+				new { arg = "flagday", type = HolidayType.FlagDays },
+				new { arg = "local2", type = HolidayType.LocalObservances },
+				new { arg = "obs1", type = HolidayType.ImportantObservances },
+				new { arg = "obs2", type = HolidayType.CommonObservances },
+				new { arg = "obs3", type = HolidayType.OtherObservances },
+				new { arg = "weekday", type = HolidayType.Weekdays },
+				new { arg = "christian", type = HolidayType.Christian },
+				new { arg = "buddhism", type = HolidayType.Buddhism },
+				new { arg = "hebrew", type = HolidayType.Hebrew },
+				new { arg = "hinduism", type = HolidayType.Hinduism },
+				new { arg = "muslim", type = HolidayType.Muslim },
+				new { arg = "orthodox", type = HolidayType.Orthodox },
+				new { arg = "seasons", type = HolidayType.Seasons },
+				new { arg = "tz", type = HolidayType.TimezoneEvents },
+				new { arg = "un", type = HolidayType.UnitedNations },
+				new { arg = "world", type = HolidayType.WorldWideObservances }
+			}.ToList().SingleOrDefault(expr);
+
+            return x.arg as string;
+		}
+
+        internal static string ResolveBusinessDaysFilterType(Func<dynamic, bool> expr)
+        {
+			var x = new[] {
+				new { arg = "all", type = BusinessDaysFilterType.All },
+                new { arg = "mon", type = BusinessDaysFilterType.Monday },
+                new { arg = "tue", type = BusinessDaysFilterType.Tuesday },
+                new { arg = "wed", type = BusinessDaysFilterType.Wednesday },
+                new { arg = "thu", type = BusinessDaysFilterType.Thursday },
+                new { arg = "fri", type = BusinessDaysFilterType.Friday },
+                new { arg = "sat", type = BusinessDaysFilterType.Saturday },
+                new { arg = "sun", type = BusinessDaysFilterType.Sunday },
+                new { arg = "weekend", type = BusinessDaysFilterType.Weekend },
+                new { arg = "holidays", type = BusinessDaysFilterType.Holidays },
+                new { arg = "weekendholidays", type = BusinessDaysFilterType.WeekendHolidays },
+                new { arg = "none", type = BusinessDaysFilterType.None }
+			}.ToList().SingleOrDefault(expr);
+
+			return x.arg as string;
+		}
+
+		internal static string ResolveAstronomyEventClass (Func<dynamic, bool> expr)
 		{
-			var list = new List<Tuple<int, string, AstronomyEventClass>> ();
-			list.Add (Tuple.Create (1, "all", AstronomyEventClass.All));
-			list.Add (Tuple.Create (1 << 1, "daylength", AstronomyEventClass.DayLength));
-			list.Add (Tuple.Create (1 << 2, "meridian", AstronomyEventClass.Meridian));
-			list.Add (Tuple.Create (1 << 3, "phase", AstronomyEventClass.Phase));
-			list.Add (Tuple.Create (1 << 4, "setrise", AstronomyEventClass.SetRise));
-			list.Add (Tuple.Create (1 << 5, "twilight", AstronomyEventClass.AllTwilights));
-			list.Add (Tuple.Create (1 << 6, "twilight6", AstronomyEventClass.CivilTwilight));
-			list.Add (Tuple.Create (1 << 7, "twilight12", AstronomyEventClass.NauticalTwilight));
-			list.Add (Tuple.Create (1 << 8, "twilight18", AstronomyEventClass.AstronomicalTwilight));
-			
-			return list.SingleOrDefault (expr);
+			var x = new[] {
+				new { arg = "all", type = AstronomyEventClass.All },
+				new { arg = "daylength", type = AstronomyEventClass.DayLength },
+				new { arg = "meridian", type = AstronomyEventClass.Meridian },
+				new { arg = "phase", type = AstronomyEventClass.Phase },
+				new { arg = "setrise", type = AstronomyEventClass.SetRise },
+				new { arg = "twilight", type = AstronomyEventClass.AllTwilights },
+				new { arg = "twilight6", type = AstronomyEventClass.CivilTwilight },
+				new { arg = "twilight12", type = AstronomyEventClass.NauticalTwilight },
+				new { arg = "twilight18", type = AstronomyEventClass.AstronomicalTwilight }
+			}.ToList().SingleOrDefault(expr);
+
+			return x.arg as string;
 		}
 		
 		internal static AstronomyEventCode ResolveAstronomyEventCode (string eventCode)

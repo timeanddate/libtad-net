@@ -100,7 +100,7 @@ namespace TimeAndDate.Services
 			{
 				if (Types.HasFlag (holidayType))
 				{
-					includedStrings.Add (StringHelpers.ResolveHolidayType (x => x.Item1 == (int)holidayType).Item2);
+                    includedStrings.Add (StringHelpers.ResolveHolidayType (x => (int)x.type == (int)holidayType));
 				}
 			}
 			
