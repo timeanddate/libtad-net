@@ -93,6 +93,8 @@
     <Compile Include="DataTypes\BusinessDays\Period.cs" />
     <Compile Include="DataTypes\BusinessDays\WeekdaysType.cs" />
     <Compile Include="BusinessDates.cs" />
+    <Compile Include="BusinessDuration.cs" />
+    <Compile Include="BusinessDurationService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
