@@ -17,10 +17,10 @@ namespace TimeAndDate.Services
 
 		public List<Period> Periods { get; set; }
 
-        public BusinessDates(Geo geo, List<Period> periods) 
-        {
-            Geography = geo;
-            Periods = periods;
-        }
+		public BusinessDates(Geo geo, List<Period> periods)
+		{
+			Geography = geo;
+			Periods = periods;
+		}
 	}
 }
