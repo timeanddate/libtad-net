@@ -3,9 +3,11 @@ using System.Reflection;
 using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
-using TimeAndDate.Services.DataTypes.Astro;
 using System.Text;
+using TimeAndDate.Services.DataTypes.Astro;
 using TimeAndDate.Services.DataTypes.Places;
+using TimeAndDate.Services.DataTypes.Holidays;
+using TimeAndDate.Services.DataTypes.BusinessDays;
 
 namespace TimeAndDate.Services.Common
 {

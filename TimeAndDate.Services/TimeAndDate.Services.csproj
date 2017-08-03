@@ -34,6 +34,7 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -86,6 +87,12 @@
     <Compile Include="Common\XmlUtils.cs" />
     <Compile Include="Common\DateTimeUtils.cs" />
     <Compile Include="DSTService.cs" />
+    <Compile Include="BusinessDateService.cs" />
+    <Compile Include="DataTypes\BusinessDays\BusinessDaysFilterType.cs" />
+    <Compile Include="DataTypes\BusinessDays\BusinessDays.cs" />
+    <Compile Include="DataTypes\BusinessDays\Period.cs" />
+    <Compile Include="DataTypes\BusinessDays\WeekdaysType.cs" />
+    <Compile Include="BusinessDates.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -96,5 +103,6 @@
     <Folder Include="DataTypes\DST\" />
     <Folder Include="DataTypes\Holidays\" />
     <Folder Include="DataTypes\Places\" />
+    <Folder Include="DataTypes\BusinessDays\" />
   </ItemGroup>
 </Project>
