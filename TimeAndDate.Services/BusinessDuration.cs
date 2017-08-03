@@ -20,7 +20,7 @@ namespace TimeAndDate.Services
 		public BusinessDuration(Geo geo, Period period)
 		{
 			Geography = geo;
-            Period = period;
+			Period = period;
 		}
 	}
 }

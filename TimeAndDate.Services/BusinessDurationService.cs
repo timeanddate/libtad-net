@@ -9,38 +9,38 @@ using TimeAndDate.Services.DataTypes.Places;
 
 namespace TimeAndDate.Services
 {
-    public class BusinessDurationService : BaseService
-    {
-        public bool IncludeLastDate { get; set;  }
-        public bool IncludeDays { get; set; }
-        public BusinessDaysFilterType Filter { get; set; }
+	public class BusinessDurationService : BaseService
+	{
+		public bool IncludeLastDate { get; set; }
+		public bool IncludeDays { get; set; }
+		public BusinessDaysFilterType Filter { get; set; }
 
-        public BusinessDurationService(string accessKey, string secretKey) : base(accessKey, secretKey, "businessduration")
-        {
-            IncludeLastDate = false;
-            IncludeDays = false;
-            Filter = BusinessDaysFilterType.WeekendHolidays;
+		public BusinessDurationService(string accessKey, string secretKey) : base(accessKey, secretKey, "businessduration")
+		{
+			IncludeLastDate = false;
+			IncludeDays = false;
+			Filter = BusinessDaysFilterType.WeekendHolidays;
 			XmlElemName = "period";
 		}
 
-        public BusinessDuration GetDuration(DateTime startDate, DateTime endDate, LocationId placeId)
-        {
-            if (endDate.CompareTo(startDate) < 0)
-                throw new ArgumentException("End Date cannot be earlier than Start Date");
-            
-            var args = GetArguments(startDate, endDate);
+		public BusinessDuration GetDuration(DateTime startDate, DateTime endDate, LocationId placeId)
+		{
+			if (endDate.CompareTo(startDate) < 0)
+				throw new ArgumentException("End Date cannot be earlier than Start Date");
+
+			var args = GetArguments(startDate, endDate);
 			args.Set("placeid", placeId.GetIdAsString());
 			return CallService<BusinessDuration>(args);
-        }
+		}
 
 		public BusinessDuration GetDuration(DateTime startDate, DateTime endDate, string country, string state = "")
 		{
 			if (endDate.CompareTo(startDate) < 0)
 				throw new ArgumentException("End Date cannot be earlier than Start Date");
-            
+
 			var args = GetArguments(startDate, endDate);
 			args.Set("country", country);
-            args.Set("state", state);
+			args.Set("state", state);
 			return CallService<BusinessDuration>(args);
 		}
 
@@ -49,9 +49,9 @@ namespace TimeAndDate.Services
 			var args = new NameValueCollection();
 			args.Set("filter", GetFilterTypes());
 			args.Set("startdt", startDate.ToString("s", CultureInfo.InvariantCulture));
-            args.Set("enddt", endDate.ToString("s", CultureInfo.InvariantCulture));
+			args.Set("enddt", endDate.ToString("s", CultureInfo.InvariantCulture));
 			args.Set("include", IncludeDays.ToNum());
-            args.Set("includelastdate", IncludeLastDate.ToNum());
+			args.Set("includelastdate", IncludeLastDate.ToNum());
 			args.Set("lang", Language);
 			args.Set("verbosetime", Constants.DefaultVerboseTimeValue);
 
@@ -65,18 +65,18 @@ namespace TimeAndDate.Services
 			xml.LoadXml(result);
 
 			var geoElem = xml.SelectSingleNode("data/geo");
-            var periodElem = xml.SelectSingleNode("data/period");
-            Geo geo = new Geo();
-            Period period = new Period();
+			var periodElem = xml.SelectSingleNode("data/period");
+			Geo geo = new Geo();
+			Period period = new Period();
 
 			if (geoElem != null)
 				geo = (Geo)geoElem;
 
-            if (periodElem != null)
-                period = (Period)periodElem;
+			if (periodElem != null)
+				period = (Period)periodElem;
 
 			var instance = Activator.CreateInstance(typeof(BusinessDuration), new object[] { geo, period });
-            return (BusinessDuration)instance;
+			return (BusinessDuration)instance;
 		}
 
 		private string GetFilterTypes()
@@ -93,5 +93,5 @@ namespace TimeAndDate.Services
 			var included = string.Join(",", includedStrings.ToArray());
 			return included;
 		}
-    }
+	}
 }
