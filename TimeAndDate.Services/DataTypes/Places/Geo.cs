@@ -49,7 +49,7 @@ namespace TimeAndDate.Services.DataTypes.Places
 			var state = node.SelectSingleNode ("state");
 			var country = node.SelectSingleNode ("country");
 			
-			if (latitude != null && longitude != null)
+            if (!String.IsNullOrEmpty(latitude?.InnerText) && !String.IsNullOrEmpty(longitude?.InnerText))
 			{
 				var la = Decimal.Parse (latitude.InnerText, CultureInfo.InvariantCulture);			
 				var lo = Decimal.Parse (longitude.InnerText, CultureInfo.InvariantCulture);			
