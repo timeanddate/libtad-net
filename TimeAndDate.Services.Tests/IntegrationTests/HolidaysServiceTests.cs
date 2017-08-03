@@ -5,6 +5,7 @@ using System;
 using NUnit.Framework;
 using System.Linq;
 using TimeAndDate.Services.Tests;
+using TimeAndDate.Services.DataTypes.Holidays;
 
 namespace TimeAndDate.Services.Tests.IntegrationTests
 {

@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Net;
 using System.Collections.Generic;
 using TimeAndDate.Services.Common;
-using TimeAndDate.Services.DataTypes.Holiday;
+using TimeAndDate.Services.DataTypes.Holidays;
 using System.Xml;
 
 namespace TimeAndDate.Services

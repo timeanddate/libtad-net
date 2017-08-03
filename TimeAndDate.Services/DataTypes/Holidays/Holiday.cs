@@ -6,7 +6,7 @@ using TimeAndDate.Services.Common;
 using TimeAndDate.Services.DataTypes.Places;
 using TimeAndDate.Services.DataTypes.Time;
 
-namespace TimeAndDate.Services.DataTypes.Holiday
+namespace TimeAndDate.Services.DataTypes.Holidays
 {
 	public class Holiday
 	{

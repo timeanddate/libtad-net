@@ -1,5 +1,5 @@
 using System;
-namespace TimeAndDate.Services
+namespace TimeAndDate.Services.DataTypes.Holidays
 {
 	// These are just simple bitflags so the user can easily put together a set of types
 	// which should be included or excluded in the retrieval of holidays
