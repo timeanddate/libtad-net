@@ -1,3 +1,12 @@
 /test-results/
 *.user*
+/TimeAndDate.Services.Tests/*.config
+/TimeAndDate.Services.Tests/bin/
+/TimeAndDate.Services.Tests/obj/
+/TimeAndDate.Services.Tests/test-results/
+/TimeAndDate.Services/bin/
+/TimeAndDate.Services/obj/
+/TimeAndDate.Services/test-results/
+/packages/
+
 

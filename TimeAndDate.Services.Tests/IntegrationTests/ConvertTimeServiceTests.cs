@@ -10,13 +10,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 {
 	[TestFixture()]
 	public class ConvertTimeTests
-	{
-		public static TimeZoneInfo UsTimezone = TimeZoneInfo.FindSystemTimeZoneById ("US/Alaska");
-		public static DateTime UsTimestamp = TimeZoneInfo.ConvertTimeFromUtc (DateTime.Now.ToUniversalTime (), UsTimezone);
-		
-		public static TimeZoneInfo ArticTimezone = TimeZoneInfo.FindSystemTimeZoneById ("Antarctica/Troll");
-		public static DateTime ArticTimestamp = TimeZoneInfo.ConvertTimeFromUtc (DateTime.Now.ToUniversalTime (), ArticTimezone);
-					
+	{				
 		public const string fromCountry = "Norway";
 		public const string fromCity = "Oslo";
 		public static LocationId fromCoords;
@@ -81,7 +75,6 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			Assert.AreEqual (oslo.Geography.Country.Name, fromCountry);
 			
 			HasCorrectUtc (result.Utc.DateTime);					
-			HasCorrectLocation (UsTimestamp, anchorage);
 		}
 		
 		[Test()]
@@ -108,9 +101,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			Assert.AreEqual (oslo.Geography.Name, fromCity);
 			Assert.AreEqual (oslo.Geography.Country.Name, fromCountry);
-			
-			HasCorrectLocation (UsTimestamp, anchorage);
-			HasCorrectLocation (ArticTimestamp, troll);
+
 			HasCorrectUtc (result.Utc.DateTime);
 		}
 		
@@ -138,9 +129,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			Assert.AreEqual (fromCity, oslo.Geography.Name);
 			Assert.AreEqual (fromCountry, oslo.Geography.Country.Name);
-			
-			HasCorrectLocation (UsTimestamp, anchorage);
-			HasCorrectLocation (ArticTimestamp, troll);
+
 			HasCorrectUtc (result.Utc.DateTime);
 		}
 		
@@ -181,7 +170,6 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			Assert.AreEqual (fromCity, oslo.Geography.Name);
 			Assert.AreEqual (fromCountry, oslo.Geography.Country.Name);
 			
-			HasCorrectLocation (UsTimestamp, anchorage);			
 			HasCorrectUtc (result.Utc.DateTime);
 		}		
 		

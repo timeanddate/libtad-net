@@ -63,6 +63,7 @@ namespace TimeAndDate.Services
 			using (var client = new WebClient ())
 			{
 				client.Encoding = System.Text.Encoding.UTF8;
+				client.Headers.Add(HttpRequestHeader.UserAgent, Constants.DefaultUserAgent);
 				var result = client.DownloadString (uri.Uri);
 				XmlUtils.CheckForErrors (result);
 

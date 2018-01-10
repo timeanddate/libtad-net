@@ -22,5 +22,6 @@ Global
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = TimeAndDate.Time\TimeAndDate.Services.csproj
+		version = 1.0
 	EndGlobalSection
 EndGlobal

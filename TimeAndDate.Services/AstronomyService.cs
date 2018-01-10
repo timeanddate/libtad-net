@@ -171,7 +171,7 @@ namespace TimeAndDate.Services
 			{
 				if (Types.HasFlag (astroClass))
 				{
-					includedStrings.Add (StringHelpers.ResolveAstronomyEventClass (x => x.Item1 == (int)astroClass).Item2);
+					includedStrings.Add (StringHelpers.ResolveAstronomyEventClass (x => (int)x.type == (int)astroClass));
 				}
 			}			
 			

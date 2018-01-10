@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Net;
 using System.Collections.Generic;
 using TimeAndDate.Services.Common;
-using TimeAndDate.Services.DataTypes.Holiday;
+using TimeAndDate.Services.DataTypes.Holidays;
 using System.Xml;
 
 namespace TimeAndDate.Services
@@ -100,7 +100,7 @@ namespace TimeAndDate.Services
 			{
 				if (Types.HasFlag (holidayType))
 				{
-					includedStrings.Add (StringHelpers.ResolveHolidayType (x => x.Item1 == (int)holidayType).Item2);
+                    includedStrings.Add (StringHelpers.ResolveHolidayType (x => (int)x.type == (int)holidayType));
 				}
 			}
 			

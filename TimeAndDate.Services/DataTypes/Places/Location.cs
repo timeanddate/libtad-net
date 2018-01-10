@@ -93,7 +93,7 @@ namespace TimeAndDate.Services.DataTypes.Places
 				throw new MissingTimeChangesException ("IncludeTimeChanges either set to false or no time changes for this location");		
 			
 			var firstNewLocalTime = TimeChanges.FirstOrDefault ().NewLocalTime.Year;
-			if (localTime.Year > firstNewLocalTime || localTime.Year < firstNewLocalTime)
+			if (localTime.Year != firstNewLocalTime)
 				throw new QueriedDateOutOfRangeException ("The year specified in localTime is outside the year available for this location");					
 			
 			TimeChange change;

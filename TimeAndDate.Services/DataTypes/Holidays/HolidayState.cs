@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Collections.Generic;
 using System.Xml;
 
-namespace TimeAndDate.Services.DataTypes.Holiday
+namespace TimeAndDate.Services.DataTypes.Holidays
 {
 	public class HolidayState
 	{

@@ -3,12 +3,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{2879BE0B-E891-4F3A-B69C-C5EE26012532}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>TimeAndDate.Services</RootNamespace>
-    <AssemblyName>TimeAndDate.Time</AssemblyName>
+    <AssemblyName>TimeAndDate.Services</AssemblyName>
+    <ReleaseVersion>1.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +34,7 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -85,6 +87,14 @@
     <Compile Include="Common\XmlUtils.cs" />
     <Compile Include="Common\DateTimeUtils.cs" />
     <Compile Include="DSTService.cs" />
+    <Compile Include="BusinessDateService.cs" />
+    <Compile Include="DataTypes\BusinessDays\BusinessDaysFilterType.cs" />
+    <Compile Include="DataTypes\BusinessDays\BusinessDays.cs" />
+    <Compile Include="DataTypes\BusinessDays\Period.cs" />
+    <Compile Include="DataTypes\BusinessDays\WeekdaysType.cs" />
+    <Compile Include="BusinessDates.cs" />
+    <Compile Include="BusinessDuration.cs" />
+    <Compile Include="BusinessDurationService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -95,5 +105,6 @@
     <Folder Include="DataTypes\DST\" />
     <Folder Include="DataTypes\Holidays\" />
     <Folder Include="DataTypes\Places\" />
+    <Folder Include="DataTypes\BusinessDays\" />
   </ItemGroup>
 </Project>
