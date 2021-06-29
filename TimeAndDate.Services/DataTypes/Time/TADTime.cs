@@ -29,7 +29,7 @@ namespace TimeAndDate.Services.DataTypes.Time
 		/// <value>
 		/// The date time.
 		/// </value>
-		public DateTimeOffset DateTime { get; set; }
+        public TADDateTime DateTime { get; set; }
 		
 		/// <summary>
 		/// Timezone information. Element is only present if different 
@@ -56,17 +56,8 @@ namespace TimeAndDate.Services.DataTypes.Time
 			
 			if (datetime != null)
 			{
-				var year = Int32.Parse (datetime.SelectSingleNode ("year").InnerText);
-				var month = Int32.Parse (datetime.SelectSingleNode ("month").InnerText);
-				var day = Int32.Parse (datetime.SelectSingleNode ("day").InnerText);
-				var hour = Int32.Parse (datetime.SelectSingleNode ("hour").InnerText);
-				var minute = Int32.Parse (datetime.SelectSingleNode ("minute").InnerText);
-				var second = Int32.Parse (datetime.SelectSingleNode ("second").InnerText);
-				
-				model.DateTime = new DateTimeOffset (year, month, day, hour, minute, second, TimeSpan.FromHours(0));
+                model.DateTime = (TADDateTime)datetime;
 			} 
-			else if (datetime == null && iso != null)
-				model.DateTime = DateTimeOffset.Parse (model.ISO, null, DateTimeStyles.AssumeUniversal);
 			
 			return model;
 		}			

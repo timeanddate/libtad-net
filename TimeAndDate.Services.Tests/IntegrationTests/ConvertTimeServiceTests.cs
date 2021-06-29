@@ -5,6 +5,7 @@ using System.Globalization;
 using NUnit.Framework;
 using TimeAndDate.Services.Tests;
 using TimeAndDate.Services.DataTypes.Places;
+using TimeAndDate.Services.DataTypes.Time;
 
 namespace TimeAndDate.Services.Tests.IntegrationTests
 {
@@ -294,7 +295,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			Assert.IsTrue (result.Locations.All (x => x.Time.Timezone != null));
 		}	
 		
-		public void HasCorrectLocation (DateTimeOffset date, Location location)
+        public void HasCorrectLocation(TADDateTime date, Location location)
 		{
 			Assert.AreEqual (date.Year, location.Time.DateTime.Year);			
 			Assert.AreEqual (date.Month, location.Time.DateTime.Month);
@@ -303,7 +304,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			Assert.AreEqual (date.Minute, location.Time.DateTime.Minute);
 		}
 		
-		public void HasCorrectUtc (DateTimeOffset date)
+        public void HasCorrectUtc(TADDateTime date)
 		{
 			Assert.AreEqual (DateTime.UtcNow.Year, date.Year);
 			Assert.AreEqual (DateTime.UtcNow.Month, date.Month);

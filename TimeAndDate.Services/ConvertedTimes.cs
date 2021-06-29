@@ -29,7 +29,8 @@ namespace TimeAndDate.Services
 			Locations = new List<Location> ();
 		}
 
-		public ConvertedTimes(IList<Location> locations, TADTime utc) {
+        public ConvertedTimes(IList<Location> locations, TADTime utc)
+        {
 			Utc = utc;
 			Locations = locations;
 		}

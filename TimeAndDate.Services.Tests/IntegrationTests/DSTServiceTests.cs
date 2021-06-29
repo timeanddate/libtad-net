@@ -15,7 +15,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		public void Calling_DstService_Should_ReturnAllDst ()
 		{
 			// Arrage
-			var expectedReturnedCount = 129;
+            var expectedReturnedCount = 121;
 			
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
@@ -33,7 +33,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		{
 			// Arrage
 			var year = 2014;
-			var expectedReturnedCount = 133;
+            var expectedReturnedCount = 132;
 			
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
@@ -173,7 +173,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Assert
 			Assert.IsTrue (service.IncludeOnlyDstCountries);
-			Assert.AreEqual (133, result.Count);
+            Assert.AreEqual(132, result.Count);
 			
 			HasValidSampleCountry (sampleCountry);
 		}
@@ -188,14 +188,12 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
 			service.IncludeOnlyDstCountries = false;
 			var result = service.GetDaylightSavingTime (year);
-			var dstAllYear = result.Where (x => x.Special == DSTSpecialType.DaylightSavingTimeAllYear);
 			var noDstAllYear = result.Where (x => x.Special == DSTSpecialType.NoDaylightSavingTime);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 
 			// Assert
 			Assert.IsFalse (service.IncludeOnlyDstCountries);
-			Assert.AreEqual (349, result.Count);
-			Assert.Greater (dstAllYear.Count(), 0);
+            Assert.AreEqual(348, result.Count);
 			Assert.Greater (noDstAllYear.Count(), 0);
 			
 			HasValidSampleCountry (sampleCountry);

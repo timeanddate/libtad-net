@@ -1,6 +1,6 @@
 using System;
 using System.Xml;
-
+using System.Globalization;
 
 namespace TimeAndDate.Services.DataTypes.Time
 {
@@ -40,7 +40,7 @@ namespace TimeAndDate.Services.DataTypes.Time
 		/// <value>
 		/// The UTC time.
 		/// </value>
-		public DateTimeOffset UtcTime { get; set; } 
+        public TADDateTime UtcTime { get; set; }
 		
 		/// <summary>
 		/// The old local time before the transition.
@@ -48,7 +48,7 @@ namespace TimeAndDate.Services.DataTypes.Time
 		/// <value>
 		/// The old local time.
 		/// </value>
-		public DateTimeOffset OldLocalTime { get; set; }
+        public TADDateTime OldLocalTime { get; set; }
 		
 		/// <summary>
 		/// The new local time after the transition.
@@ -56,7 +56,7 @@ namespace TimeAndDate.Services.DataTypes.Time
 		/// <value>
 		/// The new local time.
 		/// </value>
-		public DateTimeOffset NewLocalTime { get; set; }		
+        public TADDateTime NewLocalTime { get; set; }
 		
 		public static explicit operator TimeChange (XmlNode node)
 		{
@@ -87,16 +87,16 @@ namespace TimeAndDate.Services.DataTypes.Time
 			}		
 			
 			if (newoffset != null)
-				model.NewTotalOffset = Int32.Parse (newoffset.InnerText);
+                model.NewTotalOffset = Int32.Parse(newoffset.InnerText, CultureInfo.InvariantCulture);
 			
 			if (utctime != null)
-				model.UtcTime = DateTimeOffset.Parse (utctime.InnerText);
+                model.UtcTime = new TADDateTime(utctime.InnerText);
 			
 			if (oldlocal != null)
-				model.OldLocalTime = DateTimeOffset.Parse (oldlocal.InnerText, null, System.Globalization.DateTimeStyles.RoundtripKind);
+                model.OldLocalTime = new TADDateTime(oldlocal.InnerText);
 			
 			if (newlocal != null)
-				model.NewLocalTime = DateTimeOffset.Parse(newlocal.InnerText, null, System.Globalization.DateTimeStyles.RoundtripKind);
+                model.NewLocalTime = new TADDateTime(newlocal.InnerText);
 						
 			return model;
 		}					

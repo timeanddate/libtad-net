@@ -75,14 +75,14 @@ namespace TimeAndDate.Services.DataTypes.Time
 			if (name != null)
 				model.Name = name.InnerText;
 			
-			if (zoneoffset != null)
-				model.BasicOffset = Int32.Parse (zoneoffset.InnerText);
+            if (zoneoffset != null && zoneoffset.InnerText != null)
+                model.BasicOffset = Int32.Parse(zoneoffset.InnerText, CultureInfo.InvariantCulture);
 			
 			if (zonedst != null) 
-				model.DSTOffset = Int32.Parse (zonedst.InnerText);
+                model.DSTOffset = Int32.Parse(zonedst.InnerText, CultureInfo.InvariantCulture);
 			
 			if (totaloffset != null)
-				model.TotalOffset = Int32.Parse (totaloffset.InnerText);
+                model.TotalOffset = Int32.Parse(totaloffset.InnerText, CultureInfo.InvariantCulture);
 				
 			if (offset != null && offset.InnerText.StartsWith ("-"))
 				model.Offset = -TimeSpan.ParseExact (offset.InnerText, @"\-hh\:mm", CultureInfo.InvariantCulture);
