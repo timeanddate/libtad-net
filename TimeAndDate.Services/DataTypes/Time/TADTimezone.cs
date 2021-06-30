@@ -75,7 +75,7 @@ namespace TimeAndDate.Services.DataTypes.Time
 			if (name != null)
 				model.Name = name.InnerText;
 			
-            		if (zoneoffset != null && zoneoffset.InnerText != null)
+            		if (zoneoffset != null)
                 		model.BasicOffset = Int32.Parse(zoneoffset.InnerText, CultureInfo.InvariantCulture);
 			
 			if (zonedst != null) 
