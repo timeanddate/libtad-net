@@ -8,6 +8,7 @@ using TimeAndDate.Services.DataTypes.Astro;
 using TimeAndDate.Services.DataTypes.Places;
 using TimeAndDate.Services.DataTypes.Holidays;
 using TimeAndDate.Services.DataTypes.BusinessDays;
+using TimeAndDate.Services.DataTypes.OnThisDay;
 
 namespace TimeAndDate.Services.Common
 {
@@ -46,24 +47,35 @@ namespace TimeAndDate.Services.Common
 				new { arg = "world", type = HolidayType.WorldWideObservances }
 			}.ToList().SingleOrDefault(expr);
 
-            return x.arg as string;
+			return x.arg as string;
 		}
 
-        internal static string ResolveBusinessDaysFilterType(Func<dynamic, bool> expr)
-        {
+		internal static string ResolveEventType (Func<dynamic, bool> expr)
+		{
+			var x = new[] {
+				new { arg = "events", type = EventType.Events },
+				new { arg = "births", type = EventType.Births },
+				new { arg = "deaths", type = EventType.Deaths }
+			}.ToList().SingleOrDefault(expr);
+
+			return x.arg as string;
+		}
+
+		internal static string ResolveBusinessDaysFilterType(Func<dynamic, bool> expr)
+		{
 			var x = new[] {
 				new { arg = "all", type = BusinessDaysFilterType.All },
-                new { arg = "mon", type = BusinessDaysFilterType.Monday },
-                new { arg = "tue", type = BusinessDaysFilterType.Tuesday },
-                new { arg = "wed", type = BusinessDaysFilterType.Wednesday },
-                new { arg = "thu", type = BusinessDaysFilterType.Thursday },
-                new { arg = "fri", type = BusinessDaysFilterType.Friday },
-                new { arg = "sat", type = BusinessDaysFilterType.Saturday },
-                new { arg = "sun", type = BusinessDaysFilterType.Sunday },
-                new { arg = "weekend", type = BusinessDaysFilterType.Weekend },
-                new { arg = "holidays", type = BusinessDaysFilterType.Holidays },
-                new { arg = "weekendholidays", type = BusinessDaysFilterType.WeekendHolidays },
-                new { arg = "none", type = BusinessDaysFilterType.None }
+				new { arg = "mon", type = BusinessDaysFilterType.Monday },
+				new { arg = "tue", type = BusinessDaysFilterType.Tuesday },
+				new { arg = "wed", type = BusinessDaysFilterType.Wednesday },
+				new { arg = "thu", type = BusinessDaysFilterType.Thursday },
+				new { arg = "fri", type = BusinessDaysFilterType.Friday },
+				new { arg = "sat", type = BusinessDaysFilterType.Saturday },
+				new { arg = "sun", type = BusinessDaysFilterType.Sunday },
+				new { arg = "weekend", type = BusinessDaysFilterType.Weekend },
+				new { arg = "holidays", type = BusinessDaysFilterType.Holidays },
+				new { arg = "weekendholidays", type = BusinessDaysFilterType.WeekendHolidays },
+				new { arg = "none", type = BusinessDaysFilterType.None }
 			}.ToList().SingleOrDefault(expr);
 
 			return x.arg as string;

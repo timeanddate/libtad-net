@@ -233,6 +233,33 @@ Other options:
         service.IncldueTimezoneInformation = false;
 
 
+On This Day Service
+--------------------------------------
+
+Notice: This API is not released yet. Constructing this service will fail until it's available.
+
+Get events, births and deaths for a month and day:
+	
+	var month = 5;
+	var day = 24;
+	var service = new OnThisDayService('accessKey', 'secretKey');
+	var result = service.EventsOnThisDay(month, day);
+
+Get events, births and deaths for todays month and day:
+
+	var result = service.EventsOnThisDay();
+
+Get a specific type of event:
+
+	service.Types = EventType.Deaths;
+	var result = service.EventsOnThisDay();
+
+Get a combination of events:
+
+	service.Types = EventType.Events | EventType.Births;
+	var result = service.EventsOnThisDay();
+
+
 Location data type:
 --------------------------------------
 
