@@ -21,9 +21,9 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			var year = 2014;
 			var expectedHoliday = "New Year's Day";
 			var expectedUid = "0007d600000007de";
-            var expectedUrl = new Uri("https://www.timeanddate.com/holidays/us/new-year-day");
+            		var expectedUrl = new Uri("https://www.timeanddate.com/holidays/us/new-year-day");
 			var expectedId = 2006;
-            var expectedDate = new TADDateTime(2014, 1, 1);
+            		var expectedDate = new TADDateTime(2014, 1, 1);
 			
 			// Act
 			var holidaysService = new HolidaysService (Config.AccessKey, Config.SecretKey);			
@@ -36,16 +36,16 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			Assert.AreEqual (expectedUrl, firstHoliday.Url);
 									
 			Assert.AreEqual (expectedId, firstHoliday.Id);
-            Assert.IsTrue(expectedDate.Equals(firstHoliday.Date.DateTime));
+            		Assert.IsTrue(expectedDate.Equals(firstHoliday.Date.DateTime));
 		}
 		
 		[Test()]
 		public void Calling_HolidaysService_WithCountry_And_WithYear_Should_ReturnHolidaysWithStates ()
 		{
 			// Arrange
-            var country = "gb-sct";
-            var year = 2015;
-            var expectedState = "Scotland";
+            		var country = "gb-sct";
+            		var year = 2015;
+            		var expectedState = "Scotland";
 			
 			// Act
 			var holidaysService = new HolidaysService (Config.AccessKey, Config.SecretKey);			
@@ -66,7 +66,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Arrange
 			var country = "us";
 			var year = 2014;
-            var expectedCount = 25;
+            		var expectedCount = 25;
 			
 			// Act
 			var holidaysService = new HolidaysService (Config.AccessKey, Config.SecretKey);			

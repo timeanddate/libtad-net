@@ -295,7 +295,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			Assert.IsTrue (result.Locations.All (x => x.Time.Timezone != null));
 		}	
 		
-        public void HasCorrectLocation(TADDateTime date, Location location)
+        	public void HasCorrectLocation(TADDateTime date, Location location)
 		{
 			Assert.AreEqual (date.Year, location.Time.DateTime.Year);			
 			Assert.AreEqual (date.Month, location.Time.DateTime.Month);
@@ -304,7 +304,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			Assert.AreEqual (date.Minute, location.Time.DateTime.Minute);
 		}
 		
-        public void HasCorrectUtc(TADDateTime date)
+        	public void HasCorrectUtc(TADDateTime date)
 		{
 			Assert.AreEqual (DateTime.UtcNow.Year, date.Year);
 			Assert.AreEqual (DateTime.UtcNow.Month, date.Month);

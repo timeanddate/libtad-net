@@ -29,7 +29,7 @@ namespace TimeAndDate.Services.DataTypes.Time
 		/// <value>
 		/// The date time.
 		/// </value>
-        public TADDateTime DateTime { get; set; }
+        	public TADDateTime DateTime { get; set; }
 		
 		/// <summary>
 		/// Timezone information. Element is only present if different 
@@ -56,7 +56,7 @@ namespace TimeAndDate.Services.DataTypes.Time
 			
 			if (datetime != null)
 			{
-                model.DateTime = (TADDateTime)datetime;
+                		model.DateTime = (TADDateTime)datetime;
 			} 
 			
 			return model;
