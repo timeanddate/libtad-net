@@ -1,68 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7DF2F1C9-0C4D-4850-974C-1CFD58763C94}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>TimeAndDate.Services.Tests</RootNamespace>
-    <AssemblyName>TimeAndDate.Time.Tests</AssemblyName>
-    <ReleaseVersion>1.0</ReleaseVersion>
+    <TargetFramework>net5.0</TargetFramework>
+
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.3.6.1\lib\net40\nunit.framework.dll</HintPath>
-    </Reference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="coverlet.collector" Version="3.0.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Config.cs" />
-    <Compile Include="UnitTests\AstronomyTests.cs" />
-    <Compile Include="IntegrationTests\HolidaysServiceTests.cs" />
-    <Compile Include="IntegrationTests\TimeServiceTests.cs" />
-    <Compile Include="IntegrationTests\PlacesServiceTests.cs" />
-    <Compile Include="IntegrationTests\ConvertTimeServiceTests.cs" />
-    <Compile Include="IntegrationTests\AstronomyServiceTests.cs" />
-    <Compile Include="IntegrationTests\DialCodeServiceTests.cs" />
-    <Compile Include="IntegrationTests\DSTServiceTests.cs" />
-    <Compile Include="IntegrationTests\BusinessDateServiceTests.cs" />
-    <Compile Include="IntegrationTests\BusinessDurationServiceTests.cs" />
+    <ProjectReference Include="..\TimeAndDate.Services\TimeAndDate.Services.csproj" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\TimeAndDate.Services\TimeAndDate.Services.csproj">
-      <Project>{2879BE0B-E891-4F3A-B69C-C5EE26012532}</Project>
-      <Name>TimeAndDate.Services</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UnitTests\" />
-    <Folder Include="IntegrationTests\" />
-  </ItemGroup>
+
+  <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+    <Copy SourceFiles="App.config" DestinationFiles="$(OutDir)/testhost.dll.config" />
+  </Target>
+
 </Project>

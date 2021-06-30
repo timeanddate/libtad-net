@@ -6,6 +6,7 @@ using NUnit.Framework.Constraints;
 using System.Globalization;
 using TimeAndDate.Services.DataTypes.Astro;
 using TimeAndDate.Services.DataTypes.Places;
+using TimeAndDate.Services.DataTypes.Time;
 using TimeAndDate.Services.Common;
 
 namespace TimeAndDate.Services.Tests.IntegrationTests
@@ -468,90 +469,5 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}	
 		
 		#endregion			
-
-		public void Calling_TimeService_And_GettingUTCOffset_WithNonExistingLocalTime_Should_ThrowException ()
-		{
-			// Arrange
-			var placeId = 187;			
-			var localTime = new DateTime (2015, 3, 29, 2, 30, 0);
-			
-			// Act
-			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId (placeId));
-			var firstLocation = result.SingleOrDefault ();
-
-
-			// Assert
-			Assert.That (() => firstLocation.GetUTCOffsetFromLocalTime(localTime),
-						 Throws.TypeOf<LocalTimeDoesNotExistException>());
-		}
-		
-		public void Calling_TimeService_And_GettingUTCOffset_WithWrongYear_Should_ThrowException ()
-		{
-			// Arrange
-			var placeId = 187;			
-			var localTime = new DateTime (2014, 3, 29, 2, 30, 0);
-			
-			// Act
-			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId (placeId));
-			var firstLocation = result.SingleOrDefault ();
-
-
-			// Assert
-			Assert.That (() => firstLocation.GetUTCOffsetFromLocalTime(localTime), 
-			            Throws.TypeOf<QueriedDateOutOfRangeException>());
-		}
-		
-		[Test]
-		public void Calling_TimeService_And_GettingUTCOffset_Should_ReturnCorrectOffset ()
-		{
-			// Arrange
-			var placeId = 187;			
-			var localWinterTime = new DateTime (DateTime.UtcNow.Year, 2, 15, 2, 30, 0);
-			var localSummerTime = new DateTime (DateTime.UtcNow.Year, 7, 15, 2, 30, 0);
-			var localFallTime = new DateTime (DateTime.UtcNow.Year, 11, 15, 2, 30, 0);
-			
-			// Act
-			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId (placeId));
-			var firstLocation = result.SingleOrDefault ();	
-			
-			var utcWinterOffset = firstLocation.GetUTCOffsetFromLocalTime (localWinterTime);
-			var utcSummerOffset = firstLocation.GetUTCOffsetFromLocalTime (localSummerTime);
-			var utcFallOffset = firstLocation.GetUTCOffsetFromLocalTime (localFallTime);
-			
-			// Assert
-			Assert.AreEqual (TimeSpan.FromHours (1), utcWinterOffset);
-			Assert.AreEqual (TimeSpan.FromHours (2), utcSummerOffset);
-			Assert.AreEqual (TimeSpan.FromHours (1), utcFallOffset);
-		}
-		
-		[Test]
-		public void Calling_TimeService_And_GettingUTCOffset_WithEdgeCases_Should_ReturnCorrectOffset ()
-		{
-			// Arrange
-			var placeId = "usa/anchorage";			
-			var beforeDstStart = new DateTimeOffset (DateTime.UtcNow.Year, 2, 15, 1, 0, 0, TimeSpan.FromHours (0));
-			var afterDstStart = new DateTimeOffset (DateTime.UtcNow.Year, 4, 15, 3, 0, 0, TimeSpan.FromHours (0));
-			var beforeDstEnd = new DateTimeOffset (DateTime.UtcNow.Year, 10, 15, 1, 0, 0, TimeSpan.FromHours (0));
-			var afterDstEnd = new DateTimeOffset (DateTime.UtcNow.Year, 12, 15, 2, 0, 0, TimeSpan.FromHours (0));
-			
-			// Act
-			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId (placeId));
-			var firstLocation = result.SingleOrDefault ();	
-			
-			var beforeDstStartOffset = firstLocation.GetUTCOffsetFromLocalTime (beforeDstStart);
-			var afterDstStartOffset = firstLocation.GetUTCOffsetFromLocalTime (afterDstStart);
-			var beforeDstEndOffset = firstLocation.GetUTCOffsetFromLocalTime (beforeDstEnd);
-			var afterDstEndOffset = firstLocation.GetUTCOffsetFromLocalTime (afterDstEnd);
-			
-			// Assert
-			Assert.AreEqual (TimeSpan.FromHours (-9), beforeDstStartOffset);
-			Assert.AreEqual (TimeSpan.FromHours (-8), afterDstStartOffset);
-			Assert.AreEqual (TimeSpan.FromHours (-8), beforeDstEndOffset);
-			Assert.AreEqual (TimeSpan.FromHours (-9), afterDstEndOffset);
-		}
 	}
 }

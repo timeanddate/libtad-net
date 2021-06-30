@@ -25,10 +25,12 @@ namespace TimeAndDate.Services.DataTypes.Places
 		public static explicit operator Country (XmlNode node)
 		{
 			var model = new Country ();
-			if (node != null) {
+            		if (node != null)
+            		{
 				model.Name = node.InnerText;
 				
-				if (node.Attributes ["id"] != null) {
+                		if (node.Attributes["id"] != null)
+                		{
 					model.Id = node.Attributes ["id"].InnerText;
 				}									
 			}
@@ -37,4 +39,3 @@ namespace TimeAndDate.Services.DataTypes.Places
 		}
 	}
 }
-
