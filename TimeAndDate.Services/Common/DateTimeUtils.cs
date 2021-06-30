@@ -9,8 +9,8 @@ namespace TimeAndDate.Services.Common
 		/// </summary>
         	internal static int ToMinuteCompare(this TADDateTime t1, TADDateTime t2)
 		{
-            		var t1ticks = t1.ToStd().Ticks;
-            		var t2ticks = t2.ToStd().Ticks;
+            		var t1ticks = ((DateTimeOffset) t1).Ticks;
+            		var t2ticks = ((DateTimeOffset) t2).Ticks;
 			
             		if (t1ticks > t2ticks)
 				return 1;

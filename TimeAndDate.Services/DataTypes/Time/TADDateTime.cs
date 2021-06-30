@@ -79,9 +79,9 @@ namespace TimeAndDate.Services.DataTypes.Time
             		Second = date.Second;
         	}
 
-        	public DateTimeOffset ToStd()
+		public static explicit operator DateTimeOffset (TADDateTime date)
         	{
-            		return new DateTimeOffset(Year, Month, Day, Hour, Minute, Second, TimeSpan.FromMinutes(0));
+            		return new DateTimeOffset(date.Year, date.Month, date.Day, date.Hour, date.Minute, date.Second, TimeSpan.FromMinutes(0));
         	}
 
         	public TADDateTime(string s)
