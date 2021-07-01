@@ -40,6 +40,8 @@ namespace TimeAndDate.Services.DataTypes.Time
         	/// </value>
         	public Int32 Second { get; set; }
 
+		private string Iso { get; set; }
+
         	public TADDateTime() { }
 
         	public TADDateTime(Int32 year, int month, int day, int hour, int minute, int second)
@@ -111,6 +113,7 @@ namespace TimeAndDate.Services.DataTypes.Time
             		Hour = time_list[0];
             		Minute = time_list[1];
             		Second = time_list[2];
+			Iso = s;
         	}
 
         	public override bool Equals(Object obj)
@@ -128,6 +131,19 @@ namespace TimeAndDate.Services.DataTypes.Time
             		Minute == t1.Minute &&
             		Second == t1.Second;
         	}
+
+		public static explicit operator string (TADDateTime date)
+		{
+			if (date.Iso != null)
+				return date.Iso;
+
+			return $"{date.Year.ToString().PadLeft(4, '0')}"
+				+ $"-{date.Month.ToString().PadLeft(2, '0')}"
+				+ $"-{date.Day.ToString().PadLeft(2, '0')}"
+				+ $"T{date.Hour.ToString().PadLeft(2, '0')}"
+				+ $":{date.Minute.ToString().PadLeft(2, '0')}"
+				+ $":{date.Second.ToString().PadLeft(2, '0')}";
+		}
 
         	public static explicit operator TADDateTime(XmlNode node)
         	{

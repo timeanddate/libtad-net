@@ -20,15 +20,15 @@ Astronomy Service
 Get astronomy information for a place on a date by textual ID:
          
          var place = new LocationId("usa/anchorage");
-         var date = new DateTime(2015, 1, 1);
+         var date = new TADDateTime(2015, 1, 1);
          var service = new AstronomyService('accessKey', 'secretKey');
          var astroInfo = service.GetAstronomicalInfo(AstronomyObjectType.Sun, place, date);
          
 Get astronomy information for a place between two dates by numeric ID:
  
          var place = new LocationId(187);
-         var startDate = new DateTime(2015, 1, 1);
-         var endDate = new DateTime(2015, 1, 30);
+         var startDate = new TADDateTime(2015, 1, 1);
+         var endDate = new TADDateTime(2015, 1, 30);
          var service = new AstronomyService('accessKey', 'secretKey');
          var astroInfo = service.GetAstronomicalInfo(AstronomyObjectType.Moon, place, startDate, endDate);
 
@@ -36,7 +36,7 @@ Retrieve specific astronomy events by coordinates:
 
         var coordinates = new Coordinates(59.743m, 10.204m);
         var place = new LocationId(coordinates);
-        var date = new DateTime(2015, 1, 1);
+        var date = new TADDateTime(2015, 1, 1);
         var service = new AstronomyService('accessKey', 'secretKey');
 
         service.Types = AstronomyEventClass.Meridian | AstronomyEventClass.NauticalTwilight;
@@ -45,13 +45,53 @@ Retrieve specific astronomy events by coordinates:
 
 Other options:
 
-        // Adds the DateTime-object ISOTime to every astronomical day
+        // Adds the TADDateTime-object ISOTime to every astronomical day
         service.IncludeISOTime = true;
 
-        // Adds the DateTime-object UTCTime to every astronomical day
+        // Adds the TADDateTime-object UTCTime to every astronomical day
         service.IncludeUTCTime = true;
 
         // Adds a search radius if GetAstronomicalInfo is used with coordinates
+        service.Radius = 50; // km
+
+Astrodata Service
+--------------------------------------
+  
+Get astronomical position for a place on a date by textual ID:
+         
+         var place = new LocationId("usa/anchorage");
+         var date = new TADDateTime(2015, 1, 1);
+         var service = new AstroDataService('accessKey', 'secretKey');
+         var astroInfo = service.GetAstroData(AstronomyObjectType.Sun, place, date);
+         
+Get astronomical position for a place for two date intervals:
+ 
+         var place = new LocationId(187);
+	 var list = new List<TADDateTime> ();
+         list.Add (new TADDateTime(2015, 1, 1));
+         list.Add (new TADDateTime(2015, 1, 30));
+         var service = new AstrodataService('accessKey', 'secretKey');
+         var astroData = service.GetAstroData(AstronomyObjectType.Moon, place, list);
+
+Get astronomical position for multiple astronomical objects:
+
+	var place = new Coordinates(57.743m, 10.204m);
+	AstronomyObjectType object = AstronomyObjectType.Sun | AstronomyObjectType.Moon;
+	var service = new AstrodataService('accessKey', 'secretKey');
+	var astroData = service.GetAstrodata(object, place, new TADDateTime(2021, 5, 3));
+
+Other options:
+	
+	// Consider the specified intervals to be local time (UTC if false)
+	service.LocalTime = true;
+
+        // Adds the TADDateTime-object ISOTime to every astronomical day
+        service.IncludeISOTime = true;
+
+        // Adds the TADDateTime-object UTCTime to every astronomical day
+        service.IncludeUTCTime = true;
+
+        // Adds a search radius if GetAstrodata is used with coordinates
         service.Radius = 50; // km
 
 
@@ -61,7 +101,7 @@ Convert Time Service
 Convert time from a location:
 
         var place = new LocationId("norway/oslo");
-        var date = DateTime.Now;
+        var date = new TADDateTime(DateTime.Now);
         var service = new ConvertTimeService('accessKey', 'secretKey');
         var convertedTime = service.ConvertTime(place, date);
 
@@ -78,7 +118,7 @@ Convert time from one location to multiple locations:
         
         var place = new LocationId("oslo/norway");
         var service = new ConvertTimeService('accessKey', 'secretKey');
-        var result = service.ConvertTime(place, DateTime.Now, listOfLocations);
+        var result = service.ConvertTime(place, new TADDateTime(DateTime.Now), listOfLocations);
 
 Other options:
 
@@ -258,16 +298,3 @@ Get a combination of events:
 
 	service.Types = EventType.Events | EventType.Births;
 	var result = service.EventsOnThisDay();
-
-
-Location data type:
---------------------------------------
-
-Get UTC offset for a local time (only applicable if service.IncludeListOfTimeChanges has been set to true):
-
-		DateTimeOffset localTime = new DateTimeOffset(2015, 6, 7, 0);
-		Location sampleLoc = result.FirstOrDefault();
-		TimeSpan offset = sampleLoc.GetUTCOffsetFromLocalTime(localTime);
-
-
-
