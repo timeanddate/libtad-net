@@ -97,6 +97,16 @@ namespace TimeAndDate.Services.Common
 
 			return x.arg as string;
 		}
+
+		internal static string ResolveAstronomyObjectType (Func<dynamic, bool> expr)
+		{
+			var x = new[] {
+				new { arg = "sun", type = AstronomyObjectType.Sun },
+				new { arg = "moon", type = AstronomyObjectType.Moon }
+			}.ToList().SingleOrDefault(expr);
+
+			return x.arg as string;
+		}
 		
 		internal static AstronomyEventCode ResolveAstronomyEventCode (string eventCode)
 		{
