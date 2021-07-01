@@ -104,17 +104,26 @@ namespace TimeAndDate.Services.DataTypes.Time
                 		strlist.Add(s);
             		}
 
-            		List<int> date_list = strlist[0].Split("-").Select(Int32.Parse).ToList<int>();
-            		List<int> time_list = strlist[1].Split(":").Select(Int32.Parse).ToList<int>();
+			try {
+				List<int> date_list = strlist[0].Split("-").Select(Int32.Parse).ToList<int>();
 
-            		Year = date_list[0];
-            		Month = date_list[1];
-            		Day = date_list[2];
-            		Hour = time_list[0];
-            		Minute = time_list[1];
-            		Second = time_list[2];
-			Iso = s;
-        	}
+
+				if (s.Contains("T"))
+				{
+					List<int> time_list = strlist[1].Split(":").Select(Int32.Parse).ToList<int>();
+					Hour = time_list[0];
+					Minute = time_list[1];
+					Second = time_list[2];
+				}
+
+				Year = date_list[0];
+				Month = date_list[1];
+				Day = date_list[2];
+				Iso = s;
+			} catch {
+				throw new InvalidIsoStringException ("Failed to parse date from the given string.");
+			}
+		}
 
         	public override bool Equals(Object obj)
         	{

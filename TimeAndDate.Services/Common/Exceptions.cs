@@ -7,5 +7,6 @@ namespace TimeAndDate.Services.Common
 	public class QueriedDateOutOfRangeException : Exception { public QueriedDateOutOfRangeException(string message) : base(message) { } }
 	public class LocalTimeDoesNotExistException : Exception { public LocalTimeDoesNotExistException(string message) : base(message) { } }
 	public class MissingTimeChangesException : Exception { public MissingTimeChangesException(string message) : base(message) { } }
+	public class InvalidIsoStringException : Exception { public InvalidIsoStringException(string message) : base(message) { } }
 }
 
