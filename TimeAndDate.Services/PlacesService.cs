@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.Net;
 using TimeAndDate.Services.Common;
@@ -42,10 +43,10 @@ namespace TimeAndDate.Services
 		/// <returns>
 		/// The places.
 		/// </returns>
-		public IList<Place> GetPlaces ()
+		public async Task<IList<Place>> GetPlaces ()
 		{
 			var args = GetArguments ();
-			return CallService (args, x => (Place)x);
+			return await CallService (args, x => (Place)x);
 		}
 		
 		private NameValueCollection GetArguments ()

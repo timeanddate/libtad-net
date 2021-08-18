@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Globalization;
@@ -23,17 +24,17 @@ namespace TimeAndDate.Services
 			XmlElemName = "period";
 		}
 
-		public BusinessDuration GetDuration(DateTime startDate, DateTime endDate, LocationId placeId)
+		public async Task<BusinessDuration> GetDuration(DateTime startDate, DateTime endDate, LocationId placeId)
 		{
 			if (endDate.CompareTo(startDate) < 0)
 				throw new ArgumentException("End Date cannot be earlier than Start Date");
 
 			var args = GetArguments(startDate, endDate);
 			args.Set("placeid", placeId.GetIdAsString());
-			return CallService<BusinessDuration>(args);
+			return await CallService<BusinessDuration>(args);
 		}
 
-		public BusinessDuration GetDuration(DateTime startDate, DateTime endDate, string country, string state = "")
+		public async Task<BusinessDuration> GetDuration(DateTime startDate, DateTime endDate, string country, string state = "")
 		{
 			if (endDate.CompareTo(startDate) < 0)
 				throw new ArgumentException("End Date cannot be earlier than Start Date");
@@ -41,7 +42,7 @@ namespace TimeAndDate.Services
 			var args = GetArguments(startDate, endDate);
 			args.Set("country", country);
 			args.Set("state", state);
-			return CallService<BusinessDuration>(args);
+			return await CallService<BusinessDuration>(args);
 		}
 
 		private NameValueCollection GetArguments(DateTime startDate, DateTime endDate)

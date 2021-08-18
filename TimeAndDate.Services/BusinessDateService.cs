@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -25,7 +26,7 @@ namespace TimeAndDate.Services
 			Filter = BusinessDaysFilterType.WeekendHolidays;
 		}
 
-		private BusinessDates CommonCallService(string op, DateTime startDate, int[] days, string country, string state = "")
+		private async Task<BusinessDates> CommonCallService(string op, DateTime startDate, int[] days, string country, string state = "")
 		{
 			if (days.Length > 1 && Repeat > 0)
 				throw new ArgumentException("Cannot set Repeat when querying for more than 1 day");
@@ -36,85 +37,85 @@ namespace TimeAndDate.Services
 			if (!String.IsNullOrEmpty(state))
 				args.Set("state", state);
 
-			return CallService<BusinessDates>(args);
+			return await CallService<BusinessDates>(args);
 		}
 
-		private BusinessDates CommonCallService(string op, DateTime startDate, int[] days, LocationId placeId)
+		private async Task<BusinessDates> CommonCallService(string op, DateTime startDate, int[] days, LocationId placeId)
 		{
 			if (days.Length > 1 && Repeat > 0)
 				throw new ArgumentException("Cannot set Repeat when querying for more than 1 day");
 
 			var args = GetArguments(op, startDate, days);
 			args.Set("placeid", placeId.GetIdAsString());
-			return CallService<BusinessDates>(args);
+			return await CallService<BusinessDates>(args);
 		}
 
 		/*
          * AddDays with overloads
          */
 
-		public BusinessDates AddDays(DateTime startDate, int[] days, string country, string state = "")
+		public async Task<BusinessDates> AddDays(DateTime startDate, int[] days, string country, string state = "")
 		{
-			return CommonCallService("add", startDate, days, country, state);
+			return await CommonCallService("add", startDate, days, country, state);
 		}
 
-		public BusinessDates AddDays(DateTime startDate, int[] days, LocationId placeId)
+		public async Task<BusinessDates> AddDays(DateTime startDate, int[] days, LocationId placeId)
 		{
-			return CommonCallService("add", startDate, days, placeId);
+			return await CommonCallService("add", startDate, days, placeId);
 		}
 
-		public BusinessDates AddDays(DateTime startDate, List<int> days, string country, string state = "")
+		public async Task<BusinessDates> AddDays(DateTime startDate, List<int> days, string country, string state = "")
 		{
-			return AddDays(startDate, days.ToArray(), country, state);
+			return await AddDays(startDate, days.ToArray(), country, state);
 		}
 
-		public BusinessDates AddDays(DateTime startDate, int days, string country, string state = "")
+		public async Task<BusinessDates> AddDays(DateTime startDate, int days, string country, string state = "")
 		{
-			return AddDays(startDate, new int[] { days }, country, state);
+			return await AddDays(startDate, new int[] { days }, country, state);
 		}
 
-		public BusinessDates AddDays(DateTime startDate, List<int> days, LocationId placeId)
+		public async Task<BusinessDates> AddDays(DateTime startDate, List<int> days, LocationId placeId)
 		{
-			return AddDays(startDate, days.ToArray(), placeId);
+			return await AddDays(startDate, days.ToArray(), placeId);
 		}
 
-		public BusinessDates AddDays(DateTime startDate, int days, LocationId placeId)
+		public async Task<BusinessDates> AddDays(DateTime startDate, int days, LocationId placeId)
 		{
-			return AddDays(startDate, new int[] { days }, placeId);
+			return await AddDays(startDate, new int[] { days }, placeId);
 		}
 
 		/*
          * SubtractDays with overloads
          */
 
-		public BusinessDates SubtractDays(DateTime startDate, int[] days, string country, string state = "")
+		public async Task<BusinessDates> SubtractDays(DateTime startDate, int[] days, string country, string state = "")
 		{
-			return CommonCallService("subtract", startDate, days, country, state);
+			return await CommonCallService("subtract", startDate, days, country, state);
 		}
 
-		public BusinessDates SubtractDays(DateTime startDate, int[] days, LocationId placeId)
+		public async Task<BusinessDates> SubtractDays(DateTime startDate, int[] days, LocationId placeId)
 		{
-			return CommonCallService("subtract", startDate, days, placeId);
+			return await CommonCallService("subtract", startDate, days, placeId);
 		}
 
-		public BusinessDates SubtractDays(DateTime startDate, List<int> days, string country, string state = "")
+		public async Task<BusinessDates> SubtractDays(DateTime startDate, List<int> days, string country, string state = "")
 		{
-			return SubtractDays(startDate, days.ToArray(), country, state);
+			return await SubtractDays(startDate, days.ToArray(), country, state);
 		}
 
-		public BusinessDates SubtractDays(DateTime startDate, int days, string country, string state = "")
+		public async Task<BusinessDates> SubtractDays(DateTime startDate, int days, string country, string state = "")
 		{
-			return SubtractDays(startDate, new int[] { days }, country, state);
+			return await SubtractDays(startDate, new int[] { days }, country, state);
 		}
 
-		public BusinessDates SubtractDays(DateTime startDate, List<int> days, LocationId placeId)
+		public async Task<BusinessDates> SubtractDays(DateTime startDate, List<int> days, LocationId placeId)
 		{
-			return SubtractDays(startDate, days.ToArray(), placeId);
+			return await SubtractDays(startDate, days.ToArray(), placeId);
 		}
 
-		public BusinessDates SubtractDays(DateTime startDate, int days, LocationId placeId)
+		public async Task<BusinessDates> SubtractDays(DateTime startDate, int days, LocationId placeId)
 		{
-			return SubtractDays(startDate, new int[] { days }, placeId);
+			return await SubtractDays(startDate, new int[] { days }, placeId);
 		}
 
 		private NameValueCollection GetArguments(string op, DateTime startDate, int[] days)

@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.Collections.Generic;
 using System.Web;
@@ -92,7 +93,7 @@ namespace TimeAndDate.Services
 		/// <param name='placeId'>
 		/// Place identifier.
 		/// </param>
-		public IList<Location> CurrentTimeForPlace (LocationId placeId)
+		public async Task<IList<Location>> CurrentTimeForPlace (LocationId placeId)
 		{
 			if (placeId == null)				
 				throw new ArgumentException ("A required argument is null or empty");
@@ -102,13 +103,13 @@ namespace TimeAndDate.Services
 				throw new ArgumentException ("A required argument is null or empty");
 
 			var args = GetArguments (id);
-			return CallService(args, x => (Location)x);
+			return await CallService(args, x => (Location)x);
 		}
 		
-		private IList<Location> RetrieveCurrentTime (string placeid)
+		private async Task<IList<Location>> RetrieveCurrentTime (string placeid)
 		{
 			var args = GetArguments (placeid);
-			return CallService(args, x => (Location)x);
+			return await CallService(args, x => (Location)x);
 		}
 
 		private NameValueCollection GetArguments (string placeId)

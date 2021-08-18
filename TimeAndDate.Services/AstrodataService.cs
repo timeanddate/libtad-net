@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.Net;
 using System.Collections.Generic;
@@ -85,13 +86,13 @@ namespace TimeAndDate.Services
 		/// <param name='interval'>
 		/// Specify the point in time you would like to calculate data for.
 		/// </param>
-		public IList<AstronomyLocation> GetAstroData (AstronomyObjectType objectType, LocationId placeId, TADDateTime interval)
+		public async Task<IList<AstronomyLocation>> GetAstroData (AstronomyObjectType objectType, LocationId placeId, TADDateTime interval)
 		{
 			var list = new List<TADDateTime> ();
 			list.Add (interval);
 
 			var args = GetArguments (objectType, placeId, list);
-			return CallService<AstronomyLocation> (args, x => (AstronomyLocation)x);
+			return await CallService<AstronomyLocation> (args, x => (AstronomyLocation)x);
 		}
 
 		/// <summary>
@@ -110,10 +111,10 @@ namespace TimeAndDate.Services
 		/// <param name='interval'>
 		/// Specify the points in time you would like to calculate data for.
 		/// </param>
-		public IList<AstronomyLocation> GetAstroData (AstronomyObjectType objectType, LocationId placeId, List<TADDateTime> interval)
+		public async Task<IList<AstronomyLocation>> GetAstroData (AstronomyObjectType objectType, LocationId placeId, List<TADDateTime> interval)
 		{
 			var args = GetArguments (objectType, placeId, interval);
-			return CallService<AstronomyLocation> (args, x => (AstronomyLocation)x);
+			return await CallService<AstronomyLocation> (args, x => (AstronomyLocation)x);
 		}
 
 		private NameValueCollection GetArguments (AstronomyObjectType objectType, LocationId locationId, List<TADDateTime> interval)

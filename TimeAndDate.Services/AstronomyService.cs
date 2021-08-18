@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.Collections.Generic;
 using TimeAndDate.Services.Common;
@@ -90,7 +91,7 @@ namespace TimeAndDate.Services
 		/// <param name='startDate'>
 		/// Start date.
 		/// </param>
-		public IList<AstronomyLocation> GetAstronomicalInfo (AstronomyObjectType objectType, LocationId placeId, DateTime startDate)
+		public async Task<IList<AstronomyLocation>> GetAstronomicalInfo (AstronomyObjectType objectType, LocationId placeId, DateTime startDate)
 		{
 			if (placeId == null || startDate.Year == 0)
 				throw new ArgumentException ("A required argument is null or empty");
@@ -104,7 +105,7 @@ namespace TimeAndDate.Services
 			args.Set ("object", objectType.ToString ().ToLower ());
 			args.Set ("startdt", startDate.ToString ("yyyy-MM-dd"));
 			
-			return CallService (args, x => (AstronomyLocation)x);
+			return await CallService (args, x => (AstronomyLocation)x);
 		}								
 		
 		/// <summary>
@@ -125,7 +126,7 @@ namespace TimeAndDate.Services
 		/// <param name='endDate'>
 		/// End date.
 		/// </param>
-		public IList<AstronomyLocation> GetAstronomicalInfo (AstronomyObjectType objectType, LocationId placeId, DateTime startDate, DateTime endDate)
+		public async Task<IList<AstronomyLocation>> GetAstronomicalInfo (AstronomyObjectType objectType, LocationId placeId, DateTime startDate, DateTime endDate)
 		{
 			if (placeId == null || startDate.Year == 0 || endDate.Year == 0)
 				throw new ArgumentException ("A required argument is null or empty");
@@ -143,7 +144,7 @@ namespace TimeAndDate.Services
 			args.Set ("startdt", startDate.ToString ("yyyy-MM-dd"));
 			args.Set ("enddt", endDate.ToString ("yyyy-MM-dd"));
 			
-			return CallService (args, x => (AstronomyLocation)x);
+			return await CallService (args, x => (AstronomyLocation)x);
 		}
 		
 		private NameValueCollection GetOptionalArguments ()

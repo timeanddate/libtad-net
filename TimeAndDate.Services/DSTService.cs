@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using TimeAndDate.Services.Common;
 using System.Net;
@@ -67,10 +68,10 @@ namespace TimeAndDate.Services
 		/// <returns>
 		/// The daylight saving time.
 		/// </returns>
-		public IList<DST> GetDaylightSavingTime ()
+		public async Task<IList<DST>> GetDaylightSavingTime ()
 		{			
 			var args = GetArguments ();
-			return CallService (args, x => (DST)x);
+			return await CallService (args, x => (DST)x);
 		}
 		
 		/// <summary>
@@ -82,7 +83,7 @@ namespace TimeAndDate.Services
 		/// <param name='countryCode'>
 		/// Country code.
 		/// </param>
-		public IList<DST> GetDaylightSavingTime (string countryCode)
+		public async Task<IList<DST>> GetDaylightSavingTime (string countryCode)
 		{
 			if (string.IsNullOrEmpty (countryCode))
 				throw new ArgumentException ("A required argument is null or empty");
@@ -91,7 +92,7 @@ namespace TimeAndDate.Services
 			var args = GetArguments ();
 			args.Set ("country", countryCode);
 			
-			return CallService (args, x => (DST)x);
+			return await CallService (args, x => (DST)x);
 		}
 		
 		/// <summary>
@@ -103,7 +104,7 @@ namespace TimeAndDate.Services
 		/// <param name='year'>
 		/// Year.
 		/// </param>
-		public IList<DST> GetDaylightSavingTime (int year)
+		public async Task<IList<DST>> GetDaylightSavingTime (int year)
 		{
 			if (year <= 0)
 				throw new ArgumentException ("A required argument is null or empty");
@@ -111,7 +112,7 @@ namespace TimeAndDate.Services
 			var args = GetArguments ();
 			args.Set ("year", year.ToString ());
 			
-			return CallService (args, x => (DST)x);
+			return await CallService (args, x => (DST)x);
 		}
 		
 		/// <summary>
@@ -126,7 +127,7 @@ namespace TimeAndDate.Services
 		/// <param name='year'>
 		/// Year.
 		/// </param>
-		public IList<DST> GetDaylightSavingTime (string countryCode, int year)
+		public async Task<IList<DST>> GetDaylightSavingTime (string countryCode, int year)
 		{
 			if (string.IsNullOrEmpty (countryCode) && year <= 0)
 				throw new ArgumentException ("A required argument is null or empty");
@@ -136,7 +137,7 @@ namespace TimeAndDate.Services
 			args.Set ("country", countryCode);
 			args.Set ("year", year.ToString ());
 			
-			return CallService (args, x => (DST)x);
+			return await CallService (args, x => (DST)x);
 		}
 		
 		private NameValueCollection GetArguments ()

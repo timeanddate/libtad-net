@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.Collections.Generic;
 using TimeAndDate.Services.Common;
@@ -70,7 +71,7 @@ namespace TimeAndDate.Services
 		/// <param name='toIds'>
 		/// The place IDs to convert to.
 		/// </param>
-		public ConvertedTimes ConvertTime (LocationId fromId, string iso, IList<LocationId> toIds = null)
+		public async Task<ConvertedTimes> ConvertTime (LocationId fromId, string iso, IList<LocationId> toIds = null)
 		{			
 			if (fromId == null || string.IsNullOrEmpty (iso))
 				throw new ArgumentException ("A required argument is null or empty");
@@ -85,7 +86,7 @@ namespace TimeAndDate.Services
 			if (toIds != null)
 				arguments.Add (GetArgumentsForToIds (toIds));			
 
-			return CallService<ConvertedTimes>(arguments);
+			return await CallService<ConvertedTimes>(arguments);
 		}		
 		
 		/// <summary>
@@ -103,9 +104,9 @@ namespace TimeAndDate.Services
 		/// <param name='ToIds'>
 		/// The place IDs to convert to.
 		/// </param>
-		public ConvertedTimes ConvertTime (LocationId fromId, DateTime date, IList<LocationId> toIds = null)
+		public async Task<ConvertedTimes> ConvertTime (LocationId fromId, DateTime date, IList<LocationId> toIds = null)
 		{	
-			return ConvertTime (fromId, date.ToString ("s", CultureInfo.InvariantCulture), toIds);
+			return await ConvertTime (fromId, date.ToString ("s", CultureInfo.InvariantCulture), toIds);
 		}					
 			
 		private NameValueCollection GetArgumentsForToIds (IList<LocationId> toIds)

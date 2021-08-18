@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
 using NUnit.Framework;
@@ -17,14 +18,14 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		#region Location
 		
 		[Test]
-		public void Calling_TimeService_WithNumericId_Should_ReturnCorrectLocation ()
+		public async Task Calling_TimeService_WithNumericId_Should_ReturnCorrectLocation ()
 		{
 			// Arrange
 			var placeId = 179;
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(placeId));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(placeId));
 			var firstLocation = result.SingleOrDefault ();
 			
 			// Assert
@@ -32,7 +33,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test]
-		public void Calling_TimeService_WithTextualId_Should_ReturnCorrectLocation ()
+		public async Task Calling_TimeService_WithTextualId_Should_ReturnCorrectLocation ()
 		{
 			// Arrange
 			var placeName = "norway/oslo";
@@ -40,7 +41,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(placeName));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(placeName));
 			var firstLocation = result.SingleOrDefault ();
 			
 			// Assert
@@ -48,7 +49,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test]
-		public void Calling_TimeService_WithCoordinates_Should_ReturnCorrectLocation ()
+		public async Task Calling_TimeService_WithCoordinates_Should_ReturnCorrectLocation ()
 		{
 			// Arrange
 			var osloCoords = new Coordinates (59.914m, 10.752m);
@@ -57,7 +58,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(osloCoords));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(osloCoords));
 			var firstLocation = result.SingleOrDefault ();
 			
 			// Assert
@@ -70,7 +71,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		#region Geo
 		
 		[Test]
-		public void Calling_TimeService_WithCoordinates_Should_ReturnCorrectGeo ()
+		public async Task Calling_TimeService_WithCoordinates_Should_ReturnCorrectGeo ()
 		{
 			// Arrange
 			var osloCoords = new Coordinates (59.914m, 10.752m);
@@ -79,7 +80,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId (osloCoords));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId (osloCoords));
 			var firstLocation = result.SingleOrDefault ();
 			
 			// Assert
@@ -92,7 +93,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test]
-		public void Calling_TimeService_WithTextualId_Should_ReturnCorrectGeo ()
+		public async Task Calling_TimeService_WithTextualId_Should_ReturnCorrectGeo ()
 		{
 			// Arrange
 			var expectedCountry = "Norway";
@@ -103,7 +104,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(placeName));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(placeName));
 			var firstLocation = result.SingleOrDefault ();
 			
 			// Assert
@@ -114,7 +115,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test]
-		public void Calling_TimeService_WithNumericId_Should_ReturnCorrectGeo ()
+		public async Task Calling_TimeService_WithNumericId_Should_ReturnCorrectGeo ()
 		{
 			// Arrange
 			var expectedCountry = "Norway";
@@ -124,7 +125,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(placeId));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(placeId));
 			var firstLocation = result.SingleOrDefault ();
 			
 			// Assert
@@ -139,7 +140,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		#region Time
 		
 		[Test]
-		public void Calling_TimeService_WithNumericId_Should_ReturnCorrectTime ()
+		public async Task Calling_TimeService_WithNumericId_Should_ReturnCorrectTime ()
 		{
 			// Arrange
 			var placeId = 187;
@@ -147,7 +148,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(placeId));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(placeId));
 			var firstLocation = result.SingleOrDefault ();			
 			
 			// Assert
@@ -155,7 +156,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test]
-		public void Calling_TimeService_WithTextualId_Should_ReturnCorrectTime ()
+		public async Task Calling_TimeService_WithTextualId_Should_ReturnCorrectTime ()
 		{
 			// Arrange
 			var placeName = "norway/oslo";
@@ -163,7 +164,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(placeName));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(placeName));
 			var firstLocation = result.SingleOrDefault ();			
 			
 			// Assert
@@ -172,7 +173,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		
 				
 		[Test]
-		public void Calling_TimeService_WithCoordinates_Should_ReturnCorrectTime ()
+		public async Task Calling_TimeService_WithCoordinates_Should_ReturnCorrectTime ()
 		{
 			// Arrange
 			var osloCoords = new Coordinates (59.914m, 10.752m);
@@ -183,7 +184,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
 			timeservice.IncludeCoordinates = true;
-			var result = timeservice.CurrentTimeForPlace (new LocationId (osloCoords));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId (osloCoords));
 			var firstLocation = result.SingleOrDefault ();		
 			
 			// Assert
@@ -196,7 +197,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		#region Timezone
 				
 		[Test]
-		public void Calling_TimeService_WithNumericId_Should_ReturnCorrectTimezone ()
+		public async Task Calling_TimeService_WithNumericId_Should_ReturnCorrectTimezone ()
 		{
 			// Arrange
 			var placeId = 187;
@@ -216,7 +217,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(placeId));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(placeId));
 			var firstLocation = result.SingleOrDefault ();			
 			var abbr = firstLocation.Time.Timezone.Abbrevation;
 
@@ -231,7 +232,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test]
-		public void Calling_TimeService_WithTextualId_Should_ReturnCorrectTimezone ()
+		public async Task Calling_TimeService_WithTextualId_Should_ReturnCorrectTimezone ()
 		{
 			// Arrange
 			var placeName = "norway/oslo";
@@ -251,7 +252,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(placeName));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(placeName));
 			var firstLocation = result.SingleOrDefault ();
 
 			// Assert
@@ -266,7 +267,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		
 				
 		[Test]
-		public void Calling_TimeService_WithCoordinates_Should_ReturnCorrectTimezone ()
+		public async Task Calling_TimeService_WithCoordinates_Should_ReturnCorrectTimezone ()
 		{
 			// Arrange
 			var osloCoords = new Coordinates (59.914m, 10.752m);			
@@ -287,7 +288,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(osloCoords));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(osloCoords));
 			var firstLocation = result.SingleOrDefault ();
 
 			// Assert
@@ -305,7 +306,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		#region TimeChanges
 		
 		[Test]
-		public void Calling_TimeService_WithNumericId_Should_ReturnCorrectTimeChanges ()
+		public async Task Calling_TimeService_WithNumericId_Should_ReturnCorrectTimeChanges ()
 		{
 			// Arrange
 			var placeId = 187;			
@@ -315,7 +316,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(placeId));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(placeId));
 			var firstLocation = result.SingleOrDefault ();		
 			var firstChange = firstLocation.TimeChanges.FirstOrDefault ();
 			var secondChange = firstLocation.TimeChanges.Skip (1).FirstOrDefault ();
@@ -328,7 +329,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test]
-		public void Calling_TimeService_WithTextualId_Should_ReturnCorrectTimeChanges ()
+		public async Task Calling_TimeService_WithTextualId_Should_ReturnCorrectTimeChanges ()
 		{
 			// Arrange
 			var placeName = "norway/oslo";
@@ -338,7 +339,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(placeName));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(placeName));
 			var firstLocation = result.SingleOrDefault ();		
 			var firstChange = firstLocation.TimeChanges.FirstOrDefault ();
 			var secondChange = firstLocation.TimeChanges.Skip (1).FirstOrDefault ();
@@ -352,7 +353,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		
 				
 		[Test]
-		public void Calling_TimeService_WithCoordinates_Should_ReturnCorrectTimeChanges ()
+		public async Task Calling_TimeService_WithCoordinates_Should_ReturnCorrectTimeChanges ()
 		{
 			// Arrange
 			var osloCoords = new Coordinates (59.914m, 10.752m);	
@@ -362,7 +363,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(osloCoords));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(osloCoords));
 			var firstLocation = result.SingleOrDefault ();		
 			var firstChange = firstLocation.TimeChanges.FirstOrDefault ();
 			var secondChange = firstLocation.TimeChanges.Skip (1).FirstOrDefault ();
@@ -381,7 +382,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		[Test]
 		// This test checks on sunset, but the check criteria can have changed from day to day
 		// TODO to find a way around this
-		public void Calling_TimeService_WithNumericId_Should_ReturnCorrectAstronomy ()
+		public async Task Calling_TimeService_WithNumericId_Should_ReturnCorrectAstronomy ()
 		{
 			// Arrange
 			var placeId = 187;
@@ -391,7 +392,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(placeId));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(placeId));
 			var firstLocation = result.SingleOrDefault ();		
 			var firstObject = firstLocation.Astronomy.SingleOrDefault ();
 			var rise = firstObject.Events.FirstOrDefault ();
@@ -411,7 +412,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		[Test]
 		// This test checks on sunset, but the check criteria can have changed from day to day
 		// TODO to find a way around this
-		public void Calling_TimeService_WithTextualId_Should_ReturnCorrectAstronomy ()
+		public async Task Calling_TimeService_WithTextualId_Should_ReturnCorrectAstronomy ()
 		{
 			// Arrange
 			var placeName = "norway/oslo";
@@ -421,7 +422,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(placeName));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(placeName));
 			var firstLocation = result.SingleOrDefault ();		
 			var firstObject = firstLocation.Astronomy.FirstOrDefault ();
 			var rise = firstObject.Events.FirstOrDefault ();
@@ -441,7 +442,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		[Test] 
 		// This test checks on sunset, but the check criteria can have changed from day to day
 		// TODO to find a way around this
-		public void Calling_TimeService_WithCoordinates_Should_ReturnCorrectAstronomy ()
+		public async Task Calling_TimeService_WithCoordinates_Should_ReturnCorrectAstronomy ()
 		{
 			// Arrange
 			var osloCoords = new Coordinates (59.914m, 10.752m);	
@@ -451,7 +452,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var timeservice = new TimeService (Config.AccessKey, Config.SecretKey);
-			var result = timeservice.CurrentTimeForPlace (new LocationId(osloCoords));
+			var result = await timeservice.CurrentTimeForPlace (new LocationId(osloCoords));
 			var firstLocation = result.SingleOrDefault ();		
 			var firstObject = firstLocation.Astronomy.SingleOrDefault ();
 			var rise = firstObject.Events.FirstOrDefault ();

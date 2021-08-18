@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.Net;
 using System.Collections.Generic;
@@ -48,13 +49,13 @@ namespace TimeAndDate.Services
 		/// <param name='year'>
 		/// The year for which the holidays should be retrieved.
 		/// </param>
-		public IList<Holiday> HolidaysForCountry (string countryCode, int year)
+		public async Task<IList<Holiday>> HolidaysForCountry (string countryCode, int year)
 		{
 			if (string.IsNullOrEmpty (countryCode) && year <= 0)
 				throw new ArgumentException ("A required argument is null or empty");
 
 			var args = GetArguments (countryCode, year);
-			return CallService(args, x => (Holiday)x);
+			return await CallService(args, x => (Holiday)x);
 		}
 		
 		/// <summary>
@@ -67,13 +68,13 @@ namespace TimeAndDate.Services
 		/// <param name='country'>
 		/// Country.
 		/// </param>
-		public IList<Holiday> HolidaysForCountry (string country)
+		public async Task<IList<Holiday>> HolidaysForCountry (string country)
 		{
 			if (string.IsNullOrEmpty (country))
 				throw new ArgumentException ("A required argument is null or empty");
 
 			var args = GetArguments (country, DateTime.Now.Year);
-			return CallService(args, x => (Holiday)x);
+			return await CallService(args, x => (Holiday)x);
 		}				
 		
 		private NameValueCollection GetArguments (string country, int year)

@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Linq;
 using NUnit.Framework;
 using TimeAndDate.Services.Tests;
@@ -12,7 +13,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 	public class AstronomyServiceTests
 	{
 		[Test()]
-		public void Calling_AstronomyService_WithoutEnddate_ReturnsCorrectAstronomyInfo ()
+		public async Task Calling_AstronomyService_WithoutEnddate_ReturnsCorrectAstronomyInfo ()
 		{
 			// Arrange
 			var startDate = new DateTime (2014, 1, 1);
@@ -21,7 +22,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
-			var result = service.GetAstronomicalInfo (type, place, startDate);
+			var result = await service.GetAstronomicalInfo (type, place, startDate);
 			var anchorage = result.SingleOrDefault ();
 			
 			// Assert
@@ -36,7 +37,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_AstronomyService_WithEnddate_Should_ReturnCorrectAstronomyInfo ()
+		public async Task Calling_AstronomyService_WithEnddate_Should_ReturnCorrectAstronomyInfo ()
 		{
 			// Arrange
 			var startDate = new DateTime (2014, 1, 1);
@@ -46,7 +47,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
-			var result = service.GetAstronomicalInfo (type, place, startDate);
+			var result = await service.GetAstronomicalInfo (type, place, startDate);
 			
 			// Assert
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
@@ -55,7 +56,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_AstronomyService_WithoutEnddate_And_OnlyOneInclusions_Should_ReturnCorrectAstronomyInfo ()
+		public async Task Calling_AstronomyService_WithoutEnddate_And_OnlyOneInclusions_Should_ReturnCorrectAstronomyInfo ()
 		{
 			// Arrange
 			var startDate = new DateTime (2014, 1, 1);
@@ -65,7 +66,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.Types = AstronomyEventClass.Meridian;
-			var result = service.GetAstronomicalInfo (type, place, startDate);
+			var result = await service.GetAstronomicalInfo (type, place, startDate);
 			
 			// Assert
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
@@ -79,7 +80,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_AstronomyService_WithEnddate_And_SeveralInclusions_Should_ReturnsCorrectAstronomyInfo ()
+		public async Task Calling_AstronomyService_WithEnddate_And_SeveralInclusions_Should_ReturnsCorrectAstronomyInfo ()
 		{
 			// Arrange
 			var startDate = new DateTime (2014, 1, 1);
@@ -90,7 +91,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.Types = AstronomyEventClass.AstronomicalTwilight | AstronomyEventClass.NauticalTwilight;
-			var result = service.GetAstronomicalInfo (type, place, startDate, endDate);
+			var result = await service.GetAstronomicalInfo (type, place, startDate, endDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList().Count > 1)));
@@ -102,7 +103,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_AstronomyService_WithoutLatLong_Should_ReturnsCorrectAstronomyInfo ()
+		public async Task Calling_AstronomyService_WithoutLatLong_Should_ReturnsCorrectAstronomyInfo ()
 		{
 			// Arrange
 			var startDate = new DateTime (2014, 1, 1);
@@ -113,7 +114,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.IncludeCoordinates = false;
-			var result = service.GetAstronomicalInfo (type, place, startDate, endDate);
+			var result = await service.GetAstronomicalInfo (type, place, startDate, endDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList ().Count > 1)));
@@ -122,7 +123,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_AstronomyService_WithLatLong_Should_ReturnCorrectAstronomyInfo ()
+		public async Task Calling_AstronomyService_WithLatLong_Should_ReturnCorrectAstronomyInfo ()
 		{
 			// Arrange
 			var startDate = new DateTime (2014, 1, 1);
@@ -132,7 +133,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.IncludeCoordinates = true;
-			var result = service.GetAstronomicalInfo (type, place, startDate);
+			var result = await service.GetAstronomicalInfo (type, place, startDate);
 			
 			// Assert
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
@@ -143,7 +144,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 				
 		
 		[Test()]
-		public void Calling_AstronomyService_WithoutISOTime_Should_ReturnsCorrectAstronomyInfo ()
+		public async Task Calling_AstronomyService_WithoutISOTime_Should_ReturnsCorrectAstronomyInfo ()
 		{
 			// Arrange
 			var startDate = new DateTime (2014, 1, 1);
@@ -154,7 +155,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.IncludeISOTime = false;
-			var result = service.GetAstronomicalInfo (type, place, startDate, endDate);
+			var result = await service.GetAstronomicalInfo (type, place, startDate, endDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList ().Count > 1)));
@@ -165,7 +166,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_AstronomyService_WithISOTime_Should_ReturnsCorrectAstronomyInfo ()
+		public async Task Calling_AstronomyService_WithISOTime_Should_ReturnsCorrectAstronomyInfo ()
 		{
 			// Arrange
 			var startDate = new DateTime (2014, 1, 1);
@@ -176,7 +177,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.IncludeISOTime = true;
-			var result = service.GetAstronomicalInfo (type, place, startDate, endDate);
+			var result = await service.GetAstronomicalInfo (type, place, startDate, endDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList ().Count > 1)));
@@ -186,7 +187,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_AstronomyService_WithoutUTCTime_Should_ReturnsCorrectAstronomyInfo ()
+		public async Task Calling_AstronomyService_WithoutUTCTime_Should_ReturnsCorrectAstronomyInfo ()
 		{
 			// Arrange
 			var startDate = new DateTime (2014, 3, 2);
@@ -197,7 +198,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.IncludeUTCTime = false;
-			var result = service.GetAstronomicalInfo (type, place, startDate, endDate);
+			var result = await service.GetAstronomicalInfo (type, place, startDate, endDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList ().Count > 1)));
@@ -208,7 +209,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_AstronomyService_WithUTCTime_Should_ReturnsCorrectAstronomyInfo ()
+		public async Task Calling_AstronomyService_WithUTCTime_Should_ReturnsCorrectAstronomyInfo ()
 		{
 			// Arrange
 			var startDate = new DateTime (2014, 2, 3);
@@ -218,7 +219,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.IncludeUTCTime = true;
-			var result = service.GetAstronomicalInfo (type, place, startDate);
+			var result = await service.GetAstronomicalInfo (type, place, startDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));		
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList ().Count >= 1)));
@@ -229,7 +230,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_AstronomyService_WithRadiusTime_Should_ReturnsCorrectAstronomyInfo ()
+		public async Task Calling_AstronomyService_WithRadiusTime_Should_ReturnsCorrectAstronomyInfo ()
 		{
 			// Arrange
 			var startDate = new DateTime (2014, 1, 1);
@@ -239,7 +240,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.Radius = 50;
-			var result = service.GetAstronomicalInfo (type, drammenCoords, startDate);
+			var result = await service.GetAstronomicalInfo (type, drammenCoords, startDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));		
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList ().Count >= 1)));

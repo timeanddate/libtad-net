@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using TimeAndDate.Services.Common;
 using System.Net;
@@ -72,7 +73,7 @@ namespace TimeAndDate.Services
 		/// <param name='toLocation'>
 		/// To location.
 		/// </param>
-		public DialCodes GetDialCode (LocationId toLocation)
+		public async Task<DialCodes> GetDialCode (LocationId toLocation)
 		{
 			if (toLocation == null)
 				throw new ArgumentException ("A required argument is null or empty");
@@ -84,7 +85,7 @@ namespace TimeAndDate.Services
 			var opts = GetOptionalArguments ();
 			opts.Set ("toid", id);
 			
-			return RetrieveDialCode (opts);
+			return await RetrieveDialCode (opts);
 		}
 		
 		/// <summary>
@@ -99,7 +100,7 @@ namespace TimeAndDate.Services
 		/// <param name='fromLocation'>
 		/// From location.
 		/// </param>
-		public DialCodes GetDialCode (LocationId toLocation, LocationId fromLocation)
+		public async Task<DialCodes> GetDialCode (LocationId toLocation, LocationId fromLocation)
 		{
 			if (toLocation == null || fromLocation == null)
 				throw new ArgumentException ("A required argument is null or empty");
@@ -113,7 +114,7 @@ namespace TimeAndDate.Services
 			opts.Set ("toid", toId);
 			opts.Set ("fromid", fromId);
 			
-			return RetrieveDialCode (opts);
+			return await RetrieveDialCode (opts);
 		}
 		
 		/// <summary>
@@ -131,15 +132,15 @@ namespace TimeAndDate.Services
 		/// <param name='number'>
 		/// Number.
 		/// </param>
-		public DialCodes GetDialCode (LocationId toLocation, LocationId fromLocation, int number)
+		public async Task<DialCodes> GetDialCode (LocationId toLocation, LocationId fromLocation, int number)
 		{
 			_number = number;
-			return GetDialCode (toLocation, fromLocation);
+			return await GetDialCode (toLocation, fromLocation);
 		}
 		
-		private DialCodes RetrieveDialCode(NameValueCollection args)
+		private async Task<DialCodes> RetrieveDialCode(NameValueCollection args)
 		{
-			var result = CallService<DialCodes>(args);
+			var result = await CallService<DialCodes>(args);
 			return (DialCodes)result;
 		}
 		

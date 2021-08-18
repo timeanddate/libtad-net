@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
@@ -39,13 +40,13 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_ConvertTimeService_WithNoId_And_WithDateTime_Should_ReturnCorrectConvertedTime ()
+		public async Task Calling_ConvertTimeService_WithNoId_And_WithDateTime_Should_ReturnCorrectConvertedTime ()
 		{
 			// Arrange
 			
 			// Act
 			var service = new ConvertTimeService (Config.AccessKey, Config.SecretKey);
-			var result = service.ConvertTime (fromId, DateTime.Now);
+			var result = await service.ConvertTime (fromId, DateTime.Now);
 			var oslo = result.Locations.FirstOrDefault (x => x.Id == "187");
 			
 			// Assert			
@@ -56,7 +57,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_ConvertTimeService_WithOneToId_And_WithDateTime_Should_ReturnCorrectConvertedTime ()
+		public async Task Calling_ConvertTimeService_WithOneToId_And_WithDateTime_Should_ReturnCorrectConvertedTime ()
 		{
 			// Arrange
 			var toId = new List<LocationId> ();
@@ -64,7 +65,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new ConvertTimeService (Config.AccessKey, Config.SecretKey);
-			var result = service.ConvertTime (fromId, DateTime.Now, toId);
+			var result = await service.ConvertTime (fromId, DateTime.Now, toId);
 			var anchorage = result.Locations.FirstOrDefault (x => x.Id == "18");
 			var oslo = result.Locations.FirstOrDefault (x => x.Id == "187");
 			
@@ -79,7 +80,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_ConvertTimeService_WithMultipleToIds_And_WithDateTime_Should_ReturnCorrectConvertedTime ()
+		public async Task Calling_ConvertTimeService_WithMultipleToIds_And_WithDateTime_Should_ReturnCorrectConvertedTime ()
 		{
 			// Arrange
 			var toId = new List<LocationId> ();
@@ -88,7 +89,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new ConvertTimeService (Config.AccessKey, Config.SecretKey);
-			var result = service.ConvertTime (fromId, DateTime.Now, toId);
+			var result = await service.ConvertTime (fromId, DateTime.Now, toId);
 			var anchorage = result.Locations.FirstOrDefault (x => x.Id == "18");
 			var oslo = result.Locations.FirstOrDefault (x => x.Id == "187");
 			var troll = result.Locations.FirstOrDefault (x => x.Id == "4365");
@@ -107,7 +108,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_ConvertTimeService_WithMultipleToIds_And_WithISO_Should_ReturnCorrectConvertedTime ()
+		public async Task Calling_ConvertTimeService_WithMultipleToIds_And_WithISO_Should_ReturnCorrectConvertedTime ()
 		{
 			// Arrange			
 			var toId = new List<LocationId> ();
@@ -116,7 +117,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new ConvertTimeService (Config.AccessKey, Config.SecretKey);
-			var result = service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
+			var result = await service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
 			var anchorage = result.Locations.FirstOrDefault (x => x.Id == "18");
 			var oslo = result.Locations.FirstOrDefault (x => x.Id == "187");
 			var troll = result.Locations.FirstOrDefault (x => x.Id == "4365");
@@ -135,13 +136,13 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_ConvertTimeService_WithNoId_And_WithISO_Should_ReturnCorrectConvertedTime ()
+		public async Task Calling_ConvertTimeService_WithNoId_And_WithISO_Should_ReturnCorrectConvertedTime ()
 		{
 			// Arrange
 			
 			// Act
 			var service = new ConvertTimeService (Config.AccessKey, Config.SecretKey);
-			var result = service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture));
+			var result = await service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture));
 			var oslo = result.Locations.FirstOrDefault (x => x.Id == "187");
 			
 			// Assert						
@@ -152,7 +153,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_ConvertTimeService_WithOneToId_And_WithISO_Should_ReturnCorrectConvertedTime ()
+		public async Task Calling_ConvertTimeService_WithOneToId_And_WithISO_Should_ReturnCorrectConvertedTime ()
 		{
 			// Arrange
 			var toId = new List<LocationId> ();
@@ -160,7 +161,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new ConvertTimeService (Config.AccessKey, Config.SecretKey);
-			var result = service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
+			var result = await service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
 			var anchorage = result.Locations.FirstOrDefault (x => x.Id == "18");
 			var oslo = result.Locations.FirstOrDefault (x => x.Id == "187");
 			
@@ -175,7 +176,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}		
 		
 		[Test()]
-		public void Calling_ConvertTimeService_WithoutTimeChanges_Should_NotReturnTimeChanges ()
+		public async Task Calling_ConvertTimeService_WithoutTimeChanges_Should_NotReturnTimeChanges ()
 		{
 			// Arrange
 			var toId = new List<LocationId> ();
@@ -184,7 +185,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new ConvertTimeService (Config.AccessKey, Config.SecretKey);
 			service.IncludeTimeChanges = false;
-			var result = service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
+			var result = await service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
 			var anchorage = result.Locations.FirstOrDefault (x => x.Id == "18");
 			var oslo = result.Locations.FirstOrDefault (x => x.Id == "187");
 			
@@ -199,7 +200,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}		
 		
 		[Test()]
-		public void Calling_ConvertTimeService_WithTimeChanges_Should_ReturnTimeChanges ()
+		public async Task Calling_ConvertTimeService_WithTimeChanges_Should_ReturnTimeChanges ()
 		{
 			// Arrange
 			var toId = new List<LocationId> ();
@@ -208,7 +209,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new ConvertTimeService (Config.AccessKey, Config.SecretKey);
 			service.IncludeTimeChanges = true; // Default
-			var result = service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
+			var result = await service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
 			var anchorage = result.Locations.FirstOrDefault (x => x.Id == "18");
 			var oslo = result.Locations.FirstOrDefault (x => x.Id == "187");
 			
@@ -223,7 +224,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}		
 		
 		[Test()]
-		public void Calling_ConvertTimeService_WithoutTimezone_Should_NotReturnTZInformation ()
+		public async Task Calling_ConvertTimeService_WithoutTimezone_Should_NotReturnTZInformation ()
 		{
 			// Arrange
 			var toId = new List<LocationId> ();
@@ -232,7 +233,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new ConvertTimeService (Config.AccessKey, Config.SecretKey);
 			service.IncludeTimezoneInformation = false;
-			var result = service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
+			var result = await service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
 			var anchorage = result.Locations.FirstOrDefault (x => x.Id == "18");
 			var oslo = result.Locations.FirstOrDefault (x => x.Id == "187");
 			
@@ -247,7 +248,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}	
 		
 		[Test()]
-		public void Calling_ConvertTimeService_WithTimezone_Should_ReturnTZInformation ()
+		public async Task Calling_ConvertTimeService_WithTimezone_Should_ReturnTZInformation ()
 		{
 			// Arrange
 			var toId = new List<LocationId> ();
@@ -256,7 +257,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new ConvertTimeService (Config.AccessKey, Config.SecretKey);
 			service.IncludeTimezoneInformation = true; // Default
-			var result = service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
+			var result = await service.ConvertTime (fromId, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
 			var anchorage = result.Locations.FirstOrDefault (x => x.Id == "18");
 			var oslo = result.Locations.FirstOrDefault (x => x.Id == "187");
 			
@@ -271,7 +272,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}	
 		
 		[Test()]
-		public void Calling_ConvertTimeService_WithRadius_Should_ReturnCorrectLocation ()
+		public async Task Calling_ConvertTimeService_WithRadius_Should_ReturnCorrectLocation ()
 		{
 			// Arrange
 			var toId = new List<LocationId> ();
@@ -281,7 +282,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new ConvertTimeService (Config.AccessKey, Config.SecretKey);
 			service.Radius = 50;
-			var result = service.ConvertTime (fromCoords, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
+			var result = await service.ConvertTime (fromCoords, DateTime.Now.ToString ("s", CultureInfo.InvariantCulture), toId);
 			var anchorage = result.Locations.FirstOrDefault (x => x.Id == "18");
 			var oslo = result.Locations.FirstOrDefault (x => x.Id == "187");
 			

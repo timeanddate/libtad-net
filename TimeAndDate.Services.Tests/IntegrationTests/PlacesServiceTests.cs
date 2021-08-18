@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using System.Linq;
 using TimeAndDate.Services.Tests;
@@ -11,13 +12,13 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 	public class PlacesServiceTests
 	{
 		[Test()]
-		public void Calling_PlacesServices_Should_ReturnListOfPlaces ()
+		public async Task Calling_PlacesServices_Should_ReturnListOfPlaces ()
 		{
 			// Arrange			
 							
 			// Act			
 			var service = new PlacesService (Config.AccessKey, Config.SecretKey);
-			var places = service.GetPlaces ();
+			var places = await service.GetPlaces ();
 			
 			// Assert
 			Assert.Greater(places.Count, 0);
@@ -26,14 +27,14 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_PlacesServices_WithoutGeo_Should_ReturnListOfPlacesWithoutGeo ()
+		public async Task Calling_PlacesServices_WithoutGeo_Should_ReturnListOfPlacesWithoutGeo ()
 		{
 			// Arrange
 				
 			// Act
 			var service = new PlacesService (Config.AccessKey, Config.SecretKey);
 			service.IncludeCoordinates = false;
-			var places = service.GetPlaces ();
+			var places = await service.GetPlaces ();
 						
 			// Assert
 			Assert.Greater(places.Count, 0);

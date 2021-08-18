@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Xml;
 using TimeAndDate.Services.Common;
 using System.Collections.Specialized;
@@ -47,7 +48,7 @@ namespace TimeAndDate.Services
 
 		}
 
-		private string SendRequest(NameValueCollection args) 
+		private async Task<string> SendRequest(NameValueCollection args) 
 		{
 			args.Set ("out", Constants.DefaultReturnFormat);
 			args.Set ("version", Constants.DefaultVersion.ToString ());
@@ -64,22 +65,22 @@ namespace TimeAndDate.Services
 			{
 				client.Encoding = System.Text.Encoding.UTF8;
 				client.Headers.Add(HttpRequestHeader.UserAgent, Constants.DefaultUserAgent);
-				var result = client.DownloadString (uri.Uri);
+				var result = await client.DownloadStringTaskAsync (uri.Uri);
 				XmlUtils.CheckForErrors (result);
 
 				return result;
 			}	
 		}
 
-		protected IList<T> CallService<T>(NameValueCollection args, Func<XmlNode, T> parser) 
+		protected async Task<IList<T>> CallService<T>(NameValueCollection args, Func<XmlNode, T> parser) 
 		{
-			var result = SendRequest (args);
+			var result = await SendRequest (args);
 			return FromXml(result, XmlElemName, parser);
 		}
 
-		protected T CallService<T>(NameValueCollection args)
+		protected async Task<T> CallService<T>(NameValueCollection args)
 		{
-			return FromString<T> (SendRequest (args));
+			return FromString<T> (await SendRequest (args));
 		}
 
 		protected IList<T> FromXml<T>(string result, string elem, Func<XmlNode, T> parser) 

@@ -2,6 +2,7 @@
 //#undef DISABLE_OPTIONS
 
 using System;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using System.Linq;
 using TimeAndDate.Services.Tests;
@@ -14,7 +15,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 	public class HolidaysServiceTests
 	{
 		[Test()]
-		public void Calling_HolidaysService_WithCountry_And_WithYear_Should_ReturnHolidays ()
+		public async Task Calling_HolidaysService_WithCountry_And_WithYear_Should_ReturnHolidays ()
 		{
 			// Arrange
 			var country = "us";
@@ -27,7 +28,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var holidaysService = new HolidaysService (Config.AccessKey, Config.SecretKey);			
-			var result = holidaysService.HolidaysForCountry (country, year);
+			var result = await holidaysService.HolidaysForCountry (country, year);
 			var firstHoliday = result.FirstOrDefault ();
 			// Assert
 			Assert.IsNotNull (firstHoliday);
@@ -40,7 +41,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_HolidaysService_WithCountry_And_WithYear_Should_ReturnHolidaysWithStates ()
+		public async Task Calling_HolidaysService_WithCountry_And_WithYear_Should_ReturnHolidaysWithStates ()
 		{
 			// Arrange
             		var country = "gb-sct";
@@ -49,7 +50,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var holidaysService = new HolidaysService (Config.AccessKey, Config.SecretKey);			
-			var result = holidaysService.HolidaysForCountry (country, year);
+			var result = await holidaysService.HolidaysForCountry (country, year);
 			var holidaysWithSpecificStates = result.Where (x => x.States != null && x.States.Count() > 0).ToList ();
 			var firstHoliday = holidaysWithSpecificStates.FirstOrDefault ();
 			var firstState = firstHoliday.States.FirstOrDefault ();
@@ -61,7 +62,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_HolidaysService_WithSpecifiedTypes_Should_ReturnHolidaysWithCorrectTypes ()
+		public async Task Calling_HolidaysService_WithSpecifiedTypes_Should_ReturnHolidaysWithCorrectTypes ()
 		{
 			// Arrange
 			var country = "us";
@@ -71,7 +72,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var holidaysService = new HolidaysService (Config.AccessKey, Config.SecretKey);			
 			holidaysService.Types = HolidayType.Christian | HolidayType.Buddhism;
-			var result = holidaysService.HolidaysForCountry (country, year);
+			var result = await holidaysService.HolidaysForCountry (country, year);
 			var sample = result.FirstOrDefault ();
 			
 			// Assert

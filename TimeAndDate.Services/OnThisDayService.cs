@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.Net;
 using System.Collections.Generic;
@@ -48,10 +49,10 @@ namespace TimeAndDate.Services
 		/// <param name='year'>
 		/// The day for which the events should be retrieved.
 		/// </param>
-		public OnThisDayResponse EventsOnThisDay (int month, int day)
+		public async Task<OnThisDayResponse> EventsOnThisDay (int month, int day)
 		{
 			var args = GetArguments (month, day);
-			return CallService<OnThisDayResponse> (args);
+			return await CallService<OnThisDayResponse> (args);
 		}
 
 		/// <summary>
@@ -61,10 +62,10 @@ namespace TimeAndDate.Services
 		/// <returns>
 		/// <c>OnThisDayResponse<c> containing requested information.
 		/// </returns>
-		public OnThisDayResponse EventsOnThisDay ()
+		public async Task<OnThisDayResponse> EventsOnThisDay ()
 		{
 			var args = GetArguments (null, null);
-			return CallService<OnThisDayResponse> (args);
+			return await CallService<OnThisDayResponse> (args);
 		}
 
 		private NameValueCollection GetArguments (int? month, int? day)

@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Threading.Tasks;
 using TimeAndDate.Services.DataTypes.Places;
 using System.Linq;
 using System.Globalization;
@@ -11,7 +12,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 	public class BusinessDateServiceTests
 	{
 		[Test()]
-		public void Calling_BusinessDateServiceWithAdd_ReturnsCorrectBusinessDate()
+		public async Task Calling_BusinessDateServiceWithAdd_ReturnsCorrectBusinessDate()
 		{
 			// Arrange
 			var location = new LocationId("usa/anchorage");
@@ -20,7 +21,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var svc = new BusinessDateService(Config.AccessKey, Config.SecretKey);
-			var res = svc.AddDays(startDate, days, location);
+			var res = await svc.AddDays(startDate, days, location);
 			var period = res.Periods.FirstOrDefault();
 
 			// Assert
@@ -30,7 +31,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_BusinessDateServiceWithAdd_AndMultipleDays_ReturnsCorrectBusinessDate()
+		public async Task Calling_BusinessDateServiceWithAdd_AndMultipleDays_ReturnsCorrectBusinessDate()
 		{
 			// Arrange
 			var location = new LocationId("usa/anchorage");
@@ -39,7 +40,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var svc = new BusinessDateService(Config.AccessKey, Config.SecretKey);
-			var res = svc.AddDays(startDate, days, location);
+			var res = await svc.AddDays(startDate, days, location);
 			var period = res.Periods.FirstOrDefault();
 
 			// Assert
@@ -49,7 +50,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_BusinessDateServiceWithAdd_AndInclude_ReturnsCorrectBusinessDate()
+		public async Task Calling_BusinessDateServiceWithAdd_AndInclude_ReturnsCorrectBusinessDate()
 		{
 			// Arrange
 			var location = new LocationId("usa/anchorage");
@@ -59,7 +60,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var svc = new BusinessDateService(Config.AccessKey, Config.SecretKey);
 			svc.IncludeDays = true;
-			var res = svc.AddDays(startDate, days, location);
+			var res = await svc.AddDays(startDate, days, location);
 			var period = res.Periods.FirstOrDefault();
 
 			// Assert
@@ -78,7 +79,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_BusinessDateServiceWithAdd_AndRepeat_ReturnsCorrectBusinessDate()
+		public async Task Calling_BusinessDateServiceWithAdd_AndRepeat_ReturnsCorrectBusinessDate()
 		{
 			// Arrange
 			var location = new LocationId("usa/anchorage");
@@ -88,7 +89,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var svc = new BusinessDateService(Config.AccessKey, Config.SecretKey);
 			svc.Repeat = 5;
-			var res = svc.AddDays(startDate, days, location);
+			var res = await svc.AddDays(startDate, days, location);
 
 			// Assert
 			Assert.AreEqual("Anchorage", res.Geography.Name);
@@ -111,7 +112,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_BusinessDateServiceWithAdd_AndInvalidRepeat_ThrowsException()
+		public async Task Calling_BusinessDateServiceWithAdd_AndInvalidRepeat_ThrowsException()
 		{
 			// Arrange
 			var location = new LocationId("usa/anchorage");
@@ -123,12 +124,12 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			svc.Repeat = 5;
 
 			// Assert
-			Assert.That(() => svc.AddDays(startDate, days, location),
+			Assert.That(async () => await svc.AddDays(startDate, days, location),
 						Throws.TypeOf<ArgumentException>());
 		}
 
 		[Test()]
-		public void Calling_BusinessDateServiceWithAdd_AndCountryState_ReturnsCorrectBusinessDate()
+		public async Task Calling_BusinessDateServiceWithAdd_AndCountryState_ReturnsCorrectBusinessDate()
 		{
 			// Arrange
 			var startDate = new DateTime(2017, 12, 01);
@@ -136,7 +137,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var svc = new BusinessDateService(Config.AccessKey, Config.SecretKey);
-			var res = svc.AddDays(startDate, days, "us", "us-nv");
+			var res = await svc.AddDays(startDate, days, "us", "us-nv");
 			var period = res.Periods.FirstOrDefault();
 
 			// Assert
@@ -145,7 +146,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_BusinessDateServiceWithAdd_AndMultipleDays_AndFilter_ReturnsCorrectBusinessDate()
+		public async Task Calling_BusinessDateServiceWithAdd_AndMultipleDays_AndFilter_ReturnsCorrectBusinessDate()
 		{
 			// Arrange
 			var location = new LocationId("usa/anchorage");
@@ -156,7 +157,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			var svc = new BusinessDateService(Config.AccessKey, Config.SecretKey);
 			svc.Filter = BusinessDaysFilterType.Monday | BusinessDaysFilterType.Tuesday;
 
-			var res = svc.AddDays(startDate, days, location);
+			var res = await svc.AddDays(startDate, days, location);
 
 			// Assert
 			//Assert.IsTrue(res.Periods.All((x) => x.))
@@ -170,7 +171,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_BusinessDateServiceWithSub_ReturnsCorrectBusinessDate()
+		public async Task Calling_BusinessDateServiceWithSub_ReturnsCorrectBusinessDate()
 		{
 			// Arrange
 			var location = new LocationId("usa/anchorage");
@@ -179,7 +180,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var svc = new BusinessDateService(Config.AccessKey, Config.SecretKey);
-			var res = svc.SubtractDays(startDate, days, location);
+			var res = await svc.SubtractDays(startDate, days, location);
 			var period = res.Periods.FirstOrDefault();
 
 			// Assert
@@ -189,7 +190,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_BusinessDateServiceWithSub_AndMultipleDays_ReturnsCorrectBusinessDate()
+		public async Task Calling_BusinessDateServiceWithSub_AndMultipleDays_ReturnsCorrectBusinessDate()
 		{
 			// Arrange
 			var location = new LocationId("usa/anchorage");
@@ -198,7 +199,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var svc = new BusinessDateService(Config.AccessKey, Config.SecretKey);
-			var res = svc.SubtractDays(startDate, days, location);
+			var res = await svc.SubtractDays(startDate, days, location);
 			var period = res.Periods.FirstOrDefault();
 
 			// Assert
