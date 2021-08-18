@@ -1,14 +1,11 @@
 using System;
-using System.Configuration;
-using System.Collections.Specialized;
-
 
 namespace TimeAndDate.Services.Tests
 {
 	public static class Config
 	{
-		public static string AccessKey = ConfigurationManager.AppSettings["TADaccessKey"];
-		public static string SecretKey = ConfigurationManager.AppSettings["TADsecretKey"];
+		public static string AccessKey = Environment.GetEnvironmentVariable("ACCESS_KEY");
+		public static string SecretKey = Environment.GetEnvironmentVariable("SECRET_KEY");
 	}
 }
 
