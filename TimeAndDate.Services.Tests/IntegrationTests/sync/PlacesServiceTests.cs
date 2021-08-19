@@ -12,13 +12,13 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 	public class PlacesServiceTests
 	{
 		[Test()]
-		public async Task Calling_PlacesServices_Should_ReturnListOfPlaces ()
+		public void Calling_PlacesServices_Should_ReturnListOfPlaces ()
 		{
 			// Arrange			
 							
 			// Act			
 			var service = new PlacesService (Config.AccessKey, Config.SecretKey);
-			var places = await service.GetPlaces ();
+			var places = service.GetPlaces ();
 			
 			// Assert
 			Assert.Greater(places.Count, 0);
@@ -27,14 +27,14 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public async Task Calling_PlacesServices_WithoutGeo_Should_ReturnListOfPlacesWithoutGeo ()
+		public void Calling_PlacesServices_WithoutGeo_Should_ReturnListOfPlacesWithoutGeo ()
 		{
 			// Arrange
 				
 			// Act
 			var service = new PlacesService (Config.AccessKey, Config.SecretKey);
 			service.IncludeCoordinates = false;
-			var places = await service.GetPlaces ();
+			var places = service.GetPlaces ();
 						
 			// Assert
 			Assert.Greater(places.Count, 0);

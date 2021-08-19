@@ -15,7 +15,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 	// TBA: Not released yet.
 	/*
 	[TestFixture()]
-	public class OnThisDayServiceTests
+	public class OnThisDayServiceTestsAsync
 	{
 		[Test()]
 		public async Task Calling_OnThisDayService_With_A_Specific_Date_Should_ReturnEvents ()
@@ -26,7 +26,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var onthisdayService = new OnThisDayService (Config.AccessKey, Config.SecretKey);
-			var result = await onthisdayService.EventsOnThisDay (month, day);
+			var result = await onthisdayService.EventsOnThisDayAsync (month, day);
 			var firstEvent = result.Events.FirstOrDefault ();
 			var firstBirth = result.Births.FirstOrDefault ();
 			var firstDeath = result.Deaths.FirstOrDefault ();
@@ -64,7 +64,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var onthisdayService = new OnThisDayService (Config.AccessKey, Config.SecretKey);
 			onthisdayService.Types = EventType.Events;
-			var result = await onthisdayService.EventsOnThisDay (month, day);
+			var result = await onthisdayService.EventsOnThisDayAsync (month, day);
 
 			// Assert
 			Assert.Greater (result.Events.Count, 0);
@@ -82,7 +82,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var onthisdayService = new OnThisDayService (Config.AccessKey, Config.SecretKey);
 			onthisdayService.Types = EventType.Births;
-			var result = await onthisdayService.EventsOnThisDay (month, day);
+			var result = await onthisdayService.EventsOnThisDayAsync (month, day);
 
 			// Assert
 			Assert.AreEqual (result.Events.Count, 0);
@@ -100,7 +100,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var onthisdayService = new OnThisDayService (Config.AccessKey, Config.SecretKey);
 			onthisdayService.Types = EventType.Deaths;
-			var result = await onthisdayService.EventsOnThisDay (month, day);
+			var result = await onthisdayService.EventsOnThisDayAsync (month, day);
 
 			// Assert
 			Assert.AreEqual (result.Events.Count, 0);

@@ -36,6 +36,18 @@ namespace TimeAndDate.Services
 			IncludeCoordinates = true;
 			XmlElemName = "place";
 		}
+
+		/// <summary>
+		/// Gets list of supported places
+		/// </summary>
+		/// <returns>
+		/// The places.
+		/// </returns>
+		public IList<Place> GetPlaces ()
+		{
+			var args = GetArguments ();
+			return CallService (args, x => (Place)x);
+		}
 		
 		/// <summary>
 		/// Gets list of supported places
@@ -43,10 +55,10 @@ namespace TimeAndDate.Services
 		/// <returns>
 		/// The places.
 		/// </returns>
-		public async Task<IList<Place>> GetPlaces ()
+		public async Task<IList<Place>> GetPlacesAsync ()
 		{
 			var args = GetArguments ();
-			return await CallService (args, x => (Place)x);
+			return await CallServiceAsync (args, x => (Place)x);
 		}
 		
 		private NameValueCollection GetArguments ()

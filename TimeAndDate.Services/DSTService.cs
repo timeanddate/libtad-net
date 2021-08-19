@@ -61,17 +61,17 @@ namespace TimeAndDate.Services
 			IncludeOnlyDstCountries = true;
 			XmlElemName = "dstentry";
 		}
-		
+
 		/// <summary>
 		/// Gets the all entries with daylight saving time 
 		/// </summary>
 		/// <returns>
 		/// The daylight saving time.
 		/// </returns>
-		public async Task<IList<DST>> GetDaylightSavingTime ()
+		public IList<DST> GetDaylightSavingTime ()
 		{			
 			var args = GetArguments ();
-			return await CallService (args, x => (DST)x);
+			return CallService (args, x => (DST)x);
 		}
 		
 		/// <summary>
@@ -83,7 +83,7 @@ namespace TimeAndDate.Services
 		/// <param name='countryCode'>
 		/// Country code.
 		/// </param>
-		public async Task<IList<DST>> GetDaylightSavingTime (string countryCode)
+		public IList<DST> GetDaylightSavingTime (string countryCode)
 		{
 			if (string.IsNullOrEmpty (countryCode))
 				throw new ArgumentException ("A required argument is null or empty");
@@ -92,7 +92,7 @@ namespace TimeAndDate.Services
 			var args = GetArguments ();
 			args.Set ("country", countryCode);
 			
-			return await CallService (args, x => (DST)x);
+			return CallService (args, x => (DST)x);
 		}
 		
 		/// <summary>
@@ -104,7 +104,7 @@ namespace TimeAndDate.Services
 		/// <param name='year'>
 		/// Year.
 		/// </param>
-		public async Task<IList<DST>> GetDaylightSavingTime (int year)
+		public IList<DST> GetDaylightSavingTime (int year)
 		{
 			if (year <= 0)
 				throw new ArgumentException ("A required argument is null or empty");
@@ -112,7 +112,7 @@ namespace TimeAndDate.Services
 			var args = GetArguments ();
 			args.Set ("year", year.ToString ());
 			
-			return await CallService (args, x => (DST)x);
+			return CallService (args, x => (DST)x);
 		}
 		
 		/// <summary>
@@ -127,7 +127,7 @@ namespace TimeAndDate.Services
 		/// <param name='year'>
 		/// Year.
 		/// </param>
-		public async Task<IList<DST>> GetDaylightSavingTime (string countryCode, int year)
+		public IList<DST> GetDaylightSavingTime (string countryCode, int year)
 		{
 			if (string.IsNullOrEmpty (countryCode) && year <= 0)
 				throw new ArgumentException ("A required argument is null or empty");
@@ -137,7 +137,85 @@ namespace TimeAndDate.Services
 			args.Set ("country", countryCode);
 			args.Set ("year", year.ToString ());
 			
-			return await CallService (args, x => (DST)x);
+			return CallService (args, x => (DST)x);
+		}
+
+		/// <summary>
+		/// Gets the all entries with daylight saving time 
+		/// </summary>
+		/// <returns>
+		/// The daylight saving time.
+		/// </returns>
+		public async Task<IList<DST>> GetDaylightSavingTimeAsync ()
+		{			
+			var args = GetArguments ();
+			return await CallServiceAsync (args, x => (DST)x);
+		}
+		
+		/// <summary>
+		/// Gets the daylight saving time by ISO3166-1-alpha-2 Country Code
+		/// </summary>
+		/// <returns>
+		/// The daylight saving time.
+		/// </returns>
+		/// <param name='countryCode'>
+		/// Country code.
+		/// </param>
+		public async Task<IList<DST>> GetDaylightSavingTimeAsync (string countryCode)
+		{
+			if (string.IsNullOrEmpty (countryCode))
+				throw new ArgumentException ("A required argument is null or empty");
+			
+			IncludeOnlyDstCountries = false;
+			var args = GetArguments ();
+			args.Set ("country", countryCode);
+			
+			return await CallServiceAsync (args, x => (DST)x);
+		}
+		
+		/// <summary>
+		/// Gets the daylight saving time by year.
+		/// </summary>
+		/// <returns>
+		/// The daylight saving time.
+		/// </returns>
+		/// <param name='year'>
+		/// Year.
+		/// </param>
+		public async Task<IList<DST>> GetDaylightSavingTimeAsync (int year)
+		{
+			if (year <= 0)
+				throw new ArgumentException ("A required argument is null or empty");
+			
+			var args = GetArguments ();
+			args.Set ("year", year.ToString ());
+			
+			return await CallServiceAsync (args, x => (DST)x);
+		}
+		
+		/// <summary>
+		/// Gets the daylight saving time by country and year.
+		/// </summary>
+		/// <returns>
+		/// The daylight saving time.
+		/// </returns>
+		/// <param name='countryCode'>
+		/// ISO3166-1-alpha-2 Country Code
+		/// </param>
+		/// <param name='year'>
+		/// Year.
+		/// </param>
+		public async Task<IList<DST>> GetDaylightSavingTimeAsync (string countryCode, int year)
+		{
+			if (string.IsNullOrEmpty (countryCode) && year <= 0)
+				throw new ArgumentException ("A required argument is null or empty");
+			
+			IncludeOnlyDstCountries = false;
+			var args = GetArguments ();
+			args.Set ("country", countryCode);
+			args.Set ("year", year.ToString ());
+			
+			return await CallServiceAsync (args, x => (DST)x);
 		}
 		
 		private NameValueCollection GetArguments ()

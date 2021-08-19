@@ -10,7 +10,7 @@ using TimeAndDate.Services.DataTypes.Places;
 namespace TimeAndDate.Services.Tests.IntegrationTests
 {
 	[TestFixture()]
-	public class AstronomyServiceTests
+	public class AstronomyServiceTestsAsync
 	{
 		[Test()]
 		public async Task Calling_AstronomyService_WithoutEnddate_ReturnsCorrectAstronomyInfo ()
@@ -22,7 +22,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
-			var result = await service.GetAstronomicalInfo (type, place, startDate);
+			var result = await service.GetAstronomicalInfoAsync (type, place, startDate);
 			var anchorage = result.SingleOrDefault ();
 			
 			// Assert
@@ -47,7 +47,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
-			var result = await service.GetAstronomicalInfo (type, place, startDate);
+			var result = await service.GetAstronomicalInfoAsync (type, place, startDate);
 			
 			// Assert
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
@@ -66,7 +66,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.Types = AstronomyEventClass.Meridian;
-			var result = await service.GetAstronomicalInfo (type, place, startDate);
+			var result = await service.GetAstronomicalInfoAsync (type, place, startDate);
 			
 			// Assert
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
@@ -91,7 +91,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.Types = AstronomyEventClass.AstronomicalTwilight | AstronomyEventClass.NauticalTwilight;
-			var result = await service.GetAstronomicalInfo (type, place, startDate, endDate);
+			var result = await service.GetAstronomicalInfoAsync (type, place, startDate, endDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList().Count > 1)));
@@ -114,7 +114,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.IncludeCoordinates = false;
-			var result = await service.GetAstronomicalInfo (type, place, startDate, endDate);
+			var result = await service.GetAstronomicalInfoAsync (type, place, startDate, endDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList ().Count > 1)));
@@ -133,7 +133,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.IncludeCoordinates = true;
-			var result = await service.GetAstronomicalInfo (type, place, startDate);
+			var result = await service.GetAstronomicalInfoAsync (type, place, startDate);
 			
 			// Assert
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
@@ -155,7 +155,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.IncludeISOTime = false;
-			var result = await service.GetAstronomicalInfo (type, place, startDate, endDate);
+			var result = await service.GetAstronomicalInfoAsync (type, place, startDate, endDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList ().Count > 1)));
@@ -177,7 +177,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.IncludeISOTime = true;
-			var result = await service.GetAstronomicalInfo (type, place, startDate, endDate);
+			var result = await service.GetAstronomicalInfoAsync (type, place, startDate, endDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList ().Count > 1)));
@@ -198,7 +198,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.IncludeUTCTime = false;
-			var result = await service.GetAstronomicalInfo (type, place, startDate, endDate);
+			var result = await service.GetAstronomicalInfoAsync (type, place, startDate, endDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList ().Count > 1)));
@@ -219,7 +219,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.IncludeUTCTime = true;
-			var result = await service.GetAstronomicalInfo (type, place, startDate);
+			var result = await service.GetAstronomicalInfoAsync (type, place, startDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));		
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList ().Count >= 1)));
@@ -240,7 +240,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
 			service.Radius = 50;
-			var result = await service.GetAstronomicalInfo (type, drammenCoords, startDate);
+			var result = await service.GetAstronomicalInfoAsync (type, drammenCoords, startDate);
 			
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));		
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.ToList ().Count >= 1)));

@@ -63,7 +63,7 @@ namespace TimeAndDate.Services
 			IncludeCoordinates = true;
 			IncludeTimezoneInformation = true;
 		}
-		
+
 		/// <summary>
 		/// Gets the dial code for the location you want to call
 		/// </summary>
@@ -73,7 +73,7 @@ namespace TimeAndDate.Services
 		/// <param name='toLocation'>
 		/// To location.
 		/// </param>
-		public async Task<DialCodes> GetDialCode (LocationId toLocation)
+		public DialCodes GetDialCode (LocationId toLocation)
 		{
 			if (toLocation == null)
 				throw new ArgumentException ("A required argument is null or empty");
@@ -85,7 +85,7 @@ namespace TimeAndDate.Services
 			var opts = GetOptionalArguments ();
 			opts.Set ("toid", id);
 			
-			return await RetrieveDialCode (opts);
+			return RetrieveDialCode (opts);
 		}
 		
 		/// <summary>
@@ -100,7 +100,7 @@ namespace TimeAndDate.Services
 		/// <param name='fromLocation'>
 		/// From location.
 		/// </param>
-		public async Task<DialCodes> GetDialCode (LocationId toLocation, LocationId fromLocation)
+		public DialCodes GetDialCode (LocationId toLocation, LocationId fromLocation)
 		{
 			if (toLocation == null || fromLocation == null)
 				throw new ArgumentException ("A required argument is null or empty");
@@ -114,7 +114,7 @@ namespace TimeAndDate.Services
 			opts.Set ("toid", toId);
 			opts.Set ("fromid", fromId);
 			
-			return await RetrieveDialCode (opts);
+			return RetrieveDialCode (opts);
 		}
 		
 		/// <summary>
@@ -132,15 +132,95 @@ namespace TimeAndDate.Services
 		/// <param name='number'>
 		/// Number.
 		/// </param>
-		public async Task<DialCodes> GetDialCode (LocationId toLocation, LocationId fromLocation, int number)
+		public DialCodes GetDialCode (LocationId toLocation, LocationId fromLocation, int number)
 		{
 			_number = number;
-			return await GetDialCode (toLocation, fromLocation);
+			return GetDialCode (toLocation, fromLocation);
 		}
 		
-		private async Task<DialCodes> RetrieveDialCode(NameValueCollection args)
+		private DialCodes RetrieveDialCode(NameValueCollection args)
 		{
-			var result = await CallService<DialCodes>(args);
+			var result = CallService<DialCodes>(args);
+			return (DialCodes)result;
+		}
+
+		/// <summary>
+		/// Gets the dial code for the location you want to call
+		/// </summary>
+		/// <returns>
+		/// The dial code.
+		/// </returns>
+		/// <param name='toLocation'>
+		/// To location.
+		/// </param>
+		public async Task<DialCodes> GetDialCodeAsync (LocationId toLocation)
+		{
+			if (toLocation == null)
+				throw new ArgumentException ("A required argument is null or empty");
+			
+			var id = toLocation.GetIdAsString ();
+			if (string.IsNullOrEmpty (id))
+				throw new ArgumentException ("A required argument is null or empty");
+			
+			var opts = GetOptionalArguments ();
+			opts.Set ("toid", id);
+			
+			return await RetrieveDialCodeAsync (opts);
+		}
+		
+		/// <summary>
+		/// Gets the dial code for the location you want to call, from where
+		/// </summary>
+		/// <returns>
+		/// The dial code.
+		/// </returns>
+		/// <param name='toLocation'>
+		/// To location.
+		/// </param>
+		/// <param name='fromLocation'>
+		/// From location.
+		/// </param>
+		public async Task<DialCodes> GetDialCodeAsync (LocationId toLocation, LocationId fromLocation)
+		{
+			if (toLocation == null || fromLocation == null)
+				throw new ArgumentException ("A required argument is null or empty");
+			
+			var toId = toLocation.GetIdAsString ();
+			var fromId = fromLocation.GetIdAsString ();
+			if (string.IsNullOrEmpty (toId) ||string.IsNullOrEmpty(fromId))
+				throw new ArgumentException ("A required argument is null or empty");
+			
+			var opts = GetOptionalArguments ();
+			opts.Set ("toid", toId);
+			opts.Set ("fromid", fromId);
+			
+			return await RetrieveDialCodeAsync (opts);
+		}
+		
+		/// <summary>
+		/// Gets the dial code for the location you want to call, from where with number
+		/// </summary>
+		/// <returns>
+		/// The dial code.
+		/// </returns>
+		/// <param name='toLocation'>
+		/// To location.
+		/// </param>
+		/// <param name='fromLocation'>
+		/// From location.
+		/// </param>
+		/// <param name='number'>
+		/// Number.
+		/// </param>
+		public async Task<DialCodes> GetDialCodeAsync (LocationId toLocation, LocationId fromLocation, int number)
+		{
+			_number = number;
+			return await GetDialCodeAsync (toLocation, fromLocation);
+		}
+		
+		private async Task<DialCodes> RetrieveDialCodeAsync(NameValueCollection args)
+		{
+			var result = await CallServiceAsync<DialCodes>(args);
 			return (DialCodes)result;
 		}
 		

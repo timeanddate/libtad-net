@@ -83,6 +83,34 @@ namespace TimeAndDate.Services
 			IncludeTimezoneInformation = true;
 			XmlElemName = "location";
 		}
+
+		/// <summary>
+		/// Retrieves the current time for place by ID.
+		/// </summary>
+		/// <returns>
+		/// The current time for place.
+		/// </returns>
+		/// <param name='placeId'>
+		/// Place identifier.
+		/// </param>
+		public IList<Location> CurrentTimeForPlace (LocationId placeId)
+		{
+			if (placeId == null)				
+				throw new ArgumentException ("A required argument is null or empty");
+			
+			var id = placeId.GetIdAsString ();
+			if(string.IsNullOrEmpty(id))
+				throw new ArgumentException ("A required argument is null or empty");
+
+			var args = GetArguments (id);
+			return CallService(args, x => (Location)x);
+		}
+		
+		private IList<Location> RetrieveCurrentTime (string placeid)
+		{
+			var args = GetArguments (placeid);
+			return CallService(args, x => (Location)x);
+		}
 		
 		/// <summary>
 		/// Retrieves the current time for place by ID.
@@ -93,7 +121,7 @@ namespace TimeAndDate.Services
 		/// <param name='placeId'>
 		/// Place identifier.
 		/// </param>
-		public async Task<IList<Location>> CurrentTimeForPlace (LocationId placeId)
+		public async Task<IList<Location>> CurrentTimeForPlaceAsync (LocationId placeId)
 		{
 			if (placeId == null)				
 				throw new ArgumentException ("A required argument is null or empty");
@@ -103,13 +131,13 @@ namespace TimeAndDate.Services
 				throw new ArgumentException ("A required argument is null or empty");
 
 			var args = GetArguments (id);
-			return await CallService(args, x => (Location)x);
+			return await CallServiceAsync(args, x => (Location)x);
 		}
 		
-		private async Task<IList<Location>> RetrieveCurrentTime (string placeid)
+		private async Task<IList<Location>> RetrieveCurrentTimeAsync (string placeid)
 		{
 			var args = GetArguments (placeid);
-			return await CallService(args, x => (Location)x);
+			return await CallServiceAsync(args, x => (Location)x);
 		}
 
 		private NameValueCollection GetArguments (string placeId)

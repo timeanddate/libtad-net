@@ -36,7 +36,7 @@ namespace TimeAndDate.Services
 		{	
 			XmlElemName = "holiday";
 		}
-		
+
 		/// <summary>
 		/// The holidays service can be used to retrieve the list of holidays for a country.
 		/// </summary>
@@ -49,13 +49,13 @@ namespace TimeAndDate.Services
 		/// <param name='year'>
 		/// The year for which the holidays should be retrieved.
 		/// </param>
-		public async Task<IList<Holiday>> HolidaysForCountry (string countryCode, int year)
+		public IList<Holiday> HolidaysForCountry (string countryCode, int year)
 		{
 			if (string.IsNullOrEmpty (countryCode) && year <= 0)
 				throw new ArgumentException ("A required argument is null or empty");
 
 			var args = GetArguments (countryCode, year);
-			return await CallService(args, x => (Holiday)x);
+			return CallService(args, x => (Holiday)x);
 		}
 		
 		/// <summary>
@@ -68,13 +68,53 @@ namespace TimeAndDate.Services
 		/// <param name='country'>
 		/// Country.
 		/// </param>
-		public async Task<IList<Holiday>> HolidaysForCountry (string country)
+		public IList<Holiday> HolidaysForCountry (string country)
 		{
 			if (string.IsNullOrEmpty (country))
 				throw new ArgumentException ("A required argument is null or empty");
 
 			var args = GetArguments (country, DateTime.Now.Year);
-			return await CallService(args, x => (Holiday)x);
+			return CallService(args, x => (Holiday)x);
+		}				
+
+		/// <summary>
+		/// The holidays service can be used to retrieve the list of holidays for a country.
+		/// </summary>
+		/// <returns>
+		/// List of holidays for a given country
+		/// </returns>
+		/// <param name='countryCode'>
+		/// Specify the ISO3166-1-alpha-2 Country Code for which you would like to retrieve the list of holidays.
+		/// </param>
+		/// <param name='year'>
+		/// The year for which the holidays should be retrieved.
+		/// </param>
+		public async Task<IList<Holiday>> HolidaysForCountryAsync (string countryCode, int year)
+		{
+			if (string.IsNullOrEmpty (countryCode) && year <= 0)
+				throw new ArgumentException ("A required argument is null or empty");
+
+			var args = GetArguments (countryCode, year);
+			return await CallServiceAsync(args, x => (Holiday)x);
+		}
+		
+		/// <summary>
+		/// The holidays service can be used to retrieve the list of holidays for a country. 
+		/// This overload uses the current year by default.
+		/// </summary>
+		/// <returns>
+		/// Specify the ISO3166-1-alpha-2 Country Code for which you would like to retrieve the list of holidays.
+		/// </returns>
+		/// <param name='country'>
+		/// Country.
+		/// </param>
+		public async Task<IList<Holiday>> HolidaysForCountryAsync (string country)
+		{
+			if (string.IsNullOrEmpty (country))
+				throw new ArgumentException ("A required argument is null or empty");
+
+			var args = GetArguments (country, DateTime.Now.Year);
+			return await CallServiceAsync(args, x => (Holiday)x);
 		}				
 		
 		private NameValueCollection GetArguments (string country, int year)

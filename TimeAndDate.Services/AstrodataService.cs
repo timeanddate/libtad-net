@@ -86,13 +86,13 @@ namespace TimeAndDate.Services
 		/// <param name='interval'>
 		/// Specify the point in time you would like to calculate data for.
 		/// </param>
-		public async Task<IList<AstronomyLocation>> GetAstroData (AstronomyObjectType objectType, LocationId placeId, TADDateTime interval)
+		public IList<AstronomyLocation> GetAstroData (AstronomyObjectType objectType, LocationId placeId, TADDateTime interval)
 		{
 			var list = new List<TADDateTime> ();
 			list.Add (interval);
 
 			var args = GetArguments (objectType, placeId, list);
-			return await CallService<AstronomyLocation> (args, x => (AstronomyLocation)x);
+			return CallService<AstronomyLocation> (args, x => (AstronomyLocation)x);
 		}
 
 		/// <summary>
@@ -111,10 +111,56 @@ namespace TimeAndDate.Services
 		/// <param name='interval'>
 		/// Specify the points in time you would like to calculate data for.
 		/// </param>
-		public async Task<IList<AstronomyLocation>> GetAstroData (AstronomyObjectType objectType, LocationId placeId, List<TADDateTime> interval)
+		public IList<AstronomyLocation> GetAstroData (AstronomyObjectType objectType, LocationId placeId, List<TADDateTime> interval)
 		{
 			var args = GetArguments (objectType, placeId, interval);
-			return await CallService<AstronomyLocation> (args, x => (AstronomyLocation)x);
+			return CallService<AstronomyLocation> (args, x => (AstronomyLocation)x);
+		}
+
+		/// <summary>
+		/// Gets the specified object types for the given interval(s).
+		/// </summary>
+		/// <returns>
+		/// A list of astronomical information.
+		/// </returns>
+		/// <param name='objectType'>
+		/// Specify which astronomical object you are interested in. Combine types by using the binary OR operator.
+		/// </param>
+		/// <param name='placeId'>
+		/// Place identifier.
+		/// </param>
+		/// <param name='interval'>
+		/// Specify the point in time you would like to calculate data for.
+		/// </param>
+		public async Task<IList<AstronomyLocation>> GetAstroDataAsync (AstronomyObjectType objectType, LocationId placeId, TADDateTime interval)
+		{
+			var list = new List<TADDateTime> ();
+			list.Add (interval);
+
+			var args = GetArguments (objectType, placeId, list);
+			return await CallServiceAsync<AstronomyLocation> (args, x => (AstronomyLocation)x);
+		}
+
+		/// <summary>
+		/// Gets the specified object types for the given interval(s).
+		/// This overload accepts a list of intervals.
+		/// </summary>
+		/// <returns>
+		/// A list of astronomical information.
+		/// </returns>
+		/// <param name='objectType'>
+		/// Specify which astronomical object you are interested in. Combine types by using the binary OR operator.
+		/// </param>
+		/// <param name='placeId'>
+		/// Place identifier.
+		/// </param>
+		/// <param name='interval'>
+		/// Specify the points in time you would like to calculate data for.
+		/// </param>
+		public async Task<IList<AstronomyLocation>> GetAstroDataAsync (AstronomyObjectType objectType, LocationId placeId, List<TADDateTime> interval)
+		{
+			var args = GetArguments (objectType, placeId, interval);
+			return await CallServiceAsync<AstronomyLocation> (args, x => (AstronomyLocation)x);
 		}
 
 		private NameValueCollection GetArguments (AstronomyObjectType objectType, LocationId locationId, List<TADDateTime> interval)

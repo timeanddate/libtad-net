@@ -10,7 +10,7 @@ using TimeAndDate.Services.DataTypes;
 namespace TimeAndDate.Services.Tests.IntegrationTests
 {
 	[TestFixture()]
-	public class DSTServiceTests
+	public class DSTServiceTestsAsync
 	{
 		[Test()]
 		public async Task Calling_DstService_Should_ReturnAllDst ()
@@ -20,7 +20,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
-			var result = await service.GetDaylightSavingTime ();
+			var result = await service.GetDaylightSavingTimeAsync ();
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -38,7 +38,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
-			var result = await service.GetDaylightSavingTime (year);
+			var result = await service.GetDaylightSavingTimeAsync (year);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -56,7 +56,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
-			var result = await service.GetDaylightSavingTime (countryCode);
+			var result = await service.GetDaylightSavingTimeAsync (countryCode);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 						
 			// Assert
@@ -76,7 +76,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
-			var result = await service.GetDaylightSavingTime (countryCode, year);
+			var result = await service.GetDaylightSavingTimeAsync (countryCode, year);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -94,7 +94,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
 			service.IncludePlacesForEveryCountry = false;
-			var result = await service.GetDaylightSavingTime (year);		
+			var result = await service.GetDaylightSavingTimeAsync (year);		
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -112,7 +112,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
-			var result = await service.GetDaylightSavingTime (year);
+			var result = await service.GetDaylightSavingTimeAsync (year);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -131,7 +131,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
 			service.IncludeTimeChanges = false;
-			var result = await service.GetDaylightSavingTime (year);
+			var result = await service.GetDaylightSavingTimeAsync (year);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -150,7 +150,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
 			service.IncludeTimeChanges = true;
-			var result = await service.GetDaylightSavingTime (year);
+			var result = await service.GetDaylightSavingTimeAsync (year);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -169,7 +169,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
 			service.IncludeOnlyDstCountries = true;
-			var result = await service.GetDaylightSavingTime (year);
+			var result = await service.GetDaylightSavingTimeAsync (year);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -188,7 +188,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
 			service.IncludeOnlyDstCountries = false;
-			var result = await service.GetDaylightSavingTime (year);
+			var result = await service.GetDaylightSavingTimeAsync (year);
 			var noDstAllYear = result.Where (x => x.Special == DSTSpecialType.NoDaylightSavingTime);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 
