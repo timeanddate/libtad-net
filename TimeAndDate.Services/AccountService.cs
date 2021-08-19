@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.Net;
 using TimeAndDate.Services.Common;
@@ -35,6 +36,17 @@ namespace TimeAndDate.Services
 		public Account GetAccount ()
 		{
 			return CallService<Account> (new NameValueCollection ());
+		}
+
+		/// <summary>
+		/// Gets information about account in use.
+		/// </summary>
+		/// <returns>
+		/// The account.
+		/// </returns>
+		public async Task<Account> GetAccount ()
+		{
+			return CallServiceAsync<Account> (new NameValueCollection ());
 		}
 
 		protected override Account FromString<Account> (string result)
