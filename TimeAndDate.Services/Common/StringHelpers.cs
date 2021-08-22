@@ -103,7 +103,15 @@ namespace TimeAndDate.Services.Common
 		{
 			var x = new[] {
 				new { arg = "sun", type = AstronomyObjectType.Sun },
-				new { arg = "moon", type = AstronomyObjectType.Moon }
+				new { arg = "moon", type = AstronomyObjectType.Moon },
+				new { arg = "mercury", type = AstronomyObjectType.Mercury},
+				new { arg = "venus", type = AstronomyObjectType.Venus},
+				new { arg = "mars", type = AstronomyObjectType.Mars},
+				new { arg = "jupiter", type = AstronomyObjectType.Jupiter},
+				new { arg = "saturn", type = AstronomyObjectType.Saturn},
+				new { arg = "uranus", type = AstronomyObjectType.Uranus},
+				new { arg = "neptune", type = AstronomyObjectType.Neptune},
+				new { arg = "pluto", type = AstronomyObjectType.Pluto},
 			}.ToList().SingleOrDefault(expr);
 
 			return x.arg as string;
