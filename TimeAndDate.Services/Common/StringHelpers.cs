@@ -85,6 +85,7 @@ namespace TimeAndDate.Services.Common
 		{
 			var x = new[] {
 				new { arg = "all", type = AstronomyEventClass.All },
+				new { arg = "current", type = AstronomyEventClass.Current },
 				new { arg = "daylength", type = AstronomyEventClass.DayLength },
 				new { arg = "meridian", type = AstronomyEventClass.Meridian },
 				new { arg = "phase", type = AstronomyEventClass.Phase },
