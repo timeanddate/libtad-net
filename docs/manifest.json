@@ -1,0 +1,1050 @@
+{
+  "homepages": [],
+  "source_base_path": "/Users/daniel/Documents/libtad-net/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.AstrodataService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.AstrodataService.html",
+          "hash": "ZhqEI23GeCMNNNuhJ6evSscucmcdTNPmSaO1m4j0ibA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.AstronomyService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.AstronomyService.html",
+          "hash": "sPFS4s81YoIER0mOgaiZoVhxf0hKZ1c+tNsEBDwBO9E="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.BaseService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.BaseService.html",
+          "hash": "+WHrhX3FmUwBOFrr0EGpi2yk7hvlhWsM6l1sNdCCMlk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.BusinessDateService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.BusinessDateService.html",
+          "hash": "QR9yEHc2fBZu/S0r6tH+d8nx3PGELrhXYm1PVtY1mvQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.BusinessDates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.BusinessDates.html",
+          "hash": "v69kctfjaecuenqPOiG8cWUlpFQLdE0lNgSf07vndqE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.BusinessDuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.BusinessDuration.html",
+          "hash": "1wfBNeCY4YlHAf2Z0kE5pHNPZbmp/2ekRQYgByB6AkE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.BusinessDurationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.BusinessDurationService.html",
+          "hash": "evnxVecEZdD1XljY8Xyd44Bj2dikSdM4RYG2enjqtcY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.Common.IdFormatException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.Common.IdFormatException.html",
+          "hash": "IMcBCj4fYwR6h/aES175Q/6xW9lcNopOWADLfXQ1oSA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.Common.LocalTimeDoesNotExistException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.Common.LocalTimeDoesNotExistException.html",
+          "hash": "3yj/YLwKrBU18gN/TVfN0MyBfpEaO7G1DUf1gsgps+4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.Common.MalformedXMLException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.Common.MalformedXMLException.html",
+          "hash": "1yLbwBYNRtFX9sT09utay/r8+yF/iDI5gCI07iNkMbI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.Common.MissingTimeChangesException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.Common.MissingTimeChangesException.html",
+          "hash": "K2mcwf6uBRUzqb7QHZhKCDDVh9zvbbvS6LjRgQ11/RY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.Common.QueriedDateOutOfRangeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.Common.QueriedDateOutOfRangeException.html",
+          "hash": "S4JHYbnaUY+jY8DPS50k1iM/EYfHDeYA8TRr65lEUek="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.Common.ServerSideException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.Common.ServerSideException.html",
+          "hash": "+SuKpVk4IYZMcQnDJJJ2SzaEIyIpBBqEPj3AZxDq3fk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.Common.html",
+          "hash": "YcBoEdnRZ95tvh0tYQCp5XBfRvfhKb2u15EnURZ2oXo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.ConvertTimeService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.ConvertTimeService.html",
+          "hash": "EYdFsFx98SErMn8QbRPZ112HgFxs3VyKgwNGjifPcgQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.ConvertedTimes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.ConvertedTimes.html",
+          "hash": "RwZ8PgpHQoJ1Kpptv5qCv6eRtXMLZFf4rPDuR4Iu6eg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.Coordinates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.Coordinates.html",
+          "hash": "sDJ73+2CsmsZcougTzsgBgNTipv8tXXGvjT28s79gPc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DSTService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DSTService.html",
+          "hash": "UYgYuqXxPJ3Y4LzgXxISD0RGrARdkJPLPkYX2Xz9yWs="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.Astronomy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.Astronomy.html",
+          "hash": "yo1BErftWlu9TCF0JzT63UZH3UXnrFPGMrXQakfUg9U="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyCurrent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyCurrent.html",
+          "hash": "3UdKcawA4kbVV0nRn2SZw1crhzyKHvhYHYuxDVDhHkg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyDay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyDay.html",
+          "hash": "GF2o8o+HdUGS3IJHOuN/qRcEwOWQBO6Y1Dhul8DIpLY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyDayEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyDayEvent.html",
+          "hash": "xRsragtRMNcqioDNukNG3d6IGXzn3Z2zkHtpHbs+/P4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyEvent.html",
+          "hash": "FFAtulT9hqYsnyc0Qi0DZLPqvjLjyDyNRnkkLLOL2y4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyEventClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyEventClass.html",
+          "hash": "SR250YoFG0+qEcOAWnAzRaEo1C27muxmFCV+gqkidMI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyEventCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyEventCode.html",
+          "hash": "fCpc3GxgRPCdjoykx60IFrE7VYGbO7gmuaByPdMqGn0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyEventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyEventType.html",
+          "hash": "XgPefVdyeZpblDvoAEB22rJ9/ureZ79hPVSVws1wmFs="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyLocation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyLocation.html",
+          "hash": "nsdO/qgAzRXETrgFaVC/n1CPYYUhHjBCQThs4uZZx4U="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectDetails.html",
+          "hash": "vBUvjNXerE0EmahJTQlcPHppvpW5irqBxdKDrtyEUto="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.html",
+          "hash": "KuIyKjrAUO9C5iq7O/pfSLVYaTolNgKZz26/sQmsp7g="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomySpecial.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomySpecial.html",
+          "hash": "iZqD1idEkJ0lb4DGFxv5r+M7tR58GRIWtg+6bLGpPfE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.MoonPhase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.MoonPhase.html",
+          "hash": "iivuu2YD+xLy+aitJnUb80N2hr9+n60oFsTmbX9BM3o="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Astro.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.html",
+          "hash": "kGmfOsDHhcji91DHhOParvPQesfrDsWRCgUUsdy02Yc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.BusinessDays.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.BusinessDays.html",
+          "hash": "dKmgMz5cYJj9E714Khp1Y/CoA6GhPDc0LpjP/ty1hX4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.BusinessDaysFilterType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.BusinessDaysFilterType.html",
+          "hash": "tpkv3NfZDzIQq/ny0R2VFOo1ypXVBl/xi3f9xU4rSiU="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.IncludeOrExcluded.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.IncludeOrExcluded.html",
+          "hash": "g603gvh08WlYNLx2UIugKm96rg77+3sDT3kFNnioE6c="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.Period.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.Period.html",
+          "hash": "8E6//KJh0S97LPvMtDFlUnfmbmE0RASB55vlhTNcyaA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.WeekdaysType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.WeekdaysType.html",
+          "hash": "xcRS1E/BKNTJt6cwx7H5cFBmaRjQmoPvB+IZNWPsj1E="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.html",
+          "hash": "IeR+sJnQbXcWVzk8cCyEODASsoL4KiEcIAyvWjVbHGE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.DST.DST.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.DST.DST.html",
+          "hash": "SiERp4qljZgwEvNnFrGeUgRIcfdOnJ9mf0V1uD8PcUw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.DST.DSTSpecialType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.DST.DSTSpecialType.html",
+          "hash": "8p70KH/3/FTwgYgMJ6LBjG11x+Xb0OEgWnnt6Ec+NE8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.DST.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.DST.html",
+          "hash": "PceBKzUJKMM6GUPhcS/M9hsWeA4NL30sszk7JVrHX98="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.DialCode.Composition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.DialCode.Composition.html",
+          "hash": "iRYTR2UI2uVVqJwmC5BG5MKwa8VdRWPLZhXYOI8wb1Y="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.DialCode.PhoneNumberElementType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.DialCode.PhoneNumberElementType.html",
+          "hash": "G+6MunUm2/NAviBF124U3f3YvHJjh6txdP/ijIGMQUQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.DialCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.DialCode.html",
+          "hash": "DVIRjkI+UMtaS9HqDadWTrwPISl8zKEs6bisctOpU70="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Holidays.Holiday.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Holidays.Holiday.html",
+          "hash": "u1/OPbab6tEXcKUxIOqdPdgku7G7k6zqF04teV+empE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Holidays.HolidayState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Holidays.HolidayState.html",
+          "hash": "rlUAr/MnPaP08xnjhEfwWQDybtdfco8aTIFOb6VrbTA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Holidays.HolidayType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Holidays.HolidayType.html",
+          "hash": "G1tifaTU3BbyxeZ/peQl6smdJepuqVljRE/RcDKg/VU="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Holidays.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Holidays.html",
+          "hash": "44Xz7QAe2HJg58oyWL0WY3q0H+s18yOll3ykDbjP3Mw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.Event.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.Event.html",
+          "hash": "WioL+om8x7iUsig1NqasOh9RTVB0r2ihd5XAYWwWfOw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.EventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.EventType.html",
+          "hash": "aYH5U2eZjv9sN3n9JhFu/ZtzWlBzjed/1rebdYqWjEI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.Name.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.Name.html",
+          "hash": "UwdWdDkRV11+V1kxjZsqE/zdT65+H3kqndJ9pwuOqAA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.OnThisDayResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.OnThisDayResponse.html",
+          "hash": "fwmjVleK5VSSVNq/S133WPvqaRFwf4VK0v1QmIEKi08="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.Person.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.Person.html",
+          "hash": "zAPelu9HvhRu6NpYMqEhIfAWaRwDA+1+RR4UIiOW4bo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.html",
+          "hash": "DPJqYDhf5A1IicgRZZ/KNY4rvzKxHIbANQ8Ucth8NRQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Places.Country.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Places.Country.html",
+          "hash": "bHEJiDXuGtxd0IV+SIMmYhjtsjfdHVMMyf390lBF1mE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Places.Geo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Places.Geo.html",
+          "hash": "M50DhMn1gO8jGR5QgrNkJomavI1UEzTRS/8qT9H53VQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Places.Location.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Places.Location.html",
+          "hash": "kaBZx5Vk0J8X1zJOUe8GZomkw26ASRCWXMgk629MNEo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Places.LocationId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Places.LocationId.html",
+          "hash": "DcKzHJ24SSSn0QD7lhAdCqUV+PiQd5PcisWXWnBykUo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Places.LocationRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Places.LocationRef.html",
+          "hash": "JwIvKCzIFpfDGd2F30fq3xBiXftSPog98ImGJhp/Aq8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Places.Place.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Places.Place.html",
+          "hash": "VpB038jPOyf+kdkT8hA27KidfRA+MbnxPiEUR/RhjQY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Places.Region.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Places.Region.html",
+          "hash": "TEmahp0hzr26vWPLpKZqTti/SkX/DQAjb5vYFvo1cog="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Places.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Places.html",
+          "hash": "JFkzsvtR64du+c4Z4fXpF0jLLYiNITIGZVtMkVpypiE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Time.TADDateTime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Time.TADDateTime.html",
+          "hash": "agGSsbCBvEIL6aVZRx7SQBj0rqSidB00LqSO3EK6rMw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Time.TADTime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Time.TADTime.html",
+          "hash": "n9VySS1mxFoJfOK6q24A5QPOfS1jJ0rrQ8tqZFZpsU8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Time.TADTimezone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Time.TADTimezone.html",
+          "hash": "zOwxH1GwjuJ7sYMvJP+dpcZZLQbIHYbPTn2sDw87N7E="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Time.TimeChange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Time.TimeChange.html",
+          "hash": "j3RxFS0Sk9RpuI62FG/5cL7kNyuMsbwXyzv1j0GB1l4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Time.VerboseTimeChange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Time.VerboseTimeChange.html",
+          "hash": "UyDcZJ3SVwVcw+t8bAoC30rzRRIYd0PhyJIbjyfGEps="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Time.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Time.html",
+          "hash": "7651LN2uLl/LGXo3CRUDsq6K6NpqnQ6xd8srxuqaSQg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DialCodeService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DialCodeService.html",
+          "hash": "5RuvrRe47LnNzW0oP1KWYxHSRFIrn42M1ip1DLGaS+E="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DialCodes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DialCodes.html",
+          "hash": "VTZKDYymjTaOL6ceG0W6D42vHXCd8cMIvFBF9v2E9WE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.HolidaysService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.HolidaysService.html",
+          "hash": "DmzJ+DDIxqxitpool6/MJF5lAB6u7bN7nDjlYzlySBw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.InMemStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.InMemStore.html",
+          "hash": "5yxAtX2vAtyIr7Oc3z0UqLF3GmSE1gTxdZ6H2VqaPPY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.MalformedXMLException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.MalformedXMLException.html",
+          "hash": "N+5Njs2UPuWu6Z2zsSvMG9lCsQunjluFZYWR1n21LLs="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.Models.BaseModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.Models.BaseModel.html",
+          "hash": "Al9aORASxyv4d5fZyW/drqV/mCZv9FE1y3DS9tgVhd0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.Models.html",
+          "hash": "PrdsVoZQqXLRB02+l0V/MWAyDpAy0/Jc7OAD+c6SUNk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.OnThisDayService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.OnThisDayService.html",
+          "hash": "pJ7TRMXIiOGcRpqXQdFZdQMvN4oq9koMKK3kFFbRlCE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.PlacesService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.PlacesService.html",
+          "hash": "+JYI7ueeoHfxSe9H/MP6hF2blr+GGgpwhHx3yae1o6g="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.TimeService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.TimeService.html",
+          "hash": "/F6f3+V+jMI7W1IvzMRxM5Qp437JhxNaIkBxOIhm3IM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.html",
+          "hash": "vRod6vR+VmIZdH047ag6WQKNq7sSDUYXxUtgrB25YrM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "K5rq3B6OfEODB95HuEls7NB930RfAZMi+0NKg6LC+Qs="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "ZJAxzqDYe2f0McP8tGvEaz7VKpHh0v+wvHAB9AbONyU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "2Cp9Nq6caNo1lCIIWIAzXTSQGVV405rEIbJAcOz0/7M="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "RhnCqEMxFQwOKtll2JL4TovQRhNeBrqGHfbARxCbkJ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 2,
+          "skipped_file_count": 2
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 79,
+          "skipped_file_count": 79
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

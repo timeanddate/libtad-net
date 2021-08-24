@@ -1,0 +1,500 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DSTService
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DSTService
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="TimeAndDate.Services.DSTService">
+  
+  
+  <h1 id="TimeAndDate_Services_DSTService" data-uid="TimeAndDate.Services.DSTService" class="text-break">Class DSTService
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="TimeAndDate.Services.BaseService.html">BaseService</a></div>
+    <div class="level2"><span class="xref">DSTService</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_Version">BaseService.Version</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_Language">BaseService.Language</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_XmlElemName">BaseService.XmlElemName</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_ServiceName">BaseService.ServiceName</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_AuthenticationOptions">BaseService.AuthenticationOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_CallService__1_NameValueCollection_Func_XmlNode___0__">BaseService.CallService&lt;T&gt;(NameValueCollection, Func&lt;XmlNode, T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_CallService__1_NameValueCollection_">BaseService.CallService&lt;T&gt;(NameValueCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_FromXml__1_System_String_System_String_Func_XmlNode___0__">BaseService.FromXml&lt;T&gt;(String, String, Func&lt;XmlNode, T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_FromString__1_System_String_">BaseService.FromString&lt;T&gt;(String)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="TimeAndDate.Services.html">TimeAndDate.Services</a></h6>
+  <h6><strong>Assembly</strong>: TimeAndDate.Services.dll</h6>
+  <h5 id="TimeAndDate_Services_DSTService_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DSTService : BaseService</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/master/apiSpec/new?filename=TimeAndDate_Services_DSTService__ctor_System_String_System_String_.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.DSTService.%23ctor(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/master/TimeAndDate.Services/DSTService.cs/#L56">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_DSTService__ctor_" data-uid="TimeAndDate.Services.DSTService.#ctor*"></a>
+  <h4 id="TimeAndDate_Services_DSTService__ctor_System_String_System_String_" data-uid="TimeAndDate.Services.DSTService.#ctor(System.String,System.String)">DSTService(String, String)</h4>
+  <div class="markdown level1 summary"><p>The dstlist service can be used to obtain data about timezones in all<br>
+supported countries, eventual start and end date of daylight savings time,<br>
+and UTC offset for the timezones.</p>
+<p>The result data is aggregated on country/timezone level. By default, only
+information from countries that actually observe DST is returned without
+listing the individually affected locations – see the parameters listplaces
+and onlydst to change this behavior.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DSTService(string accessKey, string secretKey)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">accessKey</span></td>
+        <td><p>Access key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">secretKey</span></td>
+        <td><p>Secret key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/master/apiSpec/new?filename=TimeAndDate_Services_DSTService_IncludeOnlyDstCountries.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.DSTService.IncludeOnlyDstCountries%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/master/TimeAndDate.Services/DSTService.cs/#L30">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_DSTService_IncludeOnlyDstCountries_" data-uid="TimeAndDate.Services.DSTService.IncludeOnlyDstCountries*"></a>
+  <h4 id="TimeAndDate_Services_DSTService_IncludeOnlyDstCountries" data-uid="TimeAndDate.Services.DSTService.IncludeOnlyDstCountries">IncludeOnlyDstCountries</h4>
+  <div class="markdown level1 summary"><p>Return only countries which actually observe DST in the queried year. Other countries
+will be suppressed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IncludeOnlyDstCountries { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if include only dst countries; otherwise, <code>false</code>. <code>true</code> is default.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/master/apiSpec/new?filename=TimeAndDate_Services_DSTService_IncludePlacesForEveryCountry.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.DSTService.IncludePlacesForEveryCountry%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/master/TimeAndDate.Services/DSTService.cs/#L38">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_DSTService_IncludePlacesForEveryCountry_" data-uid="TimeAndDate.Services.DSTService.IncludePlacesForEveryCountry*"></a>
+  <h4 id="TimeAndDate_Services_DSTService_IncludePlacesForEveryCountry" data-uid="TimeAndDate.Services.DSTService.IncludePlacesForEveryCountry">IncludePlacesForEveryCountry</h4>
+  <div class="markdown level1 summary"><p>For every timezone/country, list the individual places that belong to each record.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IncludePlacesForEveryCountry { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if include places for every country; otherwise, <code>false</code>. <code>true</code> is default.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/master/apiSpec/new?filename=TimeAndDate_Services_DSTService_IncludeTimeChanges.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.DSTService.IncludeTimeChanges%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/master/TimeAndDate.Services/DSTService.cs/#L21">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_DSTService_IncludeTimeChanges_" data-uid="TimeAndDate.Services.DSTService.IncludeTimeChanges*"></a>
+  <h4 id="TimeAndDate_Services_DSTService_IncludeTimeChanges" data-uid="TimeAndDate.Services.DSTService.IncludeTimeChanges">IncludeTimeChanges</h4>
+  <div class="markdown level1 summary"><p>Add a list of time changes during the year to the dstentry object. This listing e.g.
+shows changes caused by daylight savings time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IncludeTimeChanges { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if include time changes; otherwise, <code>false</code>. <code>false</code> is default.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/master/apiSpec/new?filename=TimeAndDate_Services_DSTService_GetDaylightSavingTime.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.DSTService.GetDaylightSavingTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/master/TimeAndDate.Services/DSTService.cs/#L70">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_DSTService_GetDaylightSavingTime_" data-uid="TimeAndDate.Services.DSTService.GetDaylightSavingTime*"></a>
+  <h4 id="TimeAndDate_Services_DSTService_GetDaylightSavingTime" data-uid="TimeAndDate.Services.DSTService.GetDaylightSavingTime">GetDaylightSavingTime()</h4>
+  <div class="markdown level1 summary"><p>Gets the all entries with daylight saving time</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IList&lt;DST&gt; GetDaylightSavingTime()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<a class="xref" href="TimeAndDate.Services.DataTypes.DST.DST.html">DST</a>&gt;</td>
+        <td><p>The daylight saving time.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/master/apiSpec/new?filename=TimeAndDate_Services_DSTService_GetDaylightSavingTime_System_Int32_.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.DSTService.GetDaylightSavingTime(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/master/TimeAndDate.Services/DSTService.cs/#L106">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_DSTService_GetDaylightSavingTime_" data-uid="TimeAndDate.Services.DSTService.GetDaylightSavingTime*"></a>
+  <h4 id="TimeAndDate_Services_DSTService_GetDaylightSavingTime_System_Int32_" data-uid="TimeAndDate.Services.DSTService.GetDaylightSavingTime(System.Int32)">GetDaylightSavingTime(Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the daylight saving time by year.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IList&lt;DST&gt; GetDaylightSavingTime(int year)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">year</span></td>
+        <td><p>Year.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<a class="xref" href="TimeAndDate.Services.DataTypes.DST.DST.html">DST</a>&gt;</td>
+        <td><p>The daylight saving time.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/master/apiSpec/new?filename=TimeAndDate_Services_DSTService_GetDaylightSavingTime_System_String_.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.DSTService.GetDaylightSavingTime(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/master/TimeAndDate.Services/DSTService.cs/#L85">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_DSTService_GetDaylightSavingTime_" data-uid="TimeAndDate.Services.DSTService.GetDaylightSavingTime*"></a>
+  <h4 id="TimeAndDate_Services_DSTService_GetDaylightSavingTime_System_String_" data-uid="TimeAndDate.Services.DSTService.GetDaylightSavingTime(System.String)">GetDaylightSavingTime(String)</h4>
+  <div class="markdown level1 summary"><p>Gets the daylight saving time by ISO3166-1-alpha-2 Country Code</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IList&lt;DST&gt; GetDaylightSavingTime(string countryCode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">countryCode</span></td>
+        <td><p>Country code.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<a class="xref" href="TimeAndDate.Services.DataTypes.DST.DST.html">DST</a>&gt;</td>
+        <td><p>The daylight saving time.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/master/apiSpec/new?filename=TimeAndDate_Services_DSTService_GetDaylightSavingTime_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.DSTService.GetDaylightSavingTime(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/master/TimeAndDate.Services/DSTService.cs/#L129">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_DSTService_GetDaylightSavingTime_" data-uid="TimeAndDate.Services.DSTService.GetDaylightSavingTime*"></a>
+  <h4 id="TimeAndDate_Services_DSTService_GetDaylightSavingTime_System_String_System_Int32_" data-uid="TimeAndDate.Services.DSTService.GetDaylightSavingTime(System.String,System.Int32)">GetDaylightSavingTime(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the daylight saving time by country and year.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IList&lt;DST&gt; GetDaylightSavingTime(string countryCode, int year)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">countryCode</span></td>
+        <td><p>ISO3166-1-alpha-2 Country Code</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">year</span></td>
+        <td><p>Year.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<a class="xref" href="TimeAndDate.Services.DataTypes.DST.DST.html">DST</a>&gt;</td>
+        <td><p>The daylight saving time.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/timeanddate/libtad-net/new/master/apiSpec/new?filename=TimeAndDate_Services_DSTService.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.DSTService%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/timeanddate/libtad-net/blob/master/TimeAndDate.Services/DSTService.cs/#L12" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
