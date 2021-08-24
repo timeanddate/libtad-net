@@ -7,6 +7,54 @@ references:
   commentId: N:TimeAndDate.Services
   fullName: TimeAndDate.Services
   nameWithType: TimeAndDate.Services
+- uid: TimeAndDate.Services.AccountService
+  name: AccountService
+  href: api/TimeAndDate.Services.AccountService.html
+  commentId: T:TimeAndDate.Services.AccountService
+  fullName: TimeAndDate.Services.AccountService
+  nameWithType: AccountService
+- uid: TimeAndDate.Services.AccountService.#ctor(System.String,System.String)
+  name: AccountService(String, String)
+  href: api/TimeAndDate.Services.AccountService.html#TimeAndDate_Services_AccountService__ctor_System_String_System_String_
+  commentId: M:TimeAndDate.Services.AccountService.#ctor(System.String,System.String)
+  fullName: TimeAndDate.Services.AccountService.AccountService(System.String, System.String)
+  nameWithType: AccountService.AccountService(String, String)
+- uid: TimeAndDate.Services.AccountService.#ctor*
+  name: AccountService
+  href: api/TimeAndDate.Services.AccountService.html#TimeAndDate_Services_AccountService__ctor_
+  commentId: Overload:TimeAndDate.Services.AccountService.#ctor
+  isSpec: "True"
+  fullName: TimeAndDate.Services.AccountService.AccountService
+  nameWithType: AccountService.AccountService
+- uid: TimeAndDate.Services.AccountService.FromString*
+  name: FromString
+  href: api/TimeAndDate.Services.AccountService.html#TimeAndDate_Services_AccountService_FromString_
+  commentId: Overload:TimeAndDate.Services.AccountService.FromString
+  isSpec: "True"
+  fullName: TimeAndDate.Services.AccountService.FromString
+  nameWithType: AccountService.FromString
+- uid: TimeAndDate.Services.AccountService.FromString``1(System.String)
+  name: FromString<Account>(String)
+  href: api/TimeAndDate.Services.AccountService.html#TimeAndDate_Services_AccountService_FromString__1_System_String_
+  commentId: M:TimeAndDate.Services.AccountService.FromString``1(System.String)
+  name.vb: FromString(Of Account)(String)
+  fullName: TimeAndDate.Services.AccountService.FromString<Account>(System.String)
+  fullName.vb: TimeAndDate.Services.AccountService.FromString(Of Account)(System.String)
+  nameWithType: AccountService.FromString<Account>(String)
+  nameWithType.vb: AccountService.FromString(Of Account)(String)
+- uid: TimeAndDate.Services.AccountService.GetAccount
+  name: GetAccount()
+  href: api/TimeAndDate.Services.AccountService.html#TimeAndDate_Services_AccountService_GetAccount
+  commentId: M:TimeAndDate.Services.AccountService.GetAccount
+  fullName: TimeAndDate.Services.AccountService.GetAccount()
+  nameWithType: AccountService.GetAccount()
+- uid: TimeAndDate.Services.AccountService.GetAccount*
+  name: GetAccount
+  href: api/TimeAndDate.Services.AccountService.html#TimeAndDate_Services_AccountService_GetAccount_
+  commentId: Overload:TimeAndDate.Services.AccountService.GetAccount
+  isSpec: "True"
+  fullName: TimeAndDate.Services.AccountService.GetAccount
+  nameWithType: AccountService.GetAccount
 - uid: TimeAndDate.Services.AstrodataService
   name: AstrodataService
   href: api/TimeAndDate.Services.AstrodataService.html
@@ -731,6 +779,25 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.Common.IdFormatException.IdFormatException
   nameWithType: IdFormatException.IdFormatException
+- uid: TimeAndDate.Services.Common.InvalidIsoStringException
+  name: InvalidIsoStringException
+  href: api/TimeAndDate.Services.Common.InvalidIsoStringException.html
+  commentId: T:TimeAndDate.Services.Common.InvalidIsoStringException
+  fullName: TimeAndDate.Services.Common.InvalidIsoStringException
+  nameWithType: InvalidIsoStringException
+- uid: TimeAndDate.Services.Common.InvalidIsoStringException.#ctor(System.String)
+  name: InvalidIsoStringException(String)
+  href: api/TimeAndDate.Services.Common.InvalidIsoStringException.html#TimeAndDate_Services_Common_InvalidIsoStringException__ctor_System_String_
+  commentId: M:TimeAndDate.Services.Common.InvalidIsoStringException.#ctor(System.String)
+  fullName: TimeAndDate.Services.Common.InvalidIsoStringException.InvalidIsoStringException(System.String)
+  nameWithType: InvalidIsoStringException.InvalidIsoStringException(String)
+- uid: TimeAndDate.Services.Common.InvalidIsoStringException.#ctor*
+  name: InvalidIsoStringException
+  href: api/TimeAndDate.Services.Common.InvalidIsoStringException.html#TimeAndDate_Services_Common_InvalidIsoStringException__ctor_
+  commentId: Overload:TimeAndDate.Services.Common.InvalidIsoStringException.#ctor
+  isSpec: "True"
+  fullName: TimeAndDate.Services.Common.InvalidIsoStringException.InvalidIsoStringException
+  nameWithType: InvalidIsoStringException.InvalidIsoStringException
 - uid: TimeAndDate.Services.Common.LocalTimeDoesNotExistException
   name: LocalTimeDoesNotExistException
   href: api/TimeAndDate.Services.Common.LocalTimeDoesNotExistException.html
@@ -1024,6 +1091,179 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.Coordinates.Longitude
   nameWithType: Coordinates.Longitude
+- uid: TimeAndDate.Services.DataTypes.Account
+  name: TimeAndDate.Services.DataTypes.Account
+  href: api/TimeAndDate.Services.DataTypes.Account.html
+  commentId: N:TimeAndDate.Services.DataTypes.Account
+  fullName: TimeAndDate.Services.DataTypes.Account
+  nameWithType: TimeAndDate.Services.DataTypes.Account
+- uid: TimeAndDate.Services.DataTypes.Account.Account
+  name: Account
+  href: api/TimeAndDate.Services.DataTypes.Account.Account.html
+  commentId: T:TimeAndDate.Services.DataTypes.Account.Account
+  fullName: TimeAndDate.Services.DataTypes.Account.Account
+  nameWithType: Account
+- uid: TimeAndDate.Services.DataTypes.Account.Account.#ctor
+  name: Account()
+  href: api/TimeAndDate.Services.DataTypes.Account.Account.html#TimeAndDate_Services_DataTypes_Account_Account__ctor
+  commentId: M:TimeAndDate.Services.DataTypes.Account.Account.#ctor
+  fullName: TimeAndDate.Services.DataTypes.Account.Account.Account()
+  nameWithType: Account.Account()
+- uid: TimeAndDate.Services.DataTypes.Account.Account.#ctor(XmlNode)
+  name: Account(XmlNode)
+  href: api/TimeAndDate.Services.DataTypes.Account.Account.html#TimeAndDate_Services_DataTypes_Account_Account__ctor_XmlNode_
+  commentId: M:TimeAndDate.Services.DataTypes.Account.Account.#ctor(XmlNode)
+  fullName: TimeAndDate.Services.DataTypes.Account.Account.Account(XmlNode)
+  nameWithType: Account.Account(XmlNode)
+- uid: TimeAndDate.Services.DataTypes.Account.Account.#ctor*
+  name: Account
+  href: api/TimeAndDate.Services.DataTypes.Account.Account.html#TimeAndDate_Services_DataTypes_Account_Account__ctor_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Account.Account.#ctor
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Account.Account.Account
+  nameWithType: Account.Account
+- uid: TimeAndDate.Services.DataTypes.Account.Account.Credits
+  name: Credits
+  href: api/TimeAndDate.Services.DataTypes.Account.Account.html#TimeAndDate_Services_DataTypes_Account_Account_Credits
+  commentId: P:TimeAndDate.Services.DataTypes.Account.Account.Credits
+  fullName: TimeAndDate.Services.DataTypes.Account.Account.Credits
+  nameWithType: Account.Credits
+- uid: TimeAndDate.Services.DataTypes.Account.Account.Credits*
+  name: Credits
+  href: api/TimeAndDate.Services.DataTypes.Account.Account.html#TimeAndDate_Services_DataTypes_Account_Account_Credits_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Account.Account.Credits
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Account.Account.Credits
+  nameWithType: Account.Credits
+- uid: TimeAndDate.Services.DataTypes.Account.Account.Id
+  name: Id
+  href: api/TimeAndDate.Services.DataTypes.Account.Account.html#TimeAndDate_Services_DataTypes_Account_Account_Id
+  commentId: P:TimeAndDate.Services.DataTypes.Account.Account.Id
+  fullName: TimeAndDate.Services.DataTypes.Account.Account.Id
+  nameWithType: Account.Id
+- uid: TimeAndDate.Services.DataTypes.Account.Account.Id*
+  name: Id
+  href: api/TimeAndDate.Services.DataTypes.Account.Account.html#TimeAndDate_Services_DataTypes_Account_Account_Id_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Account.Account.Id
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Account.Account.Id
+  nameWithType: Account.Id
+- uid: TimeAndDate.Services.DataTypes.Account.Account.Packages
+  name: Packages
+  href: api/TimeAndDate.Services.DataTypes.Account.Account.html#TimeAndDate_Services_DataTypes_Account_Account_Packages
+  commentId: P:TimeAndDate.Services.DataTypes.Account.Account.Packages
+  fullName: TimeAndDate.Services.DataTypes.Account.Account.Packages
+  nameWithType: Account.Packages
+- uid: TimeAndDate.Services.DataTypes.Account.Account.Packages*
+  name: Packages
+  href: api/TimeAndDate.Services.DataTypes.Account.Account.html#TimeAndDate_Services_DataTypes_Account_Account_Packages_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Account.Account.Packages
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Account.Account.Packages
+  nameWithType: Account.Packages
+- uid: TimeAndDate.Services.DataTypes.Account.Account.Timestamp
+  name: Timestamp
+  href: api/TimeAndDate.Services.DataTypes.Account.Account.html#TimeAndDate_Services_DataTypes_Account_Account_Timestamp
+  commentId: P:TimeAndDate.Services.DataTypes.Account.Account.Timestamp
+  fullName: TimeAndDate.Services.DataTypes.Account.Account.Timestamp
+  nameWithType: Account.Timestamp
+- uid: TimeAndDate.Services.DataTypes.Account.Account.Timestamp*
+  name: Timestamp
+  href: api/TimeAndDate.Services.DataTypes.Account.Account.html#TimeAndDate_Services_DataTypes_Account_Account_Timestamp_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Account.Account.Timestamp
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Account.Account.Timestamp
+  nameWithType: Account.Timestamp
+- uid: TimeAndDate.Services.DataTypes.Account.Package
+  name: Package
+  href: api/TimeAndDate.Services.DataTypes.Account.Package.html
+  commentId: T:TimeAndDate.Services.DataTypes.Account.Package
+  fullName: TimeAndDate.Services.DataTypes.Account.Package
+  nameWithType: Package
+- uid: TimeAndDate.Services.DataTypes.Account.Package.ExpirationDate
+  name: ExpirationDate
+  href: api/TimeAndDate.Services.DataTypes.Account.Package.html#TimeAndDate_Services_DataTypes_Account_Package_ExpirationDate
+  commentId: P:TimeAndDate.Services.DataTypes.Account.Package.ExpirationDate
+  fullName: TimeAndDate.Services.DataTypes.Account.Package.ExpirationDate
+  nameWithType: Package.ExpirationDate
+- uid: TimeAndDate.Services.DataTypes.Account.Package.ExpirationDate*
+  name: ExpirationDate
+  href: api/TimeAndDate.Services.DataTypes.Account.Package.html#TimeAndDate_Services_DataTypes_Account_Package_ExpirationDate_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Account.Package.ExpirationDate
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Account.Package.ExpirationDate
+  nameWithType: Package.ExpirationDate
+- uid: TimeAndDate.Services.DataTypes.Account.Package.Id
+  name: Id
+  href: api/TimeAndDate.Services.DataTypes.Account.Package.html#TimeAndDate_Services_DataTypes_Account_Package_Id
+  commentId: P:TimeAndDate.Services.DataTypes.Account.Package.Id
+  fullName: TimeAndDate.Services.DataTypes.Account.Package.Id
+  nameWithType: Package.Id
+- uid: TimeAndDate.Services.DataTypes.Account.Package.Id*
+  name: Id
+  href: api/TimeAndDate.Services.DataTypes.Account.Package.html#TimeAndDate_Services_DataTypes_Account_Package_Id_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Account.Package.Id
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Account.Package.Id
+  nameWithType: Package.Id
+- uid: TimeAndDate.Services.DataTypes.Account.Package.Name
+  name: Name
+  href: api/TimeAndDate.Services.DataTypes.Account.Package.html#TimeAndDate_Services_DataTypes_Account_Package_Name
+  commentId: P:TimeAndDate.Services.DataTypes.Account.Package.Name
+  fullName: TimeAndDate.Services.DataTypes.Account.Package.Name
+  nameWithType: Package.Name
+- uid: TimeAndDate.Services.DataTypes.Account.Package.Name*
+  name: Name
+  href: api/TimeAndDate.Services.DataTypes.Account.Package.html#TimeAndDate_Services_DataTypes_Account_Package_Name_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Account.Package.Name
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Account.Package.Name
+  nameWithType: Package.Name
+- uid: TimeAndDate.Services.DataTypes.Account.Package.op_Explicit(XmlNode)~TimeAndDate.Services.DataTypes.Account.Package
+  name: Explicit(XmlNode to Package)
+  href: api/TimeAndDate.Services.DataTypes.Account.Package.html#TimeAndDate_Services_DataTypes_Account_Package_op_Explicit_XmlNode__TimeAndDate_Services_DataTypes_Account_Package
+  commentId: M:TimeAndDate.Services.DataTypes.Account.Package.op_Explicit(XmlNode)~TimeAndDate.Services.DataTypes.Account.Package
+  name.vb: Narrowing(XmlNode to Package)
+  fullName: TimeAndDate.Services.DataTypes.Account.Package.Explicit(XmlNode to TimeAndDate.Services.DataTypes.Account.Package)
+  fullName.vb: TimeAndDate.Services.DataTypes.Account.Package.Narrowing(XmlNode to TimeAndDate.Services.DataTypes.Account.Package)
+  nameWithType: Package.Explicit(XmlNode to Package)
+  nameWithType.vb: Package.Narrowing(XmlNode to Package)
+- uid: TimeAndDate.Services.DataTypes.Account.Package.op_Explicit*
+  name: Explicit
+  href: api/TimeAndDate.Services.DataTypes.Account.Package.html#TimeAndDate_Services_DataTypes_Account_Package_op_Explicit_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Account.Package.op_Explicit
+  isSpec: "True"
+  name.vb: Narrowing
+  fullName: TimeAndDate.Services.DataTypes.Account.Package.Explicit
+  fullName.vb: TimeAndDate.Services.DataTypes.Account.Package.Narrowing
+  nameWithType: Package.Explicit
+  nameWithType.vb: Package.Narrowing
+- uid: TimeAndDate.Services.DataTypes.Account.Package.Parameters
+  name: Parameters
+  href: api/TimeAndDate.Services.DataTypes.Account.Package.html#TimeAndDate_Services_DataTypes_Account_Package_Parameters
+  commentId: P:TimeAndDate.Services.DataTypes.Account.Package.Parameters
+  fullName: TimeAndDate.Services.DataTypes.Account.Package.Parameters
+  nameWithType: Package.Parameters
+- uid: TimeAndDate.Services.DataTypes.Account.Package.Parameters*
+  name: Parameters
+  href: api/TimeAndDate.Services.DataTypes.Account.Package.html#TimeAndDate_Services_DataTypes_Account_Package_Parameters_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Account.Package.Parameters
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Account.Package.Parameters
+  nameWithType: Package.Parameters
+- uid: TimeAndDate.Services.DataTypes.Account.Package.PurchaseDate
+  name: PurchaseDate
+  href: api/TimeAndDate.Services.DataTypes.Account.Package.html#TimeAndDate_Services_DataTypes_Account_Package_PurchaseDate
+  commentId: P:TimeAndDate.Services.DataTypes.Account.Package.PurchaseDate
+  fullName: TimeAndDate.Services.DataTypes.Account.Package.PurchaseDate
+  nameWithType: Package.PurchaseDate
+- uid: TimeAndDate.Services.DataTypes.Account.Package.PurchaseDate*
+  name: PurchaseDate
+  href: api/TimeAndDate.Services.DataTypes.Account.Package.html#TimeAndDate_Services_DataTypes_Account_Package_PurchaseDate_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Account.Package.PurchaseDate
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Account.Package.PurchaseDate
+  nameWithType: Package.PurchaseDate
 - uid: TimeAndDate.Services.DataTypes.Astro
   name: TimeAndDate.Services.DataTypes.Astro
   href: api/TimeAndDate.Services.DataTypes.Astro.html
@@ -1536,6 +1776,12 @@ references:
   commentId: F:TimeAndDate.Services.DataTypes.Astro.AstronomyEventClass.CivilTwilight
   fullName: TimeAndDate.Services.DataTypes.Astro.AstronomyEventClass.CivilTwilight
   nameWithType: AstronomyEventClass.CivilTwilight
+- uid: TimeAndDate.Services.DataTypes.Astro.AstronomyEventClass.Current
+  name: Current
+  href: api/TimeAndDate.Services.DataTypes.Astro.AstronomyEventClass.html#TimeAndDate_Services_DataTypes_Astro_AstronomyEventClass_Current
+  commentId: F:TimeAndDate.Services.DataTypes.Astro.AstronomyEventClass.Current
+  fullName: TimeAndDate.Services.DataTypes.Astro.AstronomyEventClass.Current
+  nameWithType: AstronomyEventClass.Current
 - uid: TimeAndDate.Services.DataTypes.Astro.AstronomyEventClass.DayLength
   name: DayLength
   href: api/TimeAndDate.Services.DataTypes.Astro.AstronomyEventClass.html#TimeAndDate_Services_DataTypes_Astro_AstronomyEventClass_DayLength
@@ -1821,18 +2067,66 @@ references:
   commentId: T:TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType
   fullName: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType
   nameWithType: AstronomyObjectType
+- uid: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Jupiter
+  name: Jupiter
+  href: api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.html#TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_Jupiter
+  commentId: F:TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Jupiter
+  fullName: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Jupiter
+  nameWithType: AstronomyObjectType.Jupiter
+- uid: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Mars
+  name: Mars
+  href: api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.html#TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_Mars
+  commentId: F:TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Mars
+  fullName: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Mars
+  nameWithType: AstronomyObjectType.Mars
+- uid: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Mercury
+  name: Mercury
+  href: api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.html#TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_Mercury
+  commentId: F:TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Mercury
+  fullName: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Mercury
+  nameWithType: AstronomyObjectType.Mercury
 - uid: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Moon
   name: Moon
   href: api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.html#TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_Moon
   commentId: F:TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Moon
   fullName: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Moon
   nameWithType: AstronomyObjectType.Moon
+- uid: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Neptune
+  name: Neptune
+  href: api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.html#TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_Neptune
+  commentId: F:TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Neptune
+  fullName: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Neptune
+  nameWithType: AstronomyObjectType.Neptune
+- uid: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Pluto
+  name: Pluto
+  href: api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.html#TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_Pluto
+  commentId: F:TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Pluto
+  fullName: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Pluto
+  nameWithType: AstronomyObjectType.Pluto
+- uid: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Saturn
+  name: Saturn
+  href: api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.html#TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_Saturn
+  commentId: F:TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Saturn
+  fullName: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Saturn
+  nameWithType: AstronomyObjectType.Saturn
 - uid: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Sun
   name: Sun
   href: api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.html#TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_Sun
   commentId: F:TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Sun
   fullName: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Sun
   nameWithType: AstronomyObjectType.Sun
+- uid: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Uranus
+  name: Uranus
+  href: api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.html#TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_Uranus
+  commentId: F:TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Uranus
+  fullName: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Uranus
+  nameWithType: AstronomyObjectType.Uranus
+- uid: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Venus
+  name: Venus
+  href: api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.html#TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_Venus
+  commentId: F:TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Venus
+  fullName: TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.Venus
+  nameWithType: AstronomyObjectType.Venus
 - uid: TimeAndDate.Services.DataTypes.Astro.AstronomySpecial
   name: AstronomySpecial
   href: api/TimeAndDate.Services.DataTypes.Astro.AstronomySpecial.html

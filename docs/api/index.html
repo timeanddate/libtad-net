@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>PLACEHOLDER </title>
+    <title>Time And Date .NET API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="PLACEHOLDER ">
+    <meta name="title" content="Time And Date .NET API ">
     <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,9 +67,251 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="placeholder">PLACEHOLDER</h1>
+<h1 id="time-and-date-net-api">Time And Date .NET API</h1>
 
-<p>TODO: Add .NET projects to the <em>src</em> folder and run <code>docfx</code> to generate <strong>REAL</strong> <em>API Documentation</em>!</p>
+<p><a href="https://www.travis-ci.com/timeanddate/libtad-net"><img src="https://www.travis-ci.com/timeanddate/libtad-net.svg?branch=master" alt="Build Status"></a></p>
+<p>Time and Date APIs support looking up several different locations and IDs. As of API version 2 the following variations are available:</p>
+<ul>
+<li>Numeric ID (e.g. 187)</li>
+<li>Textual ID (e.g. &quot;usa/las-vegas&quot;)</li>
+<li>Coordinates (e.g. &quot;+59.743+10.204&quot;)</li>
+<li>Airports (e.g. &quot;a-ENZV&quot;)</li>
+</ul>
+<p>The class <a href="http://services.timeanddate.com/api/doc/v2/type-locationid.html">LocationId</a> is used to set the appropriate location ID. Airports categorize the same way as textual ID.</p>
+<p>An access key and a secret key is required to use the API. If you are not already a Time and Date API user, please see our <a href="https://services.timeanddate.com/api/packages/">API offers</a> to get a free 3 month trial. For more information, see our <a href="https://services.timeanddate.com/">API Services page</a>.</p>
+<p>Developed with Mono C# Compiler 4.0.1.0</p>
+<h2 id="astronomy-service">Astronomy Service</h2>
+<p>Get astronomy information for a place on a date by textual ID:</p>
+<pre><code>     var place = new LocationId(&quot;usa/anchorage&quot;);
+     var date = new TADDateTime(2015, 1, 1);
+     var service = new AstronomyService('accessKey', 'secretKey');
+     var astroInfo = service.GetAstronomicalInfo(AstronomyObjectType.Sun, place, date);
+     
+</code></pre>
+<p>Get astronomy information for a place between two dates by numeric ID:</p>
+<pre><code>     var place = new LocationId(187);
+     var startDate = new TADDateTime(2015, 1, 1);
+     var endDate = new TADDateTime(2015, 1, 30);
+     var service = new AstronomyService('accessKey', 'secretKey');
+     var astroInfo = service.GetAstronomicalInfo(AstronomyObjectType.Moon, place, startDate, endDate);
+</code></pre>
+<p>Retrieve specific astronomy events by coordinates:</p>
+<pre><code>    var coordinates = new Coordinates(59.743m, 10.204m);
+    var place = new LocationId(coordinates);
+    var date = new TADDateTime(2015, 1, 1);
+    var service = new AstronomyService('accessKey', 'secretKey');
+
+    service.Types = AstronomyEventClass.Meridian | AstronomyEventClass.NauticalTwilight;
+
+    var astroInfo = service.GetAstronomicalInfo(AstronomyObjectType.Moon, place, startDate, endDate);
+</code></pre>
+<p>Other options:</p>
+<pre><code>    // Adds the TADDateTime-object ISOTime to every astronomical day
+    service.IncludeISOTime = true;
+
+    // Adds the TADDateTime-object UTCTime to every astronomical day
+    service.IncludeUTCTime = true;
+
+    // Adds a search radius if GetAstronomicalInfo is used with coordinates
+    service.Radius = 50; // km
+</code></pre>
+<h2 id="astrodata-service">Astrodata Service</h2>
+<p>Get astronomical position for a place on a date by textual ID:</p>
+<pre><code>     var place = new LocationId(&quot;usa/anchorage&quot;);
+     var date = new TADDateTime(2015, 1, 1);
+     var service = new AstroDataService('accessKey', 'secretKey');
+     var astroInfo = service.GetAstroData(AstronomyObjectType.Sun, place, date);
+     
+</code></pre>
+<p>Get astronomical position for a place for two date intervals:</p>
+<pre><code>     var place = new LocationId(187);
+ var list = new List&lt;TADDateTime&gt; ();
+     list.Add (new TADDateTime(2015, 1, 1));
+     list.Add (new TADDateTime(2015, 1, 30));
+     var service = new AstrodataService('accessKey', 'secretKey');
+     var astroData = service.GetAstroData(AstronomyObjectType.Moon, place, list);
+</code></pre>
+<p>Get astronomical position for multiple astronomical objects:</p>
+<pre><code>var place = new Coordinates(57.743m, 10.204m);
+AstronomyObjectType object = AstronomyObjectType.Sun | AstronomyObjectType.Moon;
+var service = new AstrodataService('accessKey', 'secretKey');
+var astroData = service.GetAstrodata(object, place, new TADDateTime(2021, 5, 3));
+</code></pre>
+<p>Other options:</p>
+<pre><code>// Consider the specified intervals to be local time (UTC if false)
+service.LocalTime = true;
+
+    // Adds the TADDateTime-object ISOTime to every astronomical day
+    service.IncludeISOTime = true;
+
+    // Adds the TADDateTime-object UTCTime to every astronomical day
+    service.IncludeUTCTime = true;
+
+    // Adds a search radius if GetAstrodata is used with coordinates
+    service.Radius = 50; // km
+</code></pre>
+<h2 id="convert-time-service">Convert Time Service</h2>
+<p>Convert time from a location:</p>
+<pre><code>    var place = new LocationId(&quot;norway/oslo&quot;);
+    var date = new TADDateTime(DateTime.Now);
+    var service = new ConvertTimeService('accessKey', 'secretKey');
+    var convertedTime = service.ConvertTime(place, date);
+</code></pre>
+<p>Convert time from a location using an <a href="http://services.timeanddate.com/api/doc/v2/type-isotime.html">ISO 8601</a>-string:</p>
+<pre><code>    ...
+    var convertedTime = service.ConvertTime(place, &quot;2015-04-21T16:45:00&quot;);
+</code></pre>
+<p>Convert time from one location to multiple locations:</p>
+<pre><code>    var listOfLocations = new List&lt;LocationId&gt;();
+    listOfLocations.Add(new LocationId(&quot;usa/las-vegas&quot;));
+    listOfLocations.Add(new LocationId(179);
+    
+    var place = new LocationId(&quot;oslo/norway&quot;);
+    var service = new ConvertTimeService('accessKey', 'secretKey');
+    var result = service.ConvertTime(place, new TADDateTime(DateTime.Now), listOfLocations);
+</code></pre>
+<p>Other options:</p>
+<pre><code>    // Add TimeChanges for each location
+    service.IncludeTimeChanges = true;
+
+    // Add Timezone information for each location
+    service.IncludeTimezoneInformation = true;
+
+    // Search for a place by a specified radius
+    service.Radius = 50; // km
+</code></pre>
+<h2 id="daylight-saving-time-service">Daylight Saving Time Service</h2>
+<p>Get all daylight saving times:</p>
+<pre><code>    var service = new DSTService('accessKey', 'secretKey');
+    var allDST = service.GetDaylightSavingTime();
+</code></pre>
+<p>Get daylight saving time for a specified year:</p>
+<pre><code>    var service = new DSTService('accessKey', 'secretKey');
+    var result = service.GetDaylightSavingTime(2014);
+</code></pre>
+<p>Get daylight saving time for a specified <a href="http://services.timeanddate.com/api/doc/v2/type-isocountry.html">ISO3166-1 (Alpha2)</a> country code:</p>
+<pre><code>    var service = new DSTService('accessKey', 'secretKey');
+    var result = service.GetDaylightSavingTime(&quot;no&quot;);
+</code></pre>
+<p>Get daylight saving time for a specified <a href="http://services.timeanddate.com/api/doc/v2/type-isocountry.html">ISO3166-1 (Alpha2)</a> country code and year:</p>
+<pre><code>    var service = new DSTService('accessKey', 'secretKey');
+    var result = service.GetDaylightSavingTime(&quot;no&quot;, 2014);
+</code></pre>
+<p>Other options:</p>
+<pre><code>   // Add TimeChanges to each location
+   service.IncludeTimeChanges = true;
+
+   // Return only countries which have DST
+   service.IncludeOnlyDstCountries = true;
+
+   // Add locations for every country
+   service.IncludePlacesForEveryCountry = true;
+
+    
+</code></pre>
+<h2 id="dial-code-service">Dial Code Service</h2>
+<p>Get dial code for a location:</p>
+<pre><code>    var osloId = new LocationId(&quot;norway/oslo&quot;);
+    var service = new DialCodeService('accessKey', 'secretKey');
+    var result = service.GetDialCode(osloId);
+</code></pre>
+<p>Get dial code to a location, from a location:</p>
+<pre><code>    var osloId = new LocationId(&quot;norway/oslo&quot;)
+    var newYorkId = new LocationId(&quot;usa/new-york&quot;);
+    var service = new DialCodeService('accessKey', 'secretKey');
+    var result = service.GetDialCode(osloId, newYorkId);
+</code></pre>
+<p>Get dial code results with a local number:</p>
+<pre><code>    var osloId = new LocationId(&quot;norway/oslo&quot;)
+    var newYorkId = new LocationId(&quot;usa/new-york&quot;);
+    var number = 51515151;
+    var service = new DialCodeService('accessKey', 'secretKey');
+    var result = service.GetDialCode(osloId, newYorkId, number);
+</code></pre>
+<p>Other options:</p>
+<pre><code>    // Do not include locations in return value
+    service.IncludeLocations = false;
+
+    // Do not include current time in return value
+    service.IncludeCurrentTime = false;
+
+    // Do not include coordinates to locations in return value
+    service.IncludeCoordinates = false;
+
+    // Do not include Timezone Information in return value
+    service.IncludeTimezoneInformation = false;
+</code></pre>
+<h2 id="holidays-service">Holidays Service</h2>
+<p>Get all holidays for a country by <a href="http://services.timeanddate.com/api/doc/v2/type-isocountry.html">ISO3166-1 (Alpha2)</a> country code:</p>
+<pre><code>    var country = &quot;no&quot;;
+    var service = new HolidaysService('accessKey', 'secretKey');
+    var result = service.GetHolidaysForCountry(country);
+</code></pre>
+<p>Get all holidays for a country by year and <a href="http://services.timeanddate.com/api/doc/v2/type-isocountry.html">ISO3166-1 (Alpha2)</a> country code:</p>
+<pre><code>    var country = &quot;no&quot;;
+    var year = 2014;
+    var service = new HolidaysService('accessKey', 'secretKey');
+    var result = service.GetHolidaysForCountry(country, 2014);
+</code></pre>
+<p>Get specific holidays for a country:</p>
+<pre><code>    var country = &quot;no&quot;;
+    var service = new HolidaysService('accessKey', 'secretKey');
+    service.Types = HolidayType.Federal | HolidayType.Weekdays;
+    var result = service.GetHolidaysForCountry(country);
+</code></pre>
+<h2 id="places-service">Places Service</h2>
+<p>Get all places in Time and Date (these can be used to look up data in other services):</p>
+<pre><code>    var service = new  PlacesService('accessKey', 'secretKey')
+    var result = service.GetPlaces();
+</code></pre>
+<p>Other options:</p>
+<pre><code>    // Do not include coordinates in return value
+    service.IncludeCoordinates = false;
+</code></pre>
+<h2 id="time-service">Time Service</h2>
+<p>Get current time for a place:</p>
+<pre><code>    var place = new LocationId(179);
+    var service = new TimeService('accessKey', 'secretKey');
+    var result = service.GetCurrentTimeForPlace(place);
+</code></pre>
+<p>Other options:</p>
+<pre><code>    // Limit the number of responses
+    service.Limit = 5;
+
+    // Limit the search radius when using coordinates
+    service.Radius = 50; // km
+
+    // Do not add coordinates to location in return value
+    service.IncludeCoordinates = false;
+
+    // Do not add sunrise and sunset for location in return value
+    service.IncludeSunriseSunset = false;
+
+    // Do not add list of time changes in return value
+    service.IncludeListOfTimeChanges = false;
+
+    // Do not add timezone information to return value
+    service.IncldueTimezoneInformation = false;
+</code></pre>
+<h2 id="on-this-day-service">On This Day Service</h2>
+<p>Notice: This API is not released yet. Constructing this service will fail until it's available.</p>
+<p>Get events, births and deaths for a month and day:</p>
+<pre><code>var month = 5;
+var day = 24;
+var service = new OnThisDayService('accessKey', 'secretKey');
+var result = service.EventsOnThisDay(month, day);
+</code></pre>
+<p>Get events, births and deaths for todays month and day:</p>
+<pre><code>var result = service.EventsOnThisDay();
+</code></pre>
+<p>Get a specific type of event:</p>
+<pre><code>service.Types = EventType.Deaths;
+var result = service.EventsOnThisDay();
+</code></pre>
+<p>Get a combination of events:</p>
+<pre><code>service.Types = EventType.Events | EventType.Births;
+var result = service.EventsOnThisDay();
+</code></pre>
 </article>
           </div>
           
