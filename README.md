@@ -1,6 +1,6 @@
 Time And Date .NET API
 ======================================
-[![Build Status](https://www.travis-ci.com/timeanddate/libtad-net.svg?branch=master)](https://www.travis-ci.com/timeanddate/libtad-net)
+[![Build Status](https://app.travis-ci.com/timeanddate/libtad-net.svg?branch=master)](https://app.travis-ci.com/timeanddate/libtad-net)
 
 Time and Date APIs support looking up several different locations and IDs. As of API version 2 the following variations are available:
 
