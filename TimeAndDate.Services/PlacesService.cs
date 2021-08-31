@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.Net;
 using TimeAndDate.Services.Common;
@@ -35,7 +36,7 @@ namespace TimeAndDate.Services
 			IncludeCoordinates = true;
 			XmlElemName = "place";
 		}
-		
+
 		/// <summary>
 		/// Gets list of supported places
 		/// </summary>
@@ -46,6 +47,18 @@ namespace TimeAndDate.Services
 		{
 			var args = GetArguments ();
 			return CallService (args, x => (Place)x);
+		}
+		
+		/// <summary>
+		/// Gets list of supported places
+		/// </summary>
+		/// <returns>
+		/// The places.
+		/// </returns>
+		public async Task<IList<Place>> GetPlacesAsync ()
+		{
+			var args = GetArguments ();
+			return await CallServiceAsync (args, x => (Place)x);
 		}
 		
 		private NameValueCollection GetArguments ()

@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.Collections.Generic;
 using TimeAndDate.Services.Common;
@@ -54,7 +55,7 @@ namespace TimeAndDate.Services
 			IncludeTimeChanges = true;
 			IncludeTimezoneInformation = true;
 		}
-		
+
 		/// <summary>
 		/// Converts the time by using a LocationId, a ISO-string and optionally a list of IDs to convert to.
 		/// </summary>
@@ -106,6 +107,59 @@ namespace TimeAndDate.Services
 		public ConvertedTimes ConvertTime (LocationId fromId, DateTime date, IList<LocationId> toIds = null)
 		{	
 			return ConvertTime (fromId, date.ToString ("s", CultureInfo.InvariantCulture), toIds);
+		}					
+
+		/// <summary>
+		/// Converts the time by using a LocationId, a ISO-string and optionally a list of IDs to convert to.
+		/// </summary>
+		/// <returns>
+		/// The converted time.
+		/// </returns>
+		/// <param name='fromId'>
+		/// The places identifier
+		/// </param>
+		/// <param name='iso'>
+		/// ISO 8601-formatted string.
+		/// </param>
+		/// <param name='toIds'>
+		/// The place IDs to convert to.
+		/// </param>
+		public async Task<ConvertedTimes> ConvertTimeAsync (LocationId fromId, string iso, IList<LocationId> toIds = null)
+		{			
+			if (fromId == null || string.IsNullOrEmpty (iso))
+				throw new ArgumentException ("A required argument is null or empty");
+			
+			var id = fromId.GetIdAsString ();
+			if (string.IsNullOrEmpty (id))
+				throw new ArgumentException ("A required argument is null or empty");
+				
+			var arguments = GetCommonArguments (id);
+			arguments.Set ("iso", iso);
+
+			if (toIds != null)
+				arguments.Add (GetArgumentsForToIds (toIds));			
+
+			return await CallServiceAsync<ConvertedTimes>(arguments);
+		}		
+		
+		/// <summary>
+		/// Converts the time by using a LocationId, a DateTime and optionally a list of IDs to convert to.
+		/// </summary>
+		/// <returns>
+		/// The converted time.
+		/// </returns>
+		/// <param name='fromId'>
+		/// The places identifier
+		/// </param>
+		/// <param name='Date'>
+		/// Date.
+		/// </param>
+		/// <param name='ToIds'>
+		/// The place IDs to convert to.
+		/// </param>
+		public async Task<ConvertedTimes> ConvertTimeAsync (LocationId fromId, DateTime date, IList<LocationId> toIds = null)
+		{	
+			return await ConvertTimeAsync (fromId, date.ToString ("s", CultureInfo.InvariantCulture), toIds);
 		}					
 			
 		private NameValueCollection GetArgumentsForToIds (IList<LocationId> toIds)

@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.Collections.Generic;
 using TimeAndDate.Services.Common;
@@ -74,7 +75,7 @@ namespace TimeAndDate.Services
 			IncludeUTCTime = false;
 			XmlElemName = "location";
 		}
-		
+
 		/// <summary>
 		/// Gets the specified object type (Moon, Sun) for a specified place by start date.
 		/// </summary>
@@ -144,6 +145,77 @@ namespace TimeAndDate.Services
 			args.Set ("enddt", endDate.ToString ("yyyy-MM-dd"));
 			
 			return CallService (args, x => (AstronomyLocation)x);
+		}
+
+		/// <summary>
+		/// Gets the specified object type (Moon, Sun) for a specified place by start date.
+		/// </summary>
+		/// <returns>
+		/// A list of astronomical information.
+		/// </returns>
+		/// <param name='objectType'>
+		/// The astronomical object type (Moon or Sun)
+		/// </param>
+		/// <param name='placeId'>
+		/// Place identifier.
+		/// </param>
+		/// <param name='startDate'>
+		/// Start date.
+		/// </param>
+		public async Task<IList<AstronomyLocation>> GetAstronomicalInfoAsync (AstronomyObjectType objectType, LocationId placeId, DateTime startDate)
+		{
+			if (placeId == null || startDate.Year == 0)
+				throw new ArgumentException ("A required argument is null or empty");
+			
+			var id = placeId.GetIdAsString ();
+			if (string.IsNullOrEmpty (id))
+				throw new ArgumentException ("A required argument is null or empty");
+			
+			var args = GetOptionalArguments();
+			args.Set ("placeid", id);
+			args.Set ("object", objectType.ToString ().ToLower ());
+			args.Set ("startdt", startDate.ToString ("yyyy-MM-dd"));
+			
+			return await CallServiceAsync (args, x => (AstronomyLocation)x);
+		}								
+		
+		/// <summary>
+		/// Gets the specified object type (Moon, Sun) for a specified place by start date.
+		/// </summary>
+		/// <returns>
+		/// A list of astronomical information.
+		/// </returns>
+		/// <param name='objectType'>
+		/// The astronomical object type (Moon or Sun)
+		/// </param>
+		/// <param name='placeId'>
+		/// Place identifier.
+		/// </param>
+		/// <param name='startDate'>
+		/// Start date.
+		/// </param>
+		/// <param name='endDate'>
+		/// End date.
+		/// </param>
+		public async Task<IList<AstronomyLocation>> GetAstronomicalInfoAsync (AstronomyObjectType objectType, LocationId placeId, DateTime startDate, DateTime endDate)
+		{
+			if (placeId == null || startDate.Year == 0 || endDate.Year == 0)
+				throw new ArgumentException ("A required argument is null or empty");
+				
+			var id = placeId.GetIdAsString ();
+			if (string.IsNullOrEmpty (id))
+				throw new ArgumentException ("A required argument is null or empty");
+			
+			if (endDate.Ticks < startDate.Ticks)
+				throw new QueriedDateOutOfRangeException ("End date cannot be before Start date");
+			
+			var args = GetOptionalArguments();
+			args.Set ("placeid", id);
+			args.Set ("object", objectType.ToString ().ToLower ());
+			args.Set ("startdt", startDate.ToString ("yyyy-MM-dd"));
+			args.Set ("enddt", endDate.ToString ("yyyy-MM-dd"));
+			
+			return await CallServiceAsync (args, x => (AstronomyLocation)x);
 		}
 		
 		private NameValueCollection GetOptionalArguments ()

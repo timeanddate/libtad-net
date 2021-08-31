@@ -2,6 +2,7 @@
 //#undef DISABLE_OPTIONS
 
 using System;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
@@ -13,10 +14,10 @@ using TimeAndDate.Services.DataTypes.Time;
 namespace TimeAndDate.Services.Tests.IntegrationTests
 {
 	[TestFixture()]
-	public class AstrodataServiceTests
+	public class AstrodataServiceTestsAsync
 	{
 		[Test()]
-		public void Calling_AstrodataService_For_Every_Object_Returns_The_Correct_Object ()
+		public async Task Calling_AstrodataService_For_Every_Object_Returns_The_Correct_Object ()
 		{
 			// Arrange
 			var astrodataService = new AstrodataService (Config.AccessKey, Config.SecretKey);
@@ -24,7 +25,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			foreach (AstronomyObjectType objectType in Enum.GetValues(typeof (AstronomyObjectType))) {
 				// Act
-				var result = astrodataService.GetAstroData(objectType, new LocationId(3), datetime);
+				var result = await astrodataService.GetAstroDataAsync(objectType, new LocationId(3), datetime);
 				var firstResult = result.FirstOrDefault ();
 
 				// Assert
@@ -33,7 +34,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_AstrodataService_With_Multiple_Intervals_Returns_Expected_Amount_Of_Results ()
+		public async Task Calling_AstrodataService_With_Multiple_Intervals_Returns_Expected_Amount_Of_Results ()
 		{
 			// Arrange
 			var astrodataService = new AstrodataService (Config.AccessKey, Config.SecretKey);
@@ -45,14 +46,14 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			}
 
 			// Act
-			var result = astrodataService.GetAstroData(AstronomyObjectType.Moon, new LocationId(3), date_list);
+			var result = await astrodataService.GetAstroDataAsync(AstronomyObjectType.Moon, new LocationId(3), date_list);
 
 			// Assert
 			Assert.AreEqual (5, result[0].Objects[0].Result.Count);
 		}
 
 		[Test()]
-		public void Calling_AstrodataService_With_Language_Returns_Expected_Country_Name ()
+		public async Task Calling_AstrodataService_With_Language_Returns_Expected_Country_Name ()
 		{
 			// Arrange
 			var astrodataService = new AstrodataService (Config.AccessKey, Config.SecretKey);
@@ -60,14 +61,14 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			astrodataService.Language = "es";
 
 			// Act
-			var result = astrodataService.GetAstroData(AstronomyObjectType.Sun, new LocationId(187), time);
+			var result = await astrodataService.GetAstroDataAsync(AstronomyObjectType.Sun, new LocationId(187), time);
 
 			// Assert
 			Assert.AreEqual ("Noruega", result[0].Geography.Country.Name);
 		}
 
 		[Test()]
-		public void Calling_AstrodataService_Returns_The_Expected_Geographical_Information ()
+		public async Task Calling_AstrodataService_Returns_The_Expected_Geographical_Information ()
 		{
 			// Arrange
 			var astrodataService = new AstrodataService (Config.AccessKey, Config.SecretKey);
@@ -75,7 +76,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			var time = new TADDateTime (2020, 3, 15);
 
 			// Act
-			var result = astrodataService.GetAstroData(AstronomyObjectType.Sun, new LocationId(3), time)[0].Geography;
+			var result = (await astrodataService.GetAstroDataAsync(AstronomyObjectType.Sun, new LocationId(3), time))[0].Geography;
 
 			// Assert
 			Assert.AreEqual ("Acapulco", result.Name);
@@ -87,7 +88,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_AstrodataService_With_Multiple_Object_Returns_Expected_Result_Count ()
+		public async Task Calling_AstrodataService_With_Multiple_Object_Returns_Expected_Result_Count ()
 		{
 			// Arrange
 			var astrodataService = new AstrodataService (Config.AccessKey, Config.SecretKey);
@@ -95,7 +96,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			var objectType = AstronomyObjectType.Sun | AstronomyObjectType.Moon;
 
 			// Act
-			var result = astrodataService.GetAstroData(objectType, new LocationId(3), time);
+			var result = await astrodataService.GetAstroDataAsync(objectType, new LocationId(3), time);
 
 			// Assert
 			Assert.AreEqual (2, result[0].Objects.Count);
@@ -104,16 +105,16 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Results_With_And_Without_Localtime_Should_Return_Inequal_Values ()
+		public async Task Results_With_And_Without_Localtime_Should_Return_Inequal_Values ()
 		{
 			// Arrange
 			var astrodataService = new AstrodataService (Config.AccessKey, Config.SecretKey);
 			var time = new TADDateTime (2020, 3, 5);
 
 			// Act
-			var result = astrodataService.GetAstroData(AstronomyObjectType.Moon, new LocationId(3), time)[0].Objects[0].Result[0];
+			var result = (await astrodataService.GetAstroDataAsync(AstronomyObjectType.Moon, new LocationId(3), time))[0].Objects[0].Result[0];
 			astrodataService.LocalTime = true;
-			var result_local = astrodataService.GetAstroData(AstronomyObjectType.Moon, new LocationId(3), time)[0].Objects[0].Result[0];
+			var result_local = (await astrodataService.GetAstroDataAsync(AstronomyObjectType.Moon, new LocationId(3), time))[0].Objects[0].Result[0];
 
 			// Assert
 			Assert.AreNotEqual (result.Azimuth, result_local.Azimuth);

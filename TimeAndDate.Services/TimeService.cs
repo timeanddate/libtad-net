@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.Collections.Generic;
 using System.Web;
@@ -82,7 +83,7 @@ namespace TimeAndDate.Services
 			IncludeTimezoneInformation = true;
 			XmlElemName = "location";
 		}
-		
+
 		/// <summary>
 		/// Retrieves the current time for place by ID.
 		/// </summary>
@@ -109,6 +110,34 @@ namespace TimeAndDate.Services
 		{
 			var args = GetArguments (placeid);
 			return CallService(args, x => (Location)x);
+		}
+		
+		/// <summary>
+		/// Retrieves the current time for place by ID.
+		/// </summary>
+		/// <returns>
+		/// The current time for place.
+		/// </returns>
+		/// <param name='placeId'>
+		/// Place identifier.
+		/// </param>
+		public async Task<IList<Location>> CurrentTimeForPlaceAsync (LocationId placeId)
+		{
+			if (placeId == null)				
+				throw new ArgumentException ("A required argument is null or empty");
+			
+			var id = placeId.GetIdAsString ();
+			if(string.IsNullOrEmpty(id))
+				throw new ArgumentException ("A required argument is null or empty");
+
+			var args = GetArguments (id);
+			return await CallServiceAsync(args, x => (Location)x);
+		}
+		
+		private async Task<IList<Location>> RetrieveCurrentTimeAsync (string placeid)
+		{
+			var args = GetArguments (placeid);
+			return await CallServiceAsync(args, x => (Location)x);
 		}
 
 		private NameValueCollection GetArguments (string placeId)

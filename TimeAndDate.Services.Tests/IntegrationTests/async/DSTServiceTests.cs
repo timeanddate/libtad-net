@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Linq;
 using NUnit.Framework;
 using TimeAndDate.Services.Tests;
@@ -9,17 +10,17 @@ using TimeAndDate.Services.DataTypes;
 namespace TimeAndDate.Services.Tests.IntegrationTests
 {
 	[TestFixture()]
-	public class DSTServiceTests
+	public class DSTServiceTestsAsync
 	{
 		[Test()]
-		public void Calling_DstService_Should_ReturnAllDst ()
+		public async Task Calling_DstService_Should_ReturnAllDst ()
 		{
 			// Arrage
             		var expectedReturnedCount = 121;
 			
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
-			var result = service.GetDaylightSavingTime ();
+			var result = await service.GetDaylightSavingTimeAsync ();
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -29,7 +30,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_DstService_WithYear_Should_ReturnAllDst ()
+		public async Task Calling_DstService_WithYear_Should_ReturnAllDst ()
 		{
 			// Arrage
 			var year = 2014;
@@ -37,7 +38,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
-			var result = service.GetDaylightSavingTime (year);
+			var result = await service.GetDaylightSavingTimeAsync (year);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -47,7 +48,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_DstService_WithCountry_Should_ReturnAllDst ()
+		public async Task Calling_DstService_WithCountry_Should_ReturnAllDst ()
 		{
 			// Arrage
 			var countryCode = "no";
@@ -55,7 +56,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
-			var result = service.GetDaylightSavingTime (countryCode);
+			var result = await service.GetDaylightSavingTimeAsync (countryCode);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 						
 			// Assert
@@ -67,7 +68,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_DstService_WithCountry_And_WithYear_Should_ReturnAllDst ()
+		public async Task Calling_DstService_WithCountry_And_WithYear_Should_ReturnAllDst ()
 		{
 			// Arrage
 			var countryCode = "no";
@@ -75,7 +76,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
-			var result = service.GetDaylightSavingTime (countryCode, year);
+			var result = await service.GetDaylightSavingTimeAsync (countryCode, year);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -85,7 +86,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_DstService_WithoutPlacesForEveryCountry_Should_ReturnAllDstWithoutPlaces ()
+		public async Task Calling_DstService_WithoutPlacesForEveryCountry_Should_ReturnAllDstWithoutPlaces ()
 		{
 			// Arrage
 			var year = 2014;
@@ -93,7 +94,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
 			service.IncludePlacesForEveryCountry = false;
-			var result = service.GetDaylightSavingTime (year);		
+			var result = await service.GetDaylightSavingTimeAsync (year);		
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -104,14 +105,14 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_DstService_WithPlacesForEveryCountry_Should_ReturnAnyDstWithPlaces ()
+		public async Task Calling_DstService_WithPlacesForEveryCountry_Should_ReturnAnyDstWithPlaces ()
 		{
 			// Arrage
 			var year = 2014;
 
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
-			var result = service.GetDaylightSavingTime (year);
+			var result = await service.GetDaylightSavingTimeAsync (year);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -122,7 +123,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_DstService_WithoutTimeChanges_Should_NotReturnAnyTimeChanges ()
+		public async Task Calling_DstService_WithoutTimeChanges_Should_NotReturnAnyTimeChanges ()
 		{
 			// Arrage
 			var year = 2014;
@@ -130,7 +131,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
 			service.IncludeTimeChanges = false;
-			var result = service.GetDaylightSavingTime (year);
+			var result = await service.GetDaylightSavingTimeAsync (year);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -141,7 +142,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_DstService_WithTimeChanges_Should_ReturnAnyTimeChanges ()
+		public async Task Calling_DstService_WithTimeChanges_Should_ReturnAnyTimeChanges ()
 		{
 			// Arrage
 			var year = 2014;
@@ -149,7 +150,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
 			service.IncludeTimeChanges = true;
-			var result = service.GetDaylightSavingTime (year);
+			var result = await service.GetDaylightSavingTimeAsync (year);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -160,7 +161,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_DstService_WithOnlyDstCountries_Should_ReturnOnlyDstCountries ()
+		public async Task Calling_DstService_WithOnlyDstCountries_Should_ReturnOnlyDstCountries ()
 		{
 			// Arrage
 			var year = 2014;
@@ -168,7 +169,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
 			service.IncludeOnlyDstCountries = true;
-			var result = service.GetDaylightSavingTime (year);
+			var result = await service.GetDaylightSavingTimeAsync (year);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 			
 			// Assert
@@ -179,7 +180,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 		
 		[Test()]
-		public void Calling_DstService_WithoutOnlyDstCountries_Should_ReturnAllCountries ()
+		public async Task Calling_DstService_WithoutOnlyDstCountries_Should_ReturnAllCountries ()
 		{
 			// Arrage
 			var year = 2014;
@@ -187,7 +188,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
 			service.IncludeOnlyDstCountries = false;
-			var result = service.GetDaylightSavingTime (year);
+			var result = await service.GetDaylightSavingTimeAsync (year);
 			var noDstAllYear = result.Where (x => x.Special == DSTSpecialType.NoDaylightSavingTime);
 			var sampleCountry = result.SingleOrDefault (x => x.Region.Country.Name == "Norway");
 

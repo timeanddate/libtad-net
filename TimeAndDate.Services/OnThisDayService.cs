@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Collections.Specialized;
 using System.Net;
 using System.Collections.Generic;
@@ -65,6 +66,37 @@ namespace TimeAndDate.Services
 		{
 			var args = GetArguments (null, null);
 			return CallService<OnThisDayResponse> (args);
+		}
+
+		/// <summary>
+		/// The onthisday service can be used to retrieve a list of events, births and deaths for a specific month and day.
+		/// </summary>
+		/// <returns>
+		/// <c>OnThisDayResponse<c> containing requested information.
+		/// </returns>
+		/// <param name='month'>
+		/// The month for which the events should be retrieved.
+		/// </param>
+		/// <param name='year'>
+		/// The day for which the events should be retrieved.
+		/// </param>
+		public async Task<OnThisDayResponse> EventsOnThisDayAsync (int month, int day)
+		{
+			var args = GetArguments (month, day);
+			return await CallServiceAsync<OnThisDayResponse> (args);
+		}
+
+		/// <summary>
+		/// The onthisday service can be used to retrieve a list of events, births and deaths for a specific month and day.
+		/// This overload uses the current month and day by default.
+		/// </summary>
+		/// <returns>
+		/// <c>OnThisDayResponse<c> containing requested information.
+		/// </returns>
+		public async Task<OnThisDayResponse> EventsOnThisDayAsync ()
+		{
+			var args = GetArguments (null, null);
+			return await CallServiceAsync<OnThisDayResponse> (args);
 		}
 
 		private NameValueCollection GetArguments (int? month, int? day)

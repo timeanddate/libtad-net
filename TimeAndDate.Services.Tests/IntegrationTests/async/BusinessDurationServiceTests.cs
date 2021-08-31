@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using TimeAndDate.Services.DataTypes.Places;
 using TimeAndDate.Services.DataTypes.BusinessDays;
@@ -6,10 +7,10 @@ using TimeAndDate.Services.DataTypes.BusinessDays;
 namespace TimeAndDate.Services.Tests.IntegrationTests
 {
 	[TestFixture()]
-	public class BusinessDurationServiceTests
+	public class BusinessDurationServiceTestsAsync
     {
 		[Test()]
-		public void Calling_BusinessDurationService_ReturnsCorrectBusinessDuration()
+		public async Task Calling_BusinessDurationService_ReturnsCorrectBusinessDuration()
 		{
 			// Arrange
 			var location = new LocationId("usa/anchorage");
@@ -18,7 +19,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var svc = new BusinessDurationService(Config.AccessKey, Config.SecretKey);
-			var res = svc.GetDuration(startDate, endDate, location);
+			var res = await svc.GetDurationAsync(startDate, endDate, location);
 
 			// Assert
 			Assert.AreEqual("Anchorage", res.Geography.Name);
@@ -33,7 +34,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_BusinessDurationService_WithCountryState_ReturnsCorrectBusinessDuration()
+		public async Task Calling_BusinessDurationService_WithCountryState_ReturnsCorrectBusinessDuration()
 		{
 			// Arrange
 			var startDate = new DateTime(2017, 12, 1);
@@ -41,14 +42,14 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var svc = new BusinessDurationService(Config.AccessKey, Config.SecretKey);
-			var res = svc.GetDuration(startDate, endDate, "us", "us-nv");
+			var res = await svc.GetDurationAsync(startDate, endDate, "us", "us-nv");
 
 			// Assert
 			Assert.AreEqual("Nevada", res.Geography.State);
 		}
 
 		[Test()]
-		public void Calling_BusinessDurationService_WithInvalidEndDate_ThrowsException()
+		public async Task Calling_BusinessDurationService_WithInvalidEndDate_ThrowsException()
 		{
 			// Arrange
 			var startDate = new DateTime(2017, 12, 1);
@@ -58,12 +59,12 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			var svc = new BusinessDurationService(Config.AccessKey, Config.SecretKey);
 
 			// Assert
-			Assert.That(() => svc.GetDuration(startDate, endDate, "us", "us-nv"),
+			Assert.That(async () => await svc.GetDurationAsync(startDate, endDate, "us", "us-nv"),
 				Throws.TypeOf<ArgumentException>());
 		}
 
 		[Test()]
-		public void Calling_BusinessDurationService_WithInclude_ReturnsCorrectBusinessDuration()
+		public async Task Calling_BusinessDurationService_WithInclude_ReturnsCorrectBusinessDuration()
 		{
 			// Arrange
 			var location = new LocationId("usa/anchorage");
@@ -74,7 +75,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			var svc = new BusinessDurationService(Config.AccessKey, Config.SecretKey);
 			svc.IncludeDays = true;
 
-			var res = svc.GetDuration(startDate, endDate, location);
+			var res = await svc.GetDurationAsync(startDate, endDate, location);
 
 			// Assert
 			Assert.AreEqual("Anchorage", res.Geography.Name);
@@ -89,7 +90,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_BusinessDurationService_WithIncludeLastDate_ReturnsCorrectBusinessDuration()
+		public async Task Calling_BusinessDurationService_WithIncludeLastDate_ReturnsCorrectBusinessDuration()
 		{
 			// Arrange
 			var location = new LocationId("usa/anchorage");
@@ -100,7 +101,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			var svc = new BusinessDurationService(Config.AccessKey, Config.SecretKey);
 			svc.IncludeLastDate = true;
 
-			var res = svc.GetDuration(startDate, endDate, location);
+			var res = await svc.GetDurationAsync(startDate, endDate, location);
 
 			// Assert
 			Assert.AreEqual("Anchorage", res.Geography.Name);
@@ -111,7 +112,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_BusinessDurationService_WithFilter_ReturnsCorrectBusinessDuration()
+		public async Task Calling_BusinessDurationService_WithFilter_ReturnsCorrectBusinessDuration()
 		{
 			// Arrange
 			var location = new LocationId("usa/anchorage");
@@ -122,7 +123,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			var svc = new BusinessDurationService(Config.AccessKey, Config.SecretKey);
 			svc.Filter = BusinessDaysFilterType.Monday | BusinessDaysFilterType.Tuesday;
 
-			var res = svc.GetDuration(startDate, endDate, location);
+			var res = await svc.GetDurationAsync(startDate, endDate, location);
 
 			// Assert
 			Assert.AreEqual("Anchorage", res.Geography.Name);

@@ -3,6 +3,7 @@
 //#undef DISABLE_OPTIONS
 
 using System;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using System.Linq;
 using TimeAndDate.Services.Tests;
@@ -14,10 +15,10 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 	// TBA: Not released yet.
 	/*
 	[TestFixture()]
-	public class OnThisDayServiceTests
+	public class OnThisDayServiceTestsAsync
 	{
 		[Test()]
-		public void Calling_OnThisDayService_With_A_Specific_Date_Should_ReturnEvents ()
+		public async Task Calling_OnThisDayService_With_A_Specific_Date_Should_ReturnEvents ()
 		{
 			// Arrange
 			var month = 5;
@@ -25,7 +26,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Act
 			var onthisdayService = new OnThisDayService (Config.AccessKey, Config.SecretKey);
-			var result = onthisdayService.EventsOnThisDay (month, day);
+			var result = await onthisdayService.EventsOnThisDayAsync (month, day);
 			var firstEvent = result.Events.FirstOrDefault ();
 			var firstBirth = result.Births.FirstOrDefault ();
 			var firstDeath = result.Deaths.FirstOrDefault ();
@@ -54,7 +55,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_OnThisDayService_With_Events_Only_Should_Return_Events_Only ()
+		public async Task Calling_OnThisDayService_With_Events_Only_Should_Return_Events_Only ()
 		{
 			// Arrange
 			var month = 5;
@@ -63,7 +64,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var onthisdayService = new OnThisDayService (Config.AccessKey, Config.SecretKey);
 			onthisdayService.Types = EventType.Events;
-			var result = onthisdayService.EventsOnThisDay (month, day);
+			var result = await onthisdayService.EventsOnThisDayAsync (month, day);
 
 			// Assert
 			Assert.Greater (result.Events.Count, 0);
@@ -72,7 +73,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_OnThisDayService_With_Births_Only_Should_Return_Births_Only ()
+		public async Task Calling_OnThisDayService_With_Births_Only_Should_Return_Births_Only ()
 		{
 			// Arrange
 			var month = 5;
@@ -81,7 +82,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var onthisdayService = new OnThisDayService (Config.AccessKey, Config.SecretKey);
 			onthisdayService.Types = EventType.Births;
-			var result = onthisdayService.EventsOnThisDay (month, day);
+			var result = await onthisdayService.EventsOnThisDayAsync (month, day);
 
 			// Assert
 			Assert.AreEqual (result.Events.Count, 0);
@@ -90,7 +91,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
-		public void Calling_OnThisDayService_With_Deaths_Only_Should_Return_Deaths_Only ()
+		public async Task Calling_OnThisDayService_With_Deaths_Only_Should_Return_Deaths_Only ()
 		{
 			// Arrange
 			var month = 5;
@@ -99,7 +100,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Act
 			var onthisdayService = new OnThisDayService (Config.AccessKey, Config.SecretKey);
 			onthisdayService.Types = EventType.Deaths;
-			var result = onthisdayService.EventsOnThisDay (month, day);
+			var result = await onthisdayService.EventsOnThisDayAsync (month, day);
 
 			// Assert
 			Assert.AreEqual (result.Events.Count, 0);
