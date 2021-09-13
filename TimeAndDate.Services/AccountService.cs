@@ -46,7 +46,7 @@ namespace TimeAndDate.Services
 		/// </returns>
 		public async Task<Account> GetAccountAsync ()
 		{
-			return CallServiceAsync<Account> (new NameValueCollection ());
+			return await CallServiceAsync<Account> (new NameValueCollection ());
 		}
 
 		protected override Account FromString<Account> (string result)
