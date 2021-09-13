@@ -9,6 +9,7 @@ using TimeAndDate.Services.DataTypes.Places;
 using TimeAndDate.Services.DataTypes.Holidays;
 using TimeAndDate.Services.DataTypes.BusinessDays;
 using TimeAndDate.Services.DataTypes.OnThisDay;
+using TimeAndDate.Services.DataTypes.Tides;
 
 namespace TimeAndDate.Services.Common
 {
@@ -151,6 +152,23 @@ namespace TimeAndDate.Services.Common
 				return AstronomyEventCode.ThirdQuarter;
 			default:
 				throw new ArgumentException ("EventCode does not conform to enum AstronomyEventCode");
+			}
+		}
+
+		internal static TidalPhase ResolveTidalPhase (string tidalPhase)
+		{
+			switch (tidalPhase)
+			{
+				case "high":
+					return TidalPhase.High;
+				case "low":
+					return TidalPhase.Low;
+				case "ebb":
+					return TidalPhase.Ebb;
+				case "flood":
+					return TidalPhase.Flood;
+				default:
+					throw new ArgumentException ("Input does not conform to enum TidalPhase");
 			}
 		}
 		
