@@ -29,7 +29,7 @@ namespace TimeAndDate.Services.DataTypes.Account
 		/// <value>
 		/// The request credits.
 		/// </value>
-		public int Credits { get; set; }
+		public long Credits { get; set; }
 
 		/// <summary>
 		/// Active packages owned by the request account.
@@ -64,7 +64,7 @@ namespace TimeAndDate.Services.DataTypes.Account
 			}
 
 			if (credits != null)
-				Credits = Int32.Parse(credits.InnerText);
+				Credits = long.Parse(credits.InnerText);
 
 			if (packages != null)
 			{
