@@ -44,7 +44,7 @@ namespace TimeAndDate.Services
 		/// <returns>
 		/// The account.
 		/// </returns>
-		public async Task<Account> GetAccount ()
+		public async Task<Account> GetAccountAsync ()
 		{
 			return CallServiceAsync<Account> (new NameValueCollection ());
 		}
