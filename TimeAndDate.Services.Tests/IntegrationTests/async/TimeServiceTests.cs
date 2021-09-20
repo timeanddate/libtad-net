@@ -87,7 +87,6 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			Assert.AreEqual (osloCoords.Latitude, firstLocation.Geography.Coordinates.Latitude);
 			Assert.AreEqual (osloCoords.Longitude, firstLocation.Geography.Coordinates.Longitude);
 			Assert.AreEqual (expectedId, firstLocation.Id);
-			Assert.IsNull (firstLocation.Geography.Country);
 			Assert.IsNull (firstLocation.Geography.State);
 			Assert.IsNull (firstLocation.Geography.Name);
 		}
