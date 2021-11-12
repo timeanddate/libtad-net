@@ -11,7 +11,7 @@ Time and Date APIs support looking up several different locations and IDs. As of
 
 The class [LocationId](http://services.timeanddate.com/api/doc/v2/type-locationid.html) is used to set the appropriate location ID. Airports categorize the same way as textual ID.
 
-An access key and a secret key is required to use the API. If you are not already a Time and Date API user, please see our [API offers](https://services.timeanddate.com/api/packages/) to get a free 3 month trial. For more information, see our [API Services page](https://services.timeanddate.com/).
+An access key and a secret key is required to use the API. If you are not already a Time and Date API user, please see our [API offers](https://services.timeanddate.com/free-trial) to get a free 3 month trial. For more information, see our [API Services page](https://dev.timeanddate.com/).
 
 Developed with Mono C# Compiler 4.0.1.0 
 
@@ -106,7 +106,7 @@ Convert time from a location:
         var service = new ConvertTimeService('accessKey', 'secretKey');
         var convertedTime = service.ConvertTime(place, date);
 
-Convert time from a location using an [ISO 8601](http://services.timeanddate.com/api/doc/v2/type-isotime.html)-string:
+Convert time from a location using an [ISO 8601](https://dev.timeanddate.com/docs/external-references#ISO8601)-string:
 
         ...
         var convertedTime = service.ConvertTime(place, "2015-04-21T16:45:00");
@@ -146,12 +146,12 @@ Get daylight saving time for a specified year:
         var service = new DSTService('accessKey', 'secretKey');
         var result = service.GetDaylightSavingTime(2014);
 
-Get daylight saving time for a specified [ISO3166-1 (Alpha2)](http://services.timeanddate.com/api/doc/v2/type-isocountry.html) country code:
+Get daylight saving time for a specified [ISO3166-1 (Alpha2)](https://dev.timeanddate.com/docs/external-references#ISO3166) country code:
 
         var service = new DSTService('accessKey', 'secretKey');
         var result = service.GetDaylightSavingTime("no");
 
-Get daylight saving time for a specified [ISO3166-1 (Alpha2)](http://services.timeanddate.com/api/doc/v2/type-isocountry.html) country code and year:
+Get daylight saving time for a specified [ISO3166-1 (Alpha2)](https://dev.timeanddate.com/docs/external-references#ISO3166) country code and year:
 
         var service = new DSTService('accessKey', 'secretKey');
         var result = service.GetDaylightSavingTime("no", 2014);
@@ -211,13 +211,13 @@ Other options:
 Holidays Service
 --------------------------------------
 
-Get all holidays for a country by [ISO3166-1 (Alpha2)](http://services.timeanddate.com/api/doc/v2/type-isocountry.html) country code:
+Get all holidays for a country by [ISO3166-1 (Alpha2)](https://dev.timeanddate.com/docs/external-references#ISO3166) country code:
 
         var country = "no";
         var service = new HolidaysService('accessKey', 'secretKey');
         var result = service.GetHolidaysForCountry(country);
 
-Get all holidays for a country by year and [ISO3166-1 (Alpha2)](http://services.timeanddate.com/api/doc/v2/type-isocountry.html) country code:
+Get all holidays for a country by year and [ISO3166-1 (Alpha2)](https://dev.timeanddate.com/docs/external-references#ISO3166) country code:
 
         var country = "no";
         var year = 2014;
