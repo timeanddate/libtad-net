@@ -55,6 +55,19 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.AccountService.GetAccount
   nameWithType: AccountService.GetAccount
+- uid: TimeAndDate.Services.AccountService.GetAccountAsync
+  name: GetAccountAsync()
+  href: api/TimeAndDate.Services.AccountService.html#TimeAndDate_Services_AccountService_GetAccountAsync
+  commentId: M:TimeAndDate.Services.AccountService.GetAccountAsync
+  fullName: TimeAndDate.Services.AccountService.GetAccountAsync()
+  nameWithType: AccountService.GetAccountAsync()
+- uid: TimeAndDate.Services.AccountService.GetAccountAsync*
+  name: GetAccountAsync
+  href: api/TimeAndDate.Services.AccountService.html#TimeAndDate_Services_AccountService_GetAccountAsync_
+  commentId: Overload:TimeAndDate.Services.AccountService.GetAccountAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.AccountService.GetAccountAsync
+  nameWithType: AccountService.GetAccountAsync
 - uid: TimeAndDate.Services.AstrodataService
   name: AstrodataService
   href: api/TimeAndDate.Services.AstrodataService.html
@@ -96,6 +109,28 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.AstrodataService.GetAstroData
   nameWithType: AstrodataService.GetAstroData
+- uid: TimeAndDate.Services.AstrodataService.GetAstroDataAsync(TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType,TimeAndDate.Services.DataTypes.Places.LocationId,List{TimeAndDate.Services.DataTypes.Time.TADDateTime})
+  name: GetAstroDataAsync(AstronomyObjectType, LocationId, List<TADDateTime>)
+  href: api/TimeAndDate.Services.AstrodataService.html#TimeAndDate_Services_AstrodataService_GetAstroDataAsync_TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_TimeAndDate_Services_DataTypes_Places_LocationId_List_TimeAndDate_Services_DataTypes_Time_TADDateTime__
+  commentId: M:TimeAndDate.Services.AstrodataService.GetAstroDataAsync(TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType,TimeAndDate.Services.DataTypes.Places.LocationId,List{TimeAndDate.Services.DataTypes.Time.TADDateTime})
+  name.vb: GetAstroDataAsync(AstronomyObjectType, LocationId, List(Of TADDateTime))
+  fullName: TimeAndDate.Services.AstrodataService.GetAstroDataAsync(TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType, TimeAndDate.Services.DataTypes.Places.LocationId, List<TimeAndDate.Services.DataTypes.Time.TADDateTime>)
+  fullName.vb: TimeAndDate.Services.AstrodataService.GetAstroDataAsync(TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType, TimeAndDate.Services.DataTypes.Places.LocationId, List(Of TimeAndDate.Services.DataTypes.Time.TADDateTime))
+  nameWithType: AstrodataService.GetAstroDataAsync(AstronomyObjectType, LocationId, List<TADDateTime>)
+  nameWithType.vb: AstrodataService.GetAstroDataAsync(AstronomyObjectType, LocationId, List(Of TADDateTime))
+- uid: TimeAndDate.Services.AstrodataService.GetAstroDataAsync(TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType,TimeAndDate.Services.DataTypes.Places.LocationId,TimeAndDate.Services.DataTypes.Time.TADDateTime)
+  name: GetAstroDataAsync(AstronomyObjectType, LocationId, TADDateTime)
+  href: api/TimeAndDate.Services.AstrodataService.html#TimeAndDate_Services_AstrodataService_GetAstroDataAsync_TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_TimeAndDate_Services_DataTypes_Places_LocationId_TimeAndDate_Services_DataTypes_Time_TADDateTime_
+  commentId: M:TimeAndDate.Services.AstrodataService.GetAstroDataAsync(TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType,TimeAndDate.Services.DataTypes.Places.LocationId,TimeAndDate.Services.DataTypes.Time.TADDateTime)
+  fullName: TimeAndDate.Services.AstrodataService.GetAstroDataAsync(TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType, TimeAndDate.Services.DataTypes.Places.LocationId, TimeAndDate.Services.DataTypes.Time.TADDateTime)
+  nameWithType: AstrodataService.GetAstroDataAsync(AstronomyObjectType, LocationId, TADDateTime)
+- uid: TimeAndDate.Services.AstrodataService.GetAstroDataAsync*
+  name: GetAstroDataAsync
+  href: api/TimeAndDate.Services.AstrodataService.html#TimeAndDate_Services_AstrodataService_GetAstroDataAsync_
+  commentId: Overload:TimeAndDate.Services.AstrodataService.GetAstroDataAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.AstrodataService.GetAstroDataAsync
+  nameWithType: AstrodataService.GetAstroDataAsync
 - uid: TimeAndDate.Services.AstrodataService.IncludeCoordinates
   name: IncludeCoordinates
   href: api/TimeAndDate.Services.AstrodataService.html#TimeAndDate_Services_AstrodataService_IncludeCoordinates
@@ -199,6 +234,25 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.AstronomyService.GetAstronomicalInfo
   nameWithType: AstronomyService.GetAstronomicalInfo
+- uid: TimeAndDate.Services.AstronomyService.GetAstronomicalInfoAsync(TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType,TimeAndDate.Services.DataTypes.Places.LocationId,DateTime)
+  name: GetAstronomicalInfoAsync(AstronomyObjectType, LocationId, DateTime)
+  href: api/TimeAndDate.Services.AstronomyService.html#TimeAndDate_Services_AstronomyService_GetAstronomicalInfoAsync_TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_TimeAndDate_Services_DataTypes_Places_LocationId_DateTime_
+  commentId: M:TimeAndDate.Services.AstronomyService.GetAstronomicalInfoAsync(TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType,TimeAndDate.Services.DataTypes.Places.LocationId,DateTime)
+  fullName: TimeAndDate.Services.AstronomyService.GetAstronomicalInfoAsync(TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType, TimeAndDate.Services.DataTypes.Places.LocationId, DateTime)
+  nameWithType: AstronomyService.GetAstronomicalInfoAsync(AstronomyObjectType, LocationId, DateTime)
+- uid: TimeAndDate.Services.AstronomyService.GetAstronomicalInfoAsync(TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType,TimeAndDate.Services.DataTypes.Places.LocationId,DateTime,DateTime)
+  name: GetAstronomicalInfoAsync(AstronomyObjectType, LocationId, DateTime, DateTime)
+  href: api/TimeAndDate.Services.AstronomyService.html#TimeAndDate_Services_AstronomyService_GetAstronomicalInfoAsync_TimeAndDate_Services_DataTypes_Astro_AstronomyObjectType_TimeAndDate_Services_DataTypes_Places_LocationId_DateTime_DateTime_
+  commentId: M:TimeAndDate.Services.AstronomyService.GetAstronomicalInfoAsync(TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType,TimeAndDate.Services.DataTypes.Places.LocationId,DateTime,DateTime)
+  fullName: TimeAndDate.Services.AstronomyService.GetAstronomicalInfoAsync(TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType, TimeAndDate.Services.DataTypes.Places.LocationId, DateTime, DateTime)
+  nameWithType: AstronomyService.GetAstronomicalInfoAsync(AstronomyObjectType, LocationId, DateTime, DateTime)
+- uid: TimeAndDate.Services.AstronomyService.GetAstronomicalInfoAsync*
+  name: GetAstronomicalInfoAsync
+  href: api/TimeAndDate.Services.AstronomyService.html#TimeAndDate_Services_AstronomyService_GetAstronomicalInfoAsync_
+  commentId: Overload:TimeAndDate.Services.AstronomyService.GetAstronomicalInfoAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.AstronomyService.GetAstronomicalInfoAsync
+  nameWithType: AstronomyService.GetAstronomicalInfoAsync
 - uid: TimeAndDate.Services.AstronomyService.IncludeCoordinates
   name: IncludeCoordinates
   href: api/TimeAndDate.Services.AstronomyService.html#TimeAndDate_Services_AstronomyService_IncludeCoordinates
@@ -314,6 +368,31 @@ references:
   fullName.vb: TimeAndDate.Services.BaseService.CallService(Of T)(NameValueCollection, Func(Of XmlNode, T))
   nameWithType: BaseService.CallService<T>(NameValueCollection, Func<XmlNode, T>)
   nameWithType.vb: BaseService.CallService(Of T)(NameValueCollection, Func(Of XmlNode, T))
+- uid: TimeAndDate.Services.BaseService.CallServiceAsync*
+  name: CallServiceAsync
+  href: api/TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_CallServiceAsync_
+  commentId: Overload:TimeAndDate.Services.BaseService.CallServiceAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.BaseService.CallServiceAsync
+  nameWithType: BaseService.CallServiceAsync
+- uid: TimeAndDate.Services.BaseService.CallServiceAsync``1(NameValueCollection)
+  name: CallServiceAsync<T>(NameValueCollection)
+  href: api/TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_CallServiceAsync__1_NameValueCollection_
+  commentId: M:TimeAndDate.Services.BaseService.CallServiceAsync``1(NameValueCollection)
+  name.vb: CallServiceAsync(Of T)(NameValueCollection)
+  fullName: TimeAndDate.Services.BaseService.CallServiceAsync<T>(NameValueCollection)
+  fullName.vb: TimeAndDate.Services.BaseService.CallServiceAsync(Of T)(NameValueCollection)
+  nameWithType: BaseService.CallServiceAsync<T>(NameValueCollection)
+  nameWithType.vb: BaseService.CallServiceAsync(Of T)(NameValueCollection)
+- uid: TimeAndDate.Services.BaseService.CallServiceAsync``1(NameValueCollection,Func{XmlNode,``0})
+  name: CallServiceAsync<T>(NameValueCollection, Func<XmlNode, T>)
+  href: api/TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_CallServiceAsync__1_NameValueCollection_Func_XmlNode___0__
+  commentId: M:TimeAndDate.Services.BaseService.CallServiceAsync``1(NameValueCollection,Func{XmlNode,``0})
+  name.vb: CallServiceAsync(Of T)(NameValueCollection, Func(Of XmlNode, T))
+  fullName: TimeAndDate.Services.BaseService.CallServiceAsync<T>(NameValueCollection, Func<XmlNode, T>)
+  fullName.vb: TimeAndDate.Services.BaseService.CallServiceAsync(Of T)(NameValueCollection, Func(Of XmlNode, T))
+  nameWithType: BaseService.CallServiceAsync<T>(NameValueCollection, Func<XmlNode, T>)
+  nameWithType.vb: BaseService.CallServiceAsync(Of T)(NameValueCollection, Func(Of XmlNode, T))
 - uid: TimeAndDate.Services.BaseService.FromString*
   name: FromString
   href: api/TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_FromString_
@@ -506,6 +585,61 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.BusinessDateService.AddDays
   nameWithType: BusinessDateService.AddDays
+- uid: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime,List{System.Int32},System.String,System.String)
+  name: AddDaysAsync(DateTime, List<Int32>, String, String)
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_AddDaysAsync_DateTime_List_System_Int32__System_String_System_String_
+  commentId: M:TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime,List{System.Int32},System.String,System.String)
+  name.vb: AddDaysAsync(DateTime, List(Of Int32), String, String)
+  fullName: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime, List<System.Int32>, System.String, System.String)
+  fullName.vb: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime, List(Of System.Int32), System.String, System.String)
+  nameWithType: BusinessDateService.AddDaysAsync(DateTime, List<Int32>, String, String)
+  nameWithType.vb: BusinessDateService.AddDaysAsync(DateTime, List(Of Int32), String, String)
+- uid: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime,List{System.Int32},TimeAndDate.Services.DataTypes.Places.LocationId)
+  name: AddDaysAsync(DateTime, List<Int32>, LocationId)
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_AddDaysAsync_DateTime_List_System_Int32__TimeAndDate_Services_DataTypes_Places_LocationId_
+  commentId: M:TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime,List{System.Int32},TimeAndDate.Services.DataTypes.Places.LocationId)
+  name.vb: AddDaysAsync(DateTime, List(Of Int32), LocationId)
+  fullName: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime, List<System.Int32>, TimeAndDate.Services.DataTypes.Places.LocationId)
+  fullName.vb: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime, List(Of System.Int32), TimeAndDate.Services.DataTypes.Places.LocationId)
+  nameWithType: BusinessDateService.AddDaysAsync(DateTime, List<Int32>, LocationId)
+  nameWithType.vb: BusinessDateService.AddDaysAsync(DateTime, List(Of Int32), LocationId)
+- uid: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime,System.Int32,System.String,System.String)
+  name: AddDaysAsync(DateTime, Int32, String, String)
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_AddDaysAsync_DateTime_System_Int32_System_String_System_String_
+  commentId: M:TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime,System.Int32,System.String,System.String)
+  fullName: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime, System.Int32, System.String, System.String)
+  nameWithType: BusinessDateService.AddDaysAsync(DateTime, Int32, String, String)
+- uid: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime,System.Int32,TimeAndDate.Services.DataTypes.Places.LocationId)
+  name: AddDaysAsync(DateTime, Int32, LocationId)
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_AddDaysAsync_DateTime_System_Int32_TimeAndDate_Services_DataTypes_Places_LocationId_
+  commentId: M:TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime,System.Int32,TimeAndDate.Services.DataTypes.Places.LocationId)
+  fullName: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime, System.Int32, TimeAndDate.Services.DataTypes.Places.LocationId)
+  nameWithType: BusinessDateService.AddDaysAsync(DateTime, Int32, LocationId)
+- uid: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime,System.Int32[],System.String,System.String)
+  name: AddDaysAsync(DateTime, Int32[], String, String)
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_AddDaysAsync_DateTime_System_Int32___System_String_System_String_
+  commentId: M:TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime,System.Int32[],System.String,System.String)
+  name.vb: AddDaysAsync(DateTime, Int32(), String, String)
+  fullName: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime, System.Int32[], System.String, System.String)
+  fullName.vb: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime, System.Int32(), System.String, System.String)
+  nameWithType: BusinessDateService.AddDaysAsync(DateTime, Int32[], String, String)
+  nameWithType.vb: BusinessDateService.AddDaysAsync(DateTime, Int32(), String, String)
+- uid: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime,System.Int32[],TimeAndDate.Services.DataTypes.Places.LocationId)
+  name: AddDaysAsync(DateTime, Int32[], LocationId)
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_AddDaysAsync_DateTime_System_Int32___TimeAndDate_Services_DataTypes_Places_LocationId_
+  commentId: M:TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime,System.Int32[],TimeAndDate.Services.DataTypes.Places.LocationId)
+  name.vb: AddDaysAsync(DateTime, Int32(), LocationId)
+  fullName: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime, System.Int32[], TimeAndDate.Services.DataTypes.Places.LocationId)
+  fullName.vb: TimeAndDate.Services.BusinessDateService.AddDaysAsync(DateTime, System.Int32(), TimeAndDate.Services.DataTypes.Places.LocationId)
+  nameWithType: BusinessDateService.AddDaysAsync(DateTime, Int32[], LocationId)
+  nameWithType.vb: BusinessDateService.AddDaysAsync(DateTime, Int32(), LocationId)
+- uid: TimeAndDate.Services.BusinessDateService.AddDaysAsync*
+  name: AddDaysAsync
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_AddDaysAsync_
+  commentId: Overload:TimeAndDate.Services.BusinessDateService.AddDaysAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.BusinessDateService.AddDaysAsync
+  nameWithType: BusinessDateService.AddDaysAsync
 - uid: TimeAndDate.Services.BusinessDateService.Filter
   name: Filter
   href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_Filter
@@ -616,6 +750,61 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.BusinessDateService.SubtractDays
   nameWithType: BusinessDateService.SubtractDays
+- uid: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime,List{System.Int32},System.String,System.String)
+  name: SubtractDaysAsync(DateTime, List<Int32>, String, String)
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_SubtractDaysAsync_DateTime_List_System_Int32__System_String_System_String_
+  commentId: M:TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime,List{System.Int32},System.String,System.String)
+  name.vb: SubtractDaysAsync(DateTime, List(Of Int32), String, String)
+  fullName: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime, List<System.Int32>, System.String, System.String)
+  fullName.vb: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime, List(Of System.Int32), System.String, System.String)
+  nameWithType: BusinessDateService.SubtractDaysAsync(DateTime, List<Int32>, String, String)
+  nameWithType.vb: BusinessDateService.SubtractDaysAsync(DateTime, List(Of Int32), String, String)
+- uid: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime,List{System.Int32},TimeAndDate.Services.DataTypes.Places.LocationId)
+  name: SubtractDaysAsync(DateTime, List<Int32>, LocationId)
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_SubtractDaysAsync_DateTime_List_System_Int32__TimeAndDate_Services_DataTypes_Places_LocationId_
+  commentId: M:TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime,List{System.Int32},TimeAndDate.Services.DataTypes.Places.LocationId)
+  name.vb: SubtractDaysAsync(DateTime, List(Of Int32), LocationId)
+  fullName: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime, List<System.Int32>, TimeAndDate.Services.DataTypes.Places.LocationId)
+  fullName.vb: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime, List(Of System.Int32), TimeAndDate.Services.DataTypes.Places.LocationId)
+  nameWithType: BusinessDateService.SubtractDaysAsync(DateTime, List<Int32>, LocationId)
+  nameWithType.vb: BusinessDateService.SubtractDaysAsync(DateTime, List(Of Int32), LocationId)
+- uid: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime,System.Int32,System.String,System.String)
+  name: SubtractDaysAsync(DateTime, Int32, String, String)
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_SubtractDaysAsync_DateTime_System_Int32_System_String_System_String_
+  commentId: M:TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime,System.Int32,System.String,System.String)
+  fullName: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime, System.Int32, System.String, System.String)
+  nameWithType: BusinessDateService.SubtractDaysAsync(DateTime, Int32, String, String)
+- uid: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime,System.Int32,TimeAndDate.Services.DataTypes.Places.LocationId)
+  name: SubtractDaysAsync(DateTime, Int32, LocationId)
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_SubtractDaysAsync_DateTime_System_Int32_TimeAndDate_Services_DataTypes_Places_LocationId_
+  commentId: M:TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime,System.Int32,TimeAndDate.Services.DataTypes.Places.LocationId)
+  fullName: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime, System.Int32, TimeAndDate.Services.DataTypes.Places.LocationId)
+  nameWithType: BusinessDateService.SubtractDaysAsync(DateTime, Int32, LocationId)
+- uid: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime,System.Int32[],System.String,System.String)
+  name: SubtractDaysAsync(DateTime, Int32[], String, String)
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_SubtractDaysAsync_DateTime_System_Int32___System_String_System_String_
+  commentId: M:TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime,System.Int32[],System.String,System.String)
+  name.vb: SubtractDaysAsync(DateTime, Int32(), String, String)
+  fullName: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime, System.Int32[], System.String, System.String)
+  fullName.vb: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime, System.Int32(), System.String, System.String)
+  nameWithType: BusinessDateService.SubtractDaysAsync(DateTime, Int32[], String, String)
+  nameWithType.vb: BusinessDateService.SubtractDaysAsync(DateTime, Int32(), String, String)
+- uid: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime,System.Int32[],TimeAndDate.Services.DataTypes.Places.LocationId)
+  name: SubtractDaysAsync(DateTime, Int32[], LocationId)
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_SubtractDaysAsync_DateTime_System_Int32___TimeAndDate_Services_DataTypes_Places_LocationId_
+  commentId: M:TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime,System.Int32[],TimeAndDate.Services.DataTypes.Places.LocationId)
+  name.vb: SubtractDaysAsync(DateTime, Int32(), LocationId)
+  fullName: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime, System.Int32[], TimeAndDate.Services.DataTypes.Places.LocationId)
+  fullName.vb: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync(DateTime, System.Int32(), TimeAndDate.Services.DataTypes.Places.LocationId)
+  nameWithType: BusinessDateService.SubtractDaysAsync(DateTime, Int32[], LocationId)
+  nameWithType.vb: BusinessDateService.SubtractDaysAsync(DateTime, Int32(), LocationId)
+- uid: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync*
+  name: SubtractDaysAsync
+  href: api/TimeAndDate.Services.BusinessDateService.html#TimeAndDate_Services_BusinessDateService_SubtractDaysAsync_
+  commentId: Overload:TimeAndDate.Services.BusinessDateService.SubtractDaysAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.BusinessDateService.SubtractDaysAsync
+  nameWithType: BusinessDateService.SubtractDaysAsync
 - uid: TimeAndDate.Services.BusinessDuration
   name: BusinessDuration
   href: api/TimeAndDate.Services.BusinessDuration.html
@@ -728,6 +917,25 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.BusinessDurationService.GetDuration
   nameWithType: BusinessDurationService.GetDuration
+- uid: TimeAndDate.Services.BusinessDurationService.GetDurationAsync(DateTime,DateTime,System.String,System.String)
+  name: GetDurationAsync(DateTime, DateTime, String, String)
+  href: api/TimeAndDate.Services.BusinessDurationService.html#TimeAndDate_Services_BusinessDurationService_GetDurationAsync_DateTime_DateTime_System_String_System_String_
+  commentId: M:TimeAndDate.Services.BusinessDurationService.GetDurationAsync(DateTime,DateTime,System.String,System.String)
+  fullName: TimeAndDate.Services.BusinessDurationService.GetDurationAsync(DateTime, DateTime, System.String, System.String)
+  nameWithType: BusinessDurationService.GetDurationAsync(DateTime, DateTime, String, String)
+- uid: TimeAndDate.Services.BusinessDurationService.GetDurationAsync(DateTime,DateTime,TimeAndDate.Services.DataTypes.Places.LocationId)
+  name: GetDurationAsync(DateTime, DateTime, LocationId)
+  href: api/TimeAndDate.Services.BusinessDurationService.html#TimeAndDate_Services_BusinessDurationService_GetDurationAsync_DateTime_DateTime_TimeAndDate_Services_DataTypes_Places_LocationId_
+  commentId: M:TimeAndDate.Services.BusinessDurationService.GetDurationAsync(DateTime,DateTime,TimeAndDate.Services.DataTypes.Places.LocationId)
+  fullName: TimeAndDate.Services.BusinessDurationService.GetDurationAsync(DateTime, DateTime, TimeAndDate.Services.DataTypes.Places.LocationId)
+  nameWithType: BusinessDurationService.GetDurationAsync(DateTime, DateTime, LocationId)
+- uid: TimeAndDate.Services.BusinessDurationService.GetDurationAsync*
+  name: GetDurationAsync
+  href: api/TimeAndDate.Services.BusinessDurationService.html#TimeAndDate_Services_BusinessDurationService_GetDurationAsync_
+  commentId: Overload:TimeAndDate.Services.BusinessDurationService.GetDurationAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.BusinessDurationService.GetDurationAsync
+  nameWithType: BusinessDurationService.GetDurationAsync
 - uid: TimeAndDate.Services.BusinessDurationService.IncludeDays
   name: IncludeDays
   href: api/TimeAndDate.Services.BusinessDurationService.html#TimeAndDate_Services_BusinessDurationService_IncludeDays
@@ -991,6 +1199,31 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.ConvertTimeService.ConvertTime
   nameWithType: ConvertTimeService.ConvertTime
+- uid: TimeAndDate.Services.ConvertTimeService.ConvertTimeAsync(TimeAndDate.Services.DataTypes.Places.LocationId,DateTime,IList{TimeAndDate.Services.DataTypes.Places.LocationId})
+  name: ConvertTimeAsync(LocationId, DateTime, IList<LocationId>)
+  href: api/TimeAndDate.Services.ConvertTimeService.html#TimeAndDate_Services_ConvertTimeService_ConvertTimeAsync_TimeAndDate_Services_DataTypes_Places_LocationId_DateTime_IList_TimeAndDate_Services_DataTypes_Places_LocationId__
+  commentId: M:TimeAndDate.Services.ConvertTimeService.ConvertTimeAsync(TimeAndDate.Services.DataTypes.Places.LocationId,DateTime,IList{TimeAndDate.Services.DataTypes.Places.LocationId})
+  name.vb: ConvertTimeAsync(LocationId, DateTime, IList(Of LocationId))
+  fullName: TimeAndDate.Services.ConvertTimeService.ConvertTimeAsync(TimeAndDate.Services.DataTypes.Places.LocationId, DateTime, IList<TimeAndDate.Services.DataTypes.Places.LocationId>)
+  fullName.vb: TimeAndDate.Services.ConvertTimeService.ConvertTimeAsync(TimeAndDate.Services.DataTypes.Places.LocationId, DateTime, IList(Of TimeAndDate.Services.DataTypes.Places.LocationId))
+  nameWithType: ConvertTimeService.ConvertTimeAsync(LocationId, DateTime, IList<LocationId>)
+  nameWithType.vb: ConvertTimeService.ConvertTimeAsync(LocationId, DateTime, IList(Of LocationId))
+- uid: TimeAndDate.Services.ConvertTimeService.ConvertTimeAsync(TimeAndDate.Services.DataTypes.Places.LocationId,System.String,IList{TimeAndDate.Services.DataTypes.Places.LocationId})
+  name: ConvertTimeAsync(LocationId, String, IList<LocationId>)
+  href: api/TimeAndDate.Services.ConvertTimeService.html#TimeAndDate_Services_ConvertTimeService_ConvertTimeAsync_TimeAndDate_Services_DataTypes_Places_LocationId_System_String_IList_TimeAndDate_Services_DataTypes_Places_LocationId__
+  commentId: M:TimeAndDate.Services.ConvertTimeService.ConvertTimeAsync(TimeAndDate.Services.DataTypes.Places.LocationId,System.String,IList{TimeAndDate.Services.DataTypes.Places.LocationId})
+  name.vb: ConvertTimeAsync(LocationId, String, IList(Of LocationId))
+  fullName: TimeAndDate.Services.ConvertTimeService.ConvertTimeAsync(TimeAndDate.Services.DataTypes.Places.LocationId, System.String, IList<TimeAndDate.Services.DataTypes.Places.LocationId>)
+  fullName.vb: TimeAndDate.Services.ConvertTimeService.ConvertTimeAsync(TimeAndDate.Services.DataTypes.Places.LocationId, System.String, IList(Of TimeAndDate.Services.DataTypes.Places.LocationId))
+  nameWithType: ConvertTimeService.ConvertTimeAsync(LocationId, String, IList<LocationId>)
+  nameWithType.vb: ConvertTimeService.ConvertTimeAsync(LocationId, String, IList(Of LocationId))
+- uid: TimeAndDate.Services.ConvertTimeService.ConvertTimeAsync*
+  name: ConvertTimeAsync
+  href: api/TimeAndDate.Services.ConvertTimeService.html#TimeAndDate_Services_ConvertTimeService_ConvertTimeAsync_
+  commentId: Overload:TimeAndDate.Services.ConvertTimeService.ConvertTimeAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.ConvertTimeService.ConvertTimeAsync
+  nameWithType: ConvertTimeService.ConvertTimeAsync
 - uid: TimeAndDate.Services.ConvertTimeService.FromString*
   name: FromString
   href: api/TimeAndDate.Services.ConvertTimeService.html#TimeAndDate_Services_ConvertTimeService_FromString_
@@ -4168,6 +4401,260 @@ references:
   fullName.vb: TimeAndDate.Services.DataTypes.Places.Region.Narrowing
   nameWithType: Region.Explicit
   nameWithType.vb: Region.Narrowing
+- uid: TimeAndDate.Services.DataTypes.Tides
+  name: TimeAndDate.Services.DataTypes.Tides
+  href: api/TimeAndDate.Services.DataTypes.Tides.html
+  commentId: N:TimeAndDate.Services.DataTypes.Tides
+  fullName: TimeAndDate.Services.DataTypes.Tides
+  nameWithType: TimeAndDate.Services.DataTypes.Tides
+- uid: TimeAndDate.Services.DataTypes.Tides.Station
+  name: Station
+  href: api/TimeAndDate.Services.DataTypes.Tides.Station.html
+  commentId: T:TimeAndDate.Services.DataTypes.Tides.Station
+  fullName: TimeAndDate.Services.DataTypes.Tides.Station
+  nameWithType: Station
+- uid: TimeAndDate.Services.DataTypes.Tides.Station.MatchParam
+  name: MatchParam
+  href: api/TimeAndDate.Services.DataTypes.Tides.Station.html#TimeAndDate_Services_DataTypes_Tides_Station_MatchParam
+  commentId: P:TimeAndDate.Services.DataTypes.Tides.Station.MatchParam
+  fullName: TimeAndDate.Services.DataTypes.Tides.Station.MatchParam
+  nameWithType: Station.MatchParam
+- uid: TimeAndDate.Services.DataTypes.Tides.Station.MatchParam*
+  name: MatchParam
+  href: api/TimeAndDate.Services.DataTypes.Tides.Station.html#TimeAndDate_Services_DataTypes_Tides_Station_MatchParam_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.Station.MatchParam
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Tides.Station.MatchParam
+  nameWithType: Station.MatchParam
+- uid: TimeAndDate.Services.DataTypes.Tides.Station.op_Explicit(XmlNode)~TimeAndDate.Services.DataTypes.Tides.Station
+  name: Explicit(XmlNode to Station)
+  href: api/TimeAndDate.Services.DataTypes.Tides.Station.html#TimeAndDate_Services_DataTypes_Tides_Station_op_Explicit_XmlNode__TimeAndDate_Services_DataTypes_Tides_Station
+  commentId: M:TimeAndDate.Services.DataTypes.Tides.Station.op_Explicit(XmlNode)~TimeAndDate.Services.DataTypes.Tides.Station
+  name.vb: Narrowing(XmlNode to Station)
+  fullName: TimeAndDate.Services.DataTypes.Tides.Station.Explicit(XmlNode to TimeAndDate.Services.DataTypes.Tides.Station)
+  fullName.vb: TimeAndDate.Services.DataTypes.Tides.Station.Narrowing(XmlNode to TimeAndDate.Services.DataTypes.Tides.Station)
+  nameWithType: Station.Explicit(XmlNode to Station)
+  nameWithType.vb: Station.Narrowing(XmlNode to Station)
+- uid: TimeAndDate.Services.DataTypes.Tides.Station.op_Explicit*
+  name: Explicit
+  href: api/TimeAndDate.Services.DataTypes.Tides.Station.html#TimeAndDate_Services_DataTypes_Tides_Station_op_Explicit_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.Station.op_Explicit
+  isSpec: "True"
+  name.vb: Narrowing
+  fullName: TimeAndDate.Services.DataTypes.Tides.Station.Explicit
+  fullName.vb: TimeAndDate.Services.DataTypes.Tides.Station.Narrowing
+  nameWithType: Station.Explicit
+  nameWithType.vb: Station.Narrowing
+- uid: TimeAndDate.Services.DataTypes.Tides.Station.Result
+  name: Result
+  href: api/TimeAndDate.Services.DataTypes.Tides.Station.html#TimeAndDate_Services_DataTypes_Tides_Station_Result
+  commentId: P:TimeAndDate.Services.DataTypes.Tides.Station.Result
+  fullName: TimeAndDate.Services.DataTypes.Tides.Station.Result
+  nameWithType: Station.Result
+- uid: TimeAndDate.Services.DataTypes.Tides.Station.Result*
+  name: Result
+  href: api/TimeAndDate.Services.DataTypes.Tides.Station.html#TimeAndDate_Services_DataTypes_Tides_Station_Result_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.Station.Result
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Tides.Station.Result
+  nameWithType: Station.Result
+- uid: TimeAndDate.Services.DataTypes.Tides.Station.Source
+  name: Source
+  href: api/TimeAndDate.Services.DataTypes.Tides.Station.html#TimeAndDate_Services_DataTypes_Tides_Station_Source
+  commentId: P:TimeAndDate.Services.DataTypes.Tides.Station.Source
+  fullName: TimeAndDate.Services.DataTypes.Tides.Station.Source
+  nameWithType: Station.Source
+- uid: TimeAndDate.Services.DataTypes.Tides.Station.Source*
+  name: Source
+  href: api/TimeAndDate.Services.DataTypes.Tides.Station.html#TimeAndDate_Services_DataTypes_Tides_Station_Source_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.Station.Source
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Tides.Station.Source
+  nameWithType: Station.Source
+- uid: TimeAndDate.Services.DataTypes.Tides.StationInfo
+  name: StationInfo
+  href: api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html
+  commentId: T:TimeAndDate.Services.DataTypes.Tides.StationInfo
+  fullName: TimeAndDate.Services.DataTypes.Tides.StationInfo
+  nameWithType: StationInfo
+- uid: TimeAndDate.Services.DataTypes.Tides.StationInfo.Distance
+  name: Distance
+  href: api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html#TimeAndDate_Services_DataTypes_Tides_StationInfo_Distance
+  commentId: P:TimeAndDate.Services.DataTypes.Tides.StationInfo.Distance
+  fullName: TimeAndDate.Services.DataTypes.Tides.StationInfo.Distance
+  nameWithType: StationInfo.Distance
+- uid: TimeAndDate.Services.DataTypes.Tides.StationInfo.Distance*
+  name: Distance
+  href: api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html#TimeAndDate_Services_DataTypes_Tides_StationInfo_Distance_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.StationInfo.Distance
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Tides.StationInfo.Distance
+  nameWithType: StationInfo.Distance
+- uid: TimeAndDate.Services.DataTypes.Tides.StationInfo.Latitude
+  name: Latitude
+  href: api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html#TimeAndDate_Services_DataTypes_Tides_StationInfo_Latitude
+  commentId: P:TimeAndDate.Services.DataTypes.Tides.StationInfo.Latitude
+  fullName: TimeAndDate.Services.DataTypes.Tides.StationInfo.Latitude
+  nameWithType: StationInfo.Latitude
+- uid: TimeAndDate.Services.DataTypes.Tides.StationInfo.Latitude*
+  name: Latitude
+  href: api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html#TimeAndDate_Services_DataTypes_Tides_StationInfo_Latitude_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.StationInfo.Latitude
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Tides.StationInfo.Latitude
+  nameWithType: StationInfo.Latitude
+- uid: TimeAndDate.Services.DataTypes.Tides.StationInfo.Longitude
+  name: Longitude
+  href: api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html#TimeAndDate_Services_DataTypes_Tides_StationInfo_Longitude
+  commentId: P:TimeAndDate.Services.DataTypes.Tides.StationInfo.Longitude
+  fullName: TimeAndDate.Services.DataTypes.Tides.StationInfo.Longitude
+  nameWithType: StationInfo.Longitude
+- uid: TimeAndDate.Services.DataTypes.Tides.StationInfo.Longitude*
+  name: Longitude
+  href: api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html#TimeAndDate_Services_DataTypes_Tides_StationInfo_Longitude_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.StationInfo.Longitude
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Tides.StationInfo.Longitude
+  nameWithType: StationInfo.Longitude
+- uid: TimeAndDate.Services.DataTypes.Tides.StationInfo.Name
+  name: Name
+  href: api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html#TimeAndDate_Services_DataTypes_Tides_StationInfo_Name
+  commentId: P:TimeAndDate.Services.DataTypes.Tides.StationInfo.Name
+  fullName: TimeAndDate.Services.DataTypes.Tides.StationInfo.Name
+  nameWithType: StationInfo.Name
+- uid: TimeAndDate.Services.DataTypes.Tides.StationInfo.Name*
+  name: Name
+  href: api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html#TimeAndDate_Services_DataTypes_Tides_StationInfo_Name_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.StationInfo.Name
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Tides.StationInfo.Name
+  nameWithType: StationInfo.Name
+- uid: TimeAndDate.Services.DataTypes.Tides.StationInfo.op_Explicit(XmlNode)~TimeAndDate.Services.DataTypes.Tides.StationInfo
+  name: Explicit(XmlNode to StationInfo)
+  href: api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html#TimeAndDate_Services_DataTypes_Tides_StationInfo_op_Explicit_XmlNode__TimeAndDate_Services_DataTypes_Tides_StationInfo
+  commentId: M:TimeAndDate.Services.DataTypes.Tides.StationInfo.op_Explicit(XmlNode)~TimeAndDate.Services.DataTypes.Tides.StationInfo
+  name.vb: Narrowing(XmlNode to StationInfo)
+  fullName: TimeAndDate.Services.DataTypes.Tides.StationInfo.Explicit(XmlNode to TimeAndDate.Services.DataTypes.Tides.StationInfo)
+  fullName.vb: TimeAndDate.Services.DataTypes.Tides.StationInfo.Narrowing(XmlNode to TimeAndDate.Services.DataTypes.Tides.StationInfo)
+  nameWithType: StationInfo.Explicit(XmlNode to StationInfo)
+  nameWithType.vb: StationInfo.Narrowing(XmlNode to StationInfo)
+- uid: TimeAndDate.Services.DataTypes.Tides.StationInfo.op_Explicit*
+  name: Explicit
+  href: api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html#TimeAndDate_Services_DataTypes_Tides_StationInfo_op_Explicit_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.StationInfo.op_Explicit
+  isSpec: "True"
+  name.vb: Narrowing
+  fullName: TimeAndDate.Services.DataTypes.Tides.StationInfo.Explicit
+  fullName.vb: TimeAndDate.Services.DataTypes.Tides.StationInfo.Narrowing
+  nameWithType: StationInfo.Explicit
+  nameWithType.vb: StationInfo.Narrowing
+- uid: TimeAndDate.Services.DataTypes.Tides.StationInfo.Type
+  name: Type
+  href: api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html#TimeAndDate_Services_DataTypes_Tides_StationInfo_Type
+  commentId: P:TimeAndDate.Services.DataTypes.Tides.StationInfo.Type
+  fullName: TimeAndDate.Services.DataTypes.Tides.StationInfo.Type
+  nameWithType: StationInfo.Type
+- uid: TimeAndDate.Services.DataTypes.Tides.StationInfo.Type*
+  name: Type
+  href: api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html#TimeAndDate_Services_DataTypes_Tides_StationInfo_Type_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.StationInfo.Type
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Tides.StationInfo.Type
+  nameWithType: StationInfo.Type
+- uid: TimeAndDate.Services.DataTypes.Tides.TidalPhase
+  name: TidalPhase
+  href: api/TimeAndDate.Services.DataTypes.Tides.TidalPhase.html
+  commentId: T:TimeAndDate.Services.DataTypes.Tides.TidalPhase
+  fullName: TimeAndDate.Services.DataTypes.Tides.TidalPhase
+  nameWithType: TidalPhase
+- uid: TimeAndDate.Services.DataTypes.Tides.TidalPhase.Ebb
+  name: Ebb
+  href: api/TimeAndDate.Services.DataTypes.Tides.TidalPhase.html#TimeAndDate_Services_DataTypes_Tides_TidalPhase_Ebb
+  commentId: F:TimeAndDate.Services.DataTypes.Tides.TidalPhase.Ebb
+  fullName: TimeAndDate.Services.DataTypes.Tides.TidalPhase.Ebb
+  nameWithType: TidalPhase.Ebb
+- uid: TimeAndDate.Services.DataTypes.Tides.TidalPhase.Flood
+  name: Flood
+  href: api/TimeAndDate.Services.DataTypes.Tides.TidalPhase.html#TimeAndDate_Services_DataTypes_Tides_TidalPhase_Flood
+  commentId: F:TimeAndDate.Services.DataTypes.Tides.TidalPhase.Flood
+  fullName: TimeAndDate.Services.DataTypes.Tides.TidalPhase.Flood
+  nameWithType: TidalPhase.Flood
+- uid: TimeAndDate.Services.DataTypes.Tides.TidalPhase.High
+  name: High
+  href: api/TimeAndDate.Services.DataTypes.Tides.TidalPhase.html#TimeAndDate_Services_DataTypes_Tides_TidalPhase_High
+  commentId: F:TimeAndDate.Services.DataTypes.Tides.TidalPhase.High
+  fullName: TimeAndDate.Services.DataTypes.Tides.TidalPhase.High
+  nameWithType: TidalPhase.High
+- uid: TimeAndDate.Services.DataTypes.Tides.TidalPhase.Low
+  name: Low
+  href: api/TimeAndDate.Services.DataTypes.Tides.TidalPhase.html#TimeAndDate_Services_DataTypes_Tides_TidalPhase_Low
+  commentId: F:TimeAndDate.Services.DataTypes.Tides.TidalPhase.Low
+  fullName: TimeAndDate.Services.DataTypes.Tides.TidalPhase.Low
+  nameWithType: TidalPhase.Low
+- uid: TimeAndDate.Services.DataTypes.Tides.Tide
+  name: Tide
+  href: api/TimeAndDate.Services.DataTypes.Tides.Tide.html
+  commentId: T:TimeAndDate.Services.DataTypes.Tides.Tide
+  fullName: TimeAndDate.Services.DataTypes.Tides.Tide
+  nameWithType: Tide
+- uid: TimeAndDate.Services.DataTypes.Tides.Tide.Amplitude
+  name: Amplitude
+  href: api/TimeAndDate.Services.DataTypes.Tides.Tide.html#TimeAndDate_Services_DataTypes_Tides_Tide_Amplitude
+  commentId: P:TimeAndDate.Services.DataTypes.Tides.Tide.Amplitude
+  fullName: TimeAndDate.Services.DataTypes.Tides.Tide.Amplitude
+  nameWithType: Tide.Amplitude
+- uid: TimeAndDate.Services.DataTypes.Tides.Tide.Amplitude*
+  name: Amplitude
+  href: api/TimeAndDate.Services.DataTypes.Tides.Tide.html#TimeAndDate_Services_DataTypes_Tides_Tide_Amplitude_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.Tide.Amplitude
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Tides.Tide.Amplitude
+  nameWithType: Tide.Amplitude
+- uid: TimeAndDate.Services.DataTypes.Tides.Tide.op_Explicit(XmlNode)~TimeAndDate.Services.DataTypes.Tides.Tide
+  name: Explicit(XmlNode to Tide)
+  href: api/TimeAndDate.Services.DataTypes.Tides.Tide.html#TimeAndDate_Services_DataTypes_Tides_Tide_op_Explicit_XmlNode__TimeAndDate_Services_DataTypes_Tides_Tide
+  commentId: M:TimeAndDate.Services.DataTypes.Tides.Tide.op_Explicit(XmlNode)~TimeAndDate.Services.DataTypes.Tides.Tide
+  name.vb: Narrowing(XmlNode to Tide)
+  fullName: TimeAndDate.Services.DataTypes.Tides.Tide.Explicit(XmlNode to TimeAndDate.Services.DataTypes.Tides.Tide)
+  fullName.vb: TimeAndDate.Services.DataTypes.Tides.Tide.Narrowing(XmlNode to TimeAndDate.Services.DataTypes.Tides.Tide)
+  nameWithType: Tide.Explicit(XmlNode to Tide)
+  nameWithType.vb: Tide.Narrowing(XmlNode to Tide)
+- uid: TimeAndDate.Services.DataTypes.Tides.Tide.op_Explicit*
+  name: Explicit
+  href: api/TimeAndDate.Services.DataTypes.Tides.Tide.html#TimeAndDate_Services_DataTypes_Tides_Tide_op_Explicit_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.Tide.op_Explicit
+  isSpec: "True"
+  name.vb: Narrowing
+  fullName: TimeAndDate.Services.DataTypes.Tides.Tide.Explicit
+  fullName.vb: TimeAndDate.Services.DataTypes.Tides.Tide.Narrowing
+  nameWithType: Tide.Explicit
+  nameWithType.vb: Tide.Narrowing
+- uid: TimeAndDate.Services.DataTypes.Tides.Tide.Phase
+  name: Phase
+  href: api/TimeAndDate.Services.DataTypes.Tides.Tide.html#TimeAndDate_Services_DataTypes_Tides_Tide_Phase
+  commentId: P:TimeAndDate.Services.DataTypes.Tides.Tide.Phase
+  fullName: TimeAndDate.Services.DataTypes.Tides.Tide.Phase
+  nameWithType: Tide.Phase
+- uid: TimeAndDate.Services.DataTypes.Tides.Tide.Phase*
+  name: Phase
+  href: api/TimeAndDate.Services.DataTypes.Tides.Tide.html#TimeAndDate_Services_DataTypes_Tides_Tide_Phase_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.Tide.Phase
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Tides.Tide.Phase
+  nameWithType: Tide.Phase
+- uid: TimeAndDate.Services.DataTypes.Tides.Tide.Time
+  name: Time
+  href: api/TimeAndDate.Services.DataTypes.Tides.Tide.html#TimeAndDate_Services_DataTypes_Tides_Tide_Time
+  commentId: P:TimeAndDate.Services.DataTypes.Tides.Tide.Time
+  fullName: TimeAndDate.Services.DataTypes.Tides.Tide.Time
+  nameWithType: Tide.Time
+- uid: TimeAndDate.Services.DataTypes.Tides.Tide.Time*
+  name: Time
+  href: api/TimeAndDate.Services.DataTypes.Tides.Tide.html#TimeAndDate_Services_DataTypes_Tides_Tide_Time_
+  commentId: Overload:TimeAndDate.Services.DataTypes.Tides.Tide.Time
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DataTypes.Tides.Tide.Time
+  nameWithType: Tide.Time
 - uid: TimeAndDate.Services.DataTypes.Time
   name: TimeAndDate.Services.DataTypes.Time
   href: api/TimeAndDate.Services.DataTypes.Time.html
@@ -4812,6 +5299,31 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.DialCodeService.GetDialCode
   nameWithType: DialCodeService.GetDialCode
+- uid: TimeAndDate.Services.DialCodeService.GetDialCodeAsync(TimeAndDate.Services.DataTypes.Places.LocationId)
+  name: GetDialCodeAsync(LocationId)
+  href: api/TimeAndDate.Services.DialCodeService.html#TimeAndDate_Services_DialCodeService_GetDialCodeAsync_TimeAndDate_Services_DataTypes_Places_LocationId_
+  commentId: M:TimeAndDate.Services.DialCodeService.GetDialCodeAsync(TimeAndDate.Services.DataTypes.Places.LocationId)
+  fullName: TimeAndDate.Services.DialCodeService.GetDialCodeAsync(TimeAndDate.Services.DataTypes.Places.LocationId)
+  nameWithType: DialCodeService.GetDialCodeAsync(LocationId)
+- uid: TimeAndDate.Services.DialCodeService.GetDialCodeAsync(TimeAndDate.Services.DataTypes.Places.LocationId,TimeAndDate.Services.DataTypes.Places.LocationId)
+  name: GetDialCodeAsync(LocationId, LocationId)
+  href: api/TimeAndDate.Services.DialCodeService.html#TimeAndDate_Services_DialCodeService_GetDialCodeAsync_TimeAndDate_Services_DataTypes_Places_LocationId_TimeAndDate_Services_DataTypes_Places_LocationId_
+  commentId: M:TimeAndDate.Services.DialCodeService.GetDialCodeAsync(TimeAndDate.Services.DataTypes.Places.LocationId,TimeAndDate.Services.DataTypes.Places.LocationId)
+  fullName: TimeAndDate.Services.DialCodeService.GetDialCodeAsync(TimeAndDate.Services.DataTypes.Places.LocationId, TimeAndDate.Services.DataTypes.Places.LocationId)
+  nameWithType: DialCodeService.GetDialCodeAsync(LocationId, LocationId)
+- uid: TimeAndDate.Services.DialCodeService.GetDialCodeAsync(TimeAndDate.Services.DataTypes.Places.LocationId,TimeAndDate.Services.DataTypes.Places.LocationId,System.Int32)
+  name: GetDialCodeAsync(LocationId, LocationId, Int32)
+  href: api/TimeAndDate.Services.DialCodeService.html#TimeAndDate_Services_DialCodeService_GetDialCodeAsync_TimeAndDate_Services_DataTypes_Places_LocationId_TimeAndDate_Services_DataTypes_Places_LocationId_System_Int32_
+  commentId: M:TimeAndDate.Services.DialCodeService.GetDialCodeAsync(TimeAndDate.Services.DataTypes.Places.LocationId,TimeAndDate.Services.DataTypes.Places.LocationId,System.Int32)
+  fullName: TimeAndDate.Services.DialCodeService.GetDialCodeAsync(TimeAndDate.Services.DataTypes.Places.LocationId, TimeAndDate.Services.DataTypes.Places.LocationId, System.Int32)
+  nameWithType: DialCodeService.GetDialCodeAsync(LocationId, LocationId, Int32)
+- uid: TimeAndDate.Services.DialCodeService.GetDialCodeAsync*
+  name: GetDialCodeAsync
+  href: api/TimeAndDate.Services.DialCodeService.html#TimeAndDate_Services_DialCodeService_GetDialCodeAsync_
+  commentId: Overload:TimeAndDate.Services.DialCodeService.GetDialCodeAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DialCodeService.GetDialCodeAsync
+  nameWithType: DialCodeService.GetDialCodeAsync
 - uid: TimeAndDate.Services.DialCodeService.IncludeCoordinates
   name: IncludeCoordinates
   href: api/TimeAndDate.Services.DialCodeService.html#TimeAndDate_Services_DialCodeService_IncludeCoordinates
@@ -4914,6 +5426,37 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.DSTService.GetDaylightSavingTime
   nameWithType: DSTService.GetDaylightSavingTime
+- uid: TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync
+  name: GetDaylightSavingTimeAsync()
+  href: api/TimeAndDate.Services.DSTService.html#TimeAndDate_Services_DSTService_GetDaylightSavingTimeAsync
+  commentId: M:TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync
+  fullName: TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync()
+  nameWithType: DSTService.GetDaylightSavingTimeAsync()
+- uid: TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync(System.Int32)
+  name: GetDaylightSavingTimeAsync(Int32)
+  href: api/TimeAndDate.Services.DSTService.html#TimeAndDate_Services_DSTService_GetDaylightSavingTimeAsync_System_Int32_
+  commentId: M:TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync(System.Int32)
+  fullName: TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync(System.Int32)
+  nameWithType: DSTService.GetDaylightSavingTimeAsync(Int32)
+- uid: TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync(System.String)
+  name: GetDaylightSavingTimeAsync(String)
+  href: api/TimeAndDate.Services.DSTService.html#TimeAndDate_Services_DSTService_GetDaylightSavingTimeAsync_System_String_
+  commentId: M:TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync(System.String)
+  fullName: TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync(System.String)
+  nameWithType: DSTService.GetDaylightSavingTimeAsync(String)
+- uid: TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync(System.String,System.Int32)
+  name: GetDaylightSavingTimeAsync(String, Int32)
+  href: api/TimeAndDate.Services.DSTService.html#TimeAndDate_Services_DSTService_GetDaylightSavingTimeAsync_System_String_System_Int32_
+  commentId: M:TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync(System.String,System.Int32)
+  fullName: TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync(System.String, System.Int32)
+  nameWithType: DSTService.GetDaylightSavingTimeAsync(String, Int32)
+- uid: TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync*
+  name: GetDaylightSavingTimeAsync
+  href: api/TimeAndDate.Services.DSTService.html#TimeAndDate_Services_DSTService_GetDaylightSavingTimeAsync_
+  commentId: Overload:TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.DSTService.GetDaylightSavingTimeAsync
+  nameWithType: DSTService.GetDaylightSavingTimeAsync
 - uid: TimeAndDate.Services.DSTService.IncludeOnlyDstCountries
   name: IncludeOnlyDstCountries
   href: api/TimeAndDate.Services.DSTService.html#TimeAndDate_Services_DSTService_IncludeOnlyDstCountries
@@ -4991,6 +5534,25 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.HolidaysService.HolidaysForCountry
   nameWithType: HolidaysService.HolidaysForCountry
+- uid: TimeAndDate.Services.HolidaysService.HolidaysForCountryAsync(System.String)
+  name: HolidaysForCountryAsync(String)
+  href: api/TimeAndDate.Services.HolidaysService.html#TimeAndDate_Services_HolidaysService_HolidaysForCountryAsync_System_String_
+  commentId: M:TimeAndDate.Services.HolidaysService.HolidaysForCountryAsync(System.String)
+  fullName: TimeAndDate.Services.HolidaysService.HolidaysForCountryAsync(System.String)
+  nameWithType: HolidaysService.HolidaysForCountryAsync(String)
+- uid: TimeAndDate.Services.HolidaysService.HolidaysForCountryAsync(System.String,System.Int32)
+  name: HolidaysForCountryAsync(String, Int32)
+  href: api/TimeAndDate.Services.HolidaysService.html#TimeAndDate_Services_HolidaysService_HolidaysForCountryAsync_System_String_System_Int32_
+  commentId: M:TimeAndDate.Services.HolidaysService.HolidaysForCountryAsync(System.String,System.Int32)
+  fullName: TimeAndDate.Services.HolidaysService.HolidaysForCountryAsync(System.String, System.Int32)
+  nameWithType: HolidaysService.HolidaysForCountryAsync(String, Int32)
+- uid: TimeAndDate.Services.HolidaysService.HolidaysForCountryAsync*
+  name: HolidaysForCountryAsync
+  href: api/TimeAndDate.Services.HolidaysService.html#TimeAndDate_Services_HolidaysService_HolidaysForCountryAsync_
+  commentId: Overload:TimeAndDate.Services.HolidaysService.HolidaysForCountryAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.HolidaysService.HolidaysForCountryAsync
+  nameWithType: HolidaysService.HolidaysForCountryAsync
 - uid: TimeAndDate.Services.HolidaysService.Types
   name: Types
   href: api/TimeAndDate.Services.HolidaysService.html#TimeAndDate_Services_HolidaysService_Types
@@ -5105,6 +5667,25 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.OnThisDayService.EventsOnThisDay
   nameWithType: OnThisDayService.EventsOnThisDay
+- uid: TimeAndDate.Services.OnThisDayService.EventsOnThisDayAsync
+  name: EventsOnThisDayAsync()
+  href: api/TimeAndDate.Services.OnThisDayService.html#TimeAndDate_Services_OnThisDayService_EventsOnThisDayAsync
+  commentId: M:TimeAndDate.Services.OnThisDayService.EventsOnThisDayAsync
+  fullName: TimeAndDate.Services.OnThisDayService.EventsOnThisDayAsync()
+  nameWithType: OnThisDayService.EventsOnThisDayAsync()
+- uid: TimeAndDate.Services.OnThisDayService.EventsOnThisDayAsync(System.Int32,System.Int32)
+  name: EventsOnThisDayAsync(Int32, Int32)
+  href: api/TimeAndDate.Services.OnThisDayService.html#TimeAndDate_Services_OnThisDayService_EventsOnThisDayAsync_System_Int32_System_Int32_
+  commentId: M:TimeAndDate.Services.OnThisDayService.EventsOnThisDayAsync(System.Int32,System.Int32)
+  fullName: TimeAndDate.Services.OnThisDayService.EventsOnThisDayAsync(System.Int32, System.Int32)
+  nameWithType: OnThisDayService.EventsOnThisDayAsync(Int32, Int32)
+- uid: TimeAndDate.Services.OnThisDayService.EventsOnThisDayAsync*
+  name: EventsOnThisDayAsync
+  href: api/TimeAndDate.Services.OnThisDayService.html#TimeAndDate_Services_OnThisDayService_EventsOnThisDayAsync_
+  commentId: Overload:TimeAndDate.Services.OnThisDayService.EventsOnThisDayAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.OnThisDayService.EventsOnThisDayAsync
+  nameWithType: OnThisDayService.EventsOnThisDayAsync
 - uid: TimeAndDate.Services.OnThisDayService.FromString*
   name: FromString
   href: api/TimeAndDate.Services.OnThisDayService.html#TimeAndDate_Services_OnThisDayService_FromString_
@@ -5166,6 +5747,19 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.PlacesService.GetPlaces
   nameWithType: PlacesService.GetPlaces
+- uid: TimeAndDate.Services.PlacesService.GetPlacesAsync
+  name: GetPlacesAsync()
+  href: api/TimeAndDate.Services.PlacesService.html#TimeAndDate_Services_PlacesService_GetPlacesAsync
+  commentId: M:TimeAndDate.Services.PlacesService.GetPlacesAsync
+  fullName: TimeAndDate.Services.PlacesService.GetPlacesAsync()
+  nameWithType: PlacesService.GetPlacesAsync()
+- uid: TimeAndDate.Services.PlacesService.GetPlacesAsync*
+  name: GetPlacesAsync
+  href: api/TimeAndDate.Services.PlacesService.html#TimeAndDate_Services_PlacesService_GetPlacesAsync_
+  commentId: Overload:TimeAndDate.Services.PlacesService.GetPlacesAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.PlacesService.GetPlacesAsync
+  nameWithType: PlacesService.GetPlacesAsync
 - uid: TimeAndDate.Services.PlacesService.IncludeCoordinates
   name: IncludeCoordinates
   href: api/TimeAndDate.Services.PlacesService.html#TimeAndDate_Services_PlacesService_IncludeCoordinates
@@ -5179,6 +5773,160 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.PlacesService.IncludeCoordinates
   nameWithType: PlacesService.IncludeCoordinates
+- uid: TimeAndDate.Services.TidesService
+  name: TidesService
+  href: api/TimeAndDate.Services.TidesService.html
+  commentId: T:TimeAndDate.Services.TidesService
+  fullName: TimeAndDate.Services.TidesService
+  nameWithType: TidesService
+- uid: TimeAndDate.Services.TidesService.#ctor(System.String,System.String)
+  name: TidesService(String, String)
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService__ctor_System_String_System_String_
+  commentId: M:TimeAndDate.Services.TidesService.#ctor(System.String,System.String)
+  fullName: TimeAndDate.Services.TidesService.TidesService(System.String, System.String)
+  nameWithType: TidesService.TidesService(String, String)
+- uid: TimeAndDate.Services.TidesService.#ctor*
+  name: TidesService
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService__ctor_
+  commentId: Overload:TimeAndDate.Services.TidesService.#ctor
+  isSpec: "True"
+  fullName: TimeAndDate.Services.TidesService.TidesService
+  nameWithType: TidesService.TidesService
+- uid: TimeAndDate.Services.TidesService.EndDate
+  name: EndDate
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_EndDate
+  commentId: P:TimeAndDate.Services.TidesService.EndDate
+  fullName: TimeAndDate.Services.TidesService.EndDate
+  nameWithType: TidesService.EndDate
+- uid: TimeAndDate.Services.TidesService.EndDate*
+  name: EndDate
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_EndDate_
+  commentId: Overload:TimeAndDate.Services.TidesService.EndDate
+  isSpec: "True"
+  fullName: TimeAndDate.Services.TidesService.EndDate
+  nameWithType: TidesService.EndDate
+- uid: TimeAndDate.Services.TidesService.GetTidalData(List{TimeAndDate.Services.DataTypes.Places.LocationId})
+  name: GetTidalData(List<LocationId>)
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_GetTidalData_List_TimeAndDate_Services_DataTypes_Places_LocationId__
+  commentId: M:TimeAndDate.Services.TidesService.GetTidalData(List{TimeAndDate.Services.DataTypes.Places.LocationId})
+  name.vb: GetTidalData(List(Of LocationId))
+  fullName: TimeAndDate.Services.TidesService.GetTidalData(List<TimeAndDate.Services.DataTypes.Places.LocationId>)
+  fullName.vb: TimeAndDate.Services.TidesService.GetTidalData(List(Of TimeAndDate.Services.DataTypes.Places.LocationId))
+  nameWithType: TidesService.GetTidalData(List<LocationId>)
+  nameWithType.vb: TidesService.GetTidalData(List(Of LocationId))
+- uid: TimeAndDate.Services.TidesService.GetTidalData(TimeAndDate.Services.DataTypes.Places.LocationId)
+  name: GetTidalData(LocationId)
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_GetTidalData_TimeAndDate_Services_DataTypes_Places_LocationId_
+  commentId: M:TimeAndDate.Services.TidesService.GetTidalData(TimeAndDate.Services.DataTypes.Places.LocationId)
+  fullName: TimeAndDate.Services.TidesService.GetTidalData(TimeAndDate.Services.DataTypes.Places.LocationId)
+  nameWithType: TidesService.GetTidalData(LocationId)
+- uid: TimeAndDate.Services.TidesService.GetTidalData*
+  name: GetTidalData
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_GetTidalData_
+  commentId: Overload:TimeAndDate.Services.TidesService.GetTidalData
+  isSpec: "True"
+  fullName: TimeAndDate.Services.TidesService.GetTidalData
+  nameWithType: TidesService.GetTidalData
+- uid: TimeAndDate.Services.TidesService.GetTidalDataAsync(List{TimeAndDate.Services.DataTypes.Places.LocationId})
+  name: GetTidalDataAsync(List<LocationId>)
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_GetTidalDataAsync_List_TimeAndDate_Services_DataTypes_Places_LocationId__
+  commentId: M:TimeAndDate.Services.TidesService.GetTidalDataAsync(List{TimeAndDate.Services.DataTypes.Places.LocationId})
+  name.vb: GetTidalDataAsync(List(Of LocationId))
+  fullName: TimeAndDate.Services.TidesService.GetTidalDataAsync(List<TimeAndDate.Services.DataTypes.Places.LocationId>)
+  fullName.vb: TimeAndDate.Services.TidesService.GetTidalDataAsync(List(Of TimeAndDate.Services.DataTypes.Places.LocationId))
+  nameWithType: TidesService.GetTidalDataAsync(List<LocationId>)
+  nameWithType.vb: TidesService.GetTidalDataAsync(List(Of LocationId))
+- uid: TimeAndDate.Services.TidesService.GetTidalDataAsync(TimeAndDate.Services.DataTypes.Places.LocationId)
+  name: GetTidalDataAsync(LocationId)
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_GetTidalDataAsync_TimeAndDate_Services_DataTypes_Places_LocationId_
+  commentId: M:TimeAndDate.Services.TidesService.GetTidalDataAsync(TimeAndDate.Services.DataTypes.Places.LocationId)
+  fullName: TimeAndDate.Services.TidesService.GetTidalDataAsync(TimeAndDate.Services.DataTypes.Places.LocationId)
+  nameWithType: TidesService.GetTidalDataAsync(LocationId)
+- uid: TimeAndDate.Services.TidesService.GetTidalDataAsync*
+  name: GetTidalDataAsync
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_GetTidalDataAsync_
+  commentId: Overload:TimeAndDate.Services.TidesService.GetTidalDataAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.TidesService.GetTidalDataAsync
+  nameWithType: TidesService.GetTidalDataAsync
+- uid: TimeAndDate.Services.TidesService.Interval
+  name: Interval
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_Interval
+  commentId: P:TimeAndDate.Services.TidesService.Interval
+  fullName: TimeAndDate.Services.TidesService.Interval
+  nameWithType: TidesService.Interval
+- uid: TimeAndDate.Services.TidesService.Interval*
+  name: Interval
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_Interval_
+  commentId: Overload:TimeAndDate.Services.TidesService.Interval
+  isSpec: "True"
+  fullName: TimeAndDate.Services.TidesService.Interval
+  nameWithType: TidesService.Interval
+- uid: TimeAndDate.Services.TidesService.LocalTime
+  name: LocalTime
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_LocalTime
+  commentId: P:TimeAndDate.Services.TidesService.LocalTime
+  fullName: TimeAndDate.Services.TidesService.LocalTime
+  nameWithType: TidesService.LocalTime
+- uid: TimeAndDate.Services.TidesService.LocalTime*
+  name: LocalTime
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_LocalTime_
+  commentId: Overload:TimeAndDate.Services.TidesService.LocalTime
+  isSpec: "True"
+  fullName: TimeAndDate.Services.TidesService.LocalTime
+  nameWithType: TidesService.LocalTime
+- uid: TimeAndDate.Services.TidesService.OnlyHighLow
+  name: OnlyHighLow
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_OnlyHighLow
+  commentId: P:TimeAndDate.Services.TidesService.OnlyHighLow
+  fullName: TimeAndDate.Services.TidesService.OnlyHighLow
+  nameWithType: TidesService.OnlyHighLow
+- uid: TimeAndDate.Services.TidesService.OnlyHighLow*
+  name: OnlyHighLow
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_OnlyHighLow_
+  commentId: Overload:TimeAndDate.Services.TidesService.OnlyHighLow
+  isSpec: "True"
+  fullName: TimeAndDate.Services.TidesService.OnlyHighLow
+  nameWithType: TidesService.OnlyHighLow
+- uid: TimeAndDate.Services.TidesService.Radius
+  name: Radius
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_Radius
+  commentId: P:TimeAndDate.Services.TidesService.Radius
+  fullName: TimeAndDate.Services.TidesService.Radius
+  nameWithType: TidesService.Radius
+- uid: TimeAndDate.Services.TidesService.Radius*
+  name: Radius
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_Radius_
+  commentId: Overload:TimeAndDate.Services.TidesService.Radius
+  isSpec: "True"
+  fullName: TimeAndDate.Services.TidesService.Radius
+  nameWithType: TidesService.Radius
+- uid: TimeAndDate.Services.TidesService.StartDate
+  name: StartDate
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_StartDate
+  commentId: P:TimeAndDate.Services.TidesService.StartDate
+  fullName: TimeAndDate.Services.TidesService.StartDate
+  nameWithType: TidesService.StartDate
+- uid: TimeAndDate.Services.TidesService.StartDate*
+  name: StartDate
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_StartDate_
+  commentId: Overload:TimeAndDate.Services.TidesService.StartDate
+  isSpec: "True"
+  fullName: TimeAndDate.Services.TidesService.StartDate
+  nameWithType: TidesService.StartDate
+- uid: TimeAndDate.Services.TidesService.Subordinate
+  name: Subordinate
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_Subordinate
+  commentId: P:TimeAndDate.Services.TidesService.Subordinate
+  fullName: TimeAndDate.Services.TidesService.Subordinate
+  nameWithType: TidesService.Subordinate
+- uid: TimeAndDate.Services.TidesService.Subordinate*
+  name: Subordinate
+  href: api/TimeAndDate.Services.TidesService.html#TimeAndDate_Services_TidesService_Subordinate_
+  commentId: Overload:TimeAndDate.Services.TidesService.Subordinate
+  isSpec: "True"
+  fullName: TimeAndDate.Services.TidesService.Subordinate
+  nameWithType: TidesService.Subordinate
 - uid: TimeAndDate.Services.TimeService
   name: TimeService
   href: api/TimeAndDate.Services.TimeService.html
@@ -5211,6 +5959,19 @@ references:
   isSpec: "True"
   fullName: TimeAndDate.Services.TimeService.CurrentTimeForPlace
   nameWithType: TimeService.CurrentTimeForPlace
+- uid: TimeAndDate.Services.TimeService.CurrentTimeForPlaceAsync(TimeAndDate.Services.DataTypes.Places.LocationId)
+  name: CurrentTimeForPlaceAsync(LocationId)
+  href: api/TimeAndDate.Services.TimeService.html#TimeAndDate_Services_TimeService_CurrentTimeForPlaceAsync_TimeAndDate_Services_DataTypes_Places_LocationId_
+  commentId: M:TimeAndDate.Services.TimeService.CurrentTimeForPlaceAsync(TimeAndDate.Services.DataTypes.Places.LocationId)
+  fullName: TimeAndDate.Services.TimeService.CurrentTimeForPlaceAsync(TimeAndDate.Services.DataTypes.Places.LocationId)
+  nameWithType: TimeService.CurrentTimeForPlaceAsync(LocationId)
+- uid: TimeAndDate.Services.TimeService.CurrentTimeForPlaceAsync*
+  name: CurrentTimeForPlaceAsync
+  href: api/TimeAndDate.Services.TimeService.html#TimeAndDate_Services_TimeService_CurrentTimeForPlaceAsync_
+  commentId: Overload:TimeAndDate.Services.TimeService.CurrentTimeForPlaceAsync
+  isSpec: "True"
+  fullName: TimeAndDate.Services.TimeService.CurrentTimeForPlaceAsync
+  nameWithType: TimeService.CurrentTimeForPlaceAsync
 - uid: TimeAndDate.Services.TimeService.IncludeCoordinates
   name: IncludeCoordinates
   href: api/TimeAndDate.Services.TimeService.html#TimeAndDate_Services_TimeService_IncludeCoordinates

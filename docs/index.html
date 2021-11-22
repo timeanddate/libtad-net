@@ -8,7 +8,7 @@
     <title>Time And Date .NET API </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Time And Date .NET API ">
-    <meta name="generator" content="docfx 2.58.0.0">
+    <meta name="generator" content="docfx 2.58.9.0">
     
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/docfx.vendor.css">
@@ -62,7 +62,7 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="time-and-date-net-api">Time And Date .NET API</h1>
 
-<p><a href="https://www.travis-ci.com/timeanddate/libtad-net"><img src="https://www.travis-ci.com/timeanddate/libtad-net.svg?branch=master" alt="Build Status"></a></p>
+<p><a href="https://app.travis-ci.com/timeanddate/libtad-net"><img src="https://app.travis-ci.com/timeanddate/libtad-net.svg?branch=master" alt="Build Status"></a></p>
 <p>Time and Date APIs support looking up several different locations and IDs. As of API version 2 the following variations are available:</p>
 <ul>
 <li>Numeric ID (e.g. 187)</li>
@@ -70,9 +70,8 @@
 <li>Coordinates (e.g. &quot;+59.743+10.204&quot;)</li>
 <li>Airports (e.g. &quot;a-ENZV&quot;)</li>
 </ul>
-<p>The class <a href="http://services.timeanddate.com/api/doc/v2/type-locationid.html">LocationId</a> is used to set the appropriate location ID. Airports categorize the same way as textual ID.</p>
-<p>An access key and a secret key is required to use the API. If you are not already a Time and Date API user, please see our <a href="https://services.timeanddate.com/api/packages/">API offers</a> to get a free 3 month trial. For more information, see our <a href="https://services.timeanddate.com/">API Services page</a>.</p>
-<p>Developed with Mono C# Compiler 4.0.1.0</p>
+<p>The class <a href="https://dev.timeanddate.com/docs/type-locationid">LocationId</a> is used to set the appropriate location ID. Airports categorize the same way as textual ID.</p>
+<p>An access key and a secret key is required to use the API. If you are not already a Time and Date API user, please see our <a href="https://dev.timeanddate.com/free-trial">API offers</a> to get a free 3 month trial. For more information, see our <a href="https://dev.timeanddate.com/">API Services page</a>.</p>
 <h2 id="astronomy-service">Astronomy Service</h2>
 <p>Get astronomy information for a place on a date by textual ID:</p>
 <pre><code>     var place = new LocationId(&quot;usa/anchorage&quot;);
@@ -150,7 +149,7 @@ service.LocalTime = true;
     var service = new ConvertTimeService('accessKey', 'secretKey');
     var convertedTime = service.ConvertTime(place, date);
 </code></pre>
-<p>Convert time from a location using an <a href="http://services.timeanddate.com/api/doc/v2/type-isotime.html">ISO 8601</a>-string:</p>
+<p>Convert time from a location using an <a href="https://dev.timeanddate.com/docs/external-references#ISO8601">ISO 8601</a>-string:</p>
 <pre><code>    ...
     var convertedTime = service.ConvertTime(place, &quot;2015-04-21T16:45:00&quot;);
 </code></pre>
@@ -182,11 +181,11 @@ service.LocalTime = true;
 <pre><code>    var service = new DSTService('accessKey', 'secretKey');
     var result = service.GetDaylightSavingTime(2014);
 </code></pre>
-<p>Get daylight saving time for a specified <a href="http://services.timeanddate.com/api/doc/v2/type-isocountry.html">ISO3166-1 (Alpha2)</a> country code:</p>
+<p>Get daylight saving time for a specified <a href="https://dev.timeanddate.com/docs/external-references#ISO3166">ISO3166-1 (Alpha2)</a> country code:</p>
 <pre><code>    var service = new DSTService('accessKey', 'secretKey');
     var result = service.GetDaylightSavingTime(&quot;no&quot;);
 </code></pre>
-<p>Get daylight saving time for a specified <a href="http://services.timeanddate.com/api/doc/v2/type-isocountry.html">ISO3166-1 (Alpha2)</a> country code and year:</p>
+<p>Get daylight saving time for a specified <a href="https://dev.timeanddate.com/docs/external-references#ISO3166">ISO3166-1 (Alpha2)</a> country code and year:</p>
 <pre><code>    var service = new DSTService('accessKey', 'secretKey');
     var result = service.GetDaylightSavingTime(&quot;no&quot;, 2014);
 </code></pre>
@@ -235,12 +234,12 @@ service.LocalTime = true;
     service.IncludeTimezoneInformation = false;
 </code></pre>
 <h2 id="holidays-service">Holidays Service</h2>
-<p>Get all holidays for a country by <a href="http://services.timeanddate.com/api/doc/v2/type-isocountry.html">ISO3166-1 (Alpha2)</a> country code:</p>
+<p>Get all holidays for a country by <a href="https://dev.timeanddate.com/docs/external-references#ISO3166">ISO3166-1 (Alpha2)</a> country code:</p>
 <pre><code>    var country = &quot;no&quot;;
     var service = new HolidaysService('accessKey', 'secretKey');
     var result = service.GetHolidaysForCountry(country);
 </code></pre>
-<p>Get all holidays for a country by year and <a href="http://services.timeanddate.com/api/doc/v2/type-isocountry.html">ISO3166-1 (Alpha2)</a> country code:</p>
+<p>Get all holidays for a country by year and <a href="https://dev.timeanddate.com/docs/external-references#ISO3166">ISO3166-1 (Alpha2)</a> country code:</p>
 <pre><code>    var country = &quot;no&quot;;
     var year = 2014;
     var service = new HolidaysService('accessKey', 'secretKey');
@@ -313,7 +312,7 @@ var result = service.EventsOnThisDay();
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/timeanddate/libtad-net/blob/master/docfx_project/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/docfx_project/index.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

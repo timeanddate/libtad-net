@@ -1,0 +1,618 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TidesService
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TidesService
+   ">
+    <meta name="generator" content="docfx 2.58.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="TimeAndDate.Services.TidesService">
+  
+  
+  <h1 id="TimeAndDate_Services_TidesService" data-uid="TimeAndDate.Services.TidesService" class="text-break">Class TidesService
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="TimeAndDate.Services.BaseService.html">BaseService</a></div>
+    <div class="level2"><span class="xref">TidesService</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_Version">BaseService.Version</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_Language">BaseService.Language</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_XmlElemName">BaseService.XmlElemName</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_ServiceName">BaseService.ServiceName</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_AuthenticationOptions">BaseService.AuthenticationOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_CallService__1_NameValueCollection_Func_XmlNode___0__">BaseService.CallService&lt;T&gt;(NameValueCollection, Func&lt;XmlNode, T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_CallService__1_NameValueCollection_">BaseService.CallService&lt;T&gt;(NameValueCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_CallServiceAsync__1_NameValueCollection_Func_XmlNode___0__">BaseService.CallServiceAsync&lt;T&gt;(NameValueCollection, Func&lt;XmlNode, T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_CallServiceAsync__1_NameValueCollection_">BaseService.CallServiceAsync&lt;T&gt;(NameValueCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_FromXml__1_System_String_System_String_Func_XmlNode___0__">BaseService.FromXml&lt;T&gt;(String, String, Func&lt;XmlNode, T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="TimeAndDate.Services.BaseService.html#TimeAndDate_Services_BaseService_FromString__1_System_String_">BaseService.FromString&lt;T&gt;(String)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="TimeAndDate.Services.html">TimeAndDate.Services</a></h6>
+  <h6><strong>Assembly</strong>: TimeAndDate.Services.dll</h6>
+  <h5 id="TimeAndDate_Services_TidesService_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TidesService : BaseService</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/update-url/apiSpec/new?filename=TimeAndDate_Services_TidesService__ctor_System_String_System_String_.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.TidesService.%23ctor(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/TimeAndDate.Services/TidesService.cs/#L61">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_TidesService__ctor_" data-uid="TimeAndDate.Services.TidesService.#ctor*"></a>
+  <h4 id="TimeAndDate_Services_TidesService__ctor_System_String_System_String_" data-uid="TimeAndDate.Services.TidesService.#ctor(System.String,System.String)">TidesService(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TidesService(string accessKey, string secretKey)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">accessKey</span></td>
+        <td><p>Access key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">secretKey</span></td>
+        <td><p>Secret key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/update-url/apiSpec/new?filename=TimeAndDate_Services_TidesService_EndDate.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.TidesService.EndDate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/TimeAndDate.Services/TidesService.cs/#L31">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_TidesService_EndDate_" data-uid="TimeAndDate.Services.TidesService.EndDate*"></a>
+  <h4 id="TimeAndDate_Services_TidesService_EndDate" data-uid="TimeAndDate.Services.TidesService.EndDate">EndDate</h4>
+  <div class="markdown level1 summary"><p>End of the requested time interval.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime? EndDate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">DateTime</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/update-url/apiSpec/new?filename=TimeAndDate_Services_TidesService_Interval.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.TidesService.Interval%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/TimeAndDate.Services/TidesService.cs/#L46">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_TidesService_Interval_" data-uid="TimeAndDate.Services.TidesService.Interval*"></a>
+  <h4 id="TimeAndDate_Services_TidesService_Interval" data-uid="TimeAndDate.Services.TidesService.Interval">Interval</h4>
+  <div class="markdown level1 summary"><p>How many minutes between each data point. Supported values: 5 min, 15 min, 30 min, 60 min.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? Interval { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/update-url/apiSpec/new?filename=TimeAndDate_Services_TidesService_LocalTime.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.TidesService.LocalTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/TimeAndDate.Services/TidesService.cs/#L51">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_TidesService_LocalTime_" data-uid="TimeAndDate.Services.TidesService.LocalTime*"></a>
+  <h4 id="TimeAndDate_Services_TidesService_LocalTime" data-uid="TimeAndDate.Services.TidesService.LocalTime">LocalTime</h4>
+  <div class="markdown level1 summary"><p>Whether input and output timestamps should be resolved to local time or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? LocalTime { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/update-url/apiSpec/new?filename=TimeAndDate_Services_TidesService_OnlyHighLow.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.TidesService.OnlyHighLow%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/TimeAndDate.Services/TidesService.cs/#L21">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_TidesService_OnlyHighLow_" data-uid="TimeAndDate.Services.TidesService.OnlyHighLow*"></a>
+  <h4 id="TimeAndDate_Services_TidesService_OnlyHighLow" data-uid="TimeAndDate.Services.TidesService.OnlyHighLow">OnlyHighLow</h4>
+  <div class="markdown level1 summary"><p>Whether to return every point per interval, or just the highest and lowest points.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? OnlyHighLow { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/update-url/apiSpec/new?filename=TimeAndDate_Services_TidesService_Radius.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.TidesService.Radius%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/TimeAndDate.Services/TidesService.cs/#L36">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_TidesService_Radius_" data-uid="TimeAndDate.Services.TidesService.Radius*"></a>
+  <h4 id="TimeAndDate_Services_TidesService_Radius" data-uid="TimeAndDate.Services.TidesService.Radius">Radius</h4>
+  <div class="markdown level1 summary"><p>Search for tidal stations within the radius from the requested place.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? Radius { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/update-url/apiSpec/new?filename=TimeAndDate_Services_TidesService_StartDate.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.TidesService.StartDate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/TimeAndDate.Services/TidesService.cs/#L26">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_TidesService_StartDate_" data-uid="TimeAndDate.Services.TidesService.StartDate*"></a>
+  <h4 id="TimeAndDate_Services_TidesService_StartDate" data-uid="TimeAndDate.Services.TidesService.StartDate">StartDate</h4>
+  <div class="markdown level1 summary"><p>Start of the requested time interval.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime? StartDate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">DateTime</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/update-url/apiSpec/new?filename=TimeAndDate_Services_TidesService_Subordinate.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.TidesService.Subordinate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/TimeAndDate.Services/TidesService.cs/#L41">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_TidesService_Subordinate_" data-uid="TimeAndDate.Services.TidesService.Subordinate*"></a>
+  <h4 id="TimeAndDate_Services_TidesService_Subordinate" data-uid="TimeAndDate.Services.TidesService.Subordinate">Subordinate</h4>
+  <div class="markdown level1 summary"><p>Whether or not to resolve subordinate or just reference stations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Subordinate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/update-url/apiSpec/new?filename=TimeAndDate_Services_TidesService_GetTidalData_List_TimeAndDate_Services_DataTypes_Places_LocationId__.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.TidesService.GetTidalData(List%7BTimeAndDate.Services.DataTypes.Places.LocationId%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/TimeAndDate.Services/TidesService.cs/#L90">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_TidesService_GetTidalData_" data-uid="TimeAndDate.Services.TidesService.GetTidalData*"></a>
+  <h4 id="TimeAndDate_Services_TidesService_GetTidalData_List_TimeAndDate_Services_DataTypes_Places_LocationId__" data-uid="TimeAndDate.Services.TidesService.GetTidalData(List{TimeAndDate.Services.DataTypes.Places.LocationId})">GetTidalData(List&lt;LocationId&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IList&lt;Station&gt; GetTidalData(List&lt;LocationId&gt; placeid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="TimeAndDate.Services.DataTypes.Places.LocationId.html">LocationId</a>&gt;</td>
+        <td><span class="parametername">placeid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<a class="xref" href="TimeAndDate.Services.DataTypes.Tides.Station.html">Station</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/update-url/apiSpec/new?filename=TimeAndDate_Services_TidesService_GetTidalData_TimeAndDate_Services_DataTypes_Places_LocationId_.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.TidesService.GetTidalData(TimeAndDate.Services.DataTypes.Places.LocationId)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/TimeAndDate.Services/TidesService.cs/#L75">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_TidesService_GetTidalData_" data-uid="TimeAndDate.Services.TidesService.GetTidalData*"></a>
+  <h4 id="TimeAndDate_Services_TidesService_GetTidalData_TimeAndDate_Services_DataTypes_Places_LocationId_" data-uid="TimeAndDate.Services.TidesService.GetTidalData(TimeAndDate.Services.DataTypes.Places.LocationId)">GetTidalData(LocationId)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IList&lt;Station&gt; GetTidalData(LocationId placeid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="TimeAndDate.Services.DataTypes.Places.LocationId.html">LocationId</a></td>
+        <td><span class="parametername">placeid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<a class="xref" href="TimeAndDate.Services.DataTypes.Tides.Station.html">Station</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/update-url/apiSpec/new?filename=TimeAndDate_Services_TidesService_GetTidalDataAsync_List_TimeAndDate_Services_DataTypes_Places_LocationId__.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.TidesService.GetTidalDataAsync(List%7BTimeAndDate.Services.DataTypes.Places.LocationId%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/TimeAndDate.Services/TidesService.cs/#L120">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_TidesService_GetTidalDataAsync_" data-uid="TimeAndDate.Services.TidesService.GetTidalDataAsync*"></a>
+  <h4 id="TimeAndDate_Services_TidesService_GetTidalDataAsync_List_TimeAndDate_Services_DataTypes_Places_LocationId__" data-uid="TimeAndDate.Services.TidesService.GetTidalDataAsync(List{TimeAndDate.Services.DataTypes.Places.LocationId})">GetTidalDataAsync(List&lt;LocationId&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;IList&lt;Station&gt;&gt; GetTidalDataAsync(List&lt;LocationId&gt; placeid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="TimeAndDate.Services.DataTypes.Places.LocationId.html">LocationId</a>&gt;</td>
+        <td><span class="parametername">placeid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IList</span>&lt;<a class="xref" href="TimeAndDate.Services.DataTypes.Tides.Station.html">Station</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/timeanddate/libtad-net/new/update-url/apiSpec/new?filename=TimeAndDate_Services_TidesService_GetTidalDataAsync_TimeAndDate_Services_DataTypes_Places_LocationId_.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.TidesService.GetTidalDataAsync(TimeAndDate.Services.DataTypes.Places.LocationId)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/TimeAndDate.Services/TidesService.cs/#L105">View Source</a>
+  </span>
+  <a id="TimeAndDate_Services_TidesService_GetTidalDataAsync_" data-uid="TimeAndDate.Services.TidesService.GetTidalDataAsync*"></a>
+  <h4 id="TimeAndDate_Services_TidesService_GetTidalDataAsync_TimeAndDate_Services_DataTypes_Places_LocationId_" data-uid="TimeAndDate.Services.TidesService.GetTidalDataAsync(TimeAndDate.Services.DataTypes.Places.LocationId)">GetTidalDataAsync(LocationId)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;IList&lt;Station&gt;&gt; GetTidalDataAsync(LocationId placeid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="TimeAndDate.Services.DataTypes.Places.LocationId.html">LocationId</a></td>
+        <td><span class="parametername">placeid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IList</span>&lt;<a class="xref" href="TimeAndDate.Services.DataTypes.Tides.Station.html">Station</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/timeanddate/libtad-net/new/update-url/apiSpec/new?filename=TimeAndDate_Services_TidesService.md&amp;value=---%0Auid%3A%20TimeAndDate.Services.TidesService%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/timeanddate/libtad-net/blob/update-url/TimeAndDate.Services/TidesService.cs/#L16" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
