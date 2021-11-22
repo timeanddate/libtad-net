@@ -9,11 +9,10 @@ Time and Date APIs support looking up several different locations and IDs. As of
 * Coordinates (e.g. "+59.743+10.204")
 * Airports (e.g. "a-ENZV")
 
-The class [LocationId](http://services.timeanddate.com/api/doc/v2/type-locationid.html) is used to set the appropriate location ID. Airports categorize the same way as textual ID.
+The class [LocationId](https://dev.timeanddate.com/docs/type-locationid) is used to set the appropriate location ID. Airports categorize the same way as textual ID.
 
-An access key and a secret key is required to use the API. If you are not already a Time and Date API user, please see our [API offers](https://services.timeanddate.com/free-trial) to get a free 3 month trial. For more information, see our [API Services page](https://dev.timeanddate.com/).
+An access key and a secret key is required to use the API. If you are not already a Time and Date API user, please see our [API offers](https://dev.timeanddate.com/free-trial) to get a free 3 month trial. For more information, see our [API Services page](https://dev.timeanddate.com/).
 
-Developed with Mono C# Compiler 4.0.1.0 
 
 Astronomy Service
 --------------------------------------
