@@ -3,7 +3,7 @@ namespace TimeAndDate.Services.DataTypes.Places
 {
 	/// <summary>
 	/// LocationId class represents the different kinds of IDs that Time and Date API
-	/// does support. See <see cref="https://services.timeanddate.com/api/doc/v2/type-locationid.html" />
+	/// does support. See <see cref="https://dev.timeanddate.com/docs/type-locationid" />
 	/// for detailed information.
 	/// </summary>
 	public class LocationId

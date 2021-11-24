@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "/Users/daniel/Documents/libtad-net/docfx_project",
+  "source_base_path": "/Users/daniel/libtad-net/docfx_project",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.AccountService.html",
-          "hash": "EIONuHelqrMRasHDU60m9HguMfHXJAvpWKyFIPh6gQk="
+          "hash": "/gFqml/XvDv8qxv3Kgdg6ohJ6cleT6Ind0YkmZx/ruo="
         }
       },
       "is_incremental": true,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.AstrodataService.html",
-          "hash": "ZhqEI23GeCMNNNuhJ6evSscucmcdTNPmSaO1m4j0ibA="
+          "hash": "RJ3ZKPQ6yQfJJ0hz3Hm4RSN2Fy6Fm/Z305eDUoL33bY="
         }
       },
       "is_incremental": true,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.AstronomyService.html",
-          "hash": "sPFS4s81YoIER0mOgaiZoVhxf0hKZ1c+tNsEBDwBO9E="
+          "hash": "IafmKZ+rgRIavad+QLuhFZyciE1TeHdFQHLTHZouHSw="
         }
       },
       "is_incremental": true,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.BaseService.html",
-          "hash": "BUFQ5s6wM86pFtyFeNs8UtPkDqAHvOOy6RyGiR2r3go="
+          "hash": "wwm6H+eaidMPd6AOtllME/O7UPKy5Cf7h+DYhS2TQAs="
         }
       },
       "is_incremental": true,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.BusinessDateService.html",
-          "hash": "QR9yEHc2fBZu/S0r6tH+d8nx3PGELrhXYm1PVtY1mvQ="
+          "hash": "PEeclaAQa6DOiRT5pNrf7LKSL/eB01D3woJWsY7vlTc="
         }
       },
       "is_incremental": true,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.BusinessDates.html",
-          "hash": "v69kctfjaecuenqPOiG8cWUlpFQLdE0lNgSf07vndqE="
+          "hash": "ugHwzgS1+9qk7XxADHNvY9PZ3L7av35pRpbxUDA4hOg="
         }
       },
       "is_incremental": true,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.BusinessDuration.html",
-          "hash": "1wfBNeCY4YlHAf2Z0kE5pHNPZbmp/2ekRQYgByB6AkE="
+          "hash": "7erE3+PKzwyac0cMhVU3FJMPUg26XES0Sw5Xr02Y6m8="
         }
       },
       "is_incremental": true,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.BusinessDurationService.html",
-          "hash": "evnxVecEZdD1XljY8Xyd44Bj2dikSdM4RYG2enjqtcY="
+          "hash": "3AYKol7ki+SAxjUfBcvxyo87IWJm2LVRg/cc0bOu09A="
         }
       },
       "is_incremental": true,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.Common.IdFormatException.html",
-          "hash": "IMcBCj4fYwR6h/aES175Q/6xW9lcNopOWADLfXQ1oSA="
+          "hash": "5rwC6eTTxjFohHLfIhcZoTjQZkLA1i/cUWrO68b4pMI="
         }
       },
       "is_incremental": true,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.Common.InvalidIsoStringException.html",
-          "hash": "MSKDVl9q4+dnFx3L75KZBD+3dh2sWI1Cpkn9Njfrndw="
+          "hash": "XlBTNfI546pz3hR+8CrEs5hGKLqs5HZnMsVM1pch2pU="
         }
       },
       "is_incremental": true,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.Common.LocalTimeDoesNotExistException.html",
-          "hash": "3yj/YLwKrBU18gN/TVfN0MyBfpEaO7G1DUf1gsgps+4="
+          "hash": "bfvL8IzKzxg5t8FN+AOw+nsiP/R4sL10gc47B1nZADA="
         }
       },
       "is_incremental": true,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.Common.MalformedXMLException.html",
-          "hash": "1yLbwBYNRtFX9sT09utay/r8+yF/iDI5gCI07iNkMbI="
+          "hash": "e8xIHqqIlzbgtYNCKUvyXUBguJgm/ldOdmM9tguHCjw="
         }
       },
       "is_incremental": true,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.Common.MissingTimeChangesException.html",
-          "hash": "K2mcwf6uBRUzqb7QHZhKCDDVh9zvbbvS6LjRgQ11/RY="
+          "hash": "XhJV3WxNCAPOmqYD+hgJFdoWb4akRd07vxKa3q2FXkM="
         }
       },
       "is_incremental": true,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.Common.QueriedDateOutOfRangeException.html",
-          "hash": "S4JHYbnaUY+jY8DPS50k1iM/EYfHDeYA8TRr65lEUek="
+          "hash": "UYZ79F7WDis4ZSCWIhkJNz1+xvbgL42v2N+AG6YjdC0="
         }
       },
       "is_incremental": true,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.Common.ServerSideException.html",
-          "hash": "+SuKpVk4IYZMcQnDJJJ2SzaEIyIpBBqEPj3AZxDq3fk="
+          "hash": "n+OXEVFCw1lcqil2xJ4nhyWh9yISaAjudlohzhvbj5o="
         }
       },
       "is_incremental": true,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.Common.html",
-          "hash": "Od2QQBB1Ji+TZIXOYx7kNjdkZOOUw2Z82AdYDY7AhEM="
+          "hash": "Um/ALw8+uns18Dh0svyPDIsbHr+MVozkmjoNpZtSKfg="
         }
       },
       "is_incremental": true,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.ConvertTimeService.html",
-          "hash": "EYdFsFx98SErMn8QbRPZ112HgFxs3VyKgwNGjifPcgQ="
+          "hash": "wVrBLBLxhm2t+XOcB/NUwkKg4DUEclOHBzXnw9vom1s="
         }
       },
       "is_incremental": true,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.ConvertedTimes.html",
-          "hash": "RwZ8PgpHQoJ1Kpptv5qCv6eRtXMLZFf4rPDuR4Iu6eg="
+          "hash": "MQqNc25hljzkUAp5AOHivnADI67CP1U21cFmPQ/XdD0="
         }
       },
       "is_incremental": true,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.Coordinates.html",
-          "hash": "sDJ73+2CsmsZcougTzsgBgNTipv8tXXGvjT28s79gPc="
+          "hash": "NH9y06XDXkkGZ6yyBKOIiD1aaPNH4xv89kkaW4wKAnc="
         }
       },
       "is_incremental": true,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DSTService.html",
-          "hash": "UYgYuqXxPJ3Y4LzgXxISD0RGrARdkJPLPkYX2Xz9yWs="
+          "hash": "vZFsRArLctCPJqi4c92n3H87Hjw7WRP8i/xggPpPGqY="
         }
       },
       "is_incremental": true,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Account.Account.html",
-          "hash": "hJsT0rQosYnKHH/gIpbqiu7bTc2e7PiYU9082ExinRM="
+          "hash": "UylBRpq3hdZrZdvzlgC2/ZdfuToeTfFEaims7zKvp1k="
         }
       },
       "is_incremental": true,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Account.Package.html",
-          "hash": "UVFquUQCRp1isNEAcozoSZK0PoJ2VuPVm5vwcf25drc="
+          "hash": "BB2CFhblcdU6Dsr959IaXg3QhlnQ8YhH4xM2Es8agEs="
         }
       },
       "is_incremental": true,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Account.html",
-          "hash": "+++6tSJOT6NxRxTdnmoLL93xObKbvtB5ePgjQq+uob0="
+          "hash": "lQrKs8Zx0bE/B9oAFWmk9VfCtgnshIJFhwpGwhrfWHc="
         }
       },
       "is_incremental": true,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.Astronomy.html",
-          "hash": "yo1BErftWlu9TCF0JzT63UZH3UXnrFPGMrXQakfUg9U="
+          "hash": "k0VeSIa+s5BlwOz/q4rMFrFdtnvo0KciZuh2F22rr94="
         }
       },
       "is_incremental": true,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyCurrent.html",
-          "hash": "3UdKcawA4kbVV0nRn2SZw1crhzyKHvhYHYuxDVDhHkg="
+          "hash": "85mus4zhdtJBTO6WKAM8qVWe5rCN9LY45IVhUx1zbfE="
         }
       },
       "is_incremental": true,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyDay.html",
-          "hash": "GF2o8o+HdUGS3IJHOuN/qRcEwOWQBO6Y1Dhul8DIpLY="
+          "hash": "zuiBWYszq4MCi6WYgIyXNFsoCv2j9ID4g0z6W1iCAcc="
         }
       },
       "is_incremental": true,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyDayEvent.html",
-          "hash": "xRsragtRMNcqioDNukNG3d6IGXzn3Z2zkHtpHbs+/P4="
+          "hash": "dAKtWtf+4PyStV47w3GJFLm+k9mnxG0mGL70HlLKDy0="
         }
       },
       "is_incremental": true,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyEvent.html",
-          "hash": "FFAtulT9hqYsnyc0Qi0DZLPqvjLjyDyNRnkkLLOL2y4="
+          "hash": "TTwSfj9HJpk9KXI39ka2xFDMrziqDIu8KijsJzTC+vo="
         }
       },
       "is_incremental": true,
@@ -345,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyEventClass.html",
-          "hash": "oqv/ZSzAnZP/qpkz5MdFMB1k3H72qbxZaejWmw5gxfQ="
+          "hash": "zy2IWUJF4lYzq7/ErMeKVNWvexIdyt8VF7cTA6R5umA="
         }
       },
       "is_incremental": true,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyEventCode.html",
-          "hash": "fCpc3GxgRPCdjoykx60IFrE7VYGbO7gmuaByPdMqGn0="
+          "hash": "8y2hknvEJAwFNMIMesKa48GNT5gzS3X+A+ZhLL0gMAQ="
         }
       },
       "is_incremental": true,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyEventType.html",
-          "hash": "XgPefVdyeZpblDvoAEB22rJ9/ureZ79hPVSVws1wmFs="
+          "hash": "stRmOrBNAWphizslpUNrEi76xVuRedbx6q9wFDbFSoE="
         }
       },
       "is_incremental": true,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyLocation.html",
-          "hash": "nsdO/qgAzRXETrgFaVC/n1CPYYUhHjBCQThs4uZZx4U="
+          "hash": "XOKgf9IvJa3oi/ZIr1FQ0zVeSGKR/ZX/T3Czdv2fRk4="
         }
       },
       "is_incremental": true,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectDetails.html",
-          "hash": "vBUvjNXerE0EmahJTQlcPHppvpW5irqBxdKDrtyEUto="
+          "hash": "HPZWd7kjuBdz70z6EfM5UsgBTkw9+oYC+bCbx3ZgfU8="
         }
       },
       "is_incremental": true,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomyObjectType.html",
-          "hash": "AoQ8xdlde1bJdVi9gUgX6V/btHIJeHgPv5GX2pJ6DHs="
+          "hash": "cgJfAhitf+l66iZ9tU5wdJHTN3S5WfOZVEYhy4YF+SI="
         }
       },
       "is_incremental": true,
@@ -417,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.AstronomySpecial.html",
-          "hash": "iZqD1idEkJ0lb4DGFxv5r+M7tR58GRIWtg+6bLGpPfE="
+          "hash": "0pu2wtf3qXg1/zjFOEOakrbxd0HeBTQ+KYFxwYHg6i8="
         }
       },
       "is_incremental": true,
@@ -429,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.MoonPhase.html",
-          "hash": "iivuu2YD+xLy+aitJnUb80N2hr9+n60oFsTmbX9BM3o="
+          "hash": "Mu1GqEWcqtHmbjMiOjOoHSqE1Fy5AU2lsjeZq+QCIjg="
         }
       },
       "is_incremental": true,
@@ -441,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Astro.html",
-          "hash": "kGmfOsDHhcji91DHhOParvPQesfrDsWRCgUUsdy02Yc="
+          "hash": "RQ7tD13R2spqAkDGBKdJmNEeBzWD+c02qn1e3V1ykL4="
         }
       },
       "is_incremental": true,
@@ -453,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.BusinessDays.html",
-          "hash": "dKmgMz5cYJj9E714Khp1Y/CoA6GhPDc0LpjP/ty1hX4="
+          "hash": "A4CoMPN/XzK3IfnBlVQ7lTpWKR9KdwSvzpaO1n+S9dY="
         }
       },
       "is_incremental": true,
@@ -465,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.BusinessDaysFilterType.html",
-          "hash": "tpkv3NfZDzIQq/ny0R2VFOo1ypXVBl/xi3f9xU4rSiU="
+          "hash": "DF4SpPmFuA2n0J4tutQefq4bBgSc0yXme643FNk8PFM="
         }
       },
       "is_incremental": true,
@@ -477,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.IncludeOrExcluded.html",
-          "hash": "g603gvh08WlYNLx2UIugKm96rg77+3sDT3kFNnioE6c="
+          "hash": "XUbV24XmcyGSpWffQk1J2L0n7bIuiAY+HiCLv8jf4/U="
         }
       },
       "is_incremental": true,
@@ -489,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.Period.html",
-          "hash": "8E6//KJh0S97LPvMtDFlUnfmbmE0RASB55vlhTNcyaA="
+          "hash": "JxotbeunvamXYDkPP8g+/Jq/15GvXaAfkAw/bQdYrlw="
         }
       },
       "is_incremental": true,
@@ -501,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.WeekdaysType.html",
-          "hash": "xcRS1E/BKNTJt6cwx7H5cFBmaRjQmoPvB+IZNWPsj1E="
+          "hash": "5pXh1S05MRDzNRanXKjLpw37kFJjK1suQxqg6j2lrA0="
         }
       },
       "is_incremental": true,
@@ -513,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.BusinessDays.html",
-          "hash": "IeR+sJnQbXcWVzk8cCyEODASsoL4KiEcIAyvWjVbHGE="
+          "hash": "ozKxLI6FfrFOqeKHYT8FYwX73iy/Wt8rIMQVF6I4C7E="
         }
       },
       "is_incremental": true,
@@ -525,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.DST.DST.html",
-          "hash": "SiERp4qljZgwEvNnFrGeUgRIcfdOnJ9mf0V1uD8PcUw="
+          "hash": "c/GbOhW0y5LHGEuyt9SLQrm6akUT39nCQCWHf5Ydegs="
         }
       },
       "is_incremental": true,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.DST.DSTSpecialType.html",
-          "hash": "8p70KH/3/FTwgYgMJ6LBjG11x+Xb0OEgWnnt6Ec+NE8="
+          "hash": "6D4A8MfHGXmEkLoklETlSP6b1QdVmgjWNTcoFs4xX3k="
         }
       },
       "is_incremental": true,
@@ -549,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.DST.html",
-          "hash": "PceBKzUJKMM6GUPhcS/M9hsWeA4NL30sszk7JVrHX98="
+          "hash": "UAZkx7ga8k54qB+MSkz/cJTxDAOBLY1jAF1mqUgSnEc="
         }
       },
       "is_incremental": true,
@@ -561,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.DialCode.Composition.html",
-          "hash": "iRYTR2UI2uVVqJwmC5BG5MKwa8VdRWPLZhXYOI8wb1Y="
+          "hash": "tl1utGLXudnQiO5SloLnCvqyoqr/Q4r2wj346mw4Seg="
         }
       },
       "is_incremental": true,
@@ -573,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.DialCode.PhoneNumberElementType.html",
-          "hash": "G+6MunUm2/NAviBF124U3f3YvHJjh6txdP/ijIGMQUQ="
+          "hash": "BOwnJFElbnRjZOZwJq3dwDyScHmQjD83Qtl4V3+gSDM="
         }
       },
       "is_incremental": true,
@@ -585,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.DialCode.html",
-          "hash": "DVIRjkI+UMtaS9HqDadWTrwPISl8zKEs6bisctOpU70="
+          "hash": "1nuoMBM4lp3Qg4g3Uvt7KhGxqlQNmmNcxD1vBFh/DAc="
         }
       },
       "is_incremental": true,
@@ -597,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Holidays.Holiday.html",
-          "hash": "u1/OPbab6tEXcKUxIOqdPdgku7G7k6zqF04teV+empE="
+          "hash": "XwZGjEeplKXBNFfc1ESEkbhLKz9RTj4xrsseq6qS0wk="
         }
       },
       "is_incremental": true,
@@ -609,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Holidays.HolidayState.html",
-          "hash": "rlUAr/MnPaP08xnjhEfwWQDybtdfco8aTIFOb6VrbTA="
+          "hash": "EwNf6lO9+7u6oDsG9Qt7Gx5DZ6o4qgnxi9iwxNpGnqY="
         }
       },
       "is_incremental": true,
@@ -621,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Holidays.HolidayType.html",
-          "hash": "G1tifaTU3BbyxeZ/peQl6smdJepuqVljRE/RcDKg/VU="
+          "hash": "TfxnncYy79QgprTFFKJJi4YZllNjWr6FQnKofiq+w20="
         }
       },
       "is_incremental": true,
@@ -633,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Holidays.html",
-          "hash": "44Xz7QAe2HJg58oyWL0WY3q0H+s18yOll3ykDbjP3Mw="
+          "hash": "T3aHiVAqkUAtl3G83RpzYubE/DIsK+FtV86OJ1x9+Rc="
         }
       },
       "is_incremental": true,
@@ -645,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.Event.html",
-          "hash": "WioL+om8x7iUsig1NqasOh9RTVB0r2ihd5XAYWwWfOw="
+          "hash": "3ks+m37XbkykReFuN0qwHpsSD7MY2TmIom6JVzlC2kw="
         }
       },
       "is_incremental": true,
@@ -657,7 +657,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.EventType.html",
-          "hash": "aYH5U2eZjv9sN3n9JhFu/ZtzWlBzjed/1rebdYqWjEI="
+          "hash": "gY9MdKVS7WaQhhg4VVkiTps5yHQz/FDViUxWKwEnzoA="
         }
       },
       "is_incremental": true,
@@ -669,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.Name.html",
-          "hash": "UwdWdDkRV11+V1kxjZsqE/zdT65+H3kqndJ9pwuOqAA="
+          "hash": "0rjIPzADA4ktomeP0B4CVKpUQG9VaIJIoIsPliPty/c="
         }
       },
       "is_incremental": true,
@@ -681,7 +681,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.OnThisDayResponse.html",
-          "hash": "fwmjVleK5VSSVNq/S133WPvqaRFwf4VK0v1QmIEKi08="
+          "hash": "rO7MjhdbL6lEB1oZtYhbAC+Z2+fpy18ACovL6WmVrW8="
         }
       },
       "is_incremental": true,
@@ -693,7 +693,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.Person.html",
-          "hash": "zAPelu9HvhRu6NpYMqEhIfAWaRwDA+1+RR4UIiOW4bo="
+          "hash": "w/xkOVNYUIFxG4QB/OQ8SuGpMHMlU05TtdwdKK4gVM0="
         }
       },
       "is_incremental": true,
@@ -705,7 +705,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.OnThisDay.html",
-          "hash": "DPJqYDhf5A1IicgRZZ/KNY4rvzKxHIbANQ8Ucth8NRQ="
+          "hash": "Ao1oflSXLsl5CKXVnEJd1cN98jS/QKhvLNd7aICTYD8="
         }
       },
       "is_incremental": true,
@@ -717,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Places.Country.html",
-          "hash": "bHEJiDXuGtxd0IV+SIMmYhjtsjfdHVMMyf390lBF1mE="
+          "hash": "VqJ+UylG4VX5C9qJh4O4nqSJBVnZYp07svFB62UcZXo="
         }
       },
       "is_incremental": true,
@@ -729,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Places.Geo.html",
-          "hash": "M50DhMn1gO8jGR5QgrNkJomavI1UEzTRS/8qT9H53VQ="
+          "hash": "fep0I03qn1oYvipYaEjR1uafDVnV9qDGjA+qZP3+/m0="
         }
       },
       "is_incremental": true,
@@ -741,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Places.Location.html",
-          "hash": "kaBZx5Vk0J8X1zJOUe8GZomkw26ASRCWXMgk629MNEo="
+          "hash": "FkzuH5wmLIdnhw/NjaeX7T8TqlYQk82qJjC1b7JKDXY="
         }
       },
       "is_incremental": true,
@@ -753,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Places.LocationId.html",
-          "hash": "DcKzHJ24SSSn0QD7lhAdCqUV+PiQd5PcisWXWnBykUo="
+          "hash": "2Fo9kpDfnzq9zFkTge/qJES95rczoKtsqJwW4L0MDzg="
         }
       },
       "is_incremental": true,
@@ -765,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Places.LocationRef.html",
-          "hash": "JwIvKCzIFpfDGd2F30fq3xBiXftSPog98ImGJhp/Aq8="
+          "hash": "59m3gBqSYV6exDpQuLUxYxJ5XBljm3M/eb4QBA8z0Dk="
         }
       },
       "is_incremental": true,
@@ -777,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Places.Place.html",
-          "hash": "VpB038jPOyf+kdkT8hA27KidfRA+MbnxPiEUR/RhjQY="
+          "hash": "LA4ykk/CgWCN2QRr3ZUAz7jl67R0mfgJy4fx/NPgOmc="
         }
       },
       "is_incremental": true,
@@ -789,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Places.Region.html",
-          "hash": "TEmahp0hzr26vWPLpKZqTti/SkX/DQAjb5vYFvo1cog="
+          "hash": "GrniwBynZ4QlWlXbrlxpHv1VmJ3uhzmjr7GCuhYpDQc="
         }
       },
       "is_incremental": true,
@@ -801,7 +801,67 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Places.html",
-          "hash": "JFkzsvtR64du+c4Z4fXpF0jLLYiNITIGZVtMkVpypiE="
+          "hash": "GMJAUw3H8aL4Tgkcdh0fG+jQEEyzlmMvIsl14rHl3BY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Tides.Station.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Tides.Station.html",
+          "hash": "efcNbOEreqEUTSGCgdHLlwPGvmBN+kfRR1kFRfrlXKg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Tides.StationInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Tides.StationInfo.html",
+          "hash": "DTEcy7vLWQ9zklVnbi2EkqQrbN/njBp6DKrhuT8IOQ4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Tides.TidalPhase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Tides.TidalPhase.html",
+          "hash": "OVyQmBHI+Pnly19pNta5gt/Yp6QJ1uK1HetEmTvOHB0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Tides.Tide.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Tides.Tide.html",
+          "hash": "kTbnhJpmwC5WpmoKe8bnCFQs7p86aLpLFborYuIrD8I="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.DataTypes.Tides.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.DataTypes.Tides.html",
+          "hash": "E/88sbB6ZxwZW6OwmWU4t3Pe1tFrSGpoEfNuXIuWzrs="
         }
       },
       "is_incremental": true,
@@ -813,7 +873,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Time.TADDateTime.html",
-          "hash": "2KrLb36J4f0M+Qbs2qvoYXthJcoHT8ZsUTdtWjq30zI="
+          "hash": "f+vivHcfcaJ5pXAQPSkqKFwKt9qhJv+hVRRy7Rk/uDQ="
         }
       },
       "is_incremental": true,
@@ -825,7 +885,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Time.TADTime.html",
-          "hash": "n9VySS1mxFoJfOK6q24A5QPOfS1jJ0rrQ8tqZFZpsU8="
+          "hash": "TcyJ97GkrPaMqFNktCflLkXwQmgmBqz+wEY55N1duP0="
         }
       },
       "is_incremental": true,
@@ -837,7 +897,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Time.TADTimezone.html",
-          "hash": "zOwxH1GwjuJ7sYMvJP+dpcZZLQbIHYbPTn2sDw87N7E="
+          "hash": "C6DOEEAeneWPXa7fpHkq3GMjxgVnxcRlhuCS1W2A008="
         }
       },
       "is_incremental": true,
@@ -849,7 +909,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Time.TimeChange.html",
-          "hash": "j3RxFS0Sk9RpuI62FG/5cL7kNyuMsbwXyzv1j0GB1l4="
+          "hash": "8rVumBXnXKaoS8Pmb+h1aT4bCIqCMDBhxSeZRA9M5Hk="
         }
       },
       "is_incremental": true,
@@ -861,7 +921,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Time.VerboseTimeChange.html",
-          "hash": "UyDcZJ3SVwVcw+t8bAoC30rzRRIYd0PhyJIbjyfGEps="
+          "hash": "S32oWM8l4ClMPiyYGX/9p2c1gygn9nQMDTkOxjw2fDA="
         }
       },
       "is_incremental": true,
@@ -873,7 +933,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DataTypes.Time.html",
-          "hash": "7651LN2uLl/LGXo3CRUDsq6K6NpqnQ6xd8srxuqaSQg="
+          "hash": "7mt9lsktC8Rhm5VRLyFZtErOS1w+1qRIQfGjDdI3ONM="
         }
       },
       "is_incremental": true,
@@ -885,7 +945,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DialCodeService.html",
-          "hash": "5RuvrRe47LnNzW0oP1KWYxHSRFIrn42M1ip1DLGaS+E="
+          "hash": "f7HeBiFsgDrYSAjjxM49ROxHO5H1QumvSBf7hsXlpQk="
         }
       },
       "is_incremental": true,
@@ -897,7 +957,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.DialCodes.html",
-          "hash": "VTZKDYymjTaOL6ceG0W6D42vHXCd8cMIvFBF9v2E9WE="
+          "hash": "qUp1juPCY1L28f2mM8Mjll0u3PzVMSFlTEfQAiEZGTQ="
         }
       },
       "is_incremental": true,
@@ -909,7 +969,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.HolidaysService.html",
-          "hash": "DmzJ+DDIxqxitpool6/MJF5lAB6u7bN7nDjlYzlySBw="
+          "hash": "43KPpJgcBXOYXPmv+BSi/rsfb5aTnRhTii+dXHawTAY="
         }
       },
       "is_incremental": true,
@@ -921,7 +981,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.InMemStore.html",
-          "hash": "5yxAtX2vAtyIr7Oc3z0UqLF3GmSE1gTxdZ6H2VqaPPY="
+          "hash": "dXQPLNKY4PfF/I+G/mJT9H66bNiuXLTQoCkZMm7KYyw="
         }
       },
       "is_incremental": true,
@@ -933,7 +993,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.MalformedXMLException.html",
-          "hash": "N+5Njs2UPuWu6Z2zsSvMG9lCsQunjluFZYWR1n21LLs="
+          "hash": "sM9HjhqdxWT/8Id7qW+oO6IabvXztpoLtp9IE5rOJf0="
         }
       },
       "is_incremental": true,
@@ -945,7 +1005,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.Models.BaseModel.html",
-          "hash": "Al9aORASxyv4d5fZyW/drqV/mCZv9FE1y3DS9tgVhd0="
+          "hash": "asAVVCXEI85o719v8rceYkNyvY3W/NznDflcnqgbayg="
         }
       },
       "is_incremental": true,
@@ -957,7 +1017,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.Models.html",
-          "hash": "PrdsVoZQqXLRB02+l0V/MWAyDpAy0/Jc7OAD+c6SUNk="
+          "hash": "ZBoRKNq0wmFr5/x+FVAJtY0GWaa4P5TN0NqHgeM9JYc="
         }
       },
       "is_incremental": true,
@@ -969,7 +1029,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.OnThisDayService.html",
-          "hash": "pJ7TRMXIiOGcRpqXQdFZdQMvN4oq9koMKK3kFFbRlCE="
+          "hash": "lxbQ2I0splhxQY/EFs2fyxwR4/6NfbXCJBG0ssKtQuQ="
         }
       },
       "is_incremental": true,
@@ -981,7 +1041,19 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.PlacesService.html",
-          "hash": "+JYI7ueeoHfxSe9H/MP6hF2blr+GGgpwhHx3yae1o6g="
+          "hash": "GopbJDoRiFMGDvTh5K9slugC2QKj048Jsw8mME7MWbk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimeAndDate.Services.TidesService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimeAndDate.Services.TidesService.html",
+          "hash": "A3k73iEf6KMbkDRJ3Diy9Ua843aKeunnJGkbD34mD2k="
         }
       },
       "is_incremental": true,
@@ -993,7 +1065,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.TimeService.html",
-          "hash": "/F6f3+V+jMI7W1IvzMRxM5Qp437JhxNaIkBxOIhm3IM="
+          "hash": "KB9ggplURXrBBF+f+57DrZoqJJMizZJZBSHDpnzGYik="
         }
       },
       "is_incremental": true,
@@ -1005,7 +1077,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TimeAndDate.Services.html",
-          "hash": "iQyV9ccXYIaeDWThfKEsiQTIvqWfnYhzkWFA8t/iwWE="
+          "hash": "Z2atyOTHhCE+VZwktWw7iC2sCM3FPrMYma3RtPSdmi0="
         }
       },
       "is_incremental": true,
@@ -1017,10 +1089,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "Rv9NiFEWfAqw3aDjku812EID9xE5/C6lRryJIgXg5Fs="
+          "hash": "NPEW5HKN/zlO9iN1YcMl5ZrvXbqiWWRpvixgLDFhSs0="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1029,7 +1101,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "AiEoYBwNo3Q+SAFA4E2kFmhcMt1Xd603k2eccAVCpK0="
+          "hash": "HJ5r9fTum3vKXBhHWvfbgBRq3ilTTplfxfgVOsaJPMI="
         }
       },
       "is_incremental": false,
@@ -1041,7 +1113,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "d9blDOfkHqMWYLmR2nptPN3qK8nv2egUrx7QE3Hqepg="
+          "hash": "zV2fvJYoOno8sH1qQQlr/INceSg1gk2REtmQ1tV0k5A="
         }
       },
       "is_incremental": true,
@@ -1073,13 +1145,13 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 2,
-          "skipped_file_count": 1
+          "skipped_file_count": 2
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 84,
-          "skipped_file_count": 84
+          "total_file_count": 90,
+          "skipped_file_count": 90
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
