@@ -66,7 +66,8 @@ namespace TimeAndDate.Services.DataTypes.Astro
 			if (moonphase != null)
 			if (!MoonPhase.TryParse (moonphase.InnerText, true, out phase))
 				throw new MalformedXMLException ("The XML returned from Time and Date contained an unsupported moonphase: " + moonphase.InnerText);
-			
+			model.MoonPhase = phase;
+
 			if (events != null)
 				foreach (XmlNode day in events)
 					model.Events.Add ((AstronomyDayEvent)day);
