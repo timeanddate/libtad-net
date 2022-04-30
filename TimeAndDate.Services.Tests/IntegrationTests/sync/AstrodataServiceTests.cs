@@ -68,6 +68,44 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		}
 
 		[Test()]
+		public void Calling_AstrodataService_With_ISOTime_Returns_Expected_Time ()
+		{
+			// Arrange
+			var astrodataService = new AstrodataService (Config.AccessKey, Config.SecretKey);
+			var time = new TADDateTime (2020, 3, 15);
+			astrodataService.IncludeISOTime = true;
+
+			// Act
+			var result = astrodataService.GetAstroData(AstronomyObjectType.Sun, new LocationId(179), time);
+			var resultTime = result[0].Objects[0].Result[0].IsoTime;
+
+			// Assert
+			Assert.NotNull(resultTime);
+			Assert.AreEqual (2020, resultTime.Year);
+			Assert.AreEqual (3, resultTime.Month);
+			Assert.AreEqual (14, resultTime.Day);
+		}
+
+		[Test()]
+		public void Calling_AstrodataService_With_UTCTime_Returns_Expected_Time ()
+		{
+			// Arrange
+			var astrodataService = new AstrodataService (Config.AccessKey, Config.SecretKey);
+			var time = new TADDateTime (2020, 3, 15);
+			astrodataService.IncludeUTCTime = true;
+
+			// Act
+			var result = astrodataService.GetAstroData(AstronomyObjectType.Sun, new LocationId(179), time);
+			var resultTime = result[0].Objects[0].Result[0].UtcTime;
+
+			// Assert
+			Assert.NotNull(resultTime);
+			Assert.AreEqual (2020, resultTime.Year);
+			Assert.AreEqual (3, resultTime.Month);
+			Assert.AreEqual (15, resultTime.Day);
+		}
+
+		[Test()]
 		public void Calling_AstrodataService_Returns_The_Expected_Geographical_Information ()
 		{
 			// Arrange
