@@ -87,8 +87,8 @@ namespace TimeAndDate.Services.DataTypes.Astro
 			var current = node.SelectSingleNode ("current");
 			var results = node.SelectNodes ("result");
 
-			var isotime = node.SelectSingleNode ("isotime");
-			var utctime = node.SelectSingleNode ("utctime");
+			var isotime = node.Attributes ["isotime"];
+			var utctime = node.Attributes ["utctime"];
 			var altitude = node.SelectSingleNode ("altitude");
 			var azimuth = node.SelectSingleNode ("azimuth");
 			var distance = node.SelectSingleNode ("distance");

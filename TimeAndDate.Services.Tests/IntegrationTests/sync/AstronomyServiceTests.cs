@@ -47,14 +47,56 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Act
 			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
-			var result = service.GetAstronomicalInfo (type, place, startDate);
+			var result = service.GetAstronomicalInfo (type, place, startDate, endDate);
 			
 			// Assert
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.HasValue))));
 			Assert.IsTrue (result.All (x => x.Objects.All (y => y.Days.All (z => z.Date.Value.Date >= startDate && z.Date.Value.Date <= endDate))));
 			Assert.IsTrue (result.All (x => x.Geography.Country.Name == "United States"));
 		}
-		
+
+		[Test()]
+		public void Calling_AstronomyService_WithAllTypes_Should_ReturnMoonPhase ()
+		{
+			// Arrange
+			var startDate = new DateTime (2014, 1, 1);
+			var endDate = new DateTime (2014, 1, 30);
+			var type = AstronomyObjectType.Sun;
+			var place = new LocationId ("usa/anchorage");
+			
+			// Act
+			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
+			service.Types = AstronomyEventClass.All;
+			var result = service.GetAstronomicalInfo (type, place, startDate, endDate);
+			var anchorage = result.SingleOrDefault ();
+			
+			// Assert
+			Assert.IsTrue (anchorage.Objects.All (y => y.Days.All (z => z.Date.HasValue)));
+			Assert.IsTrue (anchorage.Objects.All (y => y.Days.All (z => z.Date.Value.Date >= startDate.Date)));
+			Assert.IsTrue (anchorage.Objects.All (y => y.Days.All (z => z.MoonPhase != MoonPhase.NotRequested)));
+		}		
+
+		[Test()]
+		public void Calling_AstronomyService_WithPhaseType_Should_ReturnMoonPhase ()
+		{
+			// Arrange
+			var startDate = new DateTime (2014, 1, 1);
+			var endDate = new DateTime (2014, 1, 30);
+			var type = AstronomyObjectType.Moon;
+			var place = new LocationId ("usa/anchorage");
+			
+			// Act
+			var service = new AstronomyService (Config.AccessKey, Config.SecretKey);
+			service.Types = AstronomyEventClass.Phase;
+			var result = service.GetAstronomicalInfo (type, place, startDate, endDate);
+			var anchorage = result.SingleOrDefault ();
+			
+			// Assert
+			Assert.IsTrue (anchorage.Objects.All (y => y.Days.All (z => z.Date.HasValue)));
+			Assert.IsTrue (anchorage.Objects.All (y => y.Days.All (z => z.Date.Value.Date >= startDate.Date)));
+			Assert.IsTrue (anchorage.Objects.All (y => y.Days.All (z => z.MoonPhase != MoonPhase.NotRequested)));
+		}	
+
 		[Test()]
 		public void Calling_AstronomyService_WithoutEnddate_And_OnlyOneInclusions_Should_ReturnCorrectAstronomyInfo ()
 		{
