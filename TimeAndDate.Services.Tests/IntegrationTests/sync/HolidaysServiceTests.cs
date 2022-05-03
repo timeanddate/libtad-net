@@ -67,7 +67,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			// Arrange
 			var country = "us";
 			var year = 2014;
-            		var expectedCount = 25;
+            		var expectedCount = 29;
 			
 			// Act
 			var holidaysService = new HolidaysService (Config.AccessKey, Config.SecretKey);			

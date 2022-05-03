@@ -34,7 +34,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 		{
 			// Arrage
 			var year = 2014;
-            		var expectedReturnedCount = 132;
+            		var expectedReturnedCount = 133;
 			
 			// Act
 			var service = new DSTService (Config.AccessKey, Config.SecretKey);			
@@ -194,7 +194,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 
 			// Assert
 			Assert.IsFalse (service.IncludeOnlyDstCountries);
-            		Assert.AreEqual(348, result.Count);
+            		Assert.AreEqual(345, result.Count);
 			Assert.Greater (noDstAllYear.Count(), 0);
 			
 			HasValidSampleCountry (sampleCountry);
