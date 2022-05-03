@@ -174,7 +174,7 @@ namespace TimeAndDate.Services.Tests.IntegrationTests
 			
 			// Assert
 			Assert.IsTrue (service.IncludeOnlyDstCountries);
-            		Assert.AreEqual(132, result.Count);
+            		Assert.AreEqual(133, result.Count);
 			
 			HasValidSampleCountry (sampleCountry);
 		}
