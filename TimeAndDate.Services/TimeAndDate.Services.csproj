@@ -2,5 +2,9 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <Version>1.0.1</Version>
+    <Authors>Time And Date Developers</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>This is the .NET Library abstraction over timeanddate.com API Services</Description>
   </PropertyGroup>
 </Project>
