@@ -1,0 +1,5 @@
+     var place = new LocationId(187);
+     var startDate = new TADDateTime(2015, 1, 1);
+     var endDate = new TADDateTime(2015, 1, 30);
+     var service = new AstronomyService('accessKey', 'secretKey');
+     var astroInfo = service.GetAstronomicalInfo(AstronomyObjectType.Moon, place, startDate, endDate);
